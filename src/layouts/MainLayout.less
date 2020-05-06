@@ -1,0 +1,118 @@
+:global {
+  @media screen and (max-width: 600px) {
+    .navigation {
+      position: absolute !important;
+    }
+  }
+}
+// main
+.main {
+  // position: relative;
+  width: 100%;
+  min-height: auto;
+  // overflow-y: auto;
+  background: #fff;
+}
+.mainHeader {
+  background: #29303c;
+  padding: 0;
+  height: 50px;
+  line-height: 0;
+  box-shadow: 0 0 6px #686868;
+  z-index: 800;
+}
+.sider {
+  overflow-y: auto;
+  border-right: 1px solid #e8e8e8;
+  background: #fff;
+}
+.footer {
+  text-align: center;
+  color: #949191;
+  font-size: 12px;
+  padding: 15px;
+}
+.logo {
+  float: left;
+  padding-left: 20px;
+  height: 50px;
+  line-height: 46px;
+  cursor: pointer;
+}
+.navTrigger {
+  font-size: 18px;
+  line-height: 30px;
+  margin-left: 168px;
+  cursor: pointer;
+  transition: color .3s;
+  &:hover {
+    color: #1890ff;
+  }
+}
+.navTriggerFold {
+  font-size: 18px;
+  line-height: 30px;
+  margin-left: 30px;
+  cursor: pointer;
+  transition: color .3s;
+  &:hover {
+    color: #1890ff;
+  }
+}
+// header
+.header {
+  float: right;
+  color: #fff;
+}
+.user {
+  float: right;
+  padding-right: 30px;
+  cursor: default;
+  &::after {
+    content: ' ';
+    clear: both;
+  }
+}
+.userLogo {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: inline-block;
+  overflow: hidden;
+  border: 1px solid #e9e9e9;
+  vertical-align: middle;
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
+.userName {
+  line-height: 50px;
+  padding: 0 10px;
+}
+// main navigation
+.naviContent {
+  @diff: 0;
+  height: -moz-calc(~"100% - "@diff);
+  height: -webkit-calc(~"100% - "@diff);
+  height: calc(~"100% - "@diff);
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+// sub navigation
+.navigation {
+  height: 100%;
+  background: #fff;
+  min-width: 220px;
+  font-size: 14px;
+  padding: 0 10px 10px;
+}
+.navigation::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+:global {
+  .navigation .ant-menu {
+    border-right: none;
+  }
+}
