@@ -35,6 +35,26 @@ export const isInArray = (arr, value) => {
   return false
 }
 
+export const findPathByLeafId = (leafId, nodes, type, oripath) => {
+  let path = oripath
+  if (oripath === undefined) {
+    path = []
+  }
+  for (let i = 0; i < nodes.length; i++) {
+    const tmpPath = path.concat()
+    tmpPath.push(nodes[i][type])
+    if (leafId === nodes[i][type]) {
+      return { node: nodes[i], path: tmpPath }
+    }
+    if (nodes[i].children) {
+      const findResult = findPathByLeafId(leafId, nodes[i].children, type, tmpPath)
+      if (findResult) {
+        return findResult
+      }
+    }
+  }
+}
+
 // 找出重名不重学科的节点
 export const theSameLabel = (other) => {
   const samelabel = []

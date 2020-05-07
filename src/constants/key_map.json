@@ -1,0 +1,5790 @@
+{
+  "0": {
+    "cn": "技术",
+    "en": "Technology"
+  },
+  "0-0": {
+    "cn": "交通与运输技术",
+    "en": "Transportation and Transportation Technology"
+  },
+  "0-0-0": {
+    "cn": "航空运输技术",
+    "en": "Air Transport Technology"
+  },
+  "0-0-0-0": {
+    "cn": "民用飞行器技术",
+    "en": "civil aircraft technology"
+  },
+  "0-0-0-0-0": {
+    "cn": "通用航空",
+    "en": "General Aviation"
+  },
+  "0-0-0-0-0-0": {
+    "cn": "丙类",
+    "en": "Class C"
+  },
+  "0-0-0-0-0-1": {
+    "cn": "甲类",
+    "en": "Class A"
+  },
+  "0-0-0-0-0-2": {
+    "cn": "乙类",
+    "en": "Class B"
+  },
+  "0-0-0-0-0-3": {
+    "cn": "丁类",
+    "en": "Ding class"
+  },
+  "0-0-0-0-1": {
+    "cn": "大型飞机技术",
+    "en": "Large Aircraft Technology"
+  },
+  "0-0-0-0-1-0": {
+    "cn": "智能控制技术",
+    "en": "Smart Control Technology"
+  },
+  "0-0-0-0-1-1": {
+    "cn": "发动机技术",
+    "en": "Engine Technology"
+  },
+  "0-0-0-0-1-2": {
+    "cn": "电子设备技术",
+    "en": "Electronics Technology"
+  },
+  "0-0-0-0-1-3": {
+    "cn": "复合材料技术",
+    "en": "Composite Technology"
+  },
+  "0-0-0-0-2": {
+    "cn": "无人机技术",
+    "en": "Drone Technology"
+  },
+  "0-0-0-0-2-0": {
+    "cn": "动力技术",
+    "en": "Power Technology"
+  },
+  "0-0-0-0-2-1": {
+    "cn": "交互技术",
+    "en": "Interactive Technology"
+  },
+  "0-0-0-0-2-2": {
+    "cn": "芯片技术",
+    "en": "Chip Technology"
+  },
+  "0-0-0-0-2-3": {
+    "cn": "导航技术",
+    "en": "Navigation Technology"
+  },
+  "0-0-0-0-2-4": {
+    "cn": "通信技术",
+    "en": "Communication Technology"
+  },
+  "0-0-0-1": {
+    "cn": "飞行控制技术",
+    "en": "Flight Control Technology"
+  },
+  "0-0-0-1-0": {
+    "cn": "飞机进近导航技术",
+    "en": "Aircraft Approach Navigation"
+  },
+  "0-0-0-1-0-0": {
+    "cn": "航站导航设施",
+    "en": "Terminal Navigation Facility"
+  },
+  "0-0-0-1-0-1": {
+    "cn": "航空地面灯光系统",
+    "en": "Aerial Ground Lighting System"
+  },
+  "0-0-0-1-0-2": {
+    "cn": "跑道标志",
+    "en": "Runway Sign"
+  },
+  "0-0-0-1-1": {
+    "cn": "空中交通管制监视技术",
+    "en": "Air Traffic Control Surveillance Technology"
+  },
+  "0-0-1": {
+    "cn": "管道运输技术",
+    "en": "Pipeline Technology"
+  },
+  "0-0-1-0": {
+    "cn": "输送与储存技术",
+    "en": "Transfer and Storage Technology"
+  },
+  "0-0-1-0-0": {
+    "cn": "高压输送技术",
+    "en": "High Pressure Conveying Technology"
+  },
+  "0-0-1-0-1": {
+    "cn": "高压储存技术",
+    "en": "High Pressure Storage Technology"
+  },
+  "0-0-1-1": {
+    "cn": "信息与控制技术",
+    "en": "Information and Control Technology"
+  },
+  "0-0-1-1-0": {
+    "cn": "泄漏检测技术",
+    "en": "Leak Detection Technology"
+  },
+  "0-0-1-1-0-0": {
+    "cn": "泄漏噪声探测法",
+    "en": "Leak Noise Detection"
+  },
+  "0-0-1-1-0-1": {
+    "cn": "系缆式漏磁探测法",
+    "en": "Tethered Magnetic Leakage Detection"
+  },
+  "0-0-1-1-0-2": {
+    "cn": "放射性示踪剂检漏法",
+    "en": "Radioactive Tracer Leak Test"
+  },
+  "0-0-1-1-1": {
+    "cn": "输送检测技术",
+    "en": "Conveying Inspection Technology"
+  },
+  "0-0-1-1-2": {
+    "cn": "输油气管道自动控制技术",
+    "en": "Automatic Control Technology for Oil and Gas Pipelines"
+  },
+  "0-0-2": {
+    "cn": "城市交通技术",
+    "en": "Urban Transportation Technology"
+  },
+  "0-0-2-0": {
+    "cn": "城市轨道交通运营与环境控制技术",
+    "en": "Urban Rail Transit Operation and Environmental Control Technology"
+  },
+  "0-0-2-0-0": {
+    "cn": "地铁环控通风技术",
+    "en": "Metro Environmental Control Ventilation Technology"
+  },
+  "0-0-2-0-1": {
+    "cn": "地铁自动售检票技术",
+    "en": "Automated ticketing technology for subways"
+  },
+  "0-0-2-1": {
+    "cn": "城市道路交通信息化技术",
+    "en": "Information Technology for Urban Road Traffic"
+  },
+  "0-0-2-1-0": {
+    "cn": "城市公交一卡通技术",
+    "en": "Urban Transit Card Technology"
+  },
+  "0-0-2-1-1": {
+    "cn": "智能公交电子站牌技术",
+    "en": "Smart Bus Electronic Stop Sign Technology"
+  },
+  "0-0-2-1-2": {
+    "cn": "智能交通检测技术",
+    "en": "Intelligent Traffic Detection Technology"
+  },
+  "0-0-2-1-2-0": {
+    "cn": "微波检测器",
+    "en": "Microwave Detector"
+  },
+  "0-0-2-1-2-1": {
+    "cn": "GPS浮动车检测技术",
+    "en": "GPS floating car detection technology"
+  },
+  "0-0-2-1-2-2": {
+    "cn": "地埋式感应线圈",
+    "en": "Buried Induction Coil"
+  },
+  "0-0-2-1-2-3": {
+    "cn": "视频检测技术",
+    "en": "Video Detection Technology"
+  },
+  "0-0-3": {
+    "cn": "道路运输技术",
+    "en": "Road Transport Technology"
+  },
+  "0-0-3-0": {
+    "cn": "新能源汽车技术",
+    "en": "New Energy Vehicle Technology"
+  },
+  "0-0-3-0-0": {
+    "cn": "纯电动新能源汽车技术",
+    "en": "Pure Electric New Energy Vehicle Technology"
+  },
+  "0-0-3-0-1": {
+    "cn": "混合动力新能源汽车技术",
+    "en": "Hybrid New Energy Vehicle Technology"
+  },
+  "0-0-3-1": {
+    "cn": "汽车自动驾驶及控制技术",
+    "en": "Automotive driving and control technology"
+  },
+  "0-0-3-1-0": {
+    "cn": "汽车自动驾驶技术",
+    "en": "Automotive Technology"
+  },
+  "0-0-3-1-1": {
+    "cn": "车联网技术",
+    "en": "Connected Car Technology"
+  },
+  "0-0-3-2": {
+    "cn": "汽车安全与环保技术",
+    "en": "Automotive Safety and Environmental Technology"
+  },
+  "0-0-3-2-0": {
+    "cn": "汽车安全防护技术",
+    "en": "Car Security Technology"
+  },
+  "0-0-3-2-1": {
+    "cn": "汽车尾气排放控制技术",
+    "en": "Automotive Emission Control Technology"
+  },
+  "0-0-4": {
+    "cn": "综合运输技术",
+    "en": "Integrated Transportation Technology"
+  },
+  "0-0-4-0": {
+    "cn": "驼背运输技术",
+    "en": "Humpback Technology"
+  },
+  "0-0-4-1": {
+    "cn": "集装箱多式联运技术",
+    "en": "Container Multimodal Transport Technology"
+  },
+  "0-0-5": {
+    "cn": "水路运输技术",
+    "en": "Waterway Technology"
+  },
+  "0-0-5-0": {
+    "cn": "船舶运行控制技术",
+    "en": "Ship Operations Control Technology"
+  },
+  "0-0-5-0-0": {
+    "cn": "智慧船舶技术",
+    "en": "Smart Ship Technology"
+  },
+  "0-0-5-0-0-0": {
+    "cn": "自主航行技术",
+    "en": "Autonomous Navigation Technology"
+  },
+  "0-0-5-0-0-1": {
+    "cn": "信息感知技术",
+    "en": "Information Perception Technology"
+  },
+  "0-0-5-0-0-2": {
+    "cn": "航线规划技术",
+    "en": "Route Planning Technology"
+  },
+  "0-0-5-0-0-3": {
+    "cn": "能效控制技术",
+    "en": "Energy Efficiency Control Technology"
+  },
+  "0-0-5-0-0-4": {
+    "cn": "通信导航技术",
+    "en": "Communication and Navigation Technology"
+  },
+  "0-0-5-0-0-5": {
+    "cn": "遇险预警救助技术",
+    "en": "Distress Alert and Rescue Technology"
+  },
+  "0-0-5-0-0-6": {
+    "cn": "状态监测与故障诊断技术",
+    "en": "Condition Monitoring and Troubleshooting"
+  },
+  "0-0-5-0-1": {
+    "cn": "船舶出入港导航技术",
+    "en": "Navigation Technology for Ship Entry and Exit"
+  },
+  "0-0-5-0-1-0": {
+    "cn": "按叠标导航进港",
+    "en": "Navigate to the port by overlapping labels"
+  },
+  "0-0-5-0-1-1": {
+    "cn": "GPS导航",
+    "en": "GPS Navigation"
+  },
+  "0-0-5-0-1-2": {
+    "cn": "雷达辅助进港",
+    "en": "Radar Assisted Arrival"
+  },
+  "0-0-5-0-1-3": {
+    "cn": "按灯浮标导航进港",
+    "en": "Navigate to Port by Light Buoy"
+  },
+  "0-0-5-1": {
+    "cn": "先进船舶技术",
+    "en": "Advanced Ship Technology"
+  },
+  "0-0-5-1-0": {
+    "cn": "船型优化的高性能船舶技术",
+    "en": "High-Performance Ship Technology for Ship Optimization"
+  },
+  "0-0-5-1-1": {
+    "cn": "船舶高速化技术",
+    "en": "Speeding Ship Technology"
+  },
+  "0-0-5-1-2": {
+    "cn": "船舶大型化技术",
+    "en": "Shipbuilding Technology"
+  },
+  "0-0-5-1-2-0": {
+    "cn": "港口设施与货物操作",
+    "en": "Port facilities and cargo operations"
+  },
+  "0-0-5-1-2-1": {
+    "cn": "发动机功率和螺旋架",
+    "en": "Engine Power and Spiral"
+  },
+  "0-0-5-1-2-2": {
+    "cn": "船体设计上的改进",
+    "en": "Improvements in hull design"
+  },
+  "0-0-5-2": {
+    "cn": "智慧港口技术",
+    "en": "Smart Port Technology"
+  },
+  "0-0-5-2-0": {
+    "cn": "智能港口信息技术",
+    "en": "Smart Port Information Technology"
+  },
+  "0-0-5-2-0-0": {
+    "cn": "物联网技术",
+    "en": "Internet of Things Technology"
+  },
+  "0-0-5-2-0-1": {
+    "cn": "大数据技术",
+    "en": "Big Data Technology"
+  },
+  "0-0-5-2-0-2": {
+    "cn": "移动互联网技术",
+    "en": "Mobile Internet Technology"
+  },
+  "0-0-5-2-0-3": {
+    "cn": "云计算技术",
+    "en": "Cloud Computing Technology"
+  },
+  "0-0-5-2-0-4": {
+    "cn": "人工智能技术",
+    "en": "Artificial Intelligence Technology"
+  },
+  "0-0-5-2-0-5": {
+    "cn": "自动化港口装卸设备",
+    "en": "Automated Port Handling Equipment"
+  },
+  "0-0-5-2-1": {
+    "cn": "自动化无人堆场技术",
+    "en": "Automated Unmanned Yard Technology"
+  },
+  "0-0-6": {
+    "cn": "铁路运输技术",
+    "en": "Rail transport technology"
+  },
+  "0-0-6-0": {
+    "cn": "轮轨高速铁路技术",
+    "en": "Wheel-rail high-speed rail technology"
+  },
+  "0-0-6-0-0": {
+    "cn": "高速铁路动车组技术",
+    "en": "High-Speed ​​Railway EMU"
+  },
+  "0-0-6-0-1": {
+    "cn": "高速铁路基础设施先进技术",
+    "en": "Advanced Technology for High Speed ​​Rail Infrastructure"
+  },
+  "0-0-6-0-2": {
+    "cn": "高速铁路列车控制技术",
+    "en": "High Speed ​​Railway Train Control Technology"
+  },
+  "0-0-6-1": {
+    "cn": "重载运输技术",
+    "en": "Heavy-duty transportation technology"
+  },
+  "0-0-6-1-0": {
+    "cn": "重载列车车辆技术",
+    "en": "Heavy Train Vehicle Technology"
+  },
+  "0-0-6-1-0-0": {
+    "cn": "车钩缓冲装置",
+    "en": "Couple buffer"
+  },
+  "0-0-6-1-0-1": {
+    "cn": "车辆大型化",
+    "en": "Large Vehicle"
+  },
+  "0-0-6-1-0-2": {
+    "cn": "转向架技术",
+    "en": "Bogie Technology"
+  },
+  "0-0-6-1-0-3": {
+    "cn": "车辆轻量化",
+    "en": "Lightweight vehicles"
+  },
+  "0-0-6-1-1": {
+    "cn": "机车同步操纵技术",
+    "en": "Synchronous locomotive control technology"
+  },
+  "0-0-6-2": {
+    "cn": "磁悬浮交通技术",
+    "en": "Maglev Technology"
+  },
+  "0-0-6-2-0": {
+    "cn": "磁悬浮列车牵引技术",
+    "en": "Maglev Train Traction Technology"
+  },
+  "0-0-6-2-0-0": {
+    "cn": "高温超导磁浮技术",
+    "en": "High Temperature Superconducting Maglev Technology"
+  },
+  "0-0-6-2-0-1": {
+    "cn": "中速磁浮技术",
+    "en": "Medium Speed ​​Maglev Technology"
+  },
+  "0-0-6-2-0-2": {
+    "cn": "中低速磁悬浮技术",
+    "en": "Medium and Low Speed ​​Magnetic Levitation Technology"
+  },
+  "0-0-6-2-0-3": {
+    "cn": "混合式磁体磁浮技术",
+    "en": "Hybrid Magnetic Levitation"
+  },
+  "0-0-6-2-0-4": {
+    "cn": "低温超导磁浮技术",
+    "en": "Cryogenic Superconducting Maglev Technology"
+  },
+  "0-0-6-2-0-5": {
+    "cn": "常导高速磁悬浮技术",
+    "en": "Conductive high-speed magnetic levitation technology"
+  },
+  "0-0-6-2-1": {
+    "cn": "磁悬浮列车悬浮技术",
+    "en": "Maglev Technology"
+  },
+  "0-1": {
+    "cn": "能源与动力技术",
+    "en": "Energy and Power Technologies"
+  },
+  "0-1-0": {
+    "cn": "海洋能源与动力技术",
+    "en": "Marine Energy and Power Technologies"
+  },
+  "0-1-0-0": {
+    "cn": "海洋能源开发技术",
+    "en": "Marine Energy Development Technology"
+  },
+  "0-1-0-1": {
+    "cn": "潮汐能发电技术",
+    "en": "Tidal Energy Technology"
+  },
+  "0-1-1": {
+    "cn": "十制冷与低温工程",
+    "en": "Ten Refrigeration and Cryogenic Engineering"
+  },
+  "0-1-1-0": {
+    "cn": "制冷和低温技术",
+    "en": "Refrigeration and cryogenic technology"
+  },
+  "0-1-1-1": {
+    "cn": "制冷剂",
+    "en": "Refrigerant"
+  },
+  "0-1-1-2": {
+    "cn": "制冷设备与系统",
+    "en": "Refrigeration equipment and systems"
+  },
+  "0-1-2": {
+    "cn": "风能与动力技术",
+    "en": "Wind Energy and Power Technology"
+  },
+  "0-1-2-0": {
+    "cn": "风能储存技术",
+    "en": "Wind Energy Storage Technology"
+  },
+  "0-1-2-1": {
+    "cn": "风能发电技术",
+    "en": "Wind Power Technology"
+  },
+  "0-1-3": {
+    "cn": "地热能与动力技术",
+    "en": "Geothermal and Power Technologies"
+  },
+  "0-1-3-0": {
+    "cn": "地热能提取技术",
+    "en": "Geothermal Energy Extraction Technology"
+  },
+  "0-1-3-1": {
+    "cn": "地能热泵技术",
+    "en": "Geothermal heat pump technology"
+  },
+  "0-1-4": {
+    "cn": "流体机械",
+    "en": "Fluid Machinery"
+  },
+  "0-1-4-0": {
+    "cn": "汽轮机",
+    "en": "Steam Turbine"
+  },
+  "0-1-4-1": {
+    "cn": "水泵",
+    "en": "Water Pump"
+  },
+  "0-1-4-2": {
+    "cn": "水轮机",
+    "en": "Water Turbine"
+  },
+  "0-1-5": {
+    "cn": "十电能储存技术",
+    "en": "Ten Energy Storage Technology"
+  },
+  "0-1-5-0": {
+    "cn": "电化学储能技术",
+    "en": "Electrochemical Energy Storage Technology"
+  },
+  "0-1-5-1": {
+    "cn": "超导储能",
+    "en": "Superconducting Energy Storage"
+  },
+  "0-1-6": {
+    "cn": "太阳能与动力技术",
+    "en": "Solar & Power Technologies"
+  },
+  "0-1-6-0": {
+    "cn": "太阳能储存技术",
+    "en": "Solar Storage Technology"
+  },
+  "0-1-6-1": {
+    "cn": "太阳能发电技术",
+    "en": "Solar Power Technology"
+  },
+  "0-1-7": {
+    "cn": "动力机械",
+    "en": "Power Machinery"
+  },
+  "0-1-7-0": {
+    "cn": "内燃机",
+    "en": "Internal combustion engine"
+  },
+  "0-1-7-1": {
+    "cn": "燃气轮机",
+    "en": "Gas Turbine"
+  },
+  "0-1-7-2": {
+    "cn": "外燃机",
+    "en": "External Combustion Engine"
+  },
+  "0-1-7-3": {
+    "cn": "航空发动机",
+    "en": "Aero Engine"
+  },
+  "0-1-8": {
+    "cn": "生物质能与动力技术",
+    "en": "Biomass and Power Technology"
+  },
+  "0-1-8-0": {
+    "cn": "生物质能源转换技术",
+    "en": "Biomass Energy Conversion Technology"
+  },
+  "0-1-8-1": {
+    "cn": "生物质能源开发技术",
+    "en": "Biomass Energy Development Technology"
+  },
+  "0-1-9": {
+    "cn": "氢能与动力技术",
+    "en": "Hydrogen and Power Technology"
+  },
+  "0-1-9-0": {
+    "cn": "氢能发电技术",
+    "en": "Hydrogen technology"
+  },
+  "0-1-9-1": {
+    "cn": "制氢技术",
+    "en": "Hydrogen Production Technology"
+  },
+  "0-1-10": {
+    "cn": "火电水电技术",
+    "en": "Thermal and hydroelectric technology"
+  },
+  "0-1-10-0": {
+    "cn": "火力发电",
+    "en": "Thermal Power"
+  },
+  "0-1-10-1": {
+    "cn": "煤炭清洁技术",
+    "en": "Coal Clean Technology"
+  },
+  "0-1-10-2": {
+    "cn": "水力发电",
+    "en": "Hydroelectricity"
+  },
+  "0-1-10-3": {
+    "cn": "流化床技术",
+    "en": "Fluid Bed Technology"
+  },
+  "0-1-11": {
+    "cn": "核能与动力技术",
+    "en": "Nuclear Energy and Power Technology"
+  },
+  "0-1-11-0": {
+    "cn": "核能发电",
+    "en": "Nuclear Power"
+  },
+  "0-1-11-1": {
+    "cn": "第四代核能系统",
+    "en": "Fourth Generation Nuclear Energy System"
+  },
+  "0-1-11-2": {
+    "cn": "核反应堆",
+    "en": "Nuclear Reactor"
+  },
+  "0-2": {
+    "cn": "地球与环境技术",
+    "en": "Earth and Environmental Technology"
+  },
+  "0-2-0": {
+    "cn": "大气圈",
+    "en": "Atmospheric Circle"
+  },
+  "0-2-0-0": {
+    "cn": "大气圈探测技术",
+    "en": "Atmospheric sounding technology"
+  },
+  "0-2-0-0-0": {
+    "cn": "天气预报技术",
+    "en": "Weather Forecasting Technology"
+  },
+  "0-2-0-0-1": {
+    "cn": "气候变化监测技术",
+    "en": "Climate Change Monitoring Technology"
+  },
+  "0-2-0-0-2": {
+    "cn": "气象探测技术",
+    "en": "Meteorological Detection Technology"
+  },
+  "0-2-0-1": {
+    "cn": "大气污染治理技术",
+    "en": "Air Pollution Control Technology"
+  },
+  "0-2-0-1-0": {
+    "cn": "室内空气污染控制技术",
+    "en": "Indoor Air Pollution Control Technology"
+  },
+  "0-2-0-1-1": {
+    "cn": "工业废气处理技术",
+    "en": "Industrial waste gas treatment technology"
+  },
+  "0-2-0-1-2": {
+    "cn": "汽车尾气净化技术",
+    "en": "Car Exhaust Purification Technology"
+  },
+  "0-2-0-1-3": {
+    "cn": "雾霾成因解析技术",
+    "en": "Analysis of Haze Causes"
+  },
+  "0-2-1": {
+    "cn": "土壤－岩石圈",
+    "en": "Soil-lithospheric"
+  },
+  "0-2-1-0": {
+    "cn": "土壤-岩石圈探测利用技术",
+    "en": "Soil-lithospheric exploration and utilization technology"
+  },
+  "0-2-1-0-0": {
+    "cn": "矿物开采技术",
+    "en": "Mineral Mining Technology"
+  },
+  "0-2-1-0-1": {
+    "cn": "地质勘探技术",
+    "en": "Geological Survey Technology"
+  },
+  "0-2-1-1": {
+    "cn": "土壤污染的治理技术",
+    "en": "Soil pollution control technology"
+  },
+  "0-2-1-1-0": {
+    "cn": "异位污染治理技术",
+    "en": "Ectopic pollution control technology"
+  },
+  "0-2-1-1-1": {
+    "cn": "原位污染治理技术",
+    "en": "In-situ pollution control technology"
+  },
+  "0-2-1-2": {
+    "cn": "固体废物的处理处置技术",
+    "en": "Solid Waste Treatment Technology"
+  },
+  "0-2-1-2-0": {
+    "cn": "城市生活垃圾处理",
+    "en": "Urban Domestic Waste Disposal"
+  },
+  "0-2-1-2-1": {
+    "cn": "危险废物处理技术",
+    "en": "Hazardous Waste Treatment Technology"
+  },
+  "0-2-1-2-2": {
+    "cn": "工业固体废物的资源化利用",
+    "en": "Resource utilization of industrial solid waste"
+  },
+  "0-2-2": {
+    "cn": "环境信息技术",
+    "en": "Environmental Information Technology"
+  },
+  "0-2-2-0": {
+    "cn": "环境模拟技术",
+    "en": "Environmental Simulation Technology"
+  },
+  "0-2-2-0-0": {
+    "cn": "地球系统模拟",
+    "en": "Earth System Simulation"
+  },
+  "0-2-2-0-1": {
+    "cn": "水系统模拟",
+    "en": "Water System Simulation"
+  },
+  "0-2-2-0-2": {
+    "cn": "大气系统模拟",
+    "en": "Atmospheric System Simulation"
+  },
+  "0-2-2-1": {
+    "cn": "3S技术",
+    "en": "3S Technology"
+  },
+  "0-2-2-1-0": {
+    "cn": "GPS技术",
+    "en": "GPS Technology"
+  },
+  "0-2-2-1-1": {
+    "cn": "RS技术",
+    "en": "RS Technology"
+  },
+  "0-2-2-1-2": {
+    "cn": "GIS技术",
+    "en": "GIS Technology"
+  },
+  "0-2-3": {
+    "cn": "水圈（海洋系统）",
+    "en": "Water ring (ocean system)"
+  },
+  "0-2-3-0": {
+    "cn": "海洋污染问题的治理技术",
+    "en": "Government Technologies for Marine Pollution"
+  },
+  "0-2-3-0-0": {
+    "cn": "物理化学处理技术",
+    "en": "Physical and Chemical Processing Technology"
+  },
+  "0-2-3-0-1": {
+    "cn": "生物处理技术",
+    "en": "Biotechnology"
+  },
+  "0-2-3-1": {
+    "cn": "海洋资源探测利用技术",
+    "en": "Marine Resources Exploration and Utilization Technology"
+  },
+  "0-2-3-1-0": {
+    "cn": "海洋矿产资源的开发利用",
+    "en": "Development and Utilization of Marine Mineral Resources"
+  },
+  "0-2-3-1-1": {
+    "cn": "海洋热能的开发利用",
+    "en": "Development and Utilization of Marine Thermal Energy"
+  },
+  "0-2-3-1-2": {
+    "cn": "海洋深潜技术",
+    "en": "Marine Deep Dive Technology"
+  },
+  "0-2-3-1-3": {
+    "cn": "海洋水资源的开发利用",
+    "en": "Development and Utilization of Marine Water Resources"
+  },
+  "0-2-3-1-4": {
+    "cn": "海洋生物资源的开发利用",
+    "en": "Development and Utilization of Marine Biological Resources"
+  },
+  "0-2-4": {
+    "cn": "水圈（陆地系统）",
+    "en": "Hydrosphere (terrestrial system)"
+  },
+  "0-2-4-0": {
+    "cn": "人类对水资源的利用技术",
+    "en": "Human Water Utilization Technology"
+  },
+  "0-2-4-0-0": {
+    "cn": "取水技术",
+    "en": "Water extraction technology"
+  },
+  "0-2-4-0-0-0": {
+    "cn": "海洋取水技术",
+    "en": "Marine Water Extraction Technology"
+  },
+  "0-2-4-0-0-1": {
+    "cn": "空气取水技术",
+    "en": "Air Extraction Technology"
+  },
+  "0-2-4-0-1": {
+    "cn": "节水技术",
+    "en": "Water saving technology"
+  },
+  "0-2-4-0-1-0": {
+    "cn": "农业节水技术",
+    "en": "Agricultural Water Saving Technology"
+  },
+  "0-2-4-0-1-1": {
+    "cn": "城市生活节水技术",
+    "en": "Urban Life Water Saving Technology"
+  },
+  "0-2-4-0-1-2": {
+    "cn": "工业节水技术",
+    "en": "Industrial water-saving technology"
+  },
+  "0-2-4-0-2": {
+    "cn": "净水技术",
+    "en": "Water purification technology"
+  },
+  "0-2-4-0-3": {
+    "cn": "排水技术",
+    "en": "Drainage Technology"
+  },
+  "0-2-4-0-3-0": {
+    "cn": "建筑排水和室外排水",
+    "en": "Building and outdoor drainage"
+  },
+  "0-2-4-0-3-1": {
+    "cn": "农田除涝排水技术",
+    "en": "Farm Waterlogging and Drainage Technology"
+  },
+  "0-2-4-0-4": {
+    "cn": "调水技术",
+    "en": "Water Transfer Technology"
+  },
+  "0-2-4-1": {
+    "cn": "水体污染源治理技术",
+    "en": "Water Pollution Source Treatment Technology"
+  },
+  "0-2-4-1-0": {
+    "cn": "点源污染治理技术",
+    "en": "Point Source Pollution Control Technology"
+  },
+  "0-2-4-1-0-0": {
+    "cn": "污水处理新工艺",
+    "en": "New Wastewater Treatment Process"
+  },
+  "0-2-4-1-0-1": {
+    "cn": "传统污水处理工艺",
+    "en": "Traditional wastewater treatment process"
+  },
+  "0-2-4-1-0-2": {
+    "cn": "污泥处理与处置",
+    "en": "Sludge Treatment and Disposal"
+  },
+  "0-2-4-1-1": {
+    "cn": "城市面源污染治理技术",
+    "en": "Urban Non-point Source Pollution Control Technology"
+  },
+  "0-2-4-1-2": {
+    "cn": "农业面源污染治理技术",
+    "en": "Agricultural non-point source pollution control technology"
+  },
+  "0-2-4-1-2-0": {
+    "cn": "生活垃圾和农业废弃物处理技术",
+    "en": "Household and agricultural waste treatment technology"
+  },
+  "0-2-4-1-2-1": {
+    "cn": "污染物质的生态拦截技术",
+    "en": "Ecological Intercept Technology for Pollutants"
+  },
+  "0-2-4-1-2-2": {
+    "cn": "农村生活污水治理技术",
+    "en": "Rural sewage treatment technology"
+  },
+  "0-2-4-1-2-3": {
+    "cn": "农业化学品减量化技术",
+    "en": "Agrochemical Reduction Technology"
+  },
+  "0-2-4-2": {
+    "cn": "人类对水资源的探测技术",
+    "en": "Human Water Detection Technology"
+  },
+  "0-2-4-2-0": {
+    "cn": "水资源监测技术",
+    "en": "Water Resources Monitoring Technology"
+  },
+  "0-2-4-2-0-0": {
+    "cn": "水量检测技术",
+    "en": "Water Detection Technology"
+  },
+  "0-2-4-2-0-1": {
+    "cn": "水质监测",
+    "en": "Water Quality Monitoring"
+  },
+  "0-2-4-2-1": {
+    "cn": "水资源探测技术",
+    "en": "Water exploration technology"
+  },
+  "0-2-4-2-1-0": {
+    "cn": "地下水资源探测技术",
+    "en": "Groundwater Resources Detection Technology"
+  },
+  "0-2-4-2-1-1": {
+    "cn": "水下地貌探测技术",
+    "en": "Underwater Geomorphology Detection Technology"
+  },
+  "0-2-4-3": {
+    "cn": "陆地水污染的治理技术",
+    "en": "Landwater pollution control technology"
+  },
+  "0-2-4-3-0": {
+    "cn": "地下水污染的治理技术",
+    "en": "Groundwater pollution control technology"
+  },
+  "0-2-4-3-0-0": {
+    "cn": "抽出处理法",
+    "en": "Extract Processing"
+  },
+  "0-2-4-3-0-1": {
+    "cn": "物理法",
+    "en": "Physics"
+  },
+  "0-2-4-3-0-2": {
+    "cn": "水动力控制法",
+    "en": "Hydrodynamic Control Method"
+  },
+  "0-2-4-3-0-3": {
+    "cn": "原位处理法",
+    "en": "In-situ processing"
+  },
+  "0-2-4-3-1": {
+    "cn": "地表水污染的治理技术",
+    "en": "Surface Water Pollution Control Techniques"
+  },
+  "0-2-5": {
+    "cn": "生物圈",
+    "en": "Biosphere"
+  },
+  "0-2-5-0": {
+    "cn": "生物圈平衡维持技术",
+    "en": "Biosphere Balance Maintenance Technology"
+  },
+  "0-2-5-0-0": {
+    "cn": "生态系统平衡维持技术",
+    "en": "Ecosystem Balance Maintenance Technology"
+  },
+  "0-2-5-0-1": {
+    "cn": "生态修复技术",
+    "en": "Ecological Restoration Technology"
+  },
+  "0-2-5-0-2": {
+    "cn": "生物多样性保护技术",
+    "en": "Biodiversity Conservation Technology"
+  },
+  "0-2-5-1": {
+    "cn": "生态系统探测技术",
+    "en": "Ecosystem Detection Technology"
+  },
+  "0-2-5-1-0": {
+    "cn": "生物多样性测定技术",
+    "en": "Biodiversity Measurement Technology"
+  },
+  "0-2-5-1-1": {
+    "cn": "生命探测技术",
+    "en": "Life Detection Technology"
+  },
+  "0-2-6": {
+    "cn": "灾害防治技术",
+    "en": "Disaster Prevention Technology"
+  },
+  "0-2-6-0": {
+    "cn": "电磁污染治理技术",
+    "en": "Electromagnetic pollution control technology"
+  },
+  "0-2-6-1": {
+    "cn": "土壤灾害防治技术",
+    "en": "Soil Disaster Prevention Technology"
+  },
+  "0-2-6-2": {
+    "cn": "地质灾害防治技术",
+    "en": "Geological Hazard Prevention Technology"
+  },
+  "0-2-6-3": {
+    "cn": "放射性污染治理技术",
+    "en": "Radioactive pollution control technology"
+  },
+  "0-2-6-4": {
+    "cn": "气象灾害预警技术",
+    "en": "Meteorological Disaster Warning Technology"
+  },
+  "0-2-6-5": {
+    "cn": "地震预警技术",
+    "en": "Earthquake Early Warning Technology"
+  },
+  "0-3": {
+    "cn": "生物与医疗技术",
+    "en": "Biological and Medical Technology"
+  },
+  "0-3-0": {
+    "cn": "医疗技术",
+    "en": "Medical Technology"
+  },
+  "0-3-0-0": {
+    "cn": "远程医疗",
+    "en": "Telemedicine"
+  },
+  "0-3-0-1": {
+    "cn": "疫苗和药物",
+    "en": "Vaccines and drugs"
+  },
+  "0-3-0-2": {
+    "cn": "医学影像技术",
+    "en": "Medical Imaging Technology"
+  },
+  "0-3-0-2-0": {
+    "cn": "电子计算机X射线断层扫描技术",
+    "en": "Computer tomography"
+  },
+  "0-3-0-2-1": {
+    "cn": "磁共振成像",
+    "en": "MRI"
+  },
+  "0-3-0-2-2": {
+    "cn": "X光成像技术",
+    "en": "X-ray imaging technology"
+  },
+  "0-3-0-2-3": {
+    "cn": "超声成像",
+    "en": "Ultrasonic Imaging"
+  },
+  "0-3-0-3": {
+    "cn": "医疗诊疗技术",
+    "en": "Medical Technology"
+  },
+  "0-3-0-3-0": {
+    "cn": "微创手术",
+    "en": "Minimally Invasive Surgery"
+  },
+  "0-3-0-3-1": {
+    "cn": "可穿戴医疗／健康技术",
+    "en": "Wearable Medical / Health Technology"
+  },
+  "0-3-0-3-2": {
+    "cn": "器官移植",
+    "en": "Organ Transplant"
+  },
+  "0-3-0-3-3": {
+    "cn": "血管造影技术",
+    "en": "Angiography"
+  },
+  "0-3-0-3-4": {
+    "cn": "心脏起搏技术",
+    "en": "Heart Pacing Technology"
+  },
+  "0-3-0-3-5": {
+    "cn": "流式细胞技术",
+    "en": "Flow Cytometry"
+  },
+  "0-3-0-3-6": {
+    "cn": "介入诊疗技术",
+    "en": "Interventional Diagnosis Technology"
+  },
+  "0-3-0-4": {
+    "cn": "现代中医药技术",
+    "en": "Modern Chinese Medicine Technology"
+  },
+  "0-3-0-5": {
+    "cn": "医疗技术的发展",
+    "en": "Development of medical technology"
+  },
+  "0-3-1": {
+    "cn": "生物技术",
+    "en": "Biotechnology"
+  },
+  "0-3-1-0": {
+    "cn": "基因工程技术",
+    "en": "Genetic Engineering Technology"
+  },
+  "0-3-1-0-0": {
+    "cn": "重组DNA技术",
+    "en": "Recombinant DNA Technology"
+  },
+  "0-3-1-0-1": {
+    "cn": "DNA芯片技术",
+    "en": "DNA Chip Technology"
+  },
+  "0-3-1-0-2": {
+    "cn": "原位杂交技术",
+    "en": "In Situ Hybridization"
+  },
+  "0-3-1-0-3": {
+    "cn": "分子杂交和印迹技术",
+    "en": "Molecular Hybridization and Blotting"
+  },
+  "0-3-1-0-4": {
+    "cn": "DNA测序技术",
+    "en": "DNA Sequencing Technology"
+  },
+  "0-3-1-0-5": {
+    "cn": "核酸人工合成",
+    "en": "Synthetic Nucleic Acid"
+  },
+  "0-3-1-0-6": {
+    "cn": "凝胶电泳技术",
+    "en": "Gel Electrophoresis Technology"
+  },
+  "0-3-1-0-7": {
+    "cn": "聚合酶链式反应",
+    "en": "Polymerase Chain Reaction"
+  },
+  "0-3-1-1": {
+    "cn": "蛋白质工程技术",
+    "en": "Protein Engineering"
+  },
+  "0-3-1-1-0": {
+    "cn": "蛋白质分离纯化技术",
+    "en": "Protein separation and purification technology"
+  },
+  "0-3-1-1-1": {
+    "cn": "蛋白质电泳技术",
+    "en": "Protein Electrophoresis Technology"
+  },
+  "0-3-1-1-2": {
+    "cn": "蛋白表达",
+    "en": "protein expression"
+  },
+  "0-3-1-1-3": {
+    "cn": "生物质谱技术",
+    "en": "Biomass Technology"
+  },
+  "0-3-1-1-4": {
+    "cn": "蛋白质/多肽合成技术",
+    "en": "Protein / Peptide Synthesis Technology"
+  },
+  "0-3-1-1-5": {
+    "cn": "蛋白质/多肽测序技术",
+    "en": "Protein / Peptide Sequencing Technology"
+  },
+  "0-3-1-2": {
+    "cn": "微生物工程技术",
+    "en": "Microbial Engineering Technology"
+  },
+  "0-3-1-2-0": {
+    "cn": "灭菌技术",
+    "en": "Sterilization Technology"
+  },
+  "0-3-1-2-1": {
+    "cn": "生物净化技术",
+    "en": "Bio-Purification Technology"
+  },
+  "0-3-1-3": {
+    "cn": "酶工程技术",
+    "en": "Enzyme Engineering Technology"
+  },
+  "0-3-1-3-0": {
+    "cn": "固定化细胞技术",
+    "en": "Immobilized Cell Technology"
+  },
+  "0-3-1-3-1": {
+    "cn": "生物反应器",
+    "en": "Bioreactor"
+  },
+  "0-3-1-3-2": {
+    "cn": "酶固定化技术",
+    "en": "Enzyme Immobilization Technology"
+  },
+  "0-3-1-3-3": {
+    "cn": "酶化学修饰技术",
+    "en": "Enzymatic Chemical Modification Technology"
+  },
+  "0-3-1-4": {
+    "cn": "细胞工程技术",
+    "en": "Cell Engineering Technology"
+  },
+  "0-3-1-4-0": {
+    "cn": "细胞培养技术",
+    "en": "Cell Culture Technology"
+  },
+  "0-3-1-4-1": {
+    "cn": "细胞融合技术",
+    "en": "Cell Fusion Technology"
+  },
+  "0-3-1-4-2": {
+    "cn": "克隆技术",
+    "en": "Clone Technology"
+  },
+  "0-3-1-4-3": {
+    "cn": "干细胞技术",
+    "en": "Stem Cell Technology"
+  },
+  "0-3-1-4-4": {
+    "cn": "试管婴儿",
+    "en": "Test tube baby"
+  },
+  "0-3-1-5": {
+    "cn": "生物技术的发展",
+    "en": "Development of Biotechnology"
+  },
+  "0-4": {
+    "cn": "农业与食品技术",
+    "en": "Agriculture and Food Technology"
+  },
+  "0-4-0": {
+    "cn": "农业技术",
+    "en": "Agricultural Technology"
+  },
+  "0-4-0-0": {
+    "cn": "农业基本生产技术",
+    "en": "Agricultural Basic Production Technology"
+  },
+  "0-4-0-0-0": {
+    "cn": "作物良种繁育技术",
+    "en": "Crop Breeding Techniques"
+  },
+  "0-4-0-0-1": {
+    "cn": "耕作制度和土壤耕作技术",
+    "en": "Tillage systems and soil cultivation techniques"
+  },
+  "0-4-0-0-2": {
+    "cn": "作物病虫草害防治技术",
+    "en": "Crop Disease, Pest and Weed Control Technology"
+  },
+  "0-4-0-0-3": {
+    "cn": "水产养殖技术",
+    "en": "Aquaculture technology"
+  },
+  "0-4-0-0-4": {
+    "cn": "疫病防治与人畜共患病防治技术",
+    "en": "Technology for Epidemic Prevention and Zoonoses"
+  },
+  "0-4-0-0-5": {
+    "cn": "畜禽饲养管理技术",
+    "en": "Livestock Management Technology"
+  },
+  "0-4-0-0-6": {
+    "cn": "稻田综合种养技术",
+    "en": "Integrated Rice Farming Technology"
+  },
+  "0-4-0-0-7": {
+    "cn": "作物栽培技术",
+    "en": "Crop Cultivation Techniques"
+  },
+  "0-4-0-0-7-0": {
+    "cn": "生物肥料使用技术",
+    "en": "Biofertilizer Application Technology"
+  },
+  "0-4-0-0-7-1": {
+    "cn": "全程机械化技术",
+    "en": "Full Mechanization Technology"
+  },
+  "0-4-0-1": {
+    "cn": "现代农业前沿技术",
+    "en": "Front-end technology in modern agriculture"
+  },
+  "0-4-0-1-0": {
+    "cn": "现代育种技术",
+    "en": "Modern breeding technology"
+  },
+  "0-4-0-1-1": {
+    "cn": "设施农业工程技术",
+    "en": "Facility Agricultural Engineering"
+  },
+  "0-4-0-1-1-0": {
+    "cn": "设施农业温室水肥管理技术",
+    "en": "Water and Fertilizer Management Technology for Greenhouses in Protected Agriculture"
+  },
+  "0-4-0-1-1-1": {
+    "cn": "设置农业智能装备与物联网技术",
+    "en": "Setting up agricultural smart equipment and IoT technology"
+  },
+  "0-4-0-1-1-2": {
+    "cn": "设施农业高产优质栽培模式",
+    "en": "High-yield and high-quality cultivation model for protected agriculture"
+  },
+  "0-4-0-1-1-3": {
+    "cn": "设施农业环境调控技术",
+    "en": "Facilities Agricultural Environmental Regulation Technology"
+  },
+  "0-4-0-1-2": {
+    "cn": "农机精准作业技术",
+    "en": "Precision Agricultural Machinery"
+  },
+  "0-4-0-1-3": {
+    "cn": "农田信息获取与处理技术",
+    "en": "Farmland Information Acquisition and Processing Technology"
+  },
+  "0-4-0-1-4": {
+    "cn": "农业可视化与虚拟体验技术",
+    "en": "Agricultural Visualization and Virtual Experience Technology"
+  },
+  "0-4-0-2": {
+    "cn": "农业绿色生产技术",
+    "en": "Agricultural Green Production Technology"
+  },
+  "0-4-0-2-0": {
+    "cn": "农用地膜有效利用技术",
+    "en": "Effective use of agricultural mulch film"
+  },
+  "0-4-0-2-1": {
+    "cn": "农业高效节水灌溉技术",
+    "en": "Efficient agricultural water-saving irrigation technology"
+  },
+  "0-4-0-2-2": {
+    "cn": "农作物化肥农药减施技术",
+    "en": "Crop Chemical Fertilizer Reduction Technology"
+  },
+  "0-4-0-2-3": {
+    "cn": "秸秆综合利用技术",
+    "en": "Stalk Comprehensive Utilization Technology"
+  },
+  "0-4-0-2-4": {
+    "cn": "果（菜/茶）沼畜循环农业技术",
+    "en": "Fruit (vegetable / tea) bio-animal farming technology"
+  },
+  "0-4-1": {
+    "cn": "食品技术",
+    "en": "Food Technology"
+  },
+  "0-4-1-0": {
+    "cn": "食品安全技术",
+    "en": "Food Safety Technology"
+  },
+  "0-4-1-0-0": {
+    "cn": "有机食品生产技术",
+    "en": "Organic Food Production Technology"
+  },
+  "0-4-1-0-1": {
+    "cn": "农产品质量安全全程控制（含追溯）技术",
+    "en": "Agricultural Product Quality and Safety Full Process Control (including Traceability) Technology"
+  },
+  "0-4-1-0-2": {
+    "cn": "无公害农产品生产技术",
+    "en": "Pollution-free agricultural production technology"
+  },
+  "0-4-1-0-3": {
+    "cn": "绿色食品生产技术",
+    "en": "Green Food Production Technology"
+  },
+  "0-4-1-0-4": {
+    "cn": "食品安全检测技术",
+    "en": "Food Safety Testing Technology"
+  },
+  "0-4-1-1": {
+    "cn": "食品贮藏、保鲜技术",
+    "en": "Food storage and preservation technology"
+  },
+  "0-4-1-1-0": {
+    "cn": "保鲜技术",
+    "en": "Preservation Technology"
+  },
+  "0-4-1-1-1": {
+    "cn": "冷链运输技术",
+    "en": "Cold Chain Transport Technology"
+  },
+  "0-4-1-2": {
+    "cn": "食品加工技术",
+    "en": "Food Processing Technology"
+  },
+  "0-4-1-2-0": {
+    "cn": "包装技术",
+    "en": "Packaging Technology"
+  },
+  "0-4-1-2-1": {
+    "cn": "干燥技术",
+    "en": "Drying Technology"
+  },
+  "0-4-1-2-2": {
+    "cn": "发酵技术",
+    "en": "Fermentation Technology"
+  },
+  "0-4-1-2-3": {
+    "cn": "冷冻技术",
+    "en": "Freezing Technology"
+  },
+  "0-4-1-2-4": {
+    "cn": "食品加工过程的安全控制技术",
+    "en": "Safety control technology for food processing"
+  },
+  "0-4-1-2-5": {
+    "cn": "杀菌技术",
+    "en": "Sterilization Technology"
+  },
+  "0-5": {
+    "cn": "土木与建筑技术",
+    "en": "Civil & Construction Technology"
+  },
+  "0-5-0": {
+    "cn": "工程建造技术",
+    "en": "Engineering Technology"
+  },
+  "0-5-0-0": {
+    "cn": "隧道技术",
+    "en": "Tunneling Technology"
+  },
+  "0-5-0-1": {
+    "cn": "高塔建造技术",
+    "en": "High Tower Construction Technology"
+  },
+  "0-5-0-1-0": {
+    "cn": "抱杆拆除",
+    "en": "Pole Removal"
+  },
+  "0-5-0-1-1": {
+    "cn": "抱杆地面提升",
+    "en": "Pole Ground Lift"
+  },
+  "0-5-0-1-2": {
+    "cn": "塔身吊装",
+    "en": "Tower Lifting"
+  },
+  "0-5-0-1-3": {
+    "cn": "抱杆高空提升",
+    "en": "Pole Altitude Lift"
+  },
+  "0-5-0-1-4": {
+    "cn": "抱杆组立",
+    "en": "Pole Assembly"
+  },
+  "0-5-0-1-5": {
+    "cn": "顶架吊装",
+    "en": "Top Rack Lifting"
+  },
+  "0-5-0-2": {
+    "cn": "筑坝技术",
+    "en": "Dam Technology"
+  },
+  "0-5-0-3": {
+    "cn": "高层建筑技术",
+    "en": "Tall Building Technology"
+  },
+  "0-5-0-4": {
+    "cn": "填埋造地技术",
+    "en": "Landfill Technology"
+  },
+  "0-5-0-5": {
+    "cn": "轨道交通建造技术",
+    "en": "Railway Construction Technology"
+  },
+  "0-5-0-6": {
+    "cn": "港口建造技术",
+    "en": "Port Construction Technology"
+  },
+  "0-5-0-7": {
+    "cn": "铁路建造技术",
+    "en": "Railway Construction Technology"
+  },
+  "0-5-0-8": {
+    "cn": "垃圾填埋场建造技术",
+    "en": "Landfill Construction Technology"
+  },
+  "0-5-0-9": {
+    "cn": "核电站建造技术",
+    "en": "Nuclear Power Plant Construction Technology"
+  },
+  "0-5-0-10": {
+    "cn": "公路建造技术",
+    "en": "Highway Construction Technology"
+  },
+  "0-5-0-11": {
+    "cn": "地下管廊建造技术",
+    "en": "Underground pipe gallery construction technology"
+  },
+  "0-5-0-12": {
+    "cn": "造桥技术",
+    "en": "Bridge Technology"
+  },
+  "0-5-1": {
+    "cn": "特殊技术",
+    "en": "Special Technology"
+  },
+  "0-5-1-0": {
+    "cn": "建筑材料再生技术",
+    "en": "Recycling Technology for Building Materials"
+  },
+  "0-5-1-1": {
+    "cn": "盾构技术",
+    "en": "Shield Technology"
+  },
+  "0-5-1-2": {
+    "cn": "水下施工技术",
+    "en": "Underwater Construction Technology"
+  },
+  "0-5-1-3": {
+    "cn": "修复补强技术",
+    "en": "Repair Technology"
+  },
+  "0-5-1-3-0": {
+    "cn": "强化碳纤维网贴附补强技术",
+    "en": "Reinforcement technology for carbon fiber mesh attachment"
+  },
+  "0-5-1-3-1": {
+    "cn": "喷涂硅酸盐系表面改性材料技术",
+    "en": "Spraying silicate-based surface modification materials"
+  },
+  "0-5-1-3-2": {
+    "cn": "混凝土裂缝树脂注入补强技术",
+    "en": "Reinforcement Technology for Concrete Crack Resin Injection"
+  },
+  "0-5-1-3-3": {
+    "cn": "钢板与环氧树脂联体补强技术",
+    "en": "Reinforcement technology of steel plate and epoxy resin"
+  },
+  "0-5-1-4": {
+    "cn": "施工过程冷却技术",
+    "en": "Cooling Technology During Construction"
+  },
+  "0-5-1-5": {
+    "cn": "地下冰冻施工技术",
+    "en": "Underground Freezing Technology"
+  },
+  "0-5-1-6": {
+    "cn": "导流技术",
+    "en": "Diversion Technology"
+  },
+  "0-5-1-7": {
+    "cn": "防水技术",
+    "en": "Waterproof technology"
+  },
+  "0-5-1-7-0": {
+    "cn": "喷膜防水技术",
+    "en": "Spray Film Waterproof Technology"
+  },
+  "0-5-1-7-1": {
+    "cn": "聚合物水泥防水涂料",
+    "en": "Polymer cement waterproof coating"
+  },
+  "0-5-1-7-2": {
+    "cn": "喷涂聚氨酯和聚脲",
+    "en": "Spray polyurethane and polyurea"
+  },
+  "0-5-1-8": {
+    "cn": "拆除技术",
+    "en": "Removal Technology"
+  },
+  "0-5-1-9": {
+    "cn": "冻土施工技术",
+    "en": "Frozen Ground Construction Technology"
+  },
+  "0-5-2": {
+    "cn": "技术方法类技术",
+    "en": "Technical Methods"
+  },
+  "0-5-2-0": {
+    "cn": "信息化建造技术",
+    "en": "Informatization Construction Technology"
+  },
+  "0-5-2-1": {
+    "cn": "转运技术",
+    "en": "Transfer Technology"
+  },
+  "0-5-2-2": {
+    "cn": "基础地基技术",
+    "en": "Foundation Technology"
+  },
+  "0-5-2-3": {
+    "cn": "混凝土技术",
+    "en": "Concrete Technology"
+  },
+  "0-5-2-4": {
+    "cn": "钢结构技术",
+    "en": "Steel Structure Technology"
+  },
+  "0-5-2-5": {
+    "cn": "复合材料技术",
+    "en": "Composite Technology"
+  },
+  "0-5-2-6": {
+    "cn": "爆破技术",
+    "en": "Blasting Technology"
+  },
+  "0-5-2-7": {
+    "cn": "开挖技术",
+    "en": "Excavation Technology"
+  },
+  "0-5-2-8": {
+    "cn": "吊装技术",
+    "en": "Lifting Technology"
+  },
+  "0-6": {
+    "cn": "信息与通信技术",
+    "en": "Information and Communication Technology"
+  },
+  "0-6-0": {
+    "cn": "现代通信技术",
+    "en": "Modern Communication Technology"
+  },
+  "0-6-0-0": {
+    "cn": "蜂窝移动通信",
+    "en": "Cellular Mobile Communications"
+  },
+  "0-6-0-0-0": {
+    "cn": "基站",
+    "en": "Base Station"
+  },
+  "0-6-0-0-1": {
+    "cn": "制式",
+    "en": "System"
+  },
+  "0-6-0-0-2": {
+    "cn": "漫游",
+    "en": "Roam"
+  },
+  "0-6-0-1": {
+    "cn": "光纤通信技术",
+    "en": "Optical Communication Technology"
+  },
+  "0-6-0-1-0": {
+    "cn": "光纤",
+    "en": "Fiber"
+  },
+  "0-6-0-1-1": {
+    "cn": "光网络",
+    "en": "Optical Network"
+  },
+  "0-6-0-2": {
+    "cn": "卫星通信技术",
+    "en": "Satellite communication technology"
+  },
+  "0-6-0-2-0": {
+    "cn": "海事卫星电话",
+    "en": "Marine Satellite Phone"
+  },
+  "0-6-0-2-1": {
+    "cn": "卫星定位技术",
+    "en": "Satellite Positioning Technology"
+  },
+  "0-6-0-3": {
+    "cn": "短距离无线通信",
+    "en": "Short Range Wireless Communication"
+  },
+  "0-6-0-3-0": {
+    "cn": "WIFI技术",
+    "en": "WIFI Technology"
+  },
+  "0-6-0-3-1": {
+    "cn": "蓝牙技术",
+    "en": "Bluetooth"
+  },
+  "0-6-1": {
+    "cn": "人工智能技术",
+    "en": "Artificial Intelligence Technology"
+  },
+  "0-6-1-0": {
+    "cn": "智慧管理技术",
+    "en": "Smart Management Technology"
+  },
+  "0-6-1-0-0": {
+    "cn": "大数据分析",
+    "en": "Big Data Analysis"
+  },
+  "0-6-1-0-1": {
+    "cn": "机器人技术",
+    "en": "Robotics"
+  },
+  "0-6-1-0-2": {
+    "cn": "智能终端",
+    "en": "Smart Terminal"
+  },
+  "0-6-1-1": {
+    "cn": "智能识别技术",
+    "en": "Smart Identification Technology"
+  },
+  "0-6-1-1-0": {
+    "cn": "语音识别技术",
+    "en": "Speech Recognition Technology"
+  },
+  "0-6-1-1-1": {
+    "cn": "图像识别技术",
+    "en": "Image Recognition Technology"
+  },
+  "0-6-1-1-2": {
+    "cn": "文字识别技术",
+    "en": "Text Recognition Technology"
+  },
+  "0-6-2": {
+    "cn": "电子科学与技术",
+    "en": "Electronic Science and Technology"
+  },
+  "0-6-2-0": {
+    "cn": "集成电路",
+    "en": "Integrated Circuit"
+  },
+  "0-6-2-0-0": {
+    "cn": "半导体材料",
+    "en": "Semiconductor material"
+  },
+  "0-6-2-0-1": {
+    "cn": "芯片封装",
+    "en": "Chip Package"
+  },
+  "0-6-2-0-2": {
+    "cn": "超大规模集成电路",
+    "en": "VLSI"
+  },
+  "0-6-2-1": {
+    "cn": "传感器",
+    "en": "Sensor"
+  },
+  "0-6-2-1-0": {
+    "cn": "模拟传感器",
+    "en": "Analog Sensor"
+  },
+  "0-6-2-1-1": {
+    "cn": "数字传感器",
+    "en": "Digital Sensor"
+  },
+  "0-6-2-2": {
+    "cn": "电磁感应",
+    "en": "Electromagnetic induction"
+  },
+  "0-6-2-2-0": {
+    "cn": "无线充电技术",
+    "en": "Wireless Charging Technology"
+  },
+  "0-6-2-2-1": {
+    "cn": "NFC技术",
+    "en": "NFC Technology"
+  },
+  "0-6-2-2-2": {
+    "cn": "无线电技术",
+    "en": "Radio Technology"
+  },
+  "0-6-3": {
+    "cn": "计算机与网络技术",
+    "en": "Computer and Network Technology"
+  },
+  "0-6-3-0": {
+    "cn": "计算机系统",
+    "en": "Computer System"
+  },
+  "0-6-3-0-0": {
+    "cn": "软件开发技术",
+    "en": "Software Development Technology"
+  },
+  "0-6-3-0-1": {
+    "cn": "操作系统",
+    "en": "Operating System"
+  },
+  "0-6-3-0-2": {
+    "cn": "计算机硬件组成",
+    "en": "Computer Hardware Composition"
+  },
+  "0-6-3-0-3": {
+    "cn": "虚拟现实技术",
+    "en": "Virtual Reality"
+  },
+  "0-6-3-1": {
+    "cn": "高性能计算",
+    "en": "High Performance Computing"
+  },
+  "0-6-3-1-0": {
+    "cn": "超级计算机",
+    "en": "Supercomputer"
+  },
+  "0-6-3-1-1": {
+    "cn": "量子计算机",
+    "en": "Quantum Computer"
+  },
+  "0-6-3-2": {
+    "cn": "互联网技术",
+    "en": "Internet technology"
+  },
+  "0-6-3-2-0": {
+    "cn": "网络通信协议",
+    "en": "Network Communication Protocol"
+  },
+  "0-6-3-2-1": {
+    "cn": "虚拟专用网络技术",
+    "en": "Virtual Private Network Technology"
+  },
+  "0-6-3-3": {
+    "cn": "信息管理与安全",
+    "en": "Information Management and Security"
+  },
+  "0-6-3-3-0": {
+    "cn": "云计算技术",
+    "en": "Cloud Computing Technology"
+  },
+  "0-6-3-3-1": {
+    "cn": "搜索引擎技术",
+    "en": "Search Engine Technology"
+  },
+  "0-6-3-3-2": {
+    "cn": "反病毒与防护技术",
+    "en": "Anti-Virus and Protection Technology"
+  },
+  "0-6-4": {
+    "cn": "信息与信号",
+    "en": "Information and signals"
+  },
+  "0-6-4-0": {
+    "cn": "信息的传播",
+    "en": "Dissemination of Information"
+  },
+  "0-6-4-0-0": {
+    "cn": "多路复用技术",
+    "en": "Multiplexing"
+  },
+  "0-6-4-0-1": {
+    "cn": "信息加密技术",
+    "en": "Information Encryption Technology"
+  },
+  "0-6-4-0-2": {
+    "cn": "信息传输系统",
+    "en": "Information Transmission System"
+  },
+  "0-6-4-1": {
+    "cn": "信息的转换",
+    "en": "Conversion of Information"
+  },
+  "0-6-4-1-0": {
+    "cn": "信息记录与存储",
+    "en": "Recording and Storage of Information"
+  },
+  "0-6-4-1-1": {
+    "cn": "信息编码技术",
+    "en": "Information Encoding Technology"
+  },
+  "0-6-4-2": {
+    "cn": "信息的产生",
+    "en": "Generation of Information"
+  },
+  "0-6-4-2-0": {
+    "cn": "信息的基本要素",
+    "en": "Basic Elements of Information"
+  },
+  "0-6-4-2-1": {
+    "cn": "信息与信号的关系",
+    "en": "The relationship between information and signals"
+  },
+  "0-7": {
+    "cn": "材料与制造技术",
+    "en": "Materials and Manufacturing Technology"
+  },
+  "0-7-0": {
+    "cn": "纳米材料与制备技术",
+    "en": "Nanomaterials and Preparation Technology"
+  },
+  "0-7-0-0": {
+    "cn": "物理法制备技术",
+    "en": "Physical Preparation Technology"
+  },
+  "0-7-0-0-0": {
+    "cn": "机械粉碎技术",
+    "en": "Mechanical Crushing Technology"
+  },
+  "0-7-0-0-0-0": {
+    "cn": "搅拌磨",
+    "en": "Stir Mill"
+  },
+  "0-7-0-0-0-1": {
+    "cn": "球磨",
+    "en": "Ball Mill"
+  },
+  "0-7-0-0-0-2": {
+    "cn": "胶体磨",
+    "en": "colloid mill"
+  },
+  "0-7-0-0-0-3": {
+    "cn": "振动磨",
+    "en": "Vibration Mill"
+  },
+  "0-7-0-0-1": {
+    "cn": "惰性气体冷凝法",
+    "en": "Inert gas condensation method"
+  },
+  "0-7-0-0-2": {
+    "cn": "大塑性变形法",
+    "en": "Large Plastic Deformation Method"
+  },
+  "0-7-0-0-3": {
+    "cn": "爆炸法",
+    "en": "Explosion Method"
+  },
+  "0-7-0-1": {
+    "cn": "化学法制备技术",
+    "en": "Chemical Preparation Technology"
+  },
+  "0-7-0-1-0": {
+    "cn": "沉淀法",
+    "en": "Precipitation"
+  },
+  "0-7-0-1-1": {
+    "cn": "溶胶-凝胶法",
+    "en": "Sol-Gel Method"
+  },
+  "0-7-0-1-2": {
+    "cn": "水热合成法",
+    "en": "Hydrothermal Synthesis"
+  },
+  "0-7-0-1-3": {
+    "cn": "化学气相沉积",
+    "en": "Chemical Vapor Deposition"
+  },
+  "0-7-0-1-4": {
+    "cn": "电沉积法",
+    "en": "Electrodeposition"
+  },
+  "0-7-0-1-5": {
+    "cn": "化学镀法",
+    "en": "Electroless plating"
+  },
+  "0-7-0-1-6": {
+    "cn": "微乳液法",
+    "en": "Microemulsion"
+  },
+  "0-7-0-2": {
+    "cn": "纳米材料的应用技术",
+    "en": "Application Technology of Nanomaterials"
+  },
+  "0-7-0-2-0": {
+    "cn": "纳米材料在国防科技中的应用",
+    "en": "Application of Nanomaterials in Defense Technology"
+  },
+  "0-7-0-2-1": {
+    "cn": "纳米材料在机械工业领域的应用",
+    "en": "Application of nanomaterials in the machinery industry"
+  },
+  "0-7-0-2-2": {
+    "cn": "纳米材料在日常用品中的应用",
+    "en": "Application of nanomaterials in daily necessities"
+  },
+  "0-7-0-2-3": {
+    "cn": "纳米材料在环境保护方面的应用",
+    "en": "Application of nanomaterials in environmental protection"
+  },
+  "0-7-0-2-4": {
+    "cn": "纳米材料在生物医学领域的应用",
+    "en": "Application of Nanomaterials in Biomedicine"
+  },
+  "0-7-1": {
+    "cn": "金属材料与制造技术",
+    "en": "Metal Materials and Manufacturing Technology"
+  },
+  "0-7-1-0": {
+    "cn": "金属冶炼技术",
+    "en": "Metal Smelting Technology"
+  },
+  "0-7-1-0-0": {
+    "cn": "物理冶金技术",
+    "en": "Physical Metallurgy"
+  },
+  "0-7-1-0-1": {
+    "cn": "电冶金技术",
+    "en": "Electrometallurgy"
+  },
+  "0-7-1-0-2": {
+    "cn": "湿法冶金技术",
+    "en": "Hydrometallurgy"
+  },
+  "0-7-1-0-3": {
+    "cn": "火法冶金技术",
+    "en": "Pyrometallurgical technology"
+  },
+  "0-7-1-1": {
+    "cn": "塑性成型技术",
+    "en": "Plastic forming technology"
+  },
+  "0-7-1-2": {
+    "cn": "焊接技术",
+    "en": "Welding Technology"
+  },
+  "0-7-1-2-0": {
+    "cn": "熔焊",
+    "en": "Fusion Welding"
+  },
+  "0-7-1-2-1": {
+    "cn": "钎焊",
+    "en": "Brazing"
+  },
+  "0-7-1-2-2": {
+    "cn": "压焊",
+    "en": "Press-welding"
+  },
+  "0-7-1-3": {
+    "cn": "热处理技术",
+    "en": "Heat treatment technology"
+  },
+  "0-7-1-3-0": {
+    "cn": "正火",
+    "en": "Normalizing"
+  },
+  "0-7-1-3-1": {
+    "cn": "淬火",
+    "en": "Tempered"
+  },
+  "0-7-1-3-2": {
+    "cn": "退火",
+    "en": "Anneal"
+  },
+  "0-7-1-3-3": {
+    "cn": "回火",
+    "en": "Tempering"
+  },
+  "0-7-2": {
+    "cn": "无机非金属材料与制造技术",
+    "en": "Inorganic non-metal materials and manufacturing technology"
+  },
+  "0-7-2-0": {
+    "cn": "陶瓷材料与制造技术",
+    "en": "Ceramic Materials and Manufacturing Technology"
+  },
+  "0-7-2-0-0": {
+    "cn": "制品烧结",
+    "en": "Sintered product"
+  },
+  "0-7-2-0-1": {
+    "cn": "配料成型",
+    "en": "Ingredients molding"
+  },
+  "0-7-2-0-1-0": {
+    "cn": "注射成型",
+    "en": "Injection molding"
+  },
+  "0-7-2-0-1-1": {
+    "cn": "模压成型",
+    "en": "Molding"
+  },
+  "0-7-2-0-1-2": {
+    "cn": "挤压成型",
+    "en": "Extrusion"
+  },
+  "0-7-2-0-1-3": {
+    "cn": "注浆成型",
+    "en": "grouting"
+  },
+  "0-7-2-0-2": {
+    "cn": "原料配制",
+    "en": "Raw material preparation"
+  },
+  "0-7-2-0-2-0": {
+    "cn": "可塑法成型坯料",
+    "en": "Plastic Forming Blank"
+  },
+  "0-7-2-0-2-1": {
+    "cn": "注塑法成型坯料",
+    "en": "Injection molding blank"
+  },
+  "0-7-2-1": {
+    "cn": "玻璃材料与制造技术",
+    "en": "Glass Materials and Manufacturing Technology"
+  },
+  "0-7-2-1-0": {
+    "cn": "浮法成型",
+    "en": "Float molding"
+  },
+  "0-7-2-1-1": {
+    "cn": "压制法",
+    "en": "Suppression"
+  },
+  "0-7-2-1-2": {
+    "cn": "延压法",
+    "en": "Rolling"
+  },
+  "0-7-2-1-3": {
+    "cn": "浇铸成型法",
+    "en": "Casting"
+  },
+  "0-7-2-1-4": {
+    "cn": "吹制玻璃",
+    "en": "Blown glass"
+  },
+  "0-7-2-1-5": {
+    "cn": "拉制法",
+    "en": "Drawing"
+  },
+  "0-7-3": {
+    "cn": "新型材料与制造技术",
+    "en": "New Materials and Manufacturing Technologies"
+  },
+  "0-7-3-0": {
+    "cn": "3D打印材料与制造技术",
+    "en": "3D Printing Materials and Manufacturing Technology"
+  },
+  "0-7-3-0-0": {
+    "cn": "复合材料及其3D打印技术",
+    "en": "Composites and 3D Printing Technology"
+  },
+  "0-7-3-0-1": {
+    "cn": "聚合物材料及其3D打印技术",
+    "en": "Polymer Materials and 3D Printing Technology"
+  },
+  "0-7-3-0-2": {
+    "cn": "金属材料及其3D打印技术",
+    "en": "Metal Materials and 3D Printing Technology"
+  },
+  "0-7-3-0-3": {
+    "cn": "陶瓷材料及其3D打印技术",
+    "en": "Ceramic Materials and 3D Printing Technology"
+  },
+  "0-7-3-1": {
+    "cn": "智能材料与制造技术",
+    "en": "Smart Materials and Manufacturing Technology"
+  },
+  "0-7-3-1-0": {
+    "cn": "智能材料及其关键技术",
+    "en": "Smart Materials and Their Key Technologies"
+  },
+  "0-7-3-1-1": {
+    "cn": "智能材料的应用",
+    "en": "Application of Smart Materials"
+  },
+  "0-7-3-2": {
+    "cn": "超材料与制造技术",
+    "en": "Metamaterials and Manufacturing Technology"
+  },
+  "0-7-4": {
+    "cn": "高分子材料与制造技术",
+    "en": "Polymer Materials and Manufacturing Technology"
+  },
+  "0-7-4-0": {
+    "cn": "压延成型技术",
+    "en": "Calming Technology"
+  },
+  "0-7-4-1": {
+    "cn": "压制成型技术",
+    "en": "Compression Molding Technology"
+  },
+  "0-7-4-2": {
+    "cn": "挤出成型技术",
+    "en": "Extrusion Technology"
+  },
+  "0-7-4-3": {
+    "cn": "注射成型技术",
+    "en": "Injection Molding Technology"
+  },
+  "0-8": {
+    "cn": "技术的本质",
+    "en": "The essence of technology"
+  },
+  "0-8-0": {
+    "cn": "技术的起源与发展",
+    "en": "The origin and development of technology"
+  },
+  "0-8-0-0": {
+    "cn": "技术的发展",
+    "en": "Development of technology"
+  },
+  "0-8-0-0-0": {
+    "cn": "远古时代的技术发展",
+    "en": "Technological development in ancient times"
+  },
+  "0-8-0-0-0-0": {
+    "cn": "弓箭的发明",
+    "en": "The Invention of the Bow and Arrow"
+  },
+  "0-8-0-0-0-1": {
+    "cn": "原始农牧业技术",
+    "en": "Primitive Agriculture and Livestock Technology"
+  },
+  "0-8-0-0-0-2": {
+    "cn": "石器的打制和磨制",
+    "en": "Making and grinding stone tools"
+  },
+  "0-8-0-0-0-3": {
+    "cn": "人工取火和手工业技术",
+    "en": "Artificial fire and handicrafts"
+  },
+  "0-8-0-0-1": {
+    "cn": "我国古代的四大发明",
+    "en": "Four Great Inventions of Ancient China"
+  },
+  "0-8-0-0-1-0": {
+    "cn": "火药",
+    "en": "Gunpowder"
+  },
+  "0-8-0-0-1-1": {
+    "cn": "指南针",
+    "en": "Compass"
+  },
+  "0-8-0-0-1-2": {
+    "cn": "造纸术",
+    "en": "Papermaking"
+  },
+  "0-8-0-0-1-3": {
+    "cn": "印刷术",
+    "en": "Typography"
+  },
+  "0-8-0-0-2": {
+    "cn": "人类历史上的技术革命",
+    "en": "Technical Revolution in Human History"
+  },
+  "0-8-0-0-2-0": {
+    "cn": "第一次技术革命",
+    "en": "First technological revolution"
+  },
+  "0-8-0-0-2-1": {
+    "cn": "第二次技术革命",
+    "en": "Second Technical Revolution"
+  },
+  "0-8-0-0-2-2": {
+    "cn": "电力技术",
+    "en": "Power Technology"
+  },
+  "0-8-0-0-2-3": {
+    "cn": "蒸汽机技术",
+    "en": "Steam Engine Technology"
+  },
+  "0-8-0-0-2-4": {
+    "cn": "建筑技术",
+    "en": "Building Technology"
+  },
+  "0-8-0-0-2-5": {
+    "cn": "第三次技术革命",
+    "en": "The Third Technical Revolution"
+  },
+  "0-8-0-0-2-6": {
+    "cn": "钢铁冶炼技术",
+    "en": "Steel Smelting Technology"
+  },
+  "0-8-0-0-2-7": {
+    "cn": "机器制造技术",
+    "en": "Machine Technology"
+  },
+  "0-8-0-0-2-8": {
+    "cn": "化工技术",
+    "en": "Chemical Technology"
+  },
+  "0-8-0-0-2-9": {
+    "cn": "内燃机技术",
+    "en": "Internal combustion engine technology"
+  },
+  "0-8-0-0-2-10": {
+    "cn": "当前新兴的技术革命",
+    "en": "Currently emerging technological revolution"
+  },
+  "0-8-0-0-2-11": {
+    "cn": "通信技术",
+    "en": "Communication Technology"
+  },
+  "0-8-0-0-2-12": {
+    "cn": "纺织技术",
+    "en": "Textile Technology"
+  },
+  "0-8-0-0-2-13": {
+    "cn": "交通运输技术",
+    "en": "Transportation Technology"
+  },
+  "0-8-0-0-2-14": {
+    "cn": "化工技术",
+    "en": "Chemical Technology"
+  },
+  "0-8-0-0-2-15": {
+    "cn": "钢铁冶金技术",
+    "en": "Steel Metallurgy"
+  },
+  "0-8-0-0-3": {
+    "cn": "我国优秀的传统技术文化",
+    "en": "China's Excellent Traditional Technology Culture"
+  },
+  "0-8-0-0-3-0": {
+    "cn": "《农政全书》",
+    "en": "The Book of Politics"
+  },
+  "0-8-0-0-3-1": {
+    "cn": "《黄帝内经》",
+    "en": "The Yellow Emperor's Canon"
+  },
+  "0-8-0-0-3-2": {
+    "cn": "《梦溪笔谈》",
+    "en": "Meng Xi Bi Tan"
+  },
+  "0-8-0-0-3-3": {
+    "cn": "《齐民要术》",
+    "en": "Qi Min Yao Shu"
+  },
+  "0-8-0-1": {
+    "cn": "技术的起源",
+    "en": "Origin of Technology"
+  },
+  "0-8-1": {
+    "cn": "技术产品设计及使用维护",
+    "en": "Technical product design and maintenance"
+  },
+  "0-8-1-0": {
+    "cn": "技术与设计的关系",
+    "en": "Relationship between technology and design"
+  },
+  "0-8-1-0-0": {
+    "cn": "技术设计与技术进步",
+    "en": "Technical Design and Advancement"
+  },
+  "0-8-1-0-1": {
+    "cn": "技术设计中的人机关系",
+    "en": "Human-Computer Relationship in Technology Design"
+  },
+  "0-8-1-0-1-0": {
+    "cn": "人的因素",
+    "en": "Human Factor"
+  },
+  "0-8-1-0-1-1": {
+    "cn": "机的因素",
+    "en": "Machine Factors"
+  },
+  "0-8-1-0-1-2": {
+    "cn": "综合因素",
+    "en": "Combined Factors"
+  },
+  "0-8-1-0-1-3": {
+    "cn": "环境因素",
+    "en": "Environmental factors"
+  },
+  "0-8-1-1": {
+    "cn": "技术设计的一般过程",
+    "en": "General process of technical design"
+  },
+  "0-8-1-1-0": {
+    "cn": "构思分析及其方法",
+    "en": "Idea analysis and methods"
+  },
+  "0-8-1-1-0-0": {
+    "cn": "概念创意",
+    "en": "Conceptual Creativity"
+  },
+  "0-8-1-1-0-1": {
+    "cn": "用户需求分析",
+    "en": "User Needs Analysis"
+  },
+  "0-8-1-1-1": {
+    "cn": "技术的测试与优化",
+    "en": "Technical Testing and Optimization"
+  },
+  "0-8-1-1-2": {
+    "cn": "构思方案的表达",
+    "en": "Expression of an idea"
+  },
+  "0-8-1-1-3": {
+    "cn": "模型或原型的制作",
+    "en": "Making a Model or Prototype"
+  },
+  "0-8-1-1-4": {
+    "cn": "发现与明确技术需求",
+    "en": "Identify and identify technical requirements"
+  },
+  "0-8-1-1-4-0": {
+    "cn": "资料分析",
+    "en": "Data Analysis"
+  },
+  "0-8-1-1-4-1": {
+    "cn": "市场调查",
+    "en": "Market Research"
+  },
+  "0-8-1-1-4-2": {
+    "cn": "产品调查",
+    "en": "Product Survey"
+  },
+  "0-8-1-1-4-3": {
+    "cn": "社会调查",
+    "en": "Social Survey"
+  },
+  "0-8-1-1-5": {
+    "cn": "说明书的编写与产品维护",
+    "en": "Writing and maintenance of manuals"
+  },
+  "0-8-2": {
+    "cn": "技术的要素与价值",
+    "en": "Elements and Values ​​of Technology"
+  },
+  "0-8-2-0": {
+    "cn": "技术的内在要素",
+    "en": "Inherent elements of technology"
+  },
+  "0-8-2-0-0": {
+    "cn": "工艺",
+    "en": "Crafts"
+  },
+  "0-8-2-0-0-0": {
+    "cn": "金属加工工艺",
+    "en": "Metal Processing Technology"
+  },
+  "0-8-2-0-0-1": {
+    "cn": "木材加工工艺",
+    "en": "Woodworking technology"
+  },
+  "0-8-2-0-1": {
+    "cn": "连接",
+    "en": "Connect"
+  },
+  "0-8-2-0-1-0": {
+    "cn": "刚接",
+    "en": "Just connected"
+  },
+  "0-8-2-0-1-1": {
+    "cn": "插接",
+    "en": "Dock"
+  },
+  "0-8-2-0-1-2": {
+    "cn": "铰接",
+    "en": "Hinged"
+  },
+  "0-8-2-0-2": {
+    "cn": "加工",
+    "en": "Processing"
+  },
+  "0-8-2-0-3": {
+    "cn": "试验",
+    "en": "Experiment"
+  },
+  "0-8-2-0-4": {
+    "cn": "工具",
+    "en": "Tools"
+  },
+  "0-8-2-0-5": {
+    "cn": "材料",
+    "en": "Material"
+  },
+  "0-8-2-1": {
+    "cn": "技术核心素养",
+    "en": "Technical Core Literacy"
+  },
+  "0-8-2-1-0": {
+    "cn": "创新设计",
+    "en": "Innovative Design"
+  },
+  "0-8-2-1-1": {
+    "cn": "物化能力",
+    "en": "Physicalization"
+  },
+  "0-8-2-1-2": {
+    "cn": "技术意识",
+    "en": "Technical Awareness"
+  },
+  "0-8-2-1-3": {
+    "cn": "工程思维",
+    "en": "Engineering Thinking"
+  },
+  "0-8-2-1-4": {
+    "cn": "图样表达",
+    "en": "Illustration"
+  },
+  "0-8-3": {
+    "cn": "技术及其性质",
+    "en": "Technology and its properties"
+  },
+  "0-8-3-0": {
+    "cn": "技术与科学、工程的关系",
+    "en": "Relationship between technology and science and engineering"
+  },
+  "0-8-3-0-0": {
+    "cn": "技术与科学的关系",
+    "en": "Relationship between technology and science"
+  },
+  "0-8-3-0-1": {
+    "cn": "技术与工程的关系",
+    "en": "Relationship between Technology and Engineering"
+  },
+  "0-8-3-1": {
+    "cn": "技术的基本性质",
+    "en": "Basic properties of technology"
+  },
+  "0-8-3-1-0": {
+    "cn": "技术的两面性",
+    "en": "The two sides of technology"
+  },
+  "0-8-3-1-1": {
+    "cn": "技术的规范性",
+    "en": "Technical Norms"
+  },
+  "0-8-3-1-2": {
+    "cn": "技术的综合性",
+    "en": "Comprehensive Technology"
+  },
+  "0-8-3-1-3": {
+    "cn": "技术的发展性",
+    "en": "Development of technology"
+  },
+  "0-8-3-1-4": {
+    "cn": "技术的实践性",
+    "en": "Practicality of Technology"
+  },
+  "0-8-3-1-5": {
+    "cn": "技术的创新性",
+    "en": "Technological Innovation"
+  },
+  "0-8-3-1-6": {
+    "cn": "技术的目的性",
+    "en": "Technical Purpose"
+  },
+  "0-8-3-2": {
+    "cn": "技术是什么？",
+    "en": "What is technology?"
+  },
+  "0-8-3-2-0": {
+    "cn": "作为产品的技术",
+    "en": "Technology as a Product"
+  },
+  "0-8-3-2-1": {
+    "cn": "作为过程的技术",
+    "en": "Technology as a Process"
+  },
+  "0-8-3-2-2": {
+    "cn": "作为意志的技术",
+    "en": "Technology as a Will"
+  },
+  "0-8-3-2-3": {
+    "cn": "作为知识的技术",
+    "en": "Technology as Knowledge"
+  },
+  "0-9": {
+    "cn": "技术与社会",
+    "en": "Technology and Society"
+  },
+  "0-9-0": {
+    "cn": "技术的社会建制",
+    "en": "Social Organization of Technology"
+  },
+  "0-9-0-0": {
+    "cn": "技术的体制化进程",
+    "en": "Institutionalization of technology"
+  },
+  "0-9-0-0-0": {
+    "cn": "技术体制化的确立和成熟",
+    "en": "The establishment and maturity of technology institutionalization"
+  },
+  "0-9-0-0-1": {
+    "cn": "技术体制化的孕育与发展",
+    "en": "Incubation and Development of Technology Institutionalization"
+  },
+  "0-9-0-1": {
+    "cn": "技术的社会组织",
+    "en": "Technical Social Organization"
+  },
+  "0-9-0-1-0": {
+    "cn": "工程师社团组织",
+    "en": "Engineer Community"
+  },
+  "0-9-0-1-1": {
+    "cn": "技术研发组织机构",
+    "en": "Technology R & D Organization"
+  },
+  "0-9-0-2": {
+    "cn": "技术共同体及其社会规范",
+    "en": "Technical Community and its Social Norms"
+  },
+  "0-9-0-2-0": {
+    "cn": "技术共同体",
+    "en": "Technical Community"
+  },
+  "0-9-0-2-1": {
+    "cn": "技术的社会规范",
+    "en": "Social norms of technology"
+  },
+  "0-9-1": {
+    "cn": "技术伦理",
+    "en": "Technical Ethics"
+  },
+  "0-9-1-0": {
+    "cn": "现代技术发展中的伦理问题",
+    "en": "Ethical issues in the development of modern technology"
+  },
+  "0-9-1-0-0": {
+    "cn": "高技术与传统伦理的冲突问题",
+    "en": "The conflict between high technology and traditional ethics"
+  },
+  "0-9-1-0-1": {
+    "cn": "技术发展的目的性及实际后果问题",
+    "en": "The purpose and practical consequences of technological development"
+  },
+  "0-9-1-0-2": {
+    "cn": "技术应用中的风险问题",
+    "en": "Risk issues in technology applications"
+  },
+  "0-9-1-1": {
+    "cn": "技术伦理问题的产生",
+    "en": "Emergence of technical ethical issues"
+  },
+  "0-9-1-2": {
+    "cn": "现代技术伦理的一些重要原则",
+    "en": "Some important principles of modern technological ethics"
+  },
+  "0-9-2": {
+    "cn": "技术与环境",
+    "en": "Technology and Environment"
+  },
+  "0-9-2-0": {
+    "cn": "技术与人对自然环境的利用",
+    "en": "Technology and human use of the natural environment"
+  },
+  "0-9-2-1": {
+    "cn": "发展与自然相协调的新技术",
+    "en": "Develop new technologies in harmony with nature"
+  },
+  "0-9-3": {
+    "cn": "技术的公众参与",
+    "en": "Public Engagement in Technology"
+  },
+  "0-9-3-0": {
+    "cn": "国际公众参与科学技术决策的背景与动因",
+    "en": "Background and motivation of international public participation in science and technology decisions"
+  },
+  "0-9-3-0-0": {
+    "cn": "决策的民主化需要公众参与",
+    "en": "The democratization of decision-making requires public participation"
+  },
+  "0-9-3-0-1": {
+    "cn": "现代技术的发展和应用需要公众参与",
+    "en": "The development and application of modern technology requires public participation"
+  },
+  "0-9-3-1": {
+    "cn": "促进我国科学技术决策的公众参与",
+    "en": "Promote public participation in China's science and technology decisions"
+  },
+  "0-9-3-2": {
+    "cn": "公众参与技术决策的国际经验",
+    "en": "International experience in public participation in technology decision-making"
+  },
+  "0-9-3-2-0": {
+    "cn": "科学（技术）协会和民间组织积极参与",
+    "en": "Active participation of scientific (technical) associations and civil society"
+  },
+  "0-9-3-2-1": {
+    "cn": "方法的多样性和制度化",
+    "en": "Diversity and Institutionalization of Methods"
+  },
+  "0-9-3-2-2": {
+    "cn": "政府促动",
+    "en": "Government motivated"
+  },
+  "0-9-4": {
+    "cn": "社会中的技术及其体系",
+    "en": "Technology and its system in society"
+  },
+  "0-9-4-0": {
+    "cn": "当代技术体系及其重要技术领域",
+    "en": "Contemporary technology system and its important technology areas"
+  },
+  "0-9-4-0-0": {
+    "cn": "当代技术体系",
+    "en": "Contemporary Technology System"
+  },
+  "0-9-4-0-1": {
+    "cn": "当代技术的一些重要领域",
+    "en": "Some important areas of contemporary technology"
+  },
+  "0-9-4-1": {
+    "cn": "技术、科学、工程",
+    "en": "Technology, Science, Engineering"
+  },
+  "0-9-4-1-0": {
+    "cn": "技术与科学的关系",
+    "en": "Relationship between technology and science"
+  },
+  "0-9-4-1-0-0": {
+    "cn": "技术与科学也有很大的区别",
+    "en": "There is also a big difference between technology and science"
+  },
+  "0-9-4-1-0-1": {
+    "cn": "技术与科学是互相联系的",
+    "en": "Technology and science are interconnected"
+  },
+  "0-9-4-1-1": {
+    "cn": "技术与工程的关系",
+    "en": "Relationship between Technology and Engineering"
+  },
+  "0-9-4-2": {
+    "cn": "社会中的技术及其特征",
+    "en": "Technology and Features in Society"
+  },
+  "0-9-4-2-0": {
+    "cn": "技术的社会特征",
+    "en": "Social characteristics of technology"
+  },
+  "0-9-4-2-0-0": {
+    "cn": "发展形式上的跃迁性和累积性",
+    "en": "Transitional and cumulative in developmental form"
+  },
+  "0-9-4-2-0-1": {
+    "cn": "中立性与价值性",
+    "en": "Neutrality and Value"
+  },
+  "0-9-4-2-0-2": {
+    "cn": "主体性和客体性",
+    "en": "Subjectivity and Objectivity"
+  },
+  "0-9-4-2-0-3": {
+    "cn": "自然性和社会性",
+    "en": "Natural and Social"
+  },
+  "0-9-4-2-1": {
+    "cn": "社会中的技术",
+    "en": "Technology in Society"
+  },
+  "0-9-5": {
+    "cn": "技术与社会",
+    "en": "Technology and Society"
+  },
+  "0-9-5-0": {
+    "cn": "技术与政治",
+    "en": "Technology and Politics"
+  },
+  "0-9-5-0-0": {
+    "cn": "技术对社会政治生活的影响",
+    "en": "The Impact of Technology on Social and Political Life"
+  },
+  "0-9-5-0-1": {
+    "cn": "政治因素对技术发展和应用的影响",
+    "en": "Impact of political factors on technological development and application"
+  },
+  "0-9-5-1": {
+    "cn": "技术与文化",
+    "en": "Technology and Culture"
+  },
+  "0-9-5-1-0": {
+    "cn": "技术对文化的作用",
+    "en": "The role of technology in culture"
+  },
+  "0-9-5-1-1": {
+    "cn": "文化对技术的反作用",
+    "en": "Culture's Reaction to Technology"
+  },
+  "0-9-5-2": {
+    "cn": "技术与人类生活",
+    "en": "Technology and human life"
+  },
+  "0-9-5-2-0": {
+    "cn": "技术对人类生活的影响",
+    "en": "The impact of technology on human life"
+  },
+  "0-9-5-2-0-0": {
+    "cn": "消费生活方式",
+    "en": "Consumer Lifestyle"
+  },
+  "0-9-5-2-0-1": {
+    "cn": "劳动生活方式",
+    "en": "Working Lifestyle"
+  },
+  "0-9-5-2-0-2": {
+    "cn": "闲暇生活",
+    "en": "Leisure life"
+  },
+  "0-9-5-2-0-3": {
+    "cn": "教学学习方式",
+    "en": "Teaching Style"
+  },
+  "0-9-5-2-0-4": {
+    "cn": "家庭生活方式",
+    "en": "Family Lifestyle"
+  },
+  "0-9-5-2-0-5": {
+    "cn": "交往生活方式",
+    "en": "Communicative Lifestyle"
+  },
+  "0-9-5-2-1": {
+    "cn": "科学、文明、健康的生活方式",
+    "en": "Scientific, civilized, healthy lifestyle"
+  },
+  "0-9-5-3": {
+    "cn": "技术与经济",
+    "en": "Technology and Economy"
+  },
+  "0-9-5-3-0": {
+    "cn": "经济对技术的影响",
+    "en": "Economic Impact on Technology"
+  },
+  "0-9-5-3-1": {
+    "cn": "技术对经济的作用",
+    "en": "The role of technology in the economy"
+  },
+  "1": {
+    "cn": "科学",
+    "en": "Science"
+  },
+  "1-0": {
+    "cn": "物质与能量",
+    "en": "Substance and Energy"
+  },
+  "1-0-0": {
+    "cn": "运动与相互作用",
+    "en": "Motion and Interaction"
+  },
+  "1-0-0-0": {
+    "cn": "声和光",
+    "en": "Sound and Light"
+  },
+  "1-0-0-0-0": {
+    "cn": "声速",
+    "en": "Speed ​​of Sound"
+  },
+  "1-0-0-0-1": {
+    "cn": "声的特性",
+    "en": "Characteristics of sound"
+  },
+  "1-0-0-0-1-0": {
+    "cn": "音调",
+    "en": "Tone"
+  },
+  "1-0-0-0-1-1": {
+    "cn": "音色",
+    "en": "Tone"
+  },
+  "1-0-0-0-1-2": {
+    "cn": "响度",
+    "en": "Loudness"
+  },
+  "1-0-0-0-2": {
+    "cn": "波",
+    "en": "wave"
+  },
+  "1-0-0-0-3": {
+    "cn": "光",
+    "en": "Light"
+  },
+  "1-0-0-0-4": {
+    "cn": "超声波和次声波",
+    "en": "Ultrasonic and infrasound"
+  },
+  "1-0-0-0-5": {
+    "cn": "声的原理",
+    "en": "Principle of Sound"
+  },
+  "1-0-0-0-6": {
+    "cn": "激光",
+    "en": "Laser"
+  },
+  "1-0-0-0-7": {
+    "cn": "光的反射和折射",
+    "en": "Reflection and Refraction of Light"
+  },
+  "1-0-0-1": {
+    "cn": "电和磁",
+    "en": "Electric and Magnetic"
+  },
+  "1-0-0-1-0": {
+    "cn": "磁体、磁极、磁场",
+    "en": "Magnet, pole, magnetic field"
+  },
+  "1-0-0-1-1": {
+    "cn": "静电",
+    "en": "Static"
+  },
+  "1-0-0-1-2": {
+    "cn": "直流电",
+    "en": "DC"
+  },
+  "1-0-0-1-3": {
+    "cn": "摩擦起电",
+    "en": "Triboelectric Charge"
+  },
+  "1-0-0-1-4": {
+    "cn": "电磁波和电磁辐射",
+    "en": "Electromagnetic waves and electromagnetic radiation"
+  },
+  "1-0-0-1-5": {
+    "cn": "感应电流和发电机",
+    "en": "Induced current and generator"
+  },
+  "1-0-0-2": {
+    "cn": "机械运动和力",
+    "en": "Mechanical Motion and Force"
+  },
+  "1-0-0-2-0": {
+    "cn": "惯性",
+    "en": "Inertia"
+  },
+  "1-0-0-2-1": {
+    "cn": "牛顿运动定律",
+    "en": "Newton's Law of Motion"
+  },
+  "1-0-0-2-2": {
+    "cn": "速度、速率和参照物",
+    "en": "Speed, Velocity, and References"
+  },
+  "1-0-0-2-3": {
+    "cn": "杠杆原理",
+    "en": "Leverage Principle"
+  },
+  "1-0-0-2-4": {
+    "cn": "长度、路程和位移",
+    "en": "Length, distance, and displacement"
+  },
+  "1-0-0-2-5": {
+    "cn": "压强",
+    "en": "Pressure"
+  },
+  "1-0-0-2-6": {
+    "cn": "力",
+    "en": "Force"
+  },
+  "1-0-1": {
+    "cn": "物质的构成",
+    "en": "Composition of matter"
+  },
+  "1-0-1-0": {
+    "cn": "化学反应",
+    "en": "Chemical reaction"
+  },
+  "1-0-1-0-0": {
+    "cn": "金属活动顺序",
+    "en": "Metal Sequence"
+  },
+  "1-0-1-0-1": {
+    "cn": "四类基本反应",
+    "en": "Four Basic Reactions"
+  },
+  "1-0-1-0-1-0": {
+    "cn": "化合反应",
+    "en": "Chemical reaction"
+  },
+  "1-0-1-0-1-1": {
+    "cn": "复分解反应",
+    "en": "Metalysis reaction"
+  },
+  "1-0-1-0-1-2": {
+    "cn": "分解反应",
+    "en": "Decomposition reaction"
+  },
+  "1-0-1-0-1-3": {
+    "cn": "置换反应",
+    "en": "Replacement reaction"
+  },
+  "1-0-1-0-2": {
+    "cn": "催化剂",
+    "en": "Catalyst"
+  },
+  "1-0-1-0-3": {
+    "cn": "质量守恒定律",
+    "en": "Law of conservation of mass"
+  },
+  "1-0-1-1": {
+    "cn": "物质组成的表示",
+    "en": "Representation of Substance Composition"
+  },
+  "1-0-1-1-0": {
+    "cn": "相对原子质量和相对分子质量",
+    "en": "Relative atomic mass and relative molecular mass"
+  },
+  "1-0-1-1-1": {
+    "cn": "化合价和化学式",
+    "en": "Valence and chemical formula"
+  },
+  "1-0-1-2": {
+    "cn": "构成物质的微粒",
+    "en": "Particles that make up a substance"
+  },
+  "1-0-1-2-0": {
+    "cn": "放射性现象和核反应",
+    "en": "Radioactivity and nuclear reactions"
+  },
+  "1-0-1-2-1": {
+    "cn": "分子、原子、离子",
+    "en": "Molecule, atom, ion"
+  },
+  "1-0-1-3": {
+    "cn": "化学元素",
+    "en": "Chemical Element"
+  },
+  "1-0-1-3-0": {
+    "cn": "氮",
+    "en": "Nitrogen"
+  },
+  "1-0-1-3-1": {
+    "cn": "碳",
+    "en": "Carbon"
+  },
+  "1-0-1-3-2": {
+    "cn": "氧",
+    "en": "Oxygen"
+  },
+  "1-0-1-3-3": {
+    "cn": "同位素",
+    "en": "Isotopes"
+  },
+  "1-0-1-3-4": {
+    "cn": "氢",
+    "en": "Hydrogen"
+  },
+  "1-0-1-3-5": {
+    "cn": "元素周期表和元素周期律",
+    "en": "Periodic Table and Periodic Law"
+  },
+  "1-0-2": {
+    "cn": "能与能源",
+    "en": "Energy and Energy"
+  },
+  "1-0-2-0": {
+    "cn": "机械能",
+    "en": "Mechanical Energy"
+  },
+  "1-0-2-0-0": {
+    "cn": "功率和机械效率",
+    "en": "Power and mechanical efficiency"
+  },
+  "1-0-2-0-1": {
+    "cn": "机械能=动能+势能",
+    "en": "Mechanical energy = kinetic energy + potential energy"
+  },
+  "1-0-2-1": {
+    "cn": "能量守恒定律",
+    "en": "Conservation of Energy"
+  },
+  "1-0-2-2": {
+    "cn": "电磁能",
+    "en": "Electromagnetic Energy"
+  },
+  "1-0-2-2-0": {
+    "cn": "电能、电功率、焦耳定律",
+    "en": "Energy, Electric Power, Joule's Law"
+  },
+  "1-0-2-2-1": {
+    "cn": "电流、电压、电阻",
+    "en": "Current, voltage, resistance"
+  },
+  "1-0-2-2-2": {
+    "cn": "欧姆定律",
+    "en": "Ohm's Law"
+  },
+  "1-0-2-3": {
+    "cn": "能量及其转化与转移",
+    "en": "Energy and its transformation and transfer"
+  },
+  "1-0-2-4": {
+    "cn": "内能",
+    "en": "Internal Energy"
+  },
+  "1-0-2-4-0": {
+    "cn": "比热容",
+    "en": "Specific heat capacity"
+  },
+  "1-0-2-4-1": {
+    "cn": "热机",
+    "en": "Hot Engine"
+  },
+  "1-0-2-4-2": {
+    "cn": "内能",
+    "en": "Internal Energy"
+  },
+  "1-0-2-5": {
+    "cn": "能源和可持续发展",
+    "en": "Energy and Sustainable Development"
+  },
+  "1-0-2-5-0": {
+    "cn": "核能",
+    "en": "Nuclear Energy"
+  },
+  "1-0-2-5-1": {
+    "cn": "太阳能",
+    "en": "Solar"
+  },
+  "1-0-2-5-2": {
+    "cn": "潮汐能",
+    "en": "Tidal energy"
+  },
+  "1-0-2-5-3": {
+    "cn": "沼气能",
+    "en": "Biogas energy"
+  },
+  "1-0-2-5-4": {
+    "cn": "风能",
+    "en": "Wind Energy"
+  },
+  "1-0-3": {
+    "cn": "身边的物质",
+    "en": "Substance Around"
+  },
+  "1-0-3-0": {
+    "cn": "空气",
+    "en": "Air"
+  },
+  "1-0-3-0-0": {
+    "cn": "氧气",
+    "en": "Oxygen"
+  },
+  "1-0-3-0-1": {
+    "cn": "雾霾",
+    "en": "Mist"
+  },
+  "1-0-3-0-2": {
+    "cn": "稀有气体",
+    "en": "Rare Gas"
+  },
+  "1-0-3-0-3": {
+    "cn": "二氧化碳",
+    "en": "CO2"
+  },
+  "1-0-3-0-4": {
+    "cn": "氮气",
+    "en": "Nitrogen"
+  },
+  "1-0-3-1": {
+    "cn": "水和常见溶液",
+    "en": "Water and common solutions"
+  },
+  "1-0-3-1-0": {
+    "cn": "水",
+    "en": "Water"
+  },
+  "1-0-3-1-1": {
+    "cn": "水污染",
+    "en": "Water pollution"
+  },
+  "1-0-3-1-2": {
+    "cn": "溶液、溶解度、饱和溶液",
+    "en": "Solution, solubility, saturated solution"
+  },
+  "1-0-3-2": {
+    "cn": "常见物质与健康",
+    "en": "Common Substances and Health"
+  },
+  "1-0-3-2-0": {
+    "cn": "微量元素",
+    "en": "Trace Elements"
+  },
+  "1-0-3-2-1": {
+    "cn": "淀粉",
+    "en": "Starch"
+  },
+  "1-0-3-2-2": {
+    "cn": "蛋白质",
+    "en": "Protein"
+  },
+  "1-0-3-2-3": {
+    "cn": "脂质",
+    "en": "lipid"
+  },
+  "1-0-3-2-4": {
+    "cn": "糖",
+    "en": "Sugar"
+  },
+  "1-0-3-2-5": {
+    "cn": "核酸",
+    "en": "Nucleic Acid"
+  },
+  "1-0-3-3": {
+    "cn": "物体的物理性质",
+    "en": "Physical properties of an object"
+  },
+  "1-0-3-3-0": {
+    "cn": "弹性、磁性、导电性和导热性",
+    "en": "Elasticity, magnetic, electrical and thermal conductivity"
+  },
+  "1-0-3-3-1": {
+    "cn": "质量、体积、密度",
+    "en": "Mass, Volume, Density"
+  },
+  "1-0-3-4": {
+    "cn": "物质的形态与变化",
+    "en": "The form and change of matter"
+  },
+  "1-0-3-4-0": {
+    "cn": "固、液、气三态",
+    "en": "Three states of solid, liquid and gas"
+  },
+  "1-0-3-4-1": {
+    "cn": "三态的转化",
+    "en": "Three-State Conversion"
+  },
+  "1-0-3-5": {
+    "cn": "金属",
+    "en": "Metal"
+  },
+  "1-0-3-5-0": {
+    "cn": "金属的物理性质",
+    "en": "Physical properties of metal"
+  },
+  "1-0-3-5-1": {
+    "cn": "合金",
+    "en": "Alloy"
+  },
+  "1-0-3-5-2": {
+    "cn": "常见金属",
+    "en": "Common metals"
+  },
+  "1-0-3-6": {
+    "cn": "常见化合物",
+    "en": "Common Compounds"
+  },
+  "1-0-3-6-0": {
+    "cn": "无机化合物",
+    "en": "Inorganic compounds"
+  },
+  "1-0-3-6-0-0": {
+    "cn": "碱",
+    "en": "Alkali"
+  },
+  "1-0-3-6-0-1": {
+    "cn": "酸",
+    "en": "Acid"
+  },
+  "1-0-3-6-0-2": {
+    "cn": "盐",
+    "en": "Salt"
+  },
+  "1-0-3-6-0-3": {
+    "cn": "氧化物",
+    "en": "Oxide"
+  },
+  "1-0-3-6-1": {
+    "cn": "有机化合物",
+    "en": "Organic Compound"
+  },
+  "1-0-3-6-2": {
+    "cn": "合成材料",
+    "en": "Synthetic material"
+  },
+  "1-1": {
+    "cn": "科技与社会",
+    "en": "Technology and Society"
+  },
+  "1-1-0": {
+    "cn": "科学技术及其社会运行",
+    "en": "Science and Technology and Social Operations"
+  },
+  "1-1-0-0": {
+    "cn": "科学技术研究",
+    "en": "Science and Technology Research"
+  },
+  "1-1-0-0-0": {
+    "cn": "科学技术研究活动",
+    "en": "Science and Technology Research Activities"
+  },
+  "1-1-0-0-1": {
+    "cn": "科学技术研究方法",
+    "en": "Science and Technology Research Methods"
+  },
+  "1-1-0-0-2": {
+    "cn": "科学技术研究成果",
+    "en": "Science and Technology Research Achievements"
+  },
+  "1-1-0-1": {
+    "cn": "科学技术的社会运行",
+    "en": "Social Operation of Science and Technology"
+  },
+  "1-1-0-1-0": {
+    "cn": "科学技术的社会支持",
+    "en": "Social support for science and technology"
+  },
+  "1-1-0-1-1": {
+    "cn": "科学共同体及其运行",
+    "en": "Science Community and its Operations"
+  },
+  "1-1-0-2": {
+    "cn": "科学技术研究规范",
+    "en": "Specifications for Scientific and Technological Research"
+  },
+  "1-1-0-2-0": {
+    "cn": "科学精神和科学态度",
+    "en": "Scientific spirit and attitude"
+  },
+  "1-1-0-2-1": {
+    "cn": "科学技术研究的道德规范",
+    "en": "Ethics for scientific and technological research"
+  },
+  "1-1-1": {
+    "cn": "科学技术与人类文明",
+    "en": "Science and Technology and Human Civilization"
+  },
+  "1-1-1-0": {
+    "cn": "科学、技术、工程",
+    "en": "Science, Technology, Engineering"
+  },
+  "1-1-1-0-0": {
+    "cn": "工程",
+    "en": "Engineering"
+  },
+  "1-1-1-0-1": {
+    "cn": "科学",
+    "en": "Science"
+  },
+  "1-1-1-0-2": {
+    "cn": "科学、技术、工程的区别与联系",
+    "en": "Differences and connections between science, technology, and engineering"
+  },
+  "1-1-1-0-3": {
+    "cn": "技术",
+    "en": "Technology"
+  },
+  "1-1-1-1": {
+    "cn": "科学技术发展与人类文明进步",
+    "en": "Development of science and technology and progress of human civilization"
+  },
+  "1-1-1-1-0": {
+    "cn": "古代文明与古代科技",
+    "en": "Ancient civilization and ancient technology"
+  },
+  "1-1-1-1-1": {
+    "cn": "近代科技与近代文明",
+    "en": "Modern Technology and Modern Civilization"
+  },
+  "1-1-1-1-2": {
+    "cn": "20世纪以来的科学技术与社会发展",
+    "en": "Science, Technology and Social Development since the 20th Century"
+  },
+  "1-1-2": {
+    "cn": "科学技术与社会发展",
+    "en": "Science and Technology and Social Development"
+  },
+  "1-1-2-0": {
+    "cn": "科学技术的社会功能和复杂作用",
+    "en": "Social functions and complex functions of science and technology"
+  },
+  "1-1-2-0-0": {
+    "cn": "科学技术的社会功能",
+    "en": "Social functions of science and technology"
+  },
+  "1-1-2-0-1": {
+    "cn": "科学技术的复杂作用",
+    "en": "The complex role of science and technology"
+  },
+  "1-1-2-1": {
+    "cn": "当代科技伦理问题",
+    "en": "Ethical issues in contemporary technology"
+  },
+  "1-1-2-1-0": {
+    "cn": "科技伦理和科技伦理问题",
+    "en": "Science and Technology Ethics"
+  },
+  "1-1-2-1-1": {
+    "cn": "科技领域的一些伦理争议",
+    "en": "Some ethical controversies in technology"
+  },
+  "1-1-2-2": {
+    "cn": "当代科技创新与社会发展",
+    "en": "Contemporary Scientific and Technological Innovation and Social Development"
+  },
+  "1-1-2-2-0": {
+    "cn": "我国的创新驱动发展战略",
+    "en": "China's Innovation-Driven Development Strategy"
+  },
+  "1-1-2-2-1": {
+    "cn": "当代科学技术",
+    "en": "Contemporary Science and Technology"
+  },
+  "1-1-3": {
+    "cn": "提升公民科学素质",
+    "en": "Improve the scientific quality of citizens"
+  },
+  "1-1-3-0": {
+    "cn": "我国公民科学素质建设工作",
+    "en": "Building scientific literacy of our citizens"
+  },
+  "1-1-3-0-0": {
+    "cn": "我国“全民科学素质行动计划”",
+    "en": "Our National Action Plan for Scientific Quality"
+  },
+  "1-1-3-0-1": {
+    "cn": "我国科技传播普及的发展",
+    "en": "Development of the spread of science and technology in China"
+  },
+  "1-1-3-0-2": {
+    "cn": "公民科学素质与科技传播普及",
+    "en": "Science and Popularization of Science and Technology"
+  },
+  "1-1-3-1": {
+    "cn": "公民科学素质议题与概念",
+    "en": "Citizen Science Literacy Issues and Concepts"
+  },
+  "1-1-3-1-0": {
+    "cn": "公民科学素质的概念",
+    "en": "The concept of citizen scientific quality"
+  },
+  "1-1-3-1-1": {
+    "cn": "公民科学素质调查",
+    "en": "Science Survey of Citizens"
+  },
+  "1-1-3-1-2": {
+    "cn": "科学素质议题的提出",
+    "en": "Suggestion of Scientific Quality"
+  },
+  "1-2": {
+    "cn": "生命与健康",
+    "en": "Life and Health"
+  },
+  "1-2-0": {
+    "cn": "遗传与进化",
+    "en": "Genetics and Evolution"
+  },
+  "1-2-0-0": {
+    "cn": "遗传与变异",
+    "en": "Genetics and mutation"
+  },
+  "1-2-0-0-0": {
+    "cn": "性状",
+    "en": "Character"
+  },
+  "1-2-0-0-1": {
+    "cn": "遗传与变异",
+    "en": "Genetics and mutation"
+  },
+  "1-2-0-1": {
+    "cn": "遗传物质",
+    "en": "Genetic material"
+  },
+  "1-2-0-1-0": {
+    "cn": "DNA",
+    "en": "DNA"
+  },
+  "1-2-0-1-1": {
+    "cn": "染色体",
+    "en": "Chromosome"
+  },
+  "1-2-0-1-2": {
+    "cn": "基因",
+    "en": "Gene"
+  },
+  "1-2-0-1-3": {
+    "cn": "表观遗传学研究前沿",
+    "en": "The frontiers of epigenetics research"
+  },
+  "1-2-0-2": {
+    "cn": "遗传的基本规律",
+    "en": "Basic laws of inheritance"
+  },
+  "1-2-0-2-0": {
+    "cn": "基因传递",
+    "en": "Gene Delivery"
+  },
+  "1-2-0-2-1": {
+    "cn": "人的性别决定",
+    "en": "Human sex determination"
+  },
+  "1-2-0-2-2": {
+    "cn": "性状遗传规律",
+    "en": "Inheritance of traits"
+  },
+  "1-2-0-3": {
+    "cn": "遗传病",
+    "en": "Genetic disease"
+  },
+  "1-2-0-3-0": {
+    "cn": "遗传病",
+    "en": "Genetic disease"
+  },
+  "1-2-0-3-1": {
+    "cn": "禁止近亲结婚",
+    "en": "Prohibit close marriage"
+  },
+  "1-2-0-3-2": {
+    "cn": "遗传咨询",
+    "en": "Genetic Counseling"
+  },
+  "1-2-0-4": {
+    "cn": "遗传与环境",
+    "en": "Genetics and the Environment"
+  },
+  "1-2-0-4-0": {
+    "cn": "突变",
+    "en": "Mutation"
+  },
+  "1-2-0-4-1": {
+    "cn": "性状与环境",
+    "en": "Character and Environment"
+  },
+  "1-2-0-5": {
+    "cn": "生物进化",
+    "en": "Biological Evolution"
+  },
+  "1-2-0-5-0": {
+    "cn": "生命起源",
+    "en": "Origin of Life"
+  },
+  "1-2-0-5-1": {
+    "cn": "生物进化的研究方法",
+    "en": "Research Methods for Biological Evolution"
+  },
+  "1-2-0-5-2": {
+    "cn": "生物进化",
+    "en": "Biological Evolution"
+  },
+  "1-2-1": {
+    "cn": "生物多样性",
+    "en": "Biodiversity"
+  },
+  "1-2-1-0": {
+    "cn": "生物多样性与人类",
+    "en": "Biodiversity and Humanity"
+  },
+  "1-2-1-1": {
+    "cn": "生物多样性和生物的分类",
+    "en": "Biodiversity and taxonomy"
+  },
+  "1-2-1-1-0": {
+    "cn": "生物的分类",
+    "en": "Classification of living things"
+  },
+  "1-2-1-1-0-0": {
+    "cn": "植物界",
+    "en": "Botanical World"
+  },
+  "1-2-1-1-0-1": {
+    "cn": "动物界",
+    "en": "Animals"
+  },
+  "1-2-1-1-0-2": {
+    "cn": "原核生物界",
+    "en": "Prokaryotes"
+  },
+  "1-2-1-1-0-3": {
+    "cn": "原生生物界",
+    "en": "Protozoa"
+  },
+  "1-2-1-1-0-4": {
+    "cn": "真菌界",
+    "en": "Fungi World"
+  },
+  "1-2-1-1-1": {
+    "cn": "生物多样性",
+    "en": "Biodiversity"
+  },
+  "1-2-1-1-1-0": {
+    "cn": "景观多样性",
+    "en": "Landscape Diversity"
+  },
+  "1-2-1-1-1-1": {
+    "cn": "物种多样性",
+    "en": "Species diversity"
+  },
+  "1-2-1-1-1-2": {
+    "cn": "遗传多样性",
+    "en": "Genetic diversity"
+  },
+  "1-2-1-1-1-3": {
+    "cn": "生态系统多样性",
+    "en": "Ecosystem Diversity"
+  },
+  "1-2-1-2": {
+    "cn": "动物",
+    "en": "Animal"
+  },
+  "1-2-1-2-0": {
+    "cn": "脊椎动物",
+    "en": "vertebrate"
+  },
+  "1-2-1-2-0-0": {
+    "cn": "哺乳类",
+    "en": "Mammal"
+  },
+  "1-2-1-2-0-1": {
+    "cn": "鸟类",
+    "en": "Bird"
+  },
+  "1-2-1-2-0-2": {
+    "cn": "两栖类",
+    "en": "Amphibian"
+  },
+  "1-2-1-2-0-3": {
+    "cn": "爬行类",
+    "en": "Creepy"
+  },
+  "1-2-1-2-0-4": {
+    "cn": "鱼类",
+    "en": "Fish"
+  },
+  "1-2-1-2-1": {
+    "cn": "无脊椎动物",
+    "en": "Invertebrates"
+  },
+  "1-2-1-2-1-0": {
+    "cn": "环节动物",
+    "en": "Link Animal"
+  },
+  "1-2-1-2-1-1": {
+    "cn": "多孔动物",
+    "en": "Porous Animals"
+  },
+  "1-2-1-2-1-2": {
+    "cn": "节肢动物",
+    "en": "Arthropod"
+  },
+  "1-2-1-2-1-3": {
+    "cn": "原生动物",
+    "en": "Protozoa"
+  },
+  "1-2-1-2-1-4": {
+    "cn": "扁形动物",
+    "en": "Flat animal"
+  },
+  "1-2-1-2-1-5": {
+    "cn": "软体动物",
+    "en": "mollusk"
+  },
+  "1-2-1-2-1-6": {
+    "cn": "腔肠动物",
+    "en": "Coelenterate"
+  },
+  "1-2-1-3": {
+    "cn": "植物",
+    "en": "Plant"
+  },
+  "1-2-1-3-0": {
+    "cn": "蕨类植物",
+    "en": "Fern"
+  },
+  "1-2-1-3-1": {
+    "cn": "种子植物",
+    "en": "Seed Plant"
+  },
+  "1-2-1-3-1-0": {
+    "cn": "裸子植物",
+    "en": "Gypsum"
+  },
+  "1-2-1-3-1-1": {
+    "cn": "被子植物",
+    "en": "Angiosperms"
+  },
+  "1-2-1-3-2": {
+    "cn": "苔藓植物",
+    "en": "Bryophyte"
+  },
+  "1-2-1-3-3": {
+    "cn": "藻类植物",
+    "en": "Algae"
+  },
+  "1-2-1-4": {
+    "cn": "细菌、真菌和病毒",
+    "en": "Bacteria, fungi and viruses"
+  },
+  "1-2-1-4-0": {
+    "cn": "病毒",
+    "en": "Virus"
+  },
+  "1-2-1-4-1": {
+    "cn": "细菌",
+    "en": "Bacteria"
+  },
+  "1-2-1-4-2": {
+    "cn": "真菌",
+    "en": "Fungi"
+  },
+  "1-2-1-5": {
+    "cn": "生物多样性的保护",
+    "en": "Conservation of Biodiversity"
+  },
+  "1-2-1-6": {
+    "cn": "生物入侵",
+    "en": "Biological Invasion"
+  },
+  "1-2-2": {
+    "cn": "分子与细胞",
+    "en": "Molecules and Cells"
+  },
+  "1-2-2-0": {
+    "cn": "细胞的分子基础",
+    "en": "Molecular basis of cells"
+  },
+  "1-2-2-0-0": {
+    "cn": "糖类",
+    "en": "Sugar"
+  },
+  "1-2-2-0-0-0": {
+    "cn": "多糖",
+    "en": "Polysaccharide"
+  },
+  "1-2-2-0-0-1": {
+    "cn": "二糖",
+    "en": "Disaccharide"
+  },
+  "1-2-2-0-0-2": {
+    "cn": "单糖",
+    "en": "monosaccharide"
+  },
+  "1-2-2-0-1": {
+    "cn": "蛋白质",
+    "en": "Protein"
+  },
+  "1-2-2-0-2": {
+    "cn": "无机盐",
+    "en": "Inorganic salts"
+  },
+  "1-2-2-0-3": {
+    "cn": "核酸",
+    "en": "Nucleic Acid"
+  },
+  "1-2-2-0-4": {
+    "cn": "脂质",
+    "en": "lipid"
+  },
+  "1-2-2-0-4-0": {
+    "cn": "脂肪",
+    "en": "Fat"
+  },
+  "1-2-2-0-4-1": {
+    "cn": "磷脂",
+    "en": "phospholipid"
+  },
+  "1-2-2-0-4-2": {
+    "cn": "固醇",
+    "en": "Sterol"
+  },
+  "1-2-2-0-5": {
+    "cn": "水",
+    "en": "Water"
+  },
+  "1-2-2-1": {
+    "cn": "细胞的结构",
+    "en": "Structure of cells"
+  },
+  "1-2-2-1-0": {
+    "cn": "细胞壁",
+    "en": "Cell Wall"
+  },
+  "1-2-2-1-1": {
+    "cn": "细胞质",
+    "en": "cytoplasm"
+  },
+  "1-2-2-1-2": {
+    "cn": "细胞膜",
+    "en": "Cell Membrane"
+  },
+  "1-2-2-1-3": {
+    "cn": "细胞器",
+    "en": "Organizer"
+  },
+  "1-2-2-1-3-0": {
+    "cn": "线粒体",
+    "en": "Mitochondria"
+  },
+  "1-2-2-1-3-1": {
+    "cn": "叶绿体",
+    "en": "Chloroplast"
+  },
+  "1-2-2-1-3-2": {
+    "cn": "高尔基体、中心体",
+    "en": "Golgi, centrosome"
+  },
+  "1-2-2-1-3-3": {
+    "cn": "溶酶体",
+    "en": "lysosome"
+  },
+  "1-2-2-1-3-4": {
+    "cn": "内质网",
+    "en": "Endoplasmic Reticulum"
+  },
+  "1-2-2-1-3-5": {
+    "cn": "液泡",
+    "en": "Vacuum"
+  },
+  "1-2-2-1-4": {
+    "cn": "细胞核",
+    "en": "Nuclei"
+  },
+  "1-2-2-2": {
+    "cn": "细胞的代谢",
+    "en": "Cell Metabolism"
+  },
+  "1-2-2-2-0": {
+    "cn": "光合作用",
+    "en": "Photosynthesis"
+  },
+  "1-2-2-2-1": {
+    "cn": "呼吸作用",
+    "en": "Breathing"
+  },
+  "1-2-2-2-1-0": {
+    "cn": "无氧呼吸",
+    "en": "Anaerobic Breath"
+  },
+  "1-2-2-2-1-1": {
+    "cn": "有氧呼吸",
+    "en": "Aerobic respiration"
+  },
+  "1-2-2-2-2": {
+    "cn": "酶",
+    "en": "Enzyme"
+  },
+  "1-2-2-3": {
+    "cn": "细胞的生长、分裂和分化",
+    "en": "Growth, division and differentiation of cells"
+  },
+  "1-2-2-3-0": {
+    "cn": "细胞的生长",
+    "en": "Growth of cells"
+  },
+  "1-2-2-3-1": {
+    "cn": "细胞的分裂",
+    "en": "Cell division"
+  },
+  "1-2-2-3-2": {
+    "cn": "细胞的分化",
+    "en": "Cell Differentiation"
+  },
+  "1-2-2-3-3": {
+    "cn": "细胞的癌变",
+    "en": "Cancer of cells"
+  },
+  "1-2-3": {
+    "cn": "疾病防控与健康",
+    "en": "Disease Prevention and Health"
+  },
+  "1-2-3-0": {
+    "cn": "职业疾病",
+    "en": "Occupational disease"
+  },
+  "1-2-3-1": {
+    "cn": "传染病",
+    "en": "Infectious disease"
+  },
+  "1-2-3-2": {
+    "cn": "精神与心理健康",
+    "en": "Mental and Mental Health"
+  },
+  "1-2-3-3": {
+    "cn": "生活中的健康",
+    "en": "Health in Life"
+  },
+  "1-2-3-4": {
+    "cn": "日常急救避险常识",
+    "en": "Daily First Aid Hedges"
+  },
+  "1-2-3-5": {
+    "cn": "科学健身",
+    "en": "Scientific Fitness"
+  },
+  "1-2-3-6": {
+    "cn": "食品安全",
+    "en": "Food Safety"
+  },
+  "1-2-3-7": {
+    "cn": "均衡饮食与营养",
+    "en": "Balanced diet and nutrition"
+  },
+  "1-2-4": {
+    "cn": "生物技术与工程",
+    "en": "Biotechnology and Engineering"
+  },
+  "1-2-4-0": {
+    "cn": "动物细胞融合技术",
+    "en": "Animal Cell Fusion Technology"
+  },
+  "1-2-4-1": {
+    "cn": "克隆技术",
+    "en": "Clone Technology"
+  },
+  "1-2-4-2": {
+    "cn": "转基因技术",
+    "en": "GMO"
+  },
+  "1-2-4-3": {
+    "cn": "1生物技术的安全性和伦理问题",
+    "en": "1 Security and Ethical Issues in Biotechnology"
+  },
+  "1-2-4-4": {
+    "cn": "发酵工程",
+    "en": "Fermentation Engineering"
+  },
+  "1-2-4-5": {
+    "cn": "0现代中药技术",
+    "en": "0 Modern Chinese Medicine Technology"
+  },
+  "1-2-4-6": {
+    "cn": "基因工程",
+    "en": "Genetic Engineering"
+  },
+  "1-2-4-7": {
+    "cn": "蛋白质工程",
+    "en": "Protein Engineering"
+  },
+  "1-2-4-8": {
+    "cn": "试管婴儿",
+    "en": "Test tube baby"
+  },
+  "1-2-4-9": {
+    "cn": "细胞工程",
+    "en": "Cell Engineering"
+  },
+  "1-2-4-10": {
+    "cn": "生物净化技术",
+    "en": "Bio-Purification Technology"
+  },
+  "1-2-5": {
+    "cn": "稳态与控制",
+    "en": "Stability and Control"
+  },
+  "1-2-5-0": {
+    "cn": "支撑与运动",
+    "en": "Support and Movement"
+  },
+  "1-2-5-1": {
+    "cn": "神经、感官与神经调节",
+    "en": "Neural, Sensory, and Neuromodulation"
+  },
+  "1-2-5-2": {
+    "cn": "内分泌系统与体液调节",
+    "en": "Endocrine system and body fluid regulation"
+  },
+  "1-2-5-3": {
+    "cn": "气体交换与呼吸",
+    "en": "Gas exchange and breathing"
+  },
+  "1-2-5-4": {
+    "cn": "植物的结构、生殖与营养",
+    "en": "Structure, reproduction and nutrition of plants"
+  },
+  "1-2-5-5": {
+    "cn": "0植物的调控系统",
+    "en": "0 Plant Regulatory System"
+  },
+  "1-2-5-6": {
+    "cn": "血液与循环",
+    "en": "Blood and Circulation"
+  },
+  "1-2-5-7": {
+    "cn": "生殖与发育",
+    "en": "Reproduction and Development"
+  },
+  "1-2-5-8": {
+    "cn": "消化与吸收",
+    "en": "Digestion and Absorption"
+  },
+  "1-2-5-9": {
+    "cn": "免疫系统与免疫调节",
+    "en": "Immune system and immune regulation"
+  },
+  "1-2-6": {
+    "cn": "生物与环境",
+    "en": "Biology and the Environment"
+  },
+  "1-2-6-0": {
+    "cn": "生态系统的结构和功能",
+    "en": "Structure and Function of the Ecosystem"
+  },
+  "1-2-6-1": {
+    "cn": "生物与环境",
+    "en": "Biology and the Environment"
+  },
+  "1-2-6-2": {
+    "cn": "种群与群落",
+    "en": "Populations and Communities"
+  },
+  "1-2-6-3": {
+    "cn": "人类面临的生态问题",
+    "en": "Ecological problems facing humanity"
+  },
+  "1-3": {
+    "cn": "地球与环境",
+    "en": "Earth and Environment"
+  },
+  "1-3-0": {
+    "cn": "宇宙中的地球",
+    "en": "Earth in the universe"
+  },
+  "1-3-0-0": {
+    "cn": "地球的演化",
+    "en": "Evolution of the Earth"
+  },
+  "1-3-0-0-0": {
+    "cn": "海陆变迁",
+    "en": "Sea and Land Changes"
+  },
+  "1-3-0-0-0-0": {
+    "cn": "海陆的运动和变化",
+    "en": "Motion and change in land and sea"
+  },
+  "1-3-0-0-0-1": {
+    "cn": "板块构造学说的发展历史",
+    "en": "History of Plate Tectonics"
+  },
+  "1-3-0-0-0-2": {
+    "cn": "火山地震分布带",
+    "en": "Volcanic seismic distribution"
+  },
+  "1-3-0-0-0-3": {
+    "cn": "青藏高原的形成",
+    "en": "The formation of the Qinghai-Tibet Plateau"
+  },
+  "1-3-0-0-1": {
+    "cn": "地质年代",
+    "en": "Geological Age"
+  },
+  "1-3-0-0-1-0": {
+    "cn": "地质年代划分",
+    "en": "Geological chronology"
+  },
+  "1-3-0-0-1-1": {
+    "cn": "原始大气、海洋和陆地",
+    "en": "Primitive atmosphere, ocean, and land"
+  },
+  "1-3-0-1": {
+    "cn": "宇宙和天体",
+    "en": "Universe and Celestial Body"
+  },
+  "1-3-0-1-0": {
+    "cn": "天体系统",
+    "en": "Astronomical System"
+  },
+  "1-3-0-1-0-0": {
+    "cn": "地月系",
+    "en": "Earth and Moon"
+  },
+  "1-3-0-1-0-1": {
+    "cn": "银河系",
+    "en": "The Milky Way"
+  },
+  "1-3-0-1-0-2": {
+    "cn": "太阳系",
+    "en": "Solar System"
+  },
+  "1-3-0-1-0-3": {
+    "cn": "河外星系",
+    "en": "Outer Galaxy"
+  },
+  "1-3-0-1-1": {
+    "cn": "宇宙",
+    "en": "Universe"
+  },
+  "1-3-0-1-2": {
+    "cn": "天体的分类",
+    "en": "Classification of celestial bodies"
+  },
+  "1-3-0-1-2-0": {
+    "cn": "恒星",
+    "en": "Stella"
+  },
+  "1-3-0-1-2-1": {
+    "cn": "行星",
+    "en": "Planet"
+  },
+  "1-3-0-1-2-2": {
+    "cn": "小行星",
+    "en": "Asteroids"
+  },
+  "1-3-0-1-2-3": {
+    "cn": "彗星",
+    "en": "Comet"
+  },
+  "1-3-0-2": {
+    "cn": "地球和太阳系",
+    "en": "Earth and Solar System"
+  },
+  "1-3-0-2-0": {
+    "cn": "地月系",
+    "en": "Earth and Moon"
+  },
+  "1-3-0-2-0-0": {
+    "cn": "月相变化与潮汐变化",
+    "en": "Moon phase and tide changes"
+  },
+  "1-3-0-2-0-1": {
+    "cn": "月球概况及其运动特征",
+    "en": "Moon profile and its motion characteristics"
+  },
+  "1-3-0-2-1": {
+    "cn": "地球的行星特征",
+    "en": "Planetary Features of the Earth"
+  },
+  "1-3-0-2-1-0": {
+    "cn": "海陆分布",
+    "en": "Sea and Land Distribution"
+  },
+  "1-3-0-2-1-1": {
+    "cn": "地球形状、大小、质量等基本特征",
+    "en": "Basic features of Earth shape, size, mass, etc."
+  },
+  "1-3-0-2-1-2": {
+    "cn": "经线、纬线",
+    "en": "Longitude and Parallel"
+  },
+  "1-3-0-2-2": {
+    "cn": "地球的运动",
+    "en": "Motion of the Earth"
+  },
+  "1-3-0-2-2-0": {
+    "cn": "地球自转的地理意义",
+    "en": "Geographical significance of Earth's rotation"
+  },
+  "1-3-0-2-2-1": {
+    "cn": "地球公转的地理意义",
+    "en": "Geographical significance of the Earth's revolution"
+  },
+  "1-3-0-2-3": {
+    "cn": "太阳系",
+    "en": "Solar System"
+  },
+  "1-3-0-2-3-0": {
+    "cn": "太阳的圈层结构",
+    "en": "Spherical structure of the sun"
+  },
+  "1-3-0-2-3-1": {
+    "cn": "太阳系的组成",
+    "en": "Composition of the Solar System"
+  },
+  "1-3-0-2-3-2": {
+    "cn": "太阳活动及对地球的影响",
+    "en": "Solar activity and its impact on the earth"
+  },
+  "1-3-1": {
+    "cn": "地球和人类活动",
+    "en": "Earth and human activities"
+  },
+  "1-3-1-0": {
+    "cn": "自然资源",
+    "en": "Natural Resources"
+  },
+  "1-3-1-0-0": {
+    "cn": "水资源",
+    "en": "Water Resources"
+  },
+  "1-3-1-0-0-0": {
+    "cn": "利用的广泛性和不可替代性",
+    "en": "Extensive and Irreplaceable Use"
+  },
+  "1-3-1-0-0-1": {
+    "cn": "补给循环性",
+    "en": "Supply Cyclic"
+  },
+  "1-3-1-0-0-2": {
+    "cn": "时空分布的不均匀性",
+    "en": "Inhomogeneity of spatiotemporal distribution"
+  },
+  "1-3-1-0-1": {
+    "cn": "土地资源",
+    "en": "Land Resources"
+  },
+  "1-3-1-0-1-0": {
+    "cn": "土地资源和农业",
+    "en": "Land Resources and Agriculture"
+  },
+  "1-3-1-0-1-1": {
+    "cn": "土地资源的特点",
+    "en": "Characteristics of land resources"
+  },
+  "1-3-1-0-1-2": {
+    "cn": "土地资源问题的产生及其原因",
+    "en": "Land Resources Issues and Their Causes"
+  },
+  "1-3-1-0-2": {
+    "cn": "自然资源及分类",
+    "en": "Natural Resources and Classification"
+  },
+  "1-3-1-0-3": {
+    "cn": "矿产资源",
+    "en": "Mineral Resources"
+  },
+  "1-3-1-0-4": {
+    "cn": "海洋资源",
+    "en": "Marine Resources"
+  },
+  "1-3-1-0-4-0": {
+    "cn": "海洋化学资源",
+    "en": "Marine Chemical Resources"
+  },
+  "1-3-1-0-4-1": {
+    "cn": "海洋生物资源",
+    "en": "Marine Life Resources"
+  },
+  "1-3-1-0-4-2": {
+    "cn": "国际海洋法",
+    "en": "International Law of the Sea"
+  },
+  "1-3-1-0-4-3": {
+    "cn": "海洋资源开发存在的问题和对策",
+    "en": "Problems and countermeasures in marine resource development"
+  },
+  "1-3-1-0-4-4": {
+    "cn": "海洋资源的空间开发",
+    "en": "Spatial Development of Marine Resources"
+  },
+  "1-3-1-0-4-5": {
+    "cn": "海洋矿产资源",
+    "en": "Marine Mineral Resources"
+  },
+  "1-3-1-0-4-6": {
+    "cn": "海洋动力资源",
+    "en": "Marine Power"
+  },
+  "1-3-1-0-4-7": {
+    "cn": "我国海洋基本情况",
+    "en": "Basic situation of China's oceans"
+  },
+  "1-3-1-1": {
+    "cn": "地图与地理信息技术",
+    "en": "Map and Geographic Information Technology"
+  },
+  "1-3-1-1-0": {
+    "cn": "遥感技术",
+    "en": "Remote Sensing Technology"
+  },
+  "1-3-1-1-0-0": {
+    "cn": "遥感影像的应用",
+    "en": "Application of Remote Sensing Images"
+  },
+  "1-3-1-1-0-1": {
+    "cn": "遥感的工作原理及遥感图像判读",
+    "en": "The working principle of remote sensing and interpretation of remote sensing images"
+  },
+  "1-3-1-1-1": {
+    "cn": "地图",
+    "en": "Map"
+  },
+  "1-3-1-1-1-0": {
+    "cn": "电子地图",
+    "en": "Electronic Map"
+  },
+  "1-3-1-1-1-1": {
+    "cn": "地图的三要素",
+    "en": "Three Elements of a Map"
+  },
+  "1-3-1-1-1-2": {
+    "cn": "遥感影像地图",
+    "en": "Remote Sensing Image Map"
+  },
+  "1-3-1-1-1-3": {
+    "cn": "地形图",
+    "en": "Topographic Map"
+  },
+  "1-3-1-1-1-4": {
+    "cn": "地图的应用",
+    "en": "Map Application"
+  },
+  "1-3-1-1-1-5": {
+    "cn": "不同地图投影的地图特点和用途",
+    "en": "Map features and uses for different map projections"
+  },
+  "1-3-1-1-2": {
+    "cn": "地理信息系统",
+    "en": "Geographic Information System"
+  },
+  "1-3-1-1-2-0": {
+    "cn": "地理信息系统在生活中的应用",
+    "en": "Application of Geographic Information System in Life"
+  },
+  "1-3-1-1-2-1": {
+    "cn": "地理信息系统的功能",
+    "en": "Geographic Information System Features"
+  },
+  "1-3-1-1-3": {
+    "cn": "3S技术的综合运用",
+    "en": "Comprehensive use of 3S technology"
+  },
+  "1-3-1-1-3-0": {
+    "cn": "地质灾害检测系统",
+    "en": "Geological Hazard Detection System"
+  },
+  "1-3-1-1-3-1": {
+    "cn": "数字地球",
+    "en": "Digital Earth"
+  },
+  "1-3-1-1-4": {
+    "cn": "全球定位系统",
+    "en": "Global Positioning System"
+  },
+  "1-3-1-1-4-0": {
+    "cn": "全球定位系统在生活中的应用",
+    "en": "Global Positioning System in Life"
+  },
+  "1-3-1-1-4-1": {
+    "cn": "全体定位系统的组成",
+    "en": "Composition of the whole positioning system"
+  },
+  "1-3-1-2": {
+    "cn": "自然灾害",
+    "en": "Natural disaster"
+  },
+  "1-3-1-2-0": {
+    "cn": "地质灾害",
+    "en": "Geological Hazard"
+  },
+  "1-3-1-2-0-0": {
+    "cn": "地质灾害的定义",
+    "en": "Definition of Geological Hazard"
+  },
+  "1-3-1-2-0-1": {
+    "cn": "地震",
+    "en": "Earthquake"
+  },
+  "1-3-1-2-0-2": {
+    "cn": "泥石流和滑坡",
+    "en": "Landslides and landslides"
+  },
+  "1-3-1-2-0-3": {
+    "cn": "地质灾害防治",
+    "en": "Prevention of geological disasters"
+  },
+  "1-3-1-2-1": {
+    "cn": "海洋灾害",
+    "en": "Marine Disaster"
+  },
+  "1-3-1-2-1-0": {
+    "cn": "海啸",
+    "en": "Tsunami"
+  },
+  "1-3-1-2-1-1": {
+    "cn": "灾害性海浪及风暴潮",
+    "en": "Disastrous waves and storm surges"
+  },
+  "1-3-1-2-1-2": {
+    "cn": "厄尔尼诺现象和拉尼娜现象",
+    "en": "El Niño and La Niña"
+  },
+  "1-3-1-2-1-3": {
+    "cn": "赤潮",
+    "en": "Red Tide"
+  },
+  "1-3-1-2-1-4": {
+    "cn": "主要海洋灾害类型",
+    "en": "Major marine disaster types"
+  },
+  "1-3-1-2-2": {
+    "cn": "生物灾害",
+    "en": "Biohazard"
+  },
+  "1-3-1-2-2-0": {
+    "cn": "害虫防治办法",
+    "en": "Pest Control Measures"
+  },
+  "1-3-1-2-2-1": {
+    "cn": "虫害",
+    "en": "Pest"
+  },
+  "1-3-1-2-2-2": {
+    "cn": "鼠害",
+    "en": "Rat"
+  },
+  "1-3-1-2-2-3": {
+    "cn": "中国最主要的农业害虫",
+    "en": "China's leading agricultural pest"
+  },
+  "1-3-1-2-3": {
+    "cn": "自然灾害的地域差异",
+    "en": "Regional differences in natural disasters"
+  },
+  "1-3-1-2-3-0": {
+    "cn": "中国自然灾害危害程度的地域差异",
+    "en": "Regional differences in the extent of natural disasters in China"
+  },
+  "1-3-1-2-3-1": {
+    "cn": "世界主要自然灾害带",
+    "en": "World's Major Natural Disaster Belt"
+  },
+  "1-3-1-2-3-2": {
+    "cn": "自然灾害的特点",
+    "en": "Characteristics of a natural disaster"
+  },
+  "1-3-1-2-3-3": {
+    "cn": "中国六个自然灾害分区",
+    "en": "Six Natural Disaster Zones in China"
+  },
+  "1-3-1-2-4": {
+    "cn": "气象灾害",
+    "en": "Meteorological disaster"
+  },
+  "1-3-1-2-4-0": {
+    "cn": "台风",
+    "en": "Typhoon"
+  },
+  "1-3-1-2-4-1": {
+    "cn": "洪涝",
+    "en": "Flood"
+  },
+  "1-3-1-2-4-2": {
+    "cn": "旱灾",
+    "en": "Drought"
+  },
+  "1-3-1-2-4-3": {
+    "cn": "寒潮",
+    "en": "Cold Tide"
+  },
+  "1-3-1-2-4-4": {
+    "cn": "雷电",
+    "en": "Thunderbolt"
+  },
+  "1-3-1-3": {
+    "cn": "生态破坏与环境问题",
+    "en": "Ecological destruction and environmental issues"
+  },
+  "1-3-1-3-0": {
+    "cn": "环境污染问题",
+    "en": "Environmental pollution problems"
+  },
+  "1-3-1-3-0-0": {
+    "cn": "光化学烟雾",
+    "en": "Photochemical smog"
+  },
+  "1-3-1-3-0-1": {
+    "cn": "固体废弃物",
+    "en": "Solid Waste"
+  },
+  "1-3-1-3-0-2": {
+    "cn": "土壤污染",
+    "en": "Soil pollution"
+  },
+  "1-3-1-3-0-3": {
+    "cn": "大气污染",
+    "en": "Air pollution"
+  },
+  "1-3-1-3-0-4": {
+    "cn": "臭氧层破坏",
+    "en": "Ozone Destruction"
+  },
+  "1-3-1-3-0-5": {
+    "cn": "酸雨污染",
+    "en": "Acid rain pollution"
+  },
+  "1-3-1-3-0-6": {
+    "cn": "水污染",
+    "en": "Water pollution"
+  },
+  "1-3-1-3-1": {
+    "cn": "人类与环境的关系",
+    "en": "Relationship between human and environment"
+  },
+  "1-3-1-3-1-0": {
+    "cn": "环境问题及其产生的主要原因",
+    "en": "Environmental issues and their main causes"
+  },
+  "1-3-1-3-1-1": {
+    "cn": "人类与环境关系的发展阶段",
+    "en": "Development stages of the relationship between humans and the environment"
+  },
+  "1-3-1-3-1-2": {
+    "cn": "形成正确的环境伦理观",
+    "en": "Forming a correct environmental ethics"
+  },
+  "1-3-1-3-2": {
+    "cn": "环境管理",
+    "en": "Environmental Management"
+  },
+  "1-3-1-3-2-0": {
+    "cn": "全球环境管理的国际行动",
+    "en": "International Action on Global Environmental Management"
+  },
+  "1-3-1-3-2-1": {
+    "cn": "绿色生活方式",
+    "en": "Green Lifestyle"
+  },
+  "1-3-1-3-2-2": {
+    "cn": "全球环境管理组织",
+    "en": "Global Environmental Management Organization"
+  },
+  "1-3-1-3-2-3": {
+    "cn": "环境管理的基本内容",
+    "en": "Basic Content of Environmental Management"
+  },
+  "1-3-1-3-2-4": {
+    "cn": "绿色学校",
+    "en": "Green School"
+  },
+  "1-3-1-3-2-5": {
+    "cn": "环境管理的手段",
+    "en": "Means of Environmental Management"
+  },
+  "1-3-1-3-2-6": {
+    "cn": "环境保护中个人的态度和准则",
+    "en": "Personal Attitudes and Guidelines in Environmental Protection"
+  },
+  "1-3-1-3-2-7": {
+    "cn": "绿色社区",
+    "en": "Green Community"
+  },
+  "1-3-1-3-3": {
+    "cn": "生态破坏问题",
+    "en": "Ecological destruction"
+  },
+  "1-3-1-3-3-0": {
+    "cn": "生物物种锐减",
+    "en": "Drop in biological species"
+  },
+  "1-3-1-3-3-1": {
+    "cn": "水土流失",
+    "en": "Erosion"
+  },
+  "1-3-1-3-3-2": {
+    "cn": "次生盐碱化",
+    "en": "Secondary Salinization"
+  },
+  "1-3-1-3-3-3": {
+    "cn": "土地荒漠化",
+    "en": "Land Desertification"
+  },
+  "1-3-1-3-3-4": {
+    "cn": "湿地破坏及其原因",
+    "en": "Wetland destruction and its causes"
+  },
+  "1-3-1-3-3-5": {
+    "cn": "森林面积减少",
+    "en": "Decrease in forest area"
+  },
+  "1-3-1-3-4": {
+    "cn": "全球气候变化",
+    "en": "Global Climate Change"
+  },
+  "1-3-1-3-4-0": {
+    "cn": "全球气候变化对生态坏境的影响",
+    "en": "The impact of global climate change on the ecological environment"
+  },
+  "1-3-1-3-4-1": {
+    "cn": "全球气候变化对社会发展的影响",
+    "en": "The impact of global climate change on social development"
+  },
+  "1-3-2": {
+    "cn": "地球系统",
+    "en": "Earth System"
+  },
+  "1-3-2-0": {
+    "cn": "地球的圈层结构",
+    "en": "Spherical Structure of the Earth"
+  },
+  "1-3-2-0-0": {
+    "cn": "地球的外部圈层",
+    "en": "The outer circle of the earth"
+  },
+  "1-3-2-0-0-0": {
+    "cn": "水圈",
+    "en": "Water circle"
+  },
+  "1-3-2-0-0-1": {
+    "cn": "大气圈",
+    "en": "Atmospheric"
+  },
+  "1-3-2-0-0-2": {
+    "cn": "生物圈",
+    "en": "Biosphere"
+  },
+  "1-3-2-0-0-3": {
+    "cn": "岩石圈",
+    "en": "Lithosphere"
+  },
+  "1-3-2-0-1": {
+    "cn": "地球的内部圈层",
+    "en": "The inner circle of the earth"
+  },
+  "1-3-2-0-1-0": {
+    "cn": "地壳",
+    "en": "Crust"
+  },
+  "1-3-2-0-1-1": {
+    "cn": "地核",
+    "en": "Ground Core"
+  },
+  "1-3-2-0-1-2": {
+    "cn": "地幔",
+    "en": "Mantle"
+  },
+  "1-3-2-1": {
+    "cn": "天气和气候",
+    "en": "Weather and Climate"
+  },
+  "1-3-2-1-0": {
+    "cn": "天气",
+    "en": "Weather"
+  },
+  "1-3-2-1-1": {
+    "cn": "大气热状况",
+    "en": "Atmospheric Thermal State"
+  },
+  "1-3-2-1-2": {
+    "cn": "大气运动",
+    "en": "Atmospheric Motion"
+  },
+  "1-3-2-1-2-0": {
+    "cn": "风的形成",
+    "en": "The formation of wind"
+  },
+  "1-3-2-1-2-1": {
+    "cn": "热力环流",
+    "en": "Thermal circulation"
+  },
+  "1-3-2-1-2-2": {
+    "cn": "三圈环流",
+    "en": "Three Circles"
+  },
+  "1-3-2-1-2-3": {
+    "cn": "季风环流",
+    "en": "Monsoon Circulation"
+  },
+  "1-3-2-1-2-4": {
+    "cn": "气压带与风带",
+    "en": "Barometric and wind zones"
+  },
+  "1-3-2-1-3": {
+    "cn": "气候",
+    "en": "Climate"
+  },
+  "1-3-2-1-4": {
+    "cn": "天气系统",
+    "en": "Weather System"
+  },
+  "1-3-2-1-4-0": {
+    "cn": "锋面系统",
+    "en": "Front System"
+  },
+  "1-3-2-1-4-1": {
+    "cn": "气旋与反气旋",
+    "en": "Cyclones and anticyclones"
+  },
+  "1-3-2-1-4-2": {
+    "cn": "气团",
+    "en": "Air mass"
+  },
+  "1-3-2-2": {
+    "cn": "地质运动与地貌演化",
+    "en": "Geological movement and landform evolution"
+  },
+  "1-3-2-2-0": {
+    "cn": "造成地表形态变化的外力作用",
+    "en": "External forces that cause changes in landform"
+  },
+  "1-3-2-2-0-0": {
+    "cn": "风化作用",
+    "en": "Weathering"
+  },
+  "1-3-2-2-0-1": {
+    "cn": "搬运作用",
+    "en": "Handling effect"
+  },
+  "1-3-2-2-0-2": {
+    "cn": "堆积作用",
+    "en": "Stacking effect"
+  },
+  "1-3-2-2-0-3": {
+    "cn": "侵蚀作用",
+    "en": "Erosion"
+  },
+  "1-3-2-2-1": {
+    "cn": "三大岩石及物质循环",
+    "en": "Three Big Rocks and Material Cycle"
+  },
+  "1-3-2-2-1-0": {
+    "cn": "岩浆岩",
+    "en": "Magma Rock"
+  },
+  "1-3-2-2-1-1": {
+    "cn": "变质岩",
+    "en": "Metamorphic Rock"
+  },
+  "1-3-2-2-1-2": {
+    "cn": "沉积岩",
+    "en": "Sedimentary Rock"
+  },
+  "1-3-2-2-1-3": {
+    "cn": "岩石圈的物质循环",
+    "en": "Lithosphere Material Cycle"
+  },
+  "1-3-2-2-2": {
+    "cn": "地表形态",
+    "en": "Topography"
+  },
+  "1-3-2-2-2-0": {
+    "cn": "丘陵",
+    "en": "Hills"
+  },
+  "1-3-2-2-2-1": {
+    "cn": "盆地",
+    "en": "Basin"
+  },
+  "1-3-2-2-2-2": {
+    "cn": "山地",
+    "en": "Mountain"
+  },
+  "1-3-2-2-2-3": {
+    "cn": "平原",
+    "en": "Plain"
+  },
+  "1-3-2-2-2-4": {
+    "cn": "高原",
+    "en": "Highland"
+  },
+  "1-3-2-2-3": {
+    "cn": "常见地貌类型",
+    "en": "Common landform types"
+  },
+  "1-3-2-2-3-0": {
+    "cn": "冰川地貌",
+    "en": "Glacier Landforms"
+  },
+  "1-3-2-2-3-1": {
+    "cn": "黄土地貌",
+    "en": "Landscape"
+  },
+  "1-3-2-2-3-2": {
+    "cn": "海岸地貌",
+    "en": "Coastal Landforms"
+  },
+  "1-3-2-2-3-3": {
+    "cn": "风沙地貌",
+    "en": "Aeolian Landform"
+  },
+  "1-3-2-2-3-4": {
+    "cn": "河流地貌",
+    "en": "River Landforms"
+  },
+  "1-3-2-2-3-5": {
+    "cn": "喀斯特地貌",
+    "en": "Karst Landforms"
+  },
+  "1-3-2-2-4": {
+    "cn": "造成地表形态变化的内力作用",
+    "en": "Internal force that causes surface morphological changes"
+  },
+  "1-3-2-2-4-0": {
+    "cn": "地壳运动",
+    "en": "Crust Movement"
+  },
+  "1-3-2-2-4-1": {
+    "cn": "岩浆活动",
+    "en": "Magma activity"
+  },
+  "1-3-2-2-4-2": {
+    "cn": "变质作用",
+    "en": "Metamorphism"
+  },
+  "1-3-2-3": {
+    "cn": "地球表面的水",
+    "en": "Water on the surface of the earth"
+  },
+  "1-3-2-3-0": {
+    "cn": "水循环",
+    "en": "Water cycle"
+  },
+  "1-3-2-3-1": {
+    "cn": "洋流",
+    "en": "Ocean Current"
+  },
+  "1-3-2-3-1-0": {
+    "cn": "风海流、密度流和补偿流",
+    "en": "Wind current, density current, and compensation current"
+  },
+  "1-3-2-3-1-1": {
+    "cn": "暖流和寒流",
+    "en": "Warm and Cold Currents"
+  },
+  "1-3-2-3-1-2": {
+    "cn": "洋流对地理环境的影响",
+    "en": "Effects of ocean currents on geographical environment"
+  },
+  "1-3-2-3-2": {
+    "cn": "河流",
+    "en": "River"
+  },
+  "1-3-2-3-3": {
+    "cn": "海洋及海岸",
+    "en": "Ocean and Coast"
+  },
+  "1-3-2-3-3-0": {
+    "cn": "四大洋",
+    "en": "Four Oceans"
+  },
+  "1-3-2-3-3-1": {
+    "cn": "海岸地貌",
+    "en": "Coastal Landforms"
+  },
+  "1-3-2-3-3-2": {
+    "cn": "波浪",
+    "en": "wave"
+  },
+  "1-3-2-3-3-3": {
+    "cn": "潮汐",
+    "en": "Tide"
+  },
+  "1-3-2-3-4": {
+    "cn": "地表水体类型与分布",
+    "en": "Surface water types and distribution"
+  },
+  "1-4": {
+    "cn": "能力与发展",
+    "en": "Capabilities and Development"
+  },
+  "1-4-0": {
+    "cn": "科学决策的过程与方法",
+    "en": "The Process and Method of Scientific Decision"
+  },
+  "1-4-0-0": {
+    "cn": "决策的分类",
+    "en": "Classification of Decisions"
+  },
+  "1-4-0-1": {
+    "cn": "决策能力与影响因素",
+    "en": "Decision making and influencing factors"
+  },
+  "1-4-0-2": {
+    "cn": "科学决策的公众参与",
+    "en": "Public participation in scientific decision-making"
+  },
+  "1-4-0-3": {
+    "cn": "科学决策",
+    "en": "Scientific Decision"
+  },
+  "1-4-0-3-0": {
+    "cn": "决策方法与技术",
+    "en": "Decision making methods and techniques"
+  },
+  "1-4-0-3-0-0": {
+    "cn": "决策问题的性质",
+    "en": "The nature of the decision problem"
+  },
+  "1-4-0-3-0-1": {
+    "cn": "头脑风暴法",
+    "en": "Brainstorming"
+  },
+  "1-4-0-3-0-2": {
+    "cn": "自身因素",
+    "en": "self factor"
+  },
+  "1-4-0-3-0-3": {
+    "cn": "环境因素",
+    "en": "Environmental factors"
+  },
+  "1-4-0-3-0-4": {
+    "cn": "名义小组技术",
+    "en": "Nominal Group Technology"
+  },
+  "1-4-0-3-0-5": {
+    "cn": "决策主体的因素",
+    "en": "Factors of the decision-maker"
+  },
+  "1-4-0-3-0-6": {
+    "cn": "德尔菲技术",
+    "en": "Delphi Technology"
+  },
+  "1-4-0-3-1": {
+    "cn": "科学的决策程序",
+    "en": "Scientific decision-making process"
+  },
+  "1-4-0-3-1-0": {
+    "cn": "决策方案的实施、监督与反馈",
+    "en": "Implementation, Supervision and Feedback of Decisions"
+  },
+  "1-4-0-3-1-1": {
+    "cn": "对风险的预测分析与防范",
+    "en": "Predictive Analysis and Prevention of Risks"
+  },
+  "1-4-0-3-1-2": {
+    "cn": "分析各种条件和拟制决策方案",
+    "en": "Analyze conditions and make decisions"
+  },
+  "1-4-0-3-1-3": {
+    "cn": "发现和分析问题并确立决策目标",
+    "en": "Identify and analyze problems and set decision goals"
+  },
+  "1-4-0-3-1-4": {
+    "cn": "对方案的综合评估和抉择",
+    "en": "Comprehensive evaluation and selection of options"
+  },
+  "1-4-0-3-2": {
+    "cn": "决策科学化",
+    "en": "Scientific decision"
+  },
+  "1-4-1": {
+    "cn": "科学研究的过程与重要环节",
+    "en": "The Process and Important Links of Scientific Research"
+  },
+  "1-4-1-0": {
+    "cn": "形成科学解释",
+    "en": "Form a scientific explanation"
+  },
+  "1-4-1-0-0": {
+    "cn": "利用数学和计算机思考",
+    "en": "Thinking with Mathematics and Computers"
+  },
+  "1-4-1-0-1": {
+    "cn": "分析资料与数据",
+    "en": "Analytical Data and Data"
+  },
+  "1-4-1-0-2": {
+    "cn": "使用与发展理论模型",
+    "en": "Usage and Development Model"
+  },
+  "1-4-1-1": {
+    "cn": "科学研究的一般过程",
+    "en": "General Process of Scientific Research"
+  },
+  "1-4-1-2": {
+    "cn": "提出科学问题",
+    "en": "Ask a Scientific Question"
+  },
+  "1-4-1-2-0": {
+    "cn": "科学问题及其结构",
+    "en": "Scientific Issues and Structure"
+  },
+  "1-4-1-2-1": {
+    "cn": "科学问题的分类与来源",
+    "en": "Classification and Source of Scientific Issues"
+  },
+  "1-4-1-2-2": {
+    "cn": "科学始于问题",
+    "en": "Science begins with a problem"
+  },
+  "1-4-1-3": {
+    "cn": "评价和交流科学解释",
+    "en": "Evaluation and Communication Scientific Interpretation"
+  },
+  "1-4-1-4": {
+    "cn": "收集证据和数据",
+    "en": "Collect evidence and data"
+  },
+  "1-4-1-4-0": {
+    "cn": "进行科学实验得到现象与数据",
+    "en": "Phenomena and data from scientific experiments"
+  },
+  "1-4-1-4-1": {
+    "cn": "根据已有资料证据做出假设",
+    "en": "Make assumptions based on available evidence"
+  },
+  "1-4-2": {
+    "cn": "技术设计的过程与重要环节",
+    "en": "The process and important aspects of technical design"
+  },
+  "1-4-2-0": {
+    "cn": "优化技术方案",
+    "en": "Optimize the technical solution"
+  },
+  "1-4-2-1": {
+    "cn": "技术设计的一般过程",
+    "en": "General process of technical design"
+  },
+  "1-4-2-2": {
+    "cn": "界定和限定技术问题",
+    "en": "Define and qualify technical issues"
+  },
+  "1-4-2-2-0": {
+    "cn": "技术的分类",
+    "en": "Classification of Technology"
+  },
+  "1-4-2-2-1": {
+    "cn": "需求分析",
+    "en": "Requirements Analysis"
+  },
+  "1-4-2-2-2": {
+    "cn": "技术问题的界定",
+    "en": "Definition of technical issues"
+  },
+  "1-4-2-3": {
+    "cn": "技术产品的使用和维护",
+    "en": "Use and maintenance of technology products"
+  },
+  "1-4-2-4": {
+    "cn": "提出技术上潜在的解决方案",
+    "en": "Propose a technically potential solution"
+  },
+  "1-4-2-4-0": {
+    "cn": "了解产品的流程和材料",
+    "en": "Understand the process and materials of the product"
+  },
+  "1-4-2-4-1": {
+    "cn": "方案的评估",
+    "en": "Evaluation of the scheme"
+  },
+  "1-4-2-4-2": {
+    "cn": "构建设计模型",
+    "en": "Build Design Model"
+  },
+  "1-4-3": {
+    "cn": "工程实施的过程与重要环节",
+    "en": "Process and important aspects of project implementation"
+  },
+  "1-4-3-0": {
+    "cn": "工程建设",
+    "en": "Engineering Construction"
+  },
+  "1-4-3-0-0": {
+    "cn": "施工过程",
+    "en": "Construction process"
+  },
+  "1-4-3-0-1": {
+    "cn": "工程项目的分类",
+    "en": "Classification of Engineering Projects"
+  },
+  "1-4-3-0-2": {
+    "cn": "施工项目管理",
+    "en": "Construction Project Management"
+  },
+  "1-4-3-1": {
+    "cn": "工程立项与方案设计",
+    "en": "Engineering Projects and Scheme Design"
+  },
+  "1-4-3-2": {
+    "cn": "工程实施的一般工程",
+    "en": "General project implementation"
+  },
+  "1-4-3-3": {
+    "cn": "工程竣工验收",
+    "en": "Project Completion Acceptance"
+  },
+  "1-4-4": {
+    "cn": "能力",
+    "en": "Ability"
+  },
+  "1-4-4-0": {
+    "cn": "发展能力",
+    "en": "Development"
+  },
+  "1-4-4-0-0": {
+    "cn": "获取、辨别和利用信息的能力",
+    "en": "The ability to acquire, identify, and use information"
+  },
+  "1-4-4-0-1": {
+    "cn": "认知与抉择的能力",
+    "en": "Ability to recognize and make decisions"
+  },
+  "1-4-4-0-2": {
+    "cn": "情绪管理与团队协作的能力",
+    "en": "Ability for emotional management and teamwork"
+  },
+  "1-4-4-1": {
+    "cn": "科学方法维度的内涵分类",
+    "en": "Connotative Classification of Scientific Method Dimensions"
+  },
+  "1-4-4-2": {
+    "cn": "科学价值观",
+    "en": "Scientific Values"
+  },
+  "1-4-4-2-0": {
+    "cn": "价值实现的途径",
+    "en": "Path to Value"
+  },
+  "1-4-4-2-1": {
+    "cn": "价值目标的选择",
+    "en": "Selection of Value Goals"
+  },
+  "1-4-4-2-2": {
+    "cn": "科学文化",
+    "en": "Science and Culture"
+  },
+  "1-4-4-3": {
+    "cn": "科学能力及构成",
+    "en": "Scientific Competence and Composition"
+  },
+  "1-4-4-3-0": {
+    "cn": "科学生活能力",
+    "en": "Ability for Scientific Living"
+  },
+  "1-4-4-3-1": {
+    "cn": "科学劳动能力",
+    "en": "Scientific Work Capability"
+  },
+  "1-4-4-3-2": {
+    "cn": "参与公众事务的能力",
+    "en": "Ability to participate in public affairs"
+  },
+  "1-4-4-4": {
+    "cn": "科学的分类与维度",
+    "en": "Classification and Dimensions of Science"
+  },
+  "1-4-4-4-0": {
+    "cn": "科学素质的维度",
+    "en": "Dimensions of Scientific Quality"
+  },
+  "1-4-4-4-0-0": {
+    "cn": "专门研究法",
+    "en": "Special Studies"
+  },
+  "1-4-4-4-0-1": {
+    "cn": "哲学方法",
+    "en": "Philosophical Method"
+  },
+  "1-4-4-4-0-2": {
+    "cn": "一般研究法",
+    "en": "General Research Method"
+  },
+  "1-4-4-4-1": {
+    "cn": "科学知识的维度",
+    "en": "Dimensions of Scientific Knowledge"
+  },
+  "1-4-4-4-2": {
+    "cn": "科学的分类",
+    "en": "Scientific Classification"
+  },
+  "1-5": {
+    "cn": "数学与信息",
+    "en": "Mathematics and Information"
+  },
+  "1-5-0": {
+    "cn": "计算与信息",
+    "en": "Calculations and Information"
+  },
+  "1-5-0-0": {
+    "cn": "计算机",
+    "en": "Computer"
+  },
+  "1-5-0-0-0": {
+    "cn": "计算机的分类",
+    "en": "Classification of Computers"
+  },
+  "1-5-0-0-0-0": {
+    "cn": "网络计算机",
+    "en": "Network Computer"
+  },
+  "1-5-0-0-0-1": {
+    "cn": "嵌入式计算机",
+    "en": "Embedded Computer"
+  },
+  "1-5-0-0-0-2": {
+    "cn": "个人计算机",
+    "en": "Personal Computer"
+  },
+  "1-5-0-0-0-3": {
+    "cn": "超级计算机",
+    "en": "Supercomputer"
+  },
+  "1-5-0-0-1": {
+    "cn": "硬件系统与软件系统",
+    "en": "Hardware and software systems"
+  },
+  "1-5-0-0-2": {
+    "cn": "二进制",
+    "en": "Binary"
+  },
+  "1-5-0-1": {
+    "cn": "程序语言和算法",
+    "en": "Programming languages ​​and algorithms"
+  },
+  "1-5-0-2": {
+    "cn": "互联网",
+    "en": "Internet"
+  },
+  "1-5-0-3": {
+    "cn": "大数据时代",
+    "en": "The era of big data"
+  },
+  "1-5-0-3-0": {
+    "cn": "云计算",
+    "en": "Cloud Computing"
+  },
+  "1-5-0-3-1": {
+    "cn": "数据分析与挖据",
+    "en": "Data Analysis and Data Mining"
+  },
+  "1-5-0-3-2": {
+    "cn": "大数据",
+    "en": "Big Data"
+  },
+  "1-5-0-4": {
+    "cn": "数值分析",
+    "en": "Numerical Analysis"
+  },
+  "1-5-0-5": {
+    "cn": "人机交互",
+    "en": "Human-Computer Interaction"
+  },
+  "1-5-1": {
+    "cn": "不确定性",
+    "en": "Uncertainty"
+  },
+  "1-5-1-0": {
+    "cn": "数理统计",
+    "en": "Mathematical Statistics"
+  },
+  "1-5-1-1": {
+    "cn": "运筹学",
+    "en": "Operations Research"
+  },
+  "1-5-1-2": {
+    "cn": "概率统计",
+    "en": "Probability Statistics"
+  },
+  "1-5-1-3": {
+    "cn": "概率分布",
+    "en": "Probability Distribution"
+  },
+  "1-5-1-4": {
+    "cn": "排列与组合",
+    "en": "Permutations and Combinations"
+  },
+  "1-5-2": {
+    "cn": "恒定与变化",
+    "en": "Constant and Variable"
+  },
+  "1-5-2-0": {
+    "cn": "微积分",
+    "en": "Calculus"
+  },
+  "1-5-2-1": {
+    "cn": "数列",
+    "en": "Number"
+  },
+  "1-5-2-2": {
+    "cn": "方程",
+    "en": "Equation"
+  },
+  "1-5-2-3": {
+    "cn": "不等式",
+    "en": "Inequality"
+  },
+  "1-5-2-4": {
+    "cn": "整式",
+    "en": "Integer"
+  },
+  "1-5-2-5": {
+    "cn": "函数",
+    "en": "Function"
+  },
+  "1-5-2-5-0": {
+    "cn": "幂函数",
+    "en": "Power Function"
+  },
+  "1-5-2-5-1": {
+    "cn": "对数函数",
+    "en": "Logarithmic function"
+  },
+  "1-5-2-5-2": {
+    "cn": "一次函数",
+    "en": "One-time function"
+  },
+  "1-5-2-5-3": {
+    "cn": "正比例函数和反比例函数",
+    "en": "Proportional and inverse proportional functions"
+  },
+  "1-5-2-5-4": {
+    "cn": "三角函数",
+    "en": "Trigonometric Function"
+  },
+  "1-5-2-5-5": {
+    "cn": "指数函数",
+    "en": "Exponential Function"
+  },
+  "1-5-2-5-6": {
+    "cn": "二次函数",
+    "en": "Quadratic Function"
+  },
+  "1-5-3": {
+    "cn": "符号与推理",
+    "en": "Symbols and Reasoning"
+  },
+  "1-5-3-0": {
+    "cn": "推理",
+    "en": "Inference"
+  },
+  "1-5-3-1": {
+    "cn": "集合",
+    "en": "Collection"
+  },
+  "1-5-3-2": {
+    "cn": "证明方法",
+    "en": "Proof Method"
+  },
+  "1-5-3-2-0": {
+    "cn": "直接法",
+    "en": "Direct method"
+  },
+  "1-5-3-2-1": {
+    "cn": "间接法",
+    "en": "Indirect method"
+  },
+  "1-5-3-2-2": {
+    "cn": "数学归纳法",
+    "en": "Mathematical Induction"
+  },
+  "1-5-3-3": {
+    "cn": "常用逻辑用语",
+    "en": "Common Logical Terms"
+  },
+  "1-5-4": {
+    "cn": "数与形",
+    "en": "Number and Shape"
+  },
+  "1-5-4-0": {
+    "cn": "平面解析几何初步",
+    "en": "Preliminary Analytic Geometry"
+  },
+  "1-5-4-1": {
+    "cn": "数与数之间的关系",
+    "en": "Relationship between numbers"
+  },
+  "1-5-4-2": {
+    "cn": "生活中的数与形",
+    "en": "Numbers and shapes in life"
+  },
+  "1-5-4-3": {
+    "cn": "立体几何",
+    "en": "Solid Geometry"
+  },
+  "1-5-4-4": {
+    "cn": "平面几何",
+    "en": "Plane Geometry"
+  },
+  "1-5-4-4-0": {
+    "cn": "对称",
+    "en": "Symmetric"
+  },
+  "1-5-4-4-1": {
+    "cn": "直线",
+    "en": "Straight"
+  },
+  "1-5-4-4-2": {
+    "cn": "四边形",
+    "en": "Quadrangle"
+  },
+  "1-5-4-4-3": {
+    "cn": "三角形",
+    "en": "Triangle"
+  },
+  "1-5-4-4-4": {
+    "cn": "圆形",
+    "en": "Circle"
+  },
+  "1-5-4-4-5": {
+    "cn": "角",
+    "en": "corner"
+  },
+  "1-5-4-5": {
+    "cn": "数学中最常见的四个重要常数",
+    "en": "Four most important constants in mathematics"
+  },
+  "1-5-4-6": {
+    "cn": "数字记号及其发展的历史",
+    "en": "Numbers and the History of Their Development"
+  },
+  "1-6": {
+    "cn": "工程与技术",
+    "en": "Engineering and Technology"
+  },
+  "1-6-0": {
+    "cn": "现代制造技术",
+    "en": "Modern Manufacturing Technology"
+  },
+  "1-6-0-0": {
+    "cn": "超算技术",
+    "en": "Supercomputing Technology"
+  },
+  "1-6-0-1": {
+    "cn": "0仿生技术",
+    "en": "0 Bionics"
+  },
+  "1-6-0-2": {
+    "cn": "移动通信",
+    "en": "Mobile Communications"
+  },
+  "1-6-0-3": {
+    "cn": "移动智能终端",
+    "en": "Mobile Smart Terminal"
+  },
+  "1-6-0-4": {
+    "cn": "特高压输电技术",
+    "en": "UHV Transmission Technology"
+  },
+  "1-6-0-5": {
+    "cn": "卫星导航技术",
+    "en": "Satellite Navigation Technology"
+  },
+  "1-6-0-6": {
+    "cn": "新材料",
+    "en": "New Material"
+  },
+  "1-6-0-7": {
+    "cn": "传感技术",
+    "en": "Sensor Technology"
+  },
+  "1-6-0-8": {
+    "cn": "微电子技术",
+    "en": "Microelectronics"
+  },
+  "1-6-0-9": {
+    "cn": "先进制造技术",
+    "en": "Advanced Manufacturing Technology"
+  },
+  "1-6-1": {
+    "cn": "前沿高新技术",
+    "en": "Front-end high technology"
+  },
+  "1-6-1-0": {
+    "cn": "人工智能",
+    "en": "Artificial Intelligence"
+  },
+  "1-6-1-1": {
+    "cn": "3D打印技术",
+    "en": "3D Printing Technology"
+  },
+  "1-6-1-2": {
+    "cn": "转基因技术",
+    "en": "GMO"
+  },
+  "1-6-1-3": {
+    "cn": "海洋资源开发",
+    "en": "Marine Resources Development"
+  },
+  "1-6-1-4": {
+    "cn": "超导技术",
+    "en": "Superconducting Technology"
+  },
+  "1-6-1-5": {
+    "cn": "0生物制药技术",
+    "en": "0 Biopharmaceutical Technology"
+  },
+  "1-6-1-6": {
+    "cn": "大数据与云计算",
+    "en": "Big Data and Cloud Computing"
+  },
+  "1-6-1-7": {
+    "cn": "清洁能源",
+    "en": "Clean Energy"
+  },
+  "1-6-1-8": {
+    "cn": "量子计算",
+    "en": "Quantum Computing"
+  },
+  "1-6-1-9": {
+    "cn": "虚拟现实技术",
+    "en": "Virtual Reality"
+  },
+  "1-6-2": {
+    "cn": "大兴科技工程",
+    "en": "Daxing Technology Engineering"
+  },
+  "1-6-2-0": {
+    "cn": "“人类基因组计划”",
+    "en": "Human Genome Project"
+  },
+  "1-6-2-1": {
+    "cn": "智慧城市",
+    "en": "Smart City"
+  },
+  "1-6-2-2": {
+    "cn": "探月工程",
+    "en": "Lunar Exploration Project"
+  },
+  "1-6-2-3": {
+    "cn": "南水北调工程",
+    "en": "South-to-North Water Transfer Project"
+  },
+  "1-6-2-4": {
+    "cn": "三峡工程",
+    "en": "Three Gorges Project"
+  },
+  "1-6-2-5": {
+    "cn": "中国载人航天工程",
+    "en": "China's Manned Spaceflight Engineering"
+  },
+  "1-6-2-6": {
+    "cn": "智能电网",
+    "en": "Smart Grid"
+  },
+  "1-6-2-7": {
+    "cn": "跨海工程",
+    "en": "Cross-sea Engineering"
+  },
+  "1-6-2-8": {
+    "cn": "大飞机",
+    "en": "Big Plane"
+  },
+  "1-6-2-9": {
+    "cn": "0高速铁路",
+    "en": "0 High Speed ​​Rail"
+  },
+  "1-6-3": {
+    "cn": "民生科技热点",
+    "en": "Minsheng Technology Hotspot"
+  },
+  "1-6-3-0": {
+    "cn": "雾霾治理",
+    "en": "Haze Management"
+  },
+  "1-6-3-1": {
+    "cn": "新能源汽车",
+    "en": "New Energy Vehicle"
+  },
+  "1-6-3-2": {
+    "cn": "毒品检测技术",
+    "en": "Drug Detection Technology"
+  },
+  "1-6-3-3": {
+    "cn": "核电站",
+    "en": "Nuclear power plant"
+  },
+  "1-6-3-4": {
+    "cn": "污水处理技术",
+    "en": "Sewage Treatment Technology"
+  },
+  "1-6-3-5": {
+    "cn": "信息安全",
+    "en": "Information Security"
+  },
+  "1-6-3-6": {
+    "cn": "食品添加剂",
+    "en": "Food Additives"
+  },
+  "1-6-3-7": {
+    "cn": "物联网",
+    "en": "Internet of Things"
+  },
+  "1-6-3-8": {
+    "cn": "现代医疗器械",
+    "en": "Modern Medical Devices"
+  },
+  "1-7": {
+    "cn": "科学观念与方法",
+    "en": "Scientific Concepts and Methods"
+  },
+  "1-7-0": {
+    "cn": "科学观念",
+    "en": "Scientific Concept"
+  },
+  "1-7-0-0": {
+    "cn": "信息和熵的观念",
+    "en": "The notion of information and entropy"
+  },
+  "1-7-0-1": {
+    "cn": "能量和演化的观念",
+    "en": "The idea of ​​energy and evolution"
+  },
+  "1-7-0-1-0": {
+    "cn": "演化",
+    "en": "evolution"
+  },
+  "1-7-0-1-1": {
+    "cn": "能量",
+    "en": "Energy"
+  },
+  "1-7-0-2": {
+    "cn": "物质和结构的观念",
+    "en": "The idea of ​​matter and structure"
+  },
+  "1-7-0-2-0": {
+    "cn": "结构",
+    "en": "Structure"
+  },
+  "1-7-0-2-1": {
+    "cn": "物质",
+    "en": "Substance"
+  },
+  "1-7-1": {
+    "cn": "科学理念",
+    "en": "Science Concept"
+  },
+  "1-7-1-0": {
+    "cn": "从自然本身理解自然",
+    "en": "Understand nature from nature itself"
+  },
+  "1-7-1-0-0": {
+    "cn": "自然现象",
+    "en": "Natural phenomenon"
+  },
+  "1-7-1-0-1": {
+    "cn": "超自然解释",
+    "en": "Supernatural Explanation"
+  },
+  "1-7-1-1": {
+    "cn": "基于证据的认识",
+    "en": "Evidence-based recognition"
+  },
+  "1-7-1-1-0": {
+    "cn": "证据支持理论的四个方面",
+    "en": "Evidence supports four aspects of theory"
+  },
+  "1-7-1-1-0-0": {
+    "cn": "精确",
+    "en": "Exact"
+  },
+  "1-7-1-1-0-1": {
+    "cn": "数量",
+    "en": "Quantity"
+  },
+  "1-7-1-1-0-2": {
+    "cn": "种类",
+    "en": "kind"
+  },
+  "1-7-1-1-0-3": {
+    "cn": "大胆",
+    "en": "Bold"
+  },
+  "1-7-1-1-1": {
+    "cn": "证据的重要性",
+    "en": "The importance of evidence"
+  },
+  "1-7-1-2": {
+    "cn": "用科学反对迷信",
+    "en": "Science against superstition"
+  },
+  "1-7-1-2-0": {
+    "cn": "科学和伪科学",
+    "en": "Science and Pseudoscience"
+  },
+  "1-7-1-2-1": {
+    "cn": "边缘科学",
+    "en": "Edge Science"
+  },
+  "1-7-1-2-2": {
+    "cn": "迷信、民俗和娱乐",
+    "en": "Superstition, Folklore, and Entertainment"
+  },
+  "1-7-1-3": {
+    "cn": "理性精神",
+    "en": "Spirit of Reason"
+  },
+  "1-7-1-3-0": {
+    "cn": "科学的探素过程",
+    "en": "Scientific Exploration Process"
+  },
+  "1-7-1-3-1": {
+    "cn": "科学群体的价值与规范",
+    "en": "Values ​​and Norms of the Scientific Community"
+  },
+  "1-7-1-3-2": {
+    "cn": "对自然界的态度",
+    "en": "Attitude towards nature"
+  },
+  "1-7-1-4": {
+    "cn": "因果性和相关性思维",
+    "en": "Causal and Relevant Thinking"
+  },
+  "1-7-1-4-0": {
+    "cn": "规律",
+    "en": "Regular"
+  },
+  "1-7-1-4-1": {
+    "cn": "因果关系和相关性",
+    "en": "Causality and correlation"
+  },
+  "1-7-1-4-1-0": {
+    "cn": "把相关关系当作决策依据",
+    "en": "Use correlations as a basis for decisions"
+  },
+  "1-7-1-4-1-1": {
+    "cn": "小样本错误",
+    "en": "Small sample error"
+  },
+  "1-7-1-4-1-2": {
+    "cn": "把相关关系当作因果关系",
+    "en": "Take correlations as causality"
+  },
+  "1-7-1-4-1-3": {
+    "cn": "胡乱确定因果关系",
+    "en": "Indiscriminate determination of cause and effect"
+  },
+  "1-7-2": {
+    "cn": "科学规范",
+    "en": "Scientific Specification"
+  },
+  "1-7-2-0": {
+    "cn": "科学的本质",
+    "en": "The Nature of Science"
+  },
+  "1-7-2-0-0": {
+    "cn": "可被普遍理解",
+    "en": "Can be generally understood"
+  },
+  "1-7-2-0-1": {
+    "cn": "可检验性",
+    "en": "Verifiability"
+  },
+  "1-7-2-1": {
+    "cn": "科学规范",
+    "en": "Scientific Specification"
+  },
+  "1-7-2-1-0": {
+    "cn": "科学伦理",
+    "en": "Scientific Ethics"
+  },
+  "1-7-2-1-1": {
+    "cn": "科学发现的优先权",
+    "en": "Priority to Scientific Discovery"
+  },
+  "1-7-2-1-2": {
+    "cn": "科学规范",
+    "en": "Scientific Specification"
+  },
+  "1-7-2-1-2-0": {
+    "cn": "有组织的怀疑",
+    "en": "Organized doubt"
+  },
+  "1-7-2-1-2-1": {
+    "cn": "普遍性",
+    "en": "Universal"
+  },
+  "1-7-2-1-2-2": {
+    "cn": "公有性",
+    "en": "Publicity"
+  },
+  "1-7-2-1-2-3": {
+    "cn": "无私利性",
+    "en": "Self-interest"
+  },
+  "1-7-3": {
+    "cn": "科学方法",
+    "en": "Scientific Method"
+  },
+  "1-7-3-0": {
+    "cn": "理想模型和理想实验",
+    "en": "Ideal models and ideal experiments"
+  },
+  "1-7-3-0-0": {
+    "cn": "理想模型",
+    "en": "ideal model"
+  },
+  "1-7-3-0-1": {
+    "cn": "理想实验",
+    "en": "Ideal Experiment"
+  },
+  "1-7-3-1": {
+    "cn": "观察和实验",
+    "en": "Observation and Experiment"
+  },
+  "1-7-3-1-0": {
+    "cn": "实验",
+    "en": "Experiment"
+  },
+  "1-7-3-1-0-0": {
+    "cn": "对照实验",
+    "en": "Control Experiment"
+  },
+  "1-7-3-1-0-1": {
+    "cn": "双盲实验",
+    "en": "Double-blind experiment"
+  },
+  "1-7-3-1-0-2": {
+    "cn": "受控实验",
+    "en": "Controlled Experiment"
+  },
+  "1-7-3-1-1": {
+    "cn": "观察",
+    "en": "Observation"
+  },
+  "1-7-3-1-1-0": {
+    "cn": "定量观察",
+    "en": "Quantitative observation"
+  },
+  "1-7-3-1-1-1": {
+    "cn": "定性观察",
+    "en": "qualitative observation"
+  },
+  "1-7-3-2": {
+    "cn": "分类和测量",
+    "en": "Classification and Measurement"
+  },
+  "1-7-3-2-0": {
+    "cn": "测量",
+    "en": "Measure"
+  },
+  "1-7-3-2-1": {
+    "cn": "分类",
+    "en": "Classification"
+  },
+  "1-7-3-3": {
+    "cn": "推理",
+    "en": "Inference"
+  },
+  "1-7-3-3-0": {
+    "cn": "演绎",
+    "en": "Interpretation"
+  },
+  "1-7-3-3-1": {
+    "cn": "归纳",
+    "en": "Induction"
+  },
+  "1-7-3-3-1-0": {
+    "cn": "常见统计方法",
+    "en": "Common statistical methods"
+  },
+  "1-7-3-3-1-0-0": {
+    "cn": "方差分析（F检验）",
+    "en": "Analysis of variance (F test)"
+  },
+  "1-7-3-3-1-0-1": {
+    "cn": "判别分析",
+    "en": "Discriminant Analysis"
+  },
+  "1-7-3-3-1-0-2": {
+    "cn": "相关分析",
+    "en": "Correlation Analysis"
+  },
+  "1-7-3-3-1-0-3": {
+    "cn": "回归分析",
+    "en": "Regression Analysis"
+  },
+  "1-7-3-3-1-0-4": {
+    "cn": "t检验",
+    "en": "t test"
+  },
+  "1-7-3-3-1-1": {
+    "cn": "统计陷阱",
+    "en": "Statistical Trap"
+  },
+  "1-7-3-3-1-1-0": {
+    "cn": "因果关系的混淆",
+    "en": "Causality Confusion"
+  },
+  "1-7-3-3-1-1-1": {
+    "cn": "统计图表的误用",
+    "en": "Misuse of statistical charts"
+  },
+  "1-7-3-3-1-1-2": {
+    "cn": "遗漏某些重要数据和不匹配的资料",
+    "en": "Missing important data and mismatched information"
+  },
+  "1-7-3-3-1-1-3": {
+    "cn": "抽样方法的偏误",
+    "en": "Bias of sampling method"
+  },
+  "1-7-3-4": {
+    "cn": "探究过程",
+    "en": "Exploration process"
+  }
+}
