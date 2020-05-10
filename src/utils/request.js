@@ -14,6 +14,9 @@ export default {
     delete params.successTip
     delete params.rSymbol
     const optsUrl = opts.url
+    if (window.localStorage.uid) {
+      params.uid = window.localStorage.uid
+    }
     const { token, cancel } = CancelToken.source()
     if (rSymbol) {
       window.GLOBAL.requestSymbols[rSymbol] = cancel

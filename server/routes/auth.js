@@ -11,8 +11,8 @@ router.all('/', (req, res) => {
   let url = req.baseUrl
   const { basePath } = config
   console.log(url)
-  if (url.indexOf('api') > -1) {
-    url = url.split('/api')[1] // eslint-disable-line
+  if (url.indexOf('oauth') > -1) {
+    url = url.split('/oauth')[1] // eslint-disable-line
   }
   url = (typeof basePath === 'string' ? basePath : basePath[hostname]) + url
   const opt = {
@@ -20,8 +20,6 @@ router.all('/', (req, res) => {
     url,
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded',
-      'Authorization': req.body.uid,
-      'Accept': '*/*'
     },
     timeout: 40e3,
     json: true,
@@ -29,9 +27,7 @@ router.all('/', (req, res) => {
       maxSockets: Infinity,
     },
   }
-  if (req.body.uid) {
-    delete req.body.uid
-  }
+  delete req.body.uid
   if (method === 'GET') {
     opt.qs = req.query
   } else {

@@ -1,10 +1,18 @@
 export default [
   {
     path: '/',
+    redirect: '/index',
+  },
+  {
+    path: '/login',
+    component: './login',
+  },
+  {
+    path: '/',
     component: '../layouts',
     routes: [
       {
-        path: '/',
+        path: '/index',
         component: './index',
       },
     ],

@@ -55,6 +55,19 @@ export const findPathByLeafId = (leafId, nodes, type, oripath) => {
   }
 }
 
+export const eventImage = (picture) => {
+  let url
+  const type = typeof picture
+  if (type === 'object') {
+    url = picture[0] // eslint-disable-line
+  } else if (type === 'string') {
+    url = picture.substring(1, picture.length - 1).split(',')[0] // eslint-disable-line
+  }
+  if (url !== undefined && url.length > 0) {
+    return <img width={250} height={140} alt="" src={url} />
+  }
+}
+
 // 找出重名不重学科的节点
 export const theSameLabel = (other) => {
   const samelabel = []

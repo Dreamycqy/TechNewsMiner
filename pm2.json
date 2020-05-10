@@ -1,6 +1,6 @@
 {
   "apps": [{
-    "name": "eduPersona-pro",
+    "name": "techNews-pro",
     "script": "server/www.js",
     "cwd": "",
     "exec_mode": "cluster",

@@ -21,6 +21,7 @@
     "ejs": "^2.6.2",
     "element-resize-event": "^3.0.3",
     "express": "^4.17.1",
+    "jspdf": "^1.5.3",
     "lodash": "^4.17.15",
     "moment": "^2.19.2",
     "morgan": "^1.9.1",

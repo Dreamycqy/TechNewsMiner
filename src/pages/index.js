@@ -1,8 +1,13 @@
 import React from 'react'
-import { Input, Select, Button, Row, Col, Checkbox, Divider, DatePicker, TreeSelect } from 'antd'
+import { Input, Select, Button, Row, Col, Checkbox, Divider, DatePicker, TreeSelect, List, Drawer, Icon, BackTop } from 'antd'
 import moment from 'moment'
 import _ from 'lodash'
-import { makeOption, findPathByLeafId } from '@/utils/common'
+import { connect } from 'dva'
+import { routerRedux } from 'dva/router'
+import { makeOption, findPathByLeafId, eventImage } from '@/utils/common'
+import { search } from '@/services/index'
+import Export from './export'
+import FilterKeyword from './filterKeyword'
 
 let quickFilterResult = []
 let quickFilterSelect = {}
@@ -21,7 +26,9 @@ const countryList = [
 const dateFormat = 'YYYY-MM-DD'
 const myData = require('@/constants/tree_cn.json')
 const key_map = require('@/constants/key_map.json')
+const countryMap = require('@/constants/countryMap.json')
 
+@connect()
 class Home extends React.Component {
   constructor(props) {
     super(props)
@@ -38,10 +45,17 @@ class Home extends React.Component {
       showSearchBar: false,
       categories: [],
       treeValue: [],
+      loading: false,
+      drawerVisible: false,
     }
   }
 
   componentWillMount = () => {
+    this.init()
+  }
+
+  init = () => {
+    this.search()
   }
 
   changeCountry = (key) => {
@@ -52,7 +66,104 @@ class Home extends React.Component {
     this.setState({ beginDate: date[0], endDate: date[1] })
   }
 
-  search = async () => {}
+  // search = () => {
+  //   this.setState({ loading: true })
+  //   const {
+  //     searchText, beginDate, endDate, categories, country,
+  //   } = this.state
+  //   const formData = new URLSearchParams()
+  //   formData.set('word', searchText)
+  //   formData.set('startDate', beginDate.format('YYYY-MM-DD'))
+  //   formData.set('endDate', endDate.format('YYYY-MM-DD'))
+  //   formData.set('categories', JSON.stringify(categories))
+  //   formData.set('sources', JSON.stringify(countryMap[country]))
+  //   const url = 'https://api2.newsminer.net/svc/Foreign/queryNews'
+  //   const id = global.getCookie('id')
+  //   let myRequest
+  //   if (id) {
+  //     const myHeader = new Headers() // eslint-disable-line
+  //     myHeader.append('Authorization', id)
+  //     myRequest = new Request(url, { headers: myHeader }) // eslint-disable-line
+  //   } else {
+  //     myRequest = new Request(url) // eslint-disable-line
+  //   }
+  //   fetch(myRequest, { // eslint-disable-line
+  //     method: 'post',
+  //     body: formData,
+  //     mode: 'cors',
+  //   })
+  //     .then(response => response.json())
+  //     .then((result) => {
+  //       result.forEach((item) => {
+  //         item.checked = false // eslint-disable-line
+  //       })
+  //       this.setState({
+  //         newsList: result,
+  //         checkedIdList: [],
+  //         checkAll: false,
+  //       })
+  //     })
+  //     .catch(e => console.log('错误:', e)) // /请求出错
+  //   this.setState({ loading: false })
+  // }
+
+  // subSearch = (date, word, idList) => {
+  //   const {
+  //     searchText, beginDate, endDate, categories, country,
+  //   } = this.state
+  //   const formData = new URLSearchParams()
+  //   formData.set('word', searchText)
+  //   formData.set('startDate', beginDate.format('YYYY-MM-DD'))
+  //   formData.set('endDate', endDate.format('YYYY-MM-DD'))
+  //   formData.set('categories', JSON.stringify(categories))
+  //   formData.set('sources', JSON.stringify(countryMap[country]))
+  //   formData.set('ids', JSON.stringify(idList))
+  //   const url = 'https://api2.newsminer.net/svc/Foreign/subQueryNews'
+  //   const id = global.getCookie('id')
+  //   let myRequest
+  //   if (id) {
+  //     const myHeader = new Headers()
+  //     myHeader.append('Authorization', id)
+  //     myRequest = new Request(url, { headers: myHeader })
+  //   } else {
+  //     myRequest = new Request(url)
+  //   }
+  //   fetch(myRequest, {
+  //     method: 'post',
+  //     body: formData,
+  //     mode: 'cors',
+  //   })
+  //     .then(response => response.json())
+  //     .then((result) => {
+  //       result.forEach((item) => {
+  //         item.checked = false
+  //       })
+  //       this.setState({
+  //         newsList: result,
+  //         checkedIdList: [],
+  //         checkAll: false,
+  //       })
+  //     })
+  //     .catch((e) => {
+  //       console.log(e)
+  //     })
+  // };
+
+  search = async () => {
+    const {
+      searchText, beginDate, endDate, categories, country,
+    } = this.state
+    const data = await search({
+      word: searchText,
+      startDate: beginDate.format('YYYY-MM-DD'),
+      endDate: endDate.format('YYYY-MM-DD'),
+      categories: categories,
+      sources: countryMap[country],
+    })
+    if (data) {
+      console.log(data)
+    }
+  }
 
   searchInput = (value) => {
     this.setState({ searchText: value })
@@ -65,6 +176,8 @@ class Home extends React.Component {
       } else {
         this.setState({ showQuickFilter: false })
       }
+    } else {
+      this.setState({ showQuickFilter: false })
     }
   }
 
@@ -121,10 +234,23 @@ class Home extends React.Component {
     }
   }
 
+  redirect = (url) => {
+    return `https://newsminer.net/link.html?url=${url}`
+  }
+
+  logout = () => {
+    window.localStorage.setItem('uid', '')
+    window.location.href = '/login'
+  }
+
   render() {
+    const { uid, username } = window.localStorage
+    if (!uid || uid.length < 1) {
+      window.location.href = '/login'
+    }
     const {
       newsList, searchText, country, showQuickFilter, indeterminate, checkAll, checkedIdList,
-      showSearchBar, beginDate, endDate, treeValue,
+      showSearchBar, beginDate, endDate, treeValue, loading, drawerVisible,
     } = this.state
     return (
       <div>
@@ -179,11 +305,11 @@ class Home extends React.Component {
                 条
               </label>
               <Divider type="vertical" />
-              <Button type="primary" onClick={this.showDrawer} icon="menu" />
+              <Button type="primary" onClick={() => this.setState({ drawerVisible: true })} icon="menu" />
             </div>
           </Col>
         </Row>
-        <div style={{ display: showSearchBar ? 'block' : 'none', minHeight: 90, paddingLeft: 50, paddingTop: 8, backgroundColor: '#fff' }}>
+        <div style={{ display: showSearchBar ? 'block' : 'none', minHeight: 90, paddingLeft: 50, paddingTop: 8, backgroundColor: '#fff', borderBottom: '1px solid #e1e1e1' }}>
           <span>
             时间区间：&nbsp;&nbsp;
           </span>
@@ -203,7 +329,7 @@ class Home extends React.Component {
               value={treeValue}
               maxTagCount={6}
               maxTagPlaceholder={(omittedValues) => {
-                return `其他${omittedValues.length - 6}个类`
+                return `其他${omittedValues.length - 1}个类`
               }}
               treeCheckable
               showSearch
@@ -213,6 +339,136 @@ class Home extends React.Component {
               treeNodeFilterProp="title"
             />
           </div>
+        </div>
+        <div style={{ margin: '0 16px', overflow: 'initial' }}>
+          <div style={{ padding: 24, background: '#fff' }}>
+            <List
+              itemLayout="vertical"
+              size="large"
+              dataSource={newsList}
+              loading={loading}
+              pagination={{
+                pageSize: 10,
+              }}
+              renderItem={(item) => {
+                if (item.hasOwnProperty('title')) { // eslint-disable-line
+                  return (
+                    <List.Item
+                      extra={eventImage(item['image'])}
+                      actions={[
+                        <span>
+                          <a href="javascript:;" onClick={() => this.translate(item['news_Content'])}>
+                            <Icon type="TranslationOutlined" />
+                            翻译
+                          </a>
+                        </span>,
+                      ]}
+                    >
+                      <List.Item.Meta
+                        title={(
+                          <a
+                            href={this.redirect(item['url'])}
+                            target="_blank"
+                            dangerouslySetInnerHTML={{ __html: item['title'] }}
+                          />
+                        )}
+                        avatar={(
+                          <Checkbox
+                            value={item['news_ID']}
+                            checked={item.checked}
+                            onChange={this.addChecked}
+                          />
+                        )}
+                        description={(
+                          <div>
+                            <Icon
+                              className="publishTime" type="clock-circle"
+                              style={{ marginRight: 8 }}
+                            />
+                            {item['publishTime']}
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <Icon type="global" style={{ marginRight: 8 }} />
+                            {item['publisher']}
+                          </div>
+                                          )}
+                      />
+                      <p dangerouslySetInnerHTML={{ __html: `${item['content']}...` }} />
+                    </List.Item>
+                  )
+                } else {
+                  return (
+                    <List.Item
+                      extra={eventImage(item['news_Pictures'])}
+                      actions={[
+                        <span>
+                          <a href="javascript:;" onClick={() => this.translate(item['news_Content'])}>
+                            <Icon type="cloud-sync" />
+                                                &nbsp;&nbsp;翻译
+                          </a>
+                        </span>,
+                      ]}
+                    >
+                      <List.Item.Meta
+                        title={(
+                          <a
+                            href={this.redirect(item['news_URL'])}
+                            target="_blank"
+                            dangerouslySetInnerHTML={{ __html: item['news_Title'] }}
+                          />
+)}
+                        avatar={(
+                          <Checkbox
+                            value={item['news_ID']}
+                            checked={item.checked}
+                            onChange={this.addChecked}
+                          />
+)}
+                        description={(
+                          <div>
+                            <Icon
+                              className="publishTime" type="clock-circle"
+                              style={{ marginRight: 8 }}
+                            />
+                            {item.news_Time}
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <Icon type="global" style={{ marginRight: 8 }} />
+                            {item['news_Source']}
+                          </div>
+                                          )}
+                      />
+                      <p dangerouslySetInnerHTML={{ __html: `${item['news_Content']}...` }} />
+                    </List.Item>
+                  )
+                }
+              }}
+            />
+          </div>
+          <BackTop />
+          <Drawer
+            title={username}
+            placement="right"
+            closable={false}
+            onClose={() => this.setState({ drawerVisible: false })}
+            visible={drawerVisible}
+          >
+            <h3>
+              导出
+            </h3>
+            <Export checkedIdList={checkedIdList} allDataList={newsList} />
+            <Divider />
+            <h3>
+              关键词过滤管理
+            </h3>
+            <FilterKeyword init={this.init} />
+            <Divider />
+            <h3>
+              用户操作
+            </h3>
+            <Button style={{ margin: 15 }} type="primary" onClick={this.logout} icon="logout">
+              注销
+            </Button>
+            <Divider />
+          </Drawer>
         </div>
       </div>
     )
