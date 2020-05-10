@@ -159,7 +159,7 @@ export default class Export extends React.Component {
 
     render() {
       const style = {
-        margin: 15,
+        margin: 0,
       }
       return (
         <div>

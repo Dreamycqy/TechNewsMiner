@@ -1,13 +1,15 @@
 import React from 'react'
-import { Input, Select, Button, Row, Col, Checkbox, Divider, DatePicker, TreeSelect, List, Drawer, Icon, BackTop } from 'antd'
+import { Input, Select, Button, Checkbox, Divider, DatePicker, TreeSelect, List, Drawer, Icon, BackTop, message } from 'antd'
 import moment from 'moment'
 import _ from 'lodash'
 import { connect } from 'dva'
 import { routerRedux } from 'dva/router'
+import md5 from 'md5'
+import $ from 'jquery'
 import { makeOption, findPathByLeafId, eventImage } from '@/utils/common'
 import { search } from '@/services/index'
 import Export from './export'
-import FilterKeyword from './filterKeyword'
+import User from './user'
 
 let quickFilterResult = []
 let quickFilterSelect = {}
@@ -24,6 +26,8 @@ const countryList = [
   { value: 'knowledge', name: '智库' },
 ]
 const dateFormat = 'YYYY-MM-DD'
+const appid = '20200511000448145'
+const translatekey = 'nCGO32AVxsejOEd7CaVk'
 const myData = require('@/constants/tree_cn.json')
 const key_map = require('@/constants/key_map.json')
 const countryMap = require('@/constants/countryMap.json')
@@ -54,6 +58,81 @@ class Home extends React.Component {
     this.init()
   }
 
+  translate = (q) => {
+    const salt = Date.now()
+    const sign = md5(appid + q + salt + translatekey)
+    return new Promise((resolve) => {
+      $.ajax({
+        url: 'https://api.fanyi.baidu.com/api/trans/vip/translate',
+        type: 'get',
+        dataType: 'jsonp',
+        data: {
+          q,
+          appid,
+          salt,
+          from: 'auto',
+          to: 'zh',
+          sign,
+        },
+        success(data) {
+          let str = ''
+          data['trans_result'].forEach((e) => {
+            str += e.dst
+          })
+          resolve({ str })
+        },
+        error() {
+        },
+      })
+    })
+  }
+
+  handleTranslate = async (title, content, newsId) => {
+    const { newsList } = this.state
+    let target = _.find(newsList, { news_ID: newsId })
+    if (!target) {
+      target = _.find(newsList, { id: newsId })
+    }
+    if (!target) {
+      return
+    }
+    if (target.translation) {
+      target.transmode = true
+      this.setState({ newsList })
+      return
+    }
+    const origin = content.split(/<em style='color:red'>.*?>/g)
+    const highLight = content.match(/(?<=<em style='color:red'>).*?(?=<)/g)
+    let result = ''
+    origin.forEach((e, index) => {
+      result += e
+      if (highLight !== null && highLight[index]) {
+        result += highLight[index]
+      }
+    })
+    const data = await this.translate(result)
+    const transTitle = await this.translate(title)
+    if (data) {
+      target.translation = data.str
+      target.transmode = true
+      target.transTitle = transTitle.str
+      this.setState({ newsList })
+    }
+  }
+
+  handleTransBack = (newsId) => {
+    const { newsList } = this.state
+    let target = _.find(newsList, { news_ID: newsId })
+    if (!target) {
+      target = _.find(newsList, { id: newsId })
+    }
+    if (!target) {
+      return
+    }
+    target.transmode = false
+    this.setState({ newsList })
+  }
+
   init = () => {
     this.search()
   }
@@ -66,90 +145,8 @@ class Home extends React.Component {
     this.setState({ beginDate: date[0], endDate: date[1] })
   }
 
-  // search = () => {
-  //   this.setState({ loading: true })
-  //   const {
-  //     searchText, beginDate, endDate, categories, country,
-  //   } = this.state
-  //   const formData = new URLSearchParams()
-  //   formData.set('word', searchText)
-  //   formData.set('startDate', beginDate.format('YYYY-MM-DD'))
-  //   formData.set('endDate', endDate.format('YYYY-MM-DD'))
-  //   formData.set('categories', JSON.stringify(categories))
-  //   formData.set('sources', JSON.stringify(countryMap[country]))
-  //   const url = 'https://api2.newsminer.net/svc/Foreign/queryNews'
-  //   const id = global.getCookie('id')
-  //   let myRequest
-  //   if (id) {
-  //     const myHeader = new Headers() // eslint-disable-line
-  //     myHeader.append('Authorization', id)
-  //     myRequest = new Request(url, { headers: myHeader }) // eslint-disable-line
-  //   } else {
-  //     myRequest = new Request(url) // eslint-disable-line
-  //   }
-  //   fetch(myRequest, { // eslint-disable-line
-  //     method: 'post',
-  //     body: formData,
-  //     mode: 'cors',
-  //   })
-  //     .then(response => response.json())
-  //     .then((result) => {
-  //       result.forEach((item) => {
-  //         item.checked = false // eslint-disable-line
-  //       })
-  //       this.setState({
-  //         newsList: result,
-  //         checkedIdList: [],
-  //         checkAll: false,
-  //       })
-  //     })
-  //     .catch(e => console.log('错误:', e)) // /请求出错
-  //   this.setState({ loading: false })
-  // }
-
-  // subSearch = (date, word, idList) => {
-  //   const {
-  //     searchText, beginDate, endDate, categories, country,
-  //   } = this.state
-  //   const formData = new URLSearchParams()
-  //   formData.set('word', searchText)
-  //   formData.set('startDate', beginDate.format('YYYY-MM-DD'))
-  //   formData.set('endDate', endDate.format('YYYY-MM-DD'))
-  //   formData.set('categories', JSON.stringify(categories))
-  //   formData.set('sources', JSON.stringify(countryMap[country]))
-  //   formData.set('ids', JSON.stringify(idList))
-  //   const url = 'https://api2.newsminer.net/svc/Foreign/subQueryNews'
-  //   const id = global.getCookie('id')
-  //   let myRequest
-  //   if (id) {
-  //     const myHeader = new Headers()
-  //     myHeader.append('Authorization', id)
-  //     myRequest = new Request(url, { headers: myHeader })
-  //   } else {
-  //     myRequest = new Request(url)
-  //   }
-  //   fetch(myRequest, {
-  //     method: 'post',
-  //     body: formData,
-  //     mode: 'cors',
-  //   })
-  //     .then(response => response.json())
-  //     .then((result) => {
-  //       result.forEach((item) => {
-  //         item.checked = false
-  //       })
-  //       this.setState({
-  //         newsList: result,
-  //         checkedIdList: [],
-  //         checkAll: false,
-  //       })
-  //     })
-  //     .catch((e) => {
-  //       console.log(e)
-  //     })
-  // };
-
   search = async () => {
+    this.setState({ loading: true })
     const {
       searchText, beginDate, endDate, categories, country,
     } = this.state
@@ -157,12 +154,19 @@ class Home extends React.Component {
       word: searchText,
       startDate: beginDate.format('YYYY-MM-DD'),
       endDate: endDate.format('YYYY-MM-DD'),
-      categories: categories,
+      categories,
       sources: countryMap[country],
     })
     if (data) {
-      console.log(data)
+      this.setState({
+        newsList: data,
+        checkedIdList: [],
+        checkAll: false,
+      })
+    } else {
+      message.error('获取新闻列表失败，请检查是否设置过滤关键词！')
     }
+    this.setState({ loading: false })
   }
 
   searchInput = (value) => {
@@ -185,6 +189,30 @@ class Home extends React.Component {
     const { queryDate, searchText } = this.state
     this.search(queryDate, searchText)
   }
+
+  addChecked = (e) => {
+    const { checkedIdList, newsList } = this.state
+    const { value, checked } = e.target
+    if (checked) {
+      checkedIdList.push(value)
+    } else {
+      const index = checkedIdList.indexOf(value)
+      if (index > -1) {
+        checkedIdList.splice(index, 1)
+      }
+    }
+
+    newsList.forEach((item) => {
+      if (item.news_ID === value) {
+        item.checked = checked
+      }
+    })
+    this.setState({
+      checkedIdList,
+      checkAll: checkedIdList.length === newsList.length,
+      indeterminate: !!checkedIdList.length && checkedIdList.length < newsList.length,
+    })
+  };
 
   onCheckAllChange = (e) => {
     const { newsList } = this.state
@@ -238,11 +266,6 @@ class Home extends React.Component {
     return `https://newsminer.net/link.html?url=${url}`
   }
 
-  logout = () => {
-    window.localStorage.setItem('uid', '')
-    window.location.href = '/login'
-  }
-
   render() {
     const { uid, username } = window.localStorage
     if (!uid || uid.length < 1) {
@@ -254,9 +277,9 @@ class Home extends React.Component {
     } = this.state
     return (
       <div>
-        <Row style={{ height: showQuickFilter ? 80 : 64, paddingLeft: 50, lineHeight: '64px', borderBottom: '1px solid #e1e1e1' }}>
-          <Col span={15}>
-            <div>
+        <div style={{ height: showQuickFilter ? 80 : 64, paddingLeft: 50, lineHeight: '64px', borderBottom: '1px solid #e1e1e1' }}>
+          <div style={{ overflow: 'hidden' }}>
+            <div style={{ float: 'left' }}>
               <Search
                 addonBefore={(
                   <div>
@@ -279,36 +302,18 @@ class Home extends React.Component {
               />
               <Button style={{ marginLeft: 20 }} onClick={this.showSearchBarButton}>展开高级选项</Button>
             </div>
-            <div style={{ marginLeft: 160, lineHeight: '0px', display: showQuickFilter ? 'block' : 'none' }}>
-              <a href="javascript:;" onClick={() => this.jumpQuickFilter()}>
-                关键词&nbsp;&nbsp;
-                <span style={{ color: 'red' }}>{searchText}</span>
-                &nbsp;&nbsp;在聚类列表里已存在且未选中，是否选中？
-              </a>
+            <div style={{ float: 'right', marginRight: 40 }}>
+              <User init={this.init} />
             </div>
-          </Col>
-          <Col span={5} offset={4}>
-            <div style={{ float: 'right', marginRight: 25 }}>
-              <Checkbox
-                indeterminate={indeterminate}
-                onChange={this.onCheckAllChange}
-                checked={checkAll}
-              >
-                全选
-              </Checkbox>
-              <label> {/* eslint-disable-line */}
-                {' '}
-                已选择
-                {checkedIdList.length}
-                条/共
-                {newsList.length}
-                条
-              </label>
-              <Divider type="vertical" />
-              <Button type="primary" onClick={() => this.setState({ drawerVisible: true })} icon="menu" />
-            </div>
-          </Col>
-        </Row>
+          </div>
+          <div style={{ marginLeft: 160, lineHeight: '0px', display: showQuickFilter ? 'block' : 'none' }}>
+            <a href="javascript:;" onClick={() => this.jumpQuickFilter()}>
+              关键词&nbsp;&nbsp;
+              <span style={{ color: 'red' }}>{searchText}</span>
+              &nbsp;&nbsp;在聚类列表里已存在且未选中，是否选中？
+            </a>
+          </div>
+        </div>
         <div style={{ display: showSearchBar ? 'block' : 'none', minHeight: 90, paddingLeft: 50, paddingTop: 8, backgroundColor: '#fff', borderBottom: '1px solid #e1e1e1' }}>
           <span>
             时间区间：&nbsp;&nbsp;
@@ -340,6 +345,28 @@ class Home extends React.Component {
             />
           </div>
         </div>
+        <div style={{ height: 48, lineHeight: '48px', borderBottom: '1px solid #e1e1e1', paddingLeft: 40 }}>
+          <div style={{ float: 'left' }}>
+            <Checkbox
+              indeterminate={indeterminate}
+              onChange={this.onCheckAllChange}
+              checked={checkAll}
+            >
+              全选
+            </Checkbox>
+            <label> {/* eslint-disable-line */}
+              {' '}
+              已选择
+              {checkedIdList.length}
+              条/共
+              {newsList.length}
+              条
+            </label>
+          </div>
+          <div style={{ float: 'right', marginRight: 40 }}>
+            <Export checkedIdList={checkedIdList} allDataList={newsList} />
+          </div>
+        </div>
         <div style={{ margin: '0 16px', overflow: 'initial' }}>
           <div style={{ padding: 24, background: '#fff' }}>
             <List
@@ -357,10 +384,21 @@ class Home extends React.Component {
                       extra={eventImage(item['image'])}
                       actions={[
                         <span>
-                          <a href="javascript:;" onClick={() => this.translate(item['news_Content'])}>
-                            <Icon type="TranslationOutlined" />
-                            翻译
-                          </a>
+                          {
+                            item.transmode !== true
+                              ? (
+                                <a href="javascript:;" onClick={() => this.handleTranslate(item['title'], item['content'], item['id'])}>
+                                  <Icon type="cloud-sync" />
+                                  &nbsp;&nbsp;翻译
+                                </a>
+                              )
+                              : (
+                                <a href="javascript:;" onClick={() => this.handleTransBack(item['id'])}>
+                                  <Icon type="cloud-sync" />
+                                  &nbsp;&nbsp;原文
+                                </a>
+                              )
+                          }
                         </span>,
                       ]}
                     >
@@ -369,7 +407,7 @@ class Home extends React.Component {
                           <a
                             href={this.redirect(item['url'])}
                             target="_blank"
-                            dangerouslySetInnerHTML={{ __html: item['title'] }}
+                            dangerouslySetInnerHTML={{ __html: item.transmode === true ? item['transTitle'] : item['title'] }}
                           />
                         )}
                         avatar={(
@@ -386,13 +424,13 @@ class Home extends React.Component {
                               style={{ marginRight: 8 }}
                             />
                             {item['publishTime']}
-                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             <Icon type="global" style={{ marginRight: 8 }} />
                             {item['publisher']}
                           </div>
-                                          )}
+                         )}
                       />
-                      <p dangerouslySetInnerHTML={{ __html: `${item['content']}...` }} />
+                      <p dangerouslySetInnerHTML={{ __html: item.transmode === true ? `${item['translation']}...` : `${item['content']}...` }} />
                     </List.Item>
                   )
                 } else {
@@ -401,10 +439,21 @@ class Home extends React.Component {
                       extra={eventImage(item['news_Pictures'])}
                       actions={[
                         <span>
-                          <a href="javascript:;" onClick={() => this.translate(item['news_Content'])}>
-                            <Icon type="cloud-sync" />
-                                                &nbsp;&nbsp;翻译
-                          </a>
+                          {
+                            item.transmode !== true
+                              ? (
+                                <a href="javascript:;" onClick={() => this.handleTranslate(item['news_Title'], item['news_Content'], item['news_ID'])}>
+                                  <Icon type="cloud-sync" />
+                                  &nbsp;&nbsp;翻译
+                                </a>
+                              )
+                              : (
+                                <a href="javascript:;" onClick={() => this.handleTransBack(item['news_ID'])}>
+                                  <Icon type="cloud-sync" />
+                                  &nbsp;&nbsp;原文
+                                </a>
+                              )
+                          }
                         </span>,
                       ]}
                     >
@@ -413,7 +462,7 @@ class Home extends React.Component {
                           <a
                             href={this.redirect(item['news_URL'])}
                             target="_blank"
-                            dangerouslySetInnerHTML={{ __html: item['news_Title'] }}
+                            dangerouslySetInnerHTML={{ __html: item.transmode === true ? item['transTitle'] : item['news_Title'] }}
                           />
 )}
                         avatar={(
@@ -430,13 +479,13 @@ class Home extends React.Component {
                               style={{ marginRight: 8 }}
                             />
                             {item.news_Time}
-                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             <Icon type="global" style={{ marginRight: 8 }} />
                             {item['news_Source']}
                           </div>
-                                          )}
+                        )}
                       />
-                      <p dangerouslySetInnerHTML={{ __html: `${item['news_Content']}...` }} />
+                      <p dangerouslySetInnerHTML={{ __html: item.transmode === true ? `${item['translation']}...` : `${item['news_Content']}...` }} />
                     </List.Item>
                   )
                 }
@@ -455,11 +504,6 @@ class Home extends React.Component {
               导出
             </h3>
             <Export checkedIdList={checkedIdList} allDataList={newsList} />
-            <Divider />
-            <h3>
-              关键词过滤管理
-            </h3>
-            <FilterKeyword init={this.init} />
             <Divider />
             <h3>
               用户操作

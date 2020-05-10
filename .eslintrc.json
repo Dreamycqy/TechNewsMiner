@@ -37,7 +37,9 @@
     "react/jsx-max-props-per-line": [1, { "maximum": 2, "when": "multiline" }],
     "react/destructuring-assignment": [0],
     "global-require": [0],
-    "object-curly-newline": [0]
+    "object-curly-newline": [0],
+    "linebreak-style": [0 ,"error", "windows"],
+    "react/no-danger": [0]
   },
   "parserOptions": {
     "ecmaFeatures": {

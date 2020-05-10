@@ -55,11 +55,16 @@ export default {
     if (rSymbol) {
       window.GLOBAL.requestSymbols[rSymbol] = cancel
     }
+    if (window.localStorage.uid) {
+      params.uid = window.localStorage.uid
+    }
+    console.log(params)
     return axios.get(opts.url, {
-      params: opts.data || opts.params || {},
+      params: params || {},
     }, {
       timeout: 1000 * 120,
     }).then((res) => {
+      console.log(res)
       return res.data
     }).catch((err) => {
       if (axios.isCancel(err)) {

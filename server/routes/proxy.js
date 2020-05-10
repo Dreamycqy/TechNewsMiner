@@ -20,7 +20,7 @@ router.all('/', (req, res) => {
     url,
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded',
-      'Authorization': req.body.uid,
+      'Authorization': method === 'GET' ? req.query.uid : req.body.uid,
       'Accept': '*/*'
     },
     timeout: 40e3,
@@ -31,6 +31,9 @@ router.all('/', (req, res) => {
   }
   if (req.body.uid) {
     delete req.body.uid
+  }
+  if (req.query.uid) {
+    delete req.query.uid
   }
   if (method === 'GET') {
     opt.qs = req.query
