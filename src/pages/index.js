@@ -1,5 +1,5 @@
 import React from 'react'
-import { Input, Select, Button, Checkbox, DatePicker, TreeSelect, List, Icon, BackTop, message } from 'antd'
+import { Input, Select, Button, Checkbox, DatePicker, TreeSelect, List, Icon, BackTop, message, Empty } from 'antd'
 import moment from 'moment'
 import _ from 'lodash'
 import { connect } from 'dva'
@@ -14,6 +14,8 @@ import Collection from './collection'
 
 let quickFilterResult = []
 let quickFilterSelect = {}
+let emptyFilterResult = []
+let emptyFilterSelect = {}
 const { Search } = Input
 const { RangePicker } = DatePicker
 const { Option } = Select
@@ -166,7 +168,7 @@ class Home extends React.Component {
 
   search = async () => {
     const {
-      searchText, beginDate, endDate, categories, country,
+      searchText, beginDate, endDate, categories, country, treeValue,
     } = this.state
     this.setState({ loading: true, lastSearch: searchText })
     const data = await search({
@@ -194,6 +196,21 @@ class Home extends React.Component {
         checkedIdList: [],
         checkAll: false,
       })
+      this.sortData(this.state.sortor)
+      let ttreeValueTarget = treeValue[0]
+      treeValue.forEach((e) => {
+        if (e.length < ttreeValueTarget.length) {
+          ttreeValueTarget = e
+        }
+      })
+      if (data.length === 0 && ttreeValueTarget) {
+        if (ttreeValueTarget.length >= 3) {
+          const target = findPathByLeafId(ttreeValueTarget.substr(0, ttreeValueTarget.length - 2), myData, 'key')
+          if (target) {
+            emptyFilterSelect = target.node
+          }
+        }
+      }
     } else {
       message.error('获取新闻列表失败，请检查是否设置过滤关键词！')
     }
@@ -275,11 +292,11 @@ class Home extends React.Component {
     this.setState({ showSearchBar: !showSearchBar })
   }
 
-  jumpQuickFilter = () => {
+  jumpQuickFilter = async () => {
     quickFilterResult = []
     this.quickFilter([quickFilterSelect])
     const { treeValue } = this.state
-    this.selectCategory(_.uniq(treeValue.concat(quickFilterResult)))
+    await this.selectCategory(_.uniq(treeValue.concat(quickFilterResult)))
     quickFilterSelect = {}
     this.setState({ showQuickFilter: false })
   }
@@ -289,6 +306,24 @@ class Home extends React.Component {
       quickFilterResult.push(item.value)
       if (item.children) {
         this.quickFilter(item.children)
+      }
+    }
+  }
+
+  emptyQuickFilter = async () => {
+    emptyFilterResult = []
+    this.emptyFilter([emptyFilterSelect])
+    const { treeValue } = this.state
+    await this.selectCategory(_.uniq(treeValue.concat(emptyFilterResult)))
+    emptyFilterSelect = {}
+    this.search()
+  }
+
+  emptyFilter = (nodes) => {
+    for (const item of nodes) {
+      emptyFilterResult.push(item.value)
+      if (item.children) {
+        this.emptyFilter(item.children)
       }
     }
   }
@@ -414,24 +449,27 @@ class Home extends React.Component {
         </div>
         <div style={{ margin: '0 16px', overflow: 'initial' }}>
           <div style={{ padding: 24, background: '#fff' }}>
-            <List
-              itemLayout="vertical"
-              size="large"
-              dataSource={newsList}
-              loading={loading}
-              pagination={{
-                pageSize: 10,
-                showSizeChanger: true,
-                showQuickJumper: true,
-              }}
-              renderItem={(item) => {
+            {
+              newsList.length > 0 || loading === true
+                ? (
+                  <List
+                    itemLayout="vertical"
+                    size="large"
+                    dataSource={newsList}
+                    loading={loading}
+                    pagination={{
+                      pageSize: 10,
+                      showSizeChanger: true,
+                      showQuickJumper: true,
+                    }}
+                    renderItem={(item) => {
                 if (item.hasOwnProperty('title')) { // eslint-disable-line
-                  return (
-                    <List.Item
-                      extra={eventImage(item['image'])}
-                      actions={[
-                        <span>
-                          {
+                        return (
+                          <List.Item
+                            extra={eventImage(item['image'])}
+                            actions={[
+                              <span>
+                                {
                             item.transmode !== true
                               ? (
                                 <a href="javascript:;" onClick={() => this.handleTranslate(item['title'], item['content'], item['id'])}>
@@ -446,47 +484,47 @@ class Home extends React.Component {
                                 </a>
                               )
                           }
-                        </span>,
-                      ]}
-                    >
-                      <List.Item.Meta
-                        title={(
-                          <a
-                            href={this.redirect(item['url'])}
-                            target="_blank"
-                            dangerouslySetInnerHTML={{ __html: item.transmode === true ? item['transTitle'] : item['title'] }}
-                          />
+                              </span>,
+                            ]}
+                          >
+                            <List.Item.Meta
+                              title={(
+                                <a
+                                  href={this.redirect(item['url'])}
+                                  target="_blank"
+                                  dangerouslySetInnerHTML={{ __html: item.transmode === true ? item['transTitle'] : item['title'] }}
+                                />
                         )}
-                        avatar={(
-                          <Checkbox
-                            value={item['news_ID']}
-                            checked={item.checked}
-                            onChange={this.addChecked}
-                          />
+                              avatar={(
+                                <Checkbox
+                                  value={item['news_ID']}
+                                  checked={item.checked}
+                                  onChange={this.addChecked}
+                                />
                         )}
-                        description={(
-                          <div>
-                            <Icon
-                              className="publishTime" type="clock-circle"
-                              style={{ marginRight: 8 }}
-                            />
-                            {item['publishTime']}
+                              description={(
+                                <div>
+                                  <Icon
+                                    className="publishTime" type="clock-circle"
+                                    style={{ marginRight: 8 }}
+                                  />
+                                  {item['publishTime']}
                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            <Icon type="global" style={{ marginRight: 8 }} />
-                            {item['publisher']}
-                          </div>
+                                  <Icon type="global" style={{ marginRight: 8 }} />
+                                  {item['publisher']}
+                                </div>
                          )}
-                      />
-                      <p dangerouslySetInnerHTML={{ __html: item.transmode === true ? `${item['translation']}...` : `${item['content']}...` }} />
-                    </List.Item>
-                  )
-                } else {
-                  return (
-                    <List.Item
-                      extra={eventImage(item['news_Pictures'])}
-                      actions={[
-                        <span>
-                          {
+                            />
+                            <p dangerouslySetInnerHTML={{ __html: item.transmode === true ? `${item['translation']}...` : `${item['content']}...` }} />
+                          </List.Item>
+                        )
+                      } else {
+                        return (
+                          <List.Item
+                            extra={eventImage(item['news_Pictures'])}
+                            actions={[
+                              <span>
+                                {
                             item.transmode !== true
                               ? (
                                 <a href="javascript:;" onClick={() => this.handleTranslate(item['news_Title'], item['news_Content'], item['news_ID'])}>
@@ -501,43 +539,63 @@ class Home extends React.Component {
                                 </a>
                               )
                           }
-                        </span>,
-                      ]}
-                    >
-                      <List.Item.Meta
-                        title={(
-                          <a
-                            href={this.redirect(item['news_URL'])}
-                            target="_blank"
-                            dangerouslySetInnerHTML={{ __html: item.transmode === true ? item['transTitle'] : item['news_Title'] }}
-                          />
+                              </span>,
+                            ]}
+                          >
+                            <List.Item.Meta
+                              title={(
+                                <a
+                                  href={this.redirect(item['news_URL'])}
+                                  target="_blank"
+                                  dangerouslySetInnerHTML={{ __html: item.transmode === true ? item['transTitle'] : item['news_Title'] }}
+                                />
                         )}
-                        avatar={(
-                          <Checkbox
-                            value={item['news_ID']}
-                            checked={item.checked}
-                            onChange={this.addChecked}
-                          />
+                              avatar={(
+                                <Checkbox
+                                  value={item['news_ID']}
+                                  checked={item.checked}
+                                  onChange={this.addChecked}
+                                />
                         )}
-                        description={(
-                          <div>
-                            <Icon
-                              className="publishTime" type="clock-circle"
-                              style={{ marginRight: 8 }}
-                            />
-                            {item.news_Time}
+                              description={(
+                                <div>
+                                  <Icon
+                                    className="publishTime" type="clock-circle"
+                                    style={{ marginRight: 8 }}
+                                  />
+                                  {item.news_Time}
                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            <Icon type="global" style={{ marginRight: 8 }} />
-                            {item['news_Source']}
-                          </div>
+                                  <Icon type="global" style={{ marginRight: 8 }} />
+                                  {item['news_Source']}
+                                </div>
                         )}
-                      />
-                      <p dangerouslySetInnerHTML={{ __html: item.transmode === true ? `${item['translation']}...` : `${item['news_Content']}...` }} />
-                    </List.Item>
-                  )
-                }
-              }}
-            />
+                            />
+                            <p dangerouslySetInnerHTML={{ __html: item.transmode === true ? `${item['translation']}...` : `${item['news_Content']}...` }} />
+                          </List.Item>
+                        )
+                      }
+                    }}
+                  />
+                )
+                : (
+                  <Empty
+                    image="https://gw.alipayobjects.com/mdn/miniapp_social/afts/img/A*pevERLJC9v0AAAAAAAAAAABjAQAAAQ/original"
+                    imageStyle={{
+                      height: 60,
+                    }}
+                    description={(
+                      <span>
+                        当前暂无结果，
+                        {
+                          emptyFilterSelect.title ? `是否选择上一级聚类【${emptyFilterSelect.title}】？` : '推荐更换搜索词'
+                        }
+                      </span>
+                    )}
+                  >
+                    <Button style={{ display: emptyFilterSelect.title ? 'inline-block' : 'none' }} type="primary" onClick={() => this.emptyQuickFilter()}>继续搜索</Button>
+                  </Empty>
+                )
+            }
           </div>
           <BackTop />
         </div>
