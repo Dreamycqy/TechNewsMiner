@@ -458,7 +458,6 @@ class Home extends React.Component {
                     dataSource={newsList}
                     loading={loading}
                     pagination={{
-                      pageSize: 10,
                       showSizeChanger: true,
                       showQuickJumper: true,
                     }}
