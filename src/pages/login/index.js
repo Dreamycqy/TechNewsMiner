@@ -39,6 +39,7 @@ class Login extends React.Component {
     }
 
     login = async (username, password) => {
+      window.localStorage.clear()
       const data = await login({
         username,
         password,

@@ -15,6 +15,10 @@ export default [
         path: '/index',
         component: './index',
       },
+      {
+        path: '/abstract',
+        component: './abstract',
+      },
     ],
   },
 ]

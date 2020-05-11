@@ -1,14 +1,16 @@
 import React from 'react'
 import { Button, Modal, Form, Icon, Input, notification } from 'antd'
-import * as jsPDF from 'jspdf'
-
-window.jsPDF = jsPDF
+import jsPDF from 'jspdf'
 
 const openNotificationWithIcon = (type, info) => {
   notification[type]({
     message: info,
     duration: 1.5,
   })
+}
+
+function redirect(url) {
+  return `https://newsminer.net/link.html?url=${url}`
 }
 
 function getCookie(cname) {
@@ -94,10 +96,6 @@ export default class Export extends React.Component {
     };
 
     download = () => {
-      function redirect(url) {
-        return `https://newsminer.net/link.html?url=${url}`
-      }
-
       const checkedList = []
       this.props.checkedIdList.forEach((id) => {
         this.props.allDataList.forEach((data) => {
@@ -114,16 +112,17 @@ export default class Export extends React.Component {
       }
 
       const doc = new jsPDF()
+      console.log(doc.getFontList())
       doc.setFont('simsun')
       doc.setFontType('normal')
 
       let verticalOffset = 20
-      for (const i in checkedList) {
+      for (const i in checkedList) { // eslint-disable-line
         const item = checkedList[i]
 
         doc.setFontSize(10)
-        const titleLine = doc.splitTextToSize(item.news_Title.replace(/<em style='color:red'>/g, '').replace('</em>', ''), 150)
-        doc.textWithLink(titleLine, 20, verticalOffset, { url: redirect(item.news_URL) })
+        const titleLine = doc.splitTextToSize(item.news_Title.replace(/<em style='color:red'>/g, '').replace(/<\/em>/g, ''), 150)
+        doc.textWithLink(titleLine[0], 20, verticalOffset, { url: redirect(item['news_URL']) })
         verticalOffset += titleLine.length * 5
 
         doc.setFontSize(8)
@@ -162,7 +161,7 @@ export default class Export extends React.Component {
         margin: 0,
       }
       return (
-        <div>
+        <div style={{ display: 'inline-block', marginLeft: 10 }}>
           <Button style={style} className="gutter-box" type="primary" onClick={this.download} icon="export">
             导出到PDF
           </Button>

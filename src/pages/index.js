@@ -1,20 +1,22 @@
 import React from 'react'
-import { Input, Select, Button, Checkbox, Divider, DatePicker, TreeSelect, List, Drawer, Icon, BackTop, message } from 'antd'
+import { Input, Select, Button, Checkbox, DatePicker, TreeSelect, List, Icon, BackTop, message } from 'antd'
 import moment from 'moment'
 import _ from 'lodash'
 import { connect } from 'dva'
-import { routerRedux } from 'dva/router'
 import md5 from 'md5'
 import $ from 'jquery'
 import { makeOption, findPathByLeafId, eventImage } from '@/utils/common'
 import { search } from '@/services/index'
 import Export from './export'
 import User from './user'
+import AddCollection from './addCollection'
+import Collection from './collection'
 
 let quickFilterResult = []
 let quickFilterSelect = {}
 const { Search } = Input
 const { RangePicker } = DatePicker
+const { Option } = Select
 const countryList = [
   { value: 'all', name: '全部' },
   { value: 'jp', name: '日本' },
@@ -38,6 +40,7 @@ class Home extends React.Component {
     super(props)
     this.state = {
       newsList: [],
+      originNewsList: [],
       searchText: '',
       beginDate: moment().subtract(6, 'days'),
       endDate: moment(),
@@ -50,7 +53,8 @@ class Home extends React.Component {
       categories: [],
       treeValue: [],
       loading: false,
-      drawerVisible: false,
+      sortor: 'time',
+      lastSearch: '',
     }
   }
 
@@ -145,11 +149,26 @@ class Home extends React.Component {
     this.setState({ beginDate: date[0], endDate: date[1] })
   }
 
+  sortData = (type) => {
+    this.setState({ sortor: type })
+    const { originNewsList } = this.state
+    switch (type) {
+      case 'time':
+        this.setState({ newsList: originNewsList })
+        break
+      case 'score':
+        this.setState({ newsList: _.orderBy(originNewsList, 'score', 'desc') })
+        break
+      default:
+        break
+    }
+  }
+
   search = async () => {
-    this.setState({ loading: true })
     const {
       searchText, beginDate, endDate, categories, country,
     } = this.state
+    this.setState({ loading: true, lastSearch: searchText })
     const data = await search({
       word: searchText,
       startDate: beginDate.format('YYYY-MM-DD'),
@@ -158,8 +177,20 @@ class Home extends React.Component {
       sources: countryMap[country],
     })
     if (data) {
+      data.forEach((e) => {
+        e.score = 0
+        const title = e['news_Title'].replace(/<em style='color:red'>/g, '').replace(/<\/em>/g, '')
+        const content = e['news_Content'].replace(/<em style='color:red'>/g, '').replace(/<\/em>/g, '')
+        if (title.split(this.state.searchText).length > 0) {
+          e.score += 10 * (title.split(this.state.searchText).length - 1)
+        }
+        if (content.split(this.state.searchText).length > 0) {
+          e.score += 1 * (content.split(this.state.searchText).length - 1)
+        }
+      })
       this.setState({
         newsList: data,
+        originNewsList: data,
         checkedIdList: [],
         checkAll: false,
       })
@@ -267,13 +298,13 @@ class Home extends React.Component {
   }
 
   render() {
-    const { uid, username } = window.localStorage
+    const { uid } = window.localStorage
     if (!uid || uid.length < 1) {
       window.location.href = '/login'
     }
     const {
       newsList, searchText, country, showQuickFilter, indeterminate, checkAll, checkedIdList,
-      showSearchBar, beginDate, endDate, treeValue, loading, drawerVisible,
+      showSearchBar, beginDate, endDate, treeValue, loading, sortor, lastSearch,
     } = this.state
     return (
       <div>
@@ -362,8 +393,22 @@ class Home extends React.Component {
               {newsList.length}
               条
             </label>
+            <Select
+              value={sortor}
+              style={{ width: 300, marginLeft: 20 }}
+              onChange={value => this.sortData(value)}
+            >
+              <Option key="time" value="time">时间顺序</Option>
+              <Option key="score" value="score">搜索词权重顺序</Option>
+            </Select>
           </div>
           <div style={{ float: 'right', marginRight: 40 }}>
+            <AddCollection
+              checkedIdList={checkedIdList}
+              allDataList={newsList}
+              searchText={lastSearch}
+            />
+            <Collection />
             <Export checkedIdList={checkedIdList} allDataList={newsList} />
           </div>
         </div>
@@ -376,6 +421,8 @@ class Home extends React.Component {
               loading={loading}
               pagination={{
                 pageSize: 10,
+                showSizeChanger: true,
+                showQuickJumper: true,
               }}
               renderItem={(item) => {
                 if (item.hasOwnProperty('title')) { // eslint-disable-line
@@ -464,14 +511,14 @@ class Home extends React.Component {
                             target="_blank"
                             dangerouslySetInnerHTML={{ __html: item.transmode === true ? item['transTitle'] : item['news_Title'] }}
                           />
-)}
+                        )}
                         avatar={(
                           <Checkbox
                             value={item['news_ID']}
                             checked={item.checked}
                             onChange={this.addChecked}
                           />
-)}
+                        )}
                         description={(
                           <div>
                             <Icon
@@ -493,26 +540,6 @@ class Home extends React.Component {
             />
           </div>
           <BackTop />
-          <Drawer
-            title={username}
-            placement="right"
-            closable={false}
-            onClose={() => this.setState({ drawerVisible: false })}
-            visible={drawerVisible}
-          >
-            <h3>
-              导出
-            </h3>
-            <Export checkedIdList={checkedIdList} allDataList={newsList} />
-            <Divider />
-            <h3>
-              用户操作
-            </h3>
-            <Button style={{ margin: 15 }} type="primary" onClick={this.logout} icon="logout">
-              注销
-            </Button>
-            <Divider />
-          </Drawer>
         </div>
       </div>
     )
