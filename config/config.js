@@ -24,7 +24,7 @@ export default {
       antd: true,
       dva: true,
       dynamicImport: true,
-      title: 'techNews',
+      title: '科普新闻发现系统',
       dll: false,
       hardSource: false,
     }],
