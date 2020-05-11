@@ -22,6 +22,7 @@
     "express": "^4.17.1",
     "jquery": "^3.5.1",
     "jspdf": "^1.5.3",
+    "jspdf-customfonts": "0.0.4-rc.4",
     "lodash": "^4.17.15",
     "md5": "^2.2.1",
     "moment": "^2.19.2",

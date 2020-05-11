@@ -1,6 +1,7 @@
 import React from 'react'
 import { Button, Modal, Form, Icon, Input, notification } from 'antd'
 import jsPDF from 'jspdf'
+import path from '@/assets/fzhtjw-normal.js'
 
 const openNotificationWithIcon = (type, info) => {
   notification[type]({
@@ -28,6 +29,12 @@ export default class Export extends React.Component {
       visible: false,
     };
 
+    componentDidMount() {
+      const script = document.createElement('script')
+      script.src = path
+      document.body.appendChild(script)
+    }
+
     hideModal = () => {
       this.setState({
         visible: false,
@@ -40,12 +47,6 @@ export default class Export extends React.Component {
       })
       this.hideModal()
     };
-
-    componentDidMount() {
-      const script = document.createElement('script')
-      script.src = '/static/simsun-normal.js'
-      document.body.appendChild(script)
-    }
 
     openEmailModal = () => {
       this.setState({
@@ -113,7 +114,7 @@ export default class Export extends React.Component {
 
       const doc = new jsPDF()
       console.log(doc.getFontList())
-      doc.setFont('simsun')
+      doc.setFont('fzhtjw')
       doc.setFontType('normal')
 
       let verticalOffset = 20
