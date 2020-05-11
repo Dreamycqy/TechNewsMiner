@@ -252,7 +252,7 @@ class Home extends React.Component {
 
     newsList.forEach((item) => {
       if (item.news_ID === value) {
-        item.checked = checked
+        item.checked = checked // eslint-disable-line
       }
     })
     this.setState({

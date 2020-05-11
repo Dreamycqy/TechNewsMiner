@@ -41,7 +41,8 @@ export default class Export extends React.Component {
         const item = checkedList[i]
 
         doc.setFontSize(10)
-        const titleLine = doc.splitTextToSize(item.news_Title.replace(/<em style='color:red'>/g, '').replace(/<\/em>/g, ''), 150)
+        const titleText = item.transmode === true ? item.transTitle : item.news_Title
+        const titleLine = doc.splitTextToSize(titleText.replace(/<em style='color:red'>/g, '').replace(/<\/em>/g, ''), 150)
         doc.textWithLink(titleLine[0], 20, verticalOffset, { url: redirect(item['news_URL']) })
         verticalOffset += titleLine.length * 5
 

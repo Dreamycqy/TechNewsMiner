@@ -87,6 +87,19 @@ class Abstract extends React.Component {
     }
   }
 
+  handleTransBack = (newsId) => {
+    const { newsList } = this.state
+    let target = _.find(newsList, { news_ID: newsId })
+    if (!target) {
+      target = _.find(newsList, { id: newsId })
+    }
+    if (!target) {
+      return
+    }
+    target.transmode = false
+    this.setState({ newsList })
+  }
+
   handleListChange = (type, newsId, value) => {
     const { newsList } = this.state
     const newTarget = _.find(newsList, { news_ID: newsId })
@@ -138,13 +151,13 @@ class Abstract extends React.Component {
                       {
                         item.transmode !== true
                           ? (
-                            <a href="javascript:;" onClick={() => this.handleTranslate(item['news_Title'], item['news_Content'], item['news_ID'])}>
+                            <a href="javascript:;" disabled={item['editmode']} onClick={() => this.handleTranslate(item['news_Title'], item['news_Content'], item['news_ID'])}>
                               <Icon type="cloud-sync" />
                               &nbsp;&nbsp;翻译
                             </a>
                           )
                           : (
-                            <a href="javascript:;" onClick={() => this.handleTransBack(item['news_ID'])}>
+                            <a href="javascript:;" disabled={item['editmode']} onClick={() => this.handleTransBack(item['news_ID'])}>
                               <Icon type="cloud-sync" />
                               &nbsp;&nbsp;原文
                             </a>
