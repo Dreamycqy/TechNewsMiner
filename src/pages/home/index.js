@@ -6,7 +6,7 @@ import { connect } from 'dva'
 import md5 from 'md5'
 import $ from 'jquery'
 import { makeOption, findPathByLeafId, eventImage } from '@/utils/common'
-import { search } from '@/services/index'
+import { search, subQueryNews } from '@/services/index'
 import Export from './export'
 import User from './user'
 import AddCollection from './addCollection'
@@ -44,7 +44,7 @@ class Home extends React.Component {
       newsList: [],
       originNewsList: [],
       searchText: '',
-      beginDate: moment().subtract(6, 'days'),
+      startDate: moment().subtract(2, 'days'),
       endDate: moment(),
       country: 'all',
       indeterminate: false,
@@ -148,7 +148,7 @@ class Home extends React.Component {
   }
 
   changeDate = (date) => {
-    this.setState({ beginDate: date[0], endDate: date[1] })
+    this.setState({ startDate: date[0], endDate: date[1] })
   }
 
   sortData = (type) => {
@@ -156,7 +156,7 @@ class Home extends React.Component {
     const { originNewsList } = this.state
     switch (type) {
       case 'time':
-        this.setState({ newsList: originNewsList })
+        this.setState({ newsList: _.orderBy(originNewsList, 'news_Time', 'desc') })
         break
       case 'score':
         this.setState({ newsList: _.orderBy(originNewsList, 'score', 'desc') })
@@ -168,15 +168,15 @@ class Home extends React.Component {
 
   search = async () => {
     const {
-      searchText, beginDate, endDate, categories, country, treeValue,
+      searchText, startDate, endDate, categories, country, treeValue,
     } = this.state
     this.setState({ loading: true, lastSearch: searchText })
     const data = await search({
       word: searchText,
-      startDate: beginDate.format('YYYY-MM-DD'),
+      startDate: startDate.format('YYYY-MM-DD'),
       endDate: endDate.format('YYYY-MM-DD'),
-      categories,
-      sources: countryMap[country],
+      categories: JSON.stringify(categories),
+      sources: JSON.stringify(countryMap[country]),
     })
     if (data) {
       data.forEach((e) => {
@@ -215,6 +215,65 @@ class Home extends React.Component {
       message.error('获取新闻列表失败，请检查是否设置过滤关键词！')
     }
     this.setState({ loading: false })
+  }
+
+  subSearch = async (ids) => {
+    const {
+      searchText, startDate, endDate, categories, country, treeValue,
+    } = this.state
+    this.setState({ loading: true, lastSearch: searchText })
+    const data = await subQueryNews({
+      word: searchText,
+      startDate: startDate.format('YYYY-MM-DD'),
+      endDate: endDate.format('YYYY-MM-DD'),
+      categories: JSON.stringify(categories),
+      sources: JSON.stringify(countryMap[country]),
+      ids: JSON.stringify(ids),
+    })
+    if (data) {
+      data.forEach((e) => {
+        e.score = 0
+        const title = e['news_Title'].replace(/<em style='color:red'>/g, '').replace(/<\/em>/g, '')
+        const content = e['news_Content'].replace(/<em style='color:red'>/g, '').replace(/<\/em>/g, '')
+        if (title.split(this.state.searchText).length > 0) {
+          e.score += 10 * (title.split(this.state.searchText).length - 1)
+        }
+        if (content.split(this.state.searchText).length > 0) {
+          e.score += 1 * (content.split(this.state.searchText).length - 1)
+        }
+      })
+      this.setState({
+        newsList: data,
+        originNewsList: data,
+        checkedIdList: [],
+        checkAll: false,
+      })
+      this.sortData(this.state.sortor)
+      let ttreeValueTarget = treeValue[0]
+      treeValue.forEach((e) => {
+        if (e.length < ttreeValueTarget.length) {
+          ttreeValueTarget = e
+        }
+      })
+      if (data.length === 0 && ttreeValueTarget) {
+        if (ttreeValueTarget.length >= 3) {
+          const target = findPathByLeafId(ttreeValueTarget.substr(0, ttreeValueTarget.length - 2), myData, 'key')
+          if (target) {
+            emptyFilterSelect = target.node
+          }
+        }
+      }
+    } else {
+      message.error('获取新闻列表失败，请检查是否设置过滤关键词！')
+    }
+    this.setState({ loading: false })
+  }
+
+  subSearchOnClick = () => {
+    const { newsList } = this.state
+    const idList = []
+    newsList.forEach(item => idList.push(item.news_ID))
+    this.subSearch(idList)
   }
 
   searchInput = (value) => {
@@ -339,7 +398,7 @@ class Home extends React.Component {
     }
     const {
       newsList, searchText, country, showQuickFilter, indeterminate, checkAll, checkedIdList,
-      showSearchBar, beginDate, endDate, treeValue, loading, sortor, lastSearch,
+      showSearchBar, startDate, endDate, treeValue, loading, sortor, lastSearch,
     } = this.state
     return (
       <div>
@@ -387,7 +446,7 @@ class Home extends React.Component {
           <RangePicker
             format={dateFormat}
             onChange={this.changeDate}
-            value={[beginDate, endDate]}
+            value={[startDate, endDate]}
           />
           <Button style={{ marginLeft: 20 }} icon="search" type="primary" onClick={this.subSearchOnClick}>从当前结果中搜索</Button>
           <br />

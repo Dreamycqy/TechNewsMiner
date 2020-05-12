@@ -40,6 +40,7 @@ router.all('/', (req, res) => {
   } else {
     opt.json = true
     opt.body = qs.stringify(req.body)
+    console.log(opt.body)
   }
   request(opt, (error, response, body) => {
     try {

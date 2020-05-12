@@ -17,6 +17,7 @@ export default {
     if (window.localStorage.uid) {
       params.uid = window.localStorage.uid
     }
+    console.log(params)
     const { token, cancel } = CancelToken.source()
     if (rSymbol) {
       window.GLOBAL.requestSymbols[rSymbol] = cancel
