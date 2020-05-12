@@ -52,7 +52,7 @@ export default class Export extends React.Component {
         doc.addImage(imgEarch, 'JPEG', 54, verticalOffset - 2.5, 2.5, 2.5)
         doc.text(58, verticalOffset, item.news_Source)
         verticalOffset += 4
-        const contextText = item.edition && item.edition !== ''
+        const contextText = item.edition && item.edition !== '' && item.origin === false
           ? item.edition : item.transmode === true ? item['translation'] : item['news_Content']
         const contentLines = doc.splitTextToSize(`${contextText.replace(/<em style='color:red'>/g, '').replace(/<\/em>/g, '')}...`, 210)
         doc.setFontSize(6)

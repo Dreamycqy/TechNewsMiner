@@ -11,7 +11,7 @@ const appid = '20200511000448145'
 const translatekey = 'nCGO32AVxsejOEd7CaVk'
 
 const originData = _.find(JSON.parse(window.localStorage.collection), { id: getUrlParams().id })
-const { searchText } = originData
+const { searchText, name, desc, time } = originData
 
 class Abstract extends React.Component {
   constructor(props) {
@@ -23,6 +23,21 @@ class Abstract extends React.Component {
 
   redirect = (url) => {
     return `https://newsminer.net/link.html?url=${url}`
+  }
+
+  handleHighLight = (str) => {
+    if (searchText === '') {
+      return str
+    }
+    let result = str
+    const arr = searchText.split(' ')
+    arr.forEach((e) => {
+      if (e !== ' ' && e !== '') {
+        const reg = new RegExp(e, 'gi')
+        result = str.replace(reg, `<em style="color:red">${e}</em>`)
+      }
+    })
+    return result
   }
 
   translate = (q) => {
@@ -54,7 +69,7 @@ class Abstract extends React.Component {
     })
   }
 
-  handleTranslate = async (title, content, newsId) => {
+  handleTranslate = async (newsId) => {
     const { newsList } = this.state
     let target = _.find(newsList, { news_ID: newsId })
     if (!target) {
@@ -68,17 +83,8 @@ class Abstract extends React.Component {
       this.setState({ newsList })
       return
     }
-    const origin = content.split(/<em style='color:red'>.*?>/g)
-    const highLight = content.match(/(?<=<em style='color:red'>).*?(?=<)/g)
-    let result = ''
-    origin.forEach((e, index) => {
-      result += e
-      if (highLight !== null && highLight[index]) {
-        result += highLight[index]
-      }
-    })
-    const data = await this.translate(result)
-    const transTitle = await this.translate(title)
+    const data = await this.translate(target.news_Content)
+    const transTitle = await this.translate(target.news_Title)
     if (data) {
       target.translation = data.str
       target.transmode = true
@@ -116,6 +122,10 @@ class Abstract extends React.Component {
         break
       case 'save':
         newTarget.editmode = false
+        newTarget.origin = false
+        break
+      case 'origin':
+        newTarget.origin = true
         break
       default:
         break
@@ -129,10 +139,26 @@ class Abstract extends React.Component {
       <div>
         <div style={{ paddingTop: 20 }}>
           <span style={{ marginRight: 20, marginLeft: 50, fontSize: 18 }}>
+            收藏：
+            <span>{name}</span>
+          </span>
+          <span style={{ marginRight: 20, marginLeft: 20, fontSize: 18 }}>
             关键词：
             <span style={{ color: 'red' }}>{searchText}</span>
           </span>
-          <Export dataList={newsList} searchText={searchText} />
+          <span style={{ marginRight: 20, marginLeft: 20, fontSize: 18 }}>
+            创建时间：
+            <span>{time}</span>
+          </span>
+          <div style={{ float: 'right', marginRight: 40 }}>
+            <Export dataList={newsList} searchText={searchText} />
+          </div>
+        </div>
+        <div style={{ padding: 10, width: '100%', overflow: 'hidden', borderBottom: '1px solid #e8e8e8' }}>
+          <span style={{ marginRight: 20, marginLeft: 40, fontSize: 18 }}>
+            描述：
+            <span>{desc}</span>
+          </span>
         </div>
         <div style={{ padding: 24, background: '#fff' }}>
           <List
@@ -151,7 +177,7 @@ class Abstract extends React.Component {
                       {
                         item.transmode !== true
                           ? (
-                            <a href="javascript:;" disabled={item['editmode']} onClick={() => this.handleTranslate(item['news_Title'], item['news_Content'], item['news_ID'])}>
+                            <a href="javascript:;" disabled={item['editmode']} onClick={() => this.handleTranslate(item['news_ID'])}>
                               <Icon type="cloud-sync" />
                               &nbsp;&nbsp;翻译
                             </a>
@@ -188,6 +214,19 @@ class Abstract extends React.Component {
                           )
                         }
                     </span>,
+                    <span>
+                      {
+                        item.edition
+                          ? (
+                            <a href="javascript:;" onClick={() => this.handleListChange('origin', item['news_ID'])}>
+                              <Icon type="edit" />
+                              &nbsp;&nbsp;返回
+                              {item.transmode === true ? '翻译' : '原文'}
+                            </a>
+                          )
+                          : null
+                      }
+                    </span>,
                   ]}
                 >
                   <List.Item.Meta
@@ -195,7 +234,7 @@ class Abstract extends React.Component {
                       <a
                         href={this.redirect(item['news_URL'])}
                         target="_blank"
-                        dangerouslySetInnerHTML={{ __html: item.transmode === true ? item['transTitle'] : item['news_Title'] }}
+                        dangerouslySetInnerHTML={{ __html: item.transmode === true ? item['transTitle'] : this.handleHighLight(item['news_Title']) }}
                       />
                         )}
                     description={(
@@ -221,7 +260,7 @@ class Abstract extends React.Component {
                         />
                       )
                       : (
-                        <p dangerouslySetInnerHTML={{ __html: item.edition && item.edition !== '' ? item['edition'] : item.transmode === true ? `${item['translation']}...` : `${item['news_Content']}...` }} />
+                        <p dangerouslySetInnerHTML={{ __html: item.edition && item.edition !== '' && item.origin === false ? this.handleHighLight(item['edition']) : item.transmode === true ? `${item['translation']}...` : `${this.handleHighLight(item['news_Content'])}...` }} />
                       )
                   }
                 </List.Item>

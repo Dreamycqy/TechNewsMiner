@@ -46,6 +46,10 @@ class Collection extends React.Component {
       title: '描述',
       dataIndex: 'desc',
     }, {
+      title: '创建时间',
+      dataIndex: 'time',
+      width: 180,
+    }, {
       title: '新闻数',
       width: 80,
       render: (text, record) => {
