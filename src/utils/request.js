@@ -17,7 +17,6 @@ export default {
     if (window.localStorage.uid) {
       params.uid = window.localStorage.uid
     }
-    console.log(params)
     const { token, cancel } = CancelToken.source()
     if (rSymbol) {
       window.GLOBAL.requestSymbols[rSymbol] = cancel
@@ -59,13 +58,11 @@ export default {
     if (window.localStorage.uid) {
       params.uid = window.localStorage.uid
     }
-    console.log(params)
     return axios.get(opts.url, {
       params: params || {},
     }, {
       timeout: 1000 * 120,
     }).then((res) => {
-      console.log(res)
       return res.data
     }).catch((err) => {
       if (axios.isCancel(err)) {
