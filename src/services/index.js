@@ -10,7 +10,7 @@ export function login(body, rSymbol) {
 
 export function search(body, rSymbol) {
   return request.post({
-    url: '/techNews/api/svc/Foreign/queryNews',
+    url: '/techNews/api/svc/Foreign/queryNewsV2',
     data: body,
     rSymbol,
   })
@@ -18,7 +18,7 @@ export function search(body, rSymbol) {
 
 export function subQueryNews(body, rSymbol) {
   return request.post({
-    url: '/techNews/api/svc/Foreign/subQueryNews',
+    url: '/techNews/api/svc/Foreign/subQueryNewsV2',
     data: body,
     rSymbol,
   })

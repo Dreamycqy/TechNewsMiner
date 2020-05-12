@@ -1,5 +1,5 @@
 import React from 'react'
-import { Modal, Table, Button } from 'antd'
+import { Modal, Table, Button, Divider } from 'antd'
 
 class Collection extends React.Component {
   constructor(props) {
@@ -37,16 +37,6 @@ class Collection extends React.Component {
       visible, dataSource,
     } = this.state
     const columns = [{
-      title: 'ID',
-      dataIndex: 'id',
-      render: (text, record) => {
-        return (
-          <a href="javascript:;" onClick={() => this.jump(record.id)}>
-            {text}
-          </a>
-        )
-      },
-    }, {
       title: '名称',
       dataIndex: 'name',
     }, {
@@ -56,7 +46,8 @@ class Collection extends React.Component {
       title: '描述',
       dataIndex: 'desc',
     }, {
-      title: '收藏新闻数',
+      title: '新闻数',
+      width: 80,
       render: (text, record) => {
         return (
           <span>{record.checkedList.length}</span>
@@ -64,12 +55,16 @@ class Collection extends React.Component {
       },
     }, {
       title: '操作',
-      width: 60,
+      width: 160,
       render: (text, record) => {
         return (
-          <a href="javascript:;" onClick={() => this.handleDeleteRow(record.id)}>
-            删除
-          </a>
+          <span>
+            <a href="javascript:;" onClick={() => this.jump(record.id)}>生成摘要</a>
+            <Divider type="vertical" />
+            <a href="javascript:;" onClick={() => this.handleDeleteRow(record.id)}>
+              删除
+            </a>
+          </span>
         )
       },
     }]

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Modal, Input, Button } from 'antd'
+import { Modal, Input, Button, message } from 'antd'
 import uuid from 'uuid'
 
 const { TextArea } = Input
@@ -15,6 +15,10 @@ class AddCollect extends React.Component {
   }
 
   openModal = async () => {
+    if (this.props.checkedIdList.length === 0) {
+      message.error('未选择任何新闻条目！')
+      return
+    }
     await this.setState({ visible: true, name: '', desc: '' })
   }
 
