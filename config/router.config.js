@@ -12,11 +12,11 @@ export default [
     component: '../layouts',
     routes: [
       {
-        path: '/index',
-        component: './index',
+        path: './index',
+        component: './home',
       },
       {
-        path: '/abstract',
+        path: './abstract',
         component: './abstract',
       },
     ],

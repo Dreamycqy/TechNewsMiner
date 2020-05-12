@@ -2,4 +2,3 @@ app/**/**
 www/**/*.js
 /*.js
 /server/
-/src/pages/simsun-normal.js

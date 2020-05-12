@@ -107,16 +107,16 @@ class Home extends React.Component {
       this.setState({ newsList })
       return
     }
-    const origin = content.split(/<em style='color:red'>.*?>/g)
-    const highLight = content.match(/(?<=<em style='color:red'>).*?(?=<)/g)
-    let result = ''
-    origin.forEach((e, index) => {
-      result += e
-      if (highLight !== null && highLight[index]) {
-        result += highLight[index]
-      }
-    })
-    const data = await this.translate(result)
+    // const origin = content.split(/<em style='color:red'>.*?>/g)
+    // const highLight = content.match(/(?<=<em style='color:red'>).*?(?=<)/g)
+    // let result = ''
+    // origin.forEach((e, index) => {
+    //   result += e
+    //   if (highLight !== null && highLight[index]) {
+    //     result += highLight[index]
+    //   }
+    // })
+    const data = await this.translate(content)
     const transTitle = await this.translate(title)
     if (data) {
       target.translation = data.str
