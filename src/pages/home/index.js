@@ -533,7 +533,7 @@ class Home extends React.Component {
             onChange={this.changeDate}
             value={[startDate, endDate]}
           />
-          <Button style={{ marginLeft: 20 }} icon="search" type="primary" onClick={this.subSearchOnClick}>从当前结果中搜索</Button>
+          <Button style={{ marginLeft: 20 }} icon="search" type="primary" onClick={this.subSearchOnClick}>从当前结果中筛选</Button>
           <br />
           <div style={{ marginTop: 10 }}>
             <span>

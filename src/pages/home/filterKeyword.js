@@ -17,10 +17,6 @@ export default class FilterKeyword extends React.Component {
       inputValue: '',
     }
 
-    componentWillMount() {
-      this.getFilterKeyword()
-    }
-
     getFilterKeyword = async () => {
       const data = await getFilterKeyword({
         type: 'xxx',
@@ -62,6 +58,7 @@ export default class FilterKeyword extends React.Component {
 
 
     showModal = () => {
+      this.getFilterKeyword()
       this.setState({
         visible: true,
       })
