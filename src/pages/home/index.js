@@ -484,9 +484,12 @@ class Home extends React.Component {
     } = this.state
     return (
       <div>
-        <div style={{ height: showQuickFilter ? 80 : 64, paddingLeft: 50, lineHeight: '64px', borderBottom: '1px solid #e1e1e1' }}>
+        <div style={{ height: showQuickFilter ? 80 : 64, paddingLeft: 50, lineHeight: '60px', borderBottom: '1px solid #e1e1e1' }}>
           <div style={{ overflow: 'hidden' }}>
             <div style={{ float: 'left' }}>
+              <div style={{ marginRight: 16, fontSize: 20, fontWeight: 600, display: 'inline-block' }}>
+                <a href="javascript:;">科普新闻发现</a>
+              </div>
               <Search
                 addonBefore={(
                   <div>
