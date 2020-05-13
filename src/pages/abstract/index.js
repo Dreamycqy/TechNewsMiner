@@ -1,5 +1,5 @@
 import React from 'react'
-import { Input, Divider, List, Icon } from 'antd'
+import { Input, Divider, List, Icon, Popconfirm } from 'antd'
 import md5 from 'md5'
 import $ from 'jquery'
 import _ from 'lodash'
@@ -19,6 +19,10 @@ class Abstract extends React.Component {
     this.state = {
       newsList: originData.checkedList,
     }
+  }
+
+  getPopupContainer = (node) => {
+    return node.parentNode
   }
 
   redirect = (url) => {
@@ -133,6 +137,11 @@ class Abstract extends React.Component {
     this.setState({ newsList })
   }
 
+  handleDelete = (news_ID) => {
+    const { newsList } = this.state
+    this.setState({ newsList: newsList.filter(item => item.news_ID !== news_ID) })
+  }
+
   render() {
     const { newsList } = this.state
     return (
@@ -190,6 +199,15 @@ class Abstract extends React.Component {
                           )
                         }
                     </span>,
+                    <Popconfirm
+                      title="确定要删除吗？"
+                      placement="topRight"
+                      getPopupContainer={this.getPopupContainer}
+                      onConfirm={() => this.handleDelete(item.news_ID)}
+                      overlayStyle={{ display: 'inline-block', width: 200 }}
+                    >
+                      <a href="javascript:;" disabled={newsList.length < 2}>删除</a>
+                    </Popconfirm>,
                     <span>
                       {
                         item.editmode !== true
