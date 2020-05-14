@@ -190,7 +190,7 @@ class Abstract extends React.Component {
             <span>{time}</span>
           </span>
           <div style={{ float: 'right', marginRight: 40 }}>
-            <Export dataList={newsList} searchText={searchText} />
+            <Export dataList={newsList} searchText={searchText} info={{ name, desc, time }} />
           </div>
           <div style={{ float: 'right', marginRight: 20 }}>
             排序方式：
