@@ -180,6 +180,10 @@ export default class Export extends React.Component {
       defaultStyle: {
         font: 'fzhtjw',
       },
+      info: {
+        title: `摘要-${this.props.searchText.replace(/\s/g, '_')}_${moment().format('YYYY-MM-DD_HH:mm')}`,
+        author: 'Team KEG, Tsinghua University',
+      },
     }
     pdfMake.fonts = {
       fzhtjw: {
@@ -187,7 +191,7 @@ export default class Export extends React.Component {
       },
     }
     this.setState({ loading: false })
-    pdfMake.createPdf(dd).open()
+    pdfMake.createPdf(dd).download(`摘要-${this.props.searchText.replace(/\s/g, '_')}_${moment().format('YYYY-MM-DD_HH:mm')}`)
   }
 
   render() {
