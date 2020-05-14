@@ -64,8 +64,29 @@ export const eventImage = (picture) => {
     url = picture.substring(1, picture.length - 1).split(',')[0] // eslint-disable-line
   }
   if (url !== undefined && url.length > 0) {
-    return <img width={250} height={140} alt="" src={url} />
+    const target = <img width={250} height={140} alt="" src={url} />
+    return target
   }
+}
+
+export const image2Base64 = (url, ext) => {
+  function getBase64Image(img) {
+    let canvas = document.createElement('canvas')
+    canvas.width = 500
+    canvas.height = 500 * img.height / img.width
+    const ctx = canvas.getContext('2d')
+    ctx.drawImage(img, 0, 0, canvas.width, canvas.height)
+    const dataURL = canvas.toDataURL(`image/${ext}`)
+    canvas = null
+    return dataURL
+  }
+  const image = new Image()
+  image.src = `/techNews/pic/${url}`
+  return new Promise((resolve) => {
+    image.onload = () => {
+      resolve(getBase64Image(image))
+    }
+  })
 }
 
 // 找出重名不重学科的节点

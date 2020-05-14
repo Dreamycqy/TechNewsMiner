@@ -4,7 +4,7 @@ import md5 from 'md5'
 import $ from 'jquery'
 import _ from 'lodash'
 import { eventImage, getUrlParams } from '@/utils/common'
-import Export from './exportAbs'
+import ExportNew from './export2'
 
 const { TextArea } = Input
 const appid = '20200511000448145'
@@ -20,7 +20,7 @@ class Abstract extends React.Component {
       newsList: originData.checkedList,
     }
   }
-
+  
   getPopupContainer = (node) => {
     return node.parentNode
   }
@@ -160,7 +160,7 @@ class Abstract extends React.Component {
             <span>{time}</span>
           </span>
           <div style={{ float: 'right', marginRight: 40 }}>
-            <Export dataList={newsList} searchText={searchText} />
+            <ExportNew dataList={newsList} searchText={searchText} />
           </div>
         </div>
         <div style={{ padding: 10, width: '100%', overflow: 'hidden', borderBottom: '1px solid #e8e8e8' }}>
@@ -180,7 +180,7 @@ class Abstract extends React.Component {
             renderItem={(item) => {
               return (
                 <List.Item
-                  extra={eventImage(item['news_Pictures'])}
+                  extra={eventImage(item['news_Pictures'], item.news_ID)}
                   actions={[
                     <span>
                       {

@@ -1,11 +1,15 @@
 const index = require('./routes/index')
 const proxy = require('./routes/proxy')
+const image = require('./routes/image')
 // const auth = require('./routes/auth')
 
 const routesConfig = [
   {
     path: ['/:module/api/*'],
     route: proxy,
+  }, {
+    path: ['/:module/pic/*'],
+    route: image,
   }, {
   //   path: ['/:module/oauth/*'],
   //   route: auth,

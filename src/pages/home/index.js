@@ -635,7 +635,7 @@ class Home extends React.Component {
               searchText={lastSearch}
             />
             <Collection />
-            <Export checkedIdList={checkedIdList} allDataList={newsList} />
+            <Export checkedIdList={checkedIdList} allDataList={newsList} searchText={lastSearch} />
           </div>
         </div>
         <div style={{ margin: '0 16px', overflow: 'initial' }}>
@@ -713,7 +713,7 @@ class Home extends React.Component {
                       //       } else {
                       return (
                         <List.Item
-                          extra={eventImage(item['news_Pictures'])}
+                          extra={eventImage(item['news_Pictures'], item.news_ID)}
                           actions={[
                             <span>
                               {

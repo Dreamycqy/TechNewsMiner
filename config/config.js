@@ -33,6 +33,7 @@ export default {
   publicPath: '/techNews/',
   proxy: {
     '/techNews/api/': { target: 'http://127.0.0.1:8111/', changeOrigin: true },
+    '/techNews/pic/': { target: 'http://127.0.0.1:8111/', changeOrigin: true },
   },
   define: defineProperty(),
   routes: pageRoutes,
