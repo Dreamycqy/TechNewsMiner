@@ -7,7 +7,7 @@ import md5 from 'md5'
 import $ from 'jquery'
 import { makeOption, findPathByLeafId, eventImage, timeout } from '@/utils/common'
 import { search, subQueryNews, getFilterKeyword } from '@/services/index'
-import Export from './export'
+import Export from '@/components/items/export'
 import User from './user'
 import AddCollection from './addCollection'
 import Collection from './collection'
@@ -213,7 +213,8 @@ class Home extends React.Component {
   }
 
   search = async () => {
-    await this.getFilterKeyword()
+    window.GLOBAL.requestCancel('search', '取消')
+    await this.getFilterKeyword({})
     const {
       searchText, startDate, endDate, categories, country, treeValue,
     } = this.state
@@ -224,7 +225,7 @@ class Home extends React.Component {
       endDate: endDate.format('YYYY-MM-DD'),
       categories: JSON.stringify(categories),
       sources: JSON.stringify(countryMap[country]),
-    })
+    }, 'search')
     if (data) {
       data.forEach((e) => {
         e.score = 0
@@ -261,7 +262,7 @@ class Home extends React.Component {
         }
       }
     } else {
-      message.error('获取新闻列表失败，请检查是否设置过滤关键词！')
+      // message.error('获取新闻列表失败，请检查是否设置过滤关键词！')
     }
     this.setState({ loading: false })
   }

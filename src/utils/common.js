@@ -72,8 +72,8 @@ export const eventImage = (picture) => {
 export const image2Base64 = (url, ext) => {
   function getBase64Image(img) {
     let canvas = document.createElement('canvas')
-    canvas.width = 500
-    canvas.height = 500 * img.height / img.width
+    canvas.width = 400
+    canvas.height = 400 * img.height / img.width
     const ctx = canvas.getContext('2d')
     ctx.drawImage(img, 0, 0, canvas.width, canvas.height)
     const dataURL = canvas.toDataURL(`image/${ext}`)

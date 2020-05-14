@@ -11,8 +11,6 @@ export default {
     const params = opts.data || opts.body || {}
     const showError = opts.showError === undefined ? true : opts.showError
     const rSymbol = opts.rSymbol || params.rSymbol
-    delete params.successTip
-    delete params.rSymbol
     const optsUrl = opts.url
     if (window.localStorage.uid) {
       params.uid = window.localStorage.uid
@@ -21,6 +19,8 @@ export default {
     if (rSymbol) {
       window.GLOBAL.requestSymbols[rSymbol] = cancel
     }
+    delete params.successTip
+    delete params.rSymbol
     return axios.post(optsUrl, params, {
       timeout: 1000 * 120,
       cancelToken: token,

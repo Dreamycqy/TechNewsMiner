@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button } from 'antd'
+import { Button, notification } from 'antd'
 import pdfMake from 'pdfmake/build/pdfmake'
 import pdfFonts from '@/constants/vfs_fonts'
 import { image2Base64 } from '@/utils/common'
@@ -8,11 +8,25 @@ import { image2Base64 } from '@/utils/common'
 
 pdfMake.vfs = pdfFonts.pdfMake.vfs
 
+const openNotificationWithIcon = (type, info) => {
+  notification[type]({
+    message: info,
+    duration: 1.5,
+  })
+}
+
 function redirect(url) {
   return `https://newsminer.net/link.html?url=${url}`
 }
 
 export default class Export extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      loading: false,
+    }
+  }
+
   handleHighLight = (str, type) => {
     if (this.props.searchText === '') {
       return str
@@ -33,6 +47,9 @@ export default class Export extends React.Component {
         result.push({ text: e, color: '#2b2b2b', lineHeight: type === 'title' ? 1.2 : 1.5 })
       }
     })
+    if (type === 'content') {
+      result.push({ text: '……' })
+    }
     return result
   }
 
@@ -46,8 +63,40 @@ export default class Export extends React.Component {
   }
 
   download = async () => {
+    let checkedList = []
+    if (this.props.dataList) {
+      checkedList = this.props.dataList
+    } else {
+      this.props.checkedIdList.forEach((id) => {
+        this.props.allDataList.forEach((data) => {
+          if (id === data.news_ID) {
+            checkedList.push(data)
+          }
+        })
+      })
+    }
+    if (checkedList.length === 0) {
+      openNotificationWithIcon('error', '未选中任何新闻或事件')
+      return
+    }
     const content = []
-    for (const item of this.props.dataList) {
+    const imageMap = {}
+    const promises = checkedList.map(async (item) => {
+      const picture = item.news_Pictures
+      const type = typeof picture
+      let url = ''
+      if (type === 'object') {
+        url = picture[0] // eslint-disable-line
+      } else if (type === 'string') {
+        url = picture.substring(1, picture.length - 1).split(',')[0] // eslint-disable-line
+      }
+      if (url !== '') {
+        imageMap[item.news_ID] = await this.getPicture(url)
+      }
+    })
+    this.setState({ loading: true })
+    await Promise.all(promises)
+    for (const item of checkedList) {
       const titleText = item.transmode === true ? item.transTitle : item.news_Title
       const contextText = item.edition && item.edition !== '' && item.origin === false
         ? item.edition : item.transmode === true ? item['translation'] : item['news_Content']
@@ -77,19 +126,11 @@ export default class Export extends React.Component {
         fontSize: 12,
         margin: [10, 0, 10, 20],
       })
-      const picture = item.news_Pictures
-      const type = typeof picture
-      let url = ''
-      if (type === 'object') {
-        url = picture[0] // eslint-disable-line
-      } else if (type === 'string') {
-        url = picture.substring(1, picture.length - 1).split(',')[0] // eslint-disable-line
-      }
-      if (url !== '') {
-        const image = await this.getPicture(url)
+      if (imageMap[item.news_ID]) {
         content.push({
-          image,
+          image: imageMap[item.news_ID],
           margin: [10, 0, 10, 20],
+          alignment: 'center',
         })
       }
     }
@@ -104,13 +145,18 @@ export default class Export extends React.Component {
         normal: 'fzhtjw.TTF',
       },
     }
+    this.setState({ loading: false })
     pdfMake.createPdf(dd).open()
   }
 
   render() {
     return (
       <div style={{ display: 'inline-block', marginLeft: 10 }}>
-        <Button style={{ margin: 0 }} className="gutter-box" type="primary" onClick={this.download} icon="export">
+        <Button
+          style={{ margin: 0 }} className="gutter-box"
+          type="primary" onClick={this.download}
+          icon="export" loading={this.state.loading}
+        >
           导出到PDF
         </Button>
         <br />

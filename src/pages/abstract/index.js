@@ -1,32 +1,62 @@
 import React from 'react'
-import { Input, Divider, List, Icon, Popconfirm } from 'antd'
+import { Input, Divider, List, Icon, Popconfirm, Select } from 'antd'
 import md5 from 'md5'
 import $ from 'jquery'
 import _ from 'lodash'
 import { eventImage, getUrlParams } from '@/utils/common'
-import ExportNew from './export2'
+import Export from '@/components/items/export'
 
 const { TextArea } = Input
+const { Option } = Select
 const appid = '20200511000448145'
 const translatekey = 'nCGO32AVxsejOEd7CaVk'
 
 const originData = _.find(JSON.parse(window.localStorage.collection), { id: getUrlParams().id })
 const { searchText, name, desc, time } = originData
+originData.checkedList.forEach((e) => {
+  e.score = 0
+  const title = e['news_Title']
+  const content = e['news_Content']
+  searchText.split(' ').forEach((item) => {
+    if (title.split(item).length > 0) {
+      e.score += 10 * (title.split(item).length - 1)
+    }
+    if (content.split(item).length > 0) {
+      e.score += 1 * (content.split(item).length - 1)
+    }
+  })
+})
 
 class Abstract extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
       newsList: originData.checkedList,
+      sortor: '',
     }
   }
-  
+
   getPopupContainer = (node) => {
     return node.parentNode
   }
 
   redirect = (url) => {
     return `https://newsminer.net/link.html?url=${url}`
+  }
+
+  sortData = (type) => {
+    this.setState({ sortor: type })
+    const { newsList } = this.state
+    switch (type) {
+      case 'time':
+        this.setState({ newsList: _.orderBy(newsList, 'news_Time', 'desc') })
+        break
+      case 'score':
+        this.setState({ newsList: _.orderBy(newsList, 'score', 'desc') })
+        break
+      default:
+        break
+    }
   }
 
   handleHighLight = (str) => {
@@ -143,7 +173,7 @@ class Abstract extends React.Component {
   }
 
   render() {
-    const { newsList } = this.state
+    const { newsList, sortor } = this.state
     return (
       <div>
         <div style={{ paddingTop: 20 }}>
@@ -160,7 +190,18 @@ class Abstract extends React.Component {
             <span>{time}</span>
           </span>
           <div style={{ float: 'right', marginRight: 40 }}>
-            <ExportNew dataList={newsList} searchText={searchText} />
+            <Export dataList={newsList} searchText={searchText} />
+          </div>
+          <div style={{ float: 'right', marginRight: 20 }}>
+            排序方式：
+            <Select
+              value={sortor}
+              style={{ width: 200, marginLeft: 20 }}
+              onChange={value => this.sortData(value)}
+            >
+              <Option key="time" value="time">时间顺序</Option>
+              <Option key="score" value="score">搜索词权重顺序</Option>
+            </Select>
           </div>
         </div>
         <div style={{ padding: 10, width: '100%', overflow: 'hidden', borderBottom: '1px solid #e8e8e8' }}>

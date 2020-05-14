@@ -37,6 +37,8 @@ class AddCollect extends React.Component {
       visible: true,
       name: '',
       desc: '',
+      addType: 'add',
+      selectid: '',
       dataSource: JSON.parse(window.localStorage.collection || '[]'),
     })
   }
@@ -63,6 +65,9 @@ class AddCollect extends React.Component {
     } else {
       const target = _.find(dataSource, { id: this.state.selectid })
       target.checkedList = _.uniqBy(target.checkedList.concat(checkedList), 'news_ID')
+      let array = target.searchText.split(' ')
+      array = array.concat(this.props.searchText.split(' '))
+      target.searchText = _.uniq(array).join(' ')
     }
     window.localStorage.setItem('collection', JSON.stringify(dataSource))
     this.setState({ visible: false })
@@ -110,7 +115,7 @@ class AddCollect extends React.Component {
             >
               <Radio.Group onChange={this.onChangeRadio} value={addType}>
                 <Radio value="add">新增收藏</Radio>
-                <Radio value="edit">从现有收藏中选择</Radio>
+                <Radio value="edit" disabled={dataSource.length === 0}>从现有收藏中选择</Radio>
               </Radio.Group>
             </Form.Item>
             <br />
