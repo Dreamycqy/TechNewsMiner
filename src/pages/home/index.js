@@ -232,14 +232,14 @@ class Home extends React.Component {
         const content = e['news_Content']
         searchText.split(' ').forEach((item) => {
           if (title.split(item).length > 0) {
-            e.score += 10 * (title.split(this.state.item).length - 1)
+            e.score += 10 * (title.split(item).length - 1)
           }
-          if (content.split(this.state.item).length > 0) {
-            e.score += 1 * (content.split(this.state.item).length - 1)
+          if (content.split(item).length > 0) {
+            e.score += 1 * (content.split(item).length - 1)
           }
         })
       })
-      this.setState({
+      await this.setState({
         newsList: data,
         originNewsList: data,
         checkedIdList: [],
@@ -286,14 +286,14 @@ class Home extends React.Component {
         const content = e['news_Content']
         searchText.split(' ').forEach((item) => {
           if (title.split(item).length > 0) {
-            e.score += 10 * (title.split(this.state.item).length - 1)
+            e.score += 10 * (title.split(item).length - 1)
           }
-          if (content.split(this.state.item).length > 0) {
-            e.score += 1 * (content.split(this.state.item).length - 1)
+          if (content.split(item).length > 0) {
+            e.score += 1 * (content.split(item).length - 1)
           }
         })
       })
-      this.setState({
+      await this.setState({
         newsList: data,
         originNewsList: data,
         checkedIdList: [],
@@ -328,9 +328,9 @@ class Home extends React.Component {
     let result = str
     const arr = lastSearch.split(' ')
     arr.forEach((e) => {
-      if (e !== ' ' && e !== '') {
+      if (e !== ' ' && e !== ' ') {
         const reg = new RegExp(e, 'gi')
-        result = str.replace(reg, `<em style="color:red">${e}</em>`)
+        result = result.replace(reg, `<em style="color:red">${e}</em>`)
       }
     })
     return result
@@ -739,7 +739,7 @@ class Home extends React.Component {
                               <a
                                 href={this.redirect(item['news_URL'])}
                                 target="_blank"
-                                dangerouslySetInnerHTML={{ __html: item.transmode === true ? item['transTitle'] : this.handleHighLight(item['news_Title']) }}
+                                dangerouslySetInnerHTML={{ __html: item.transmode === true ? this.handleHighLight(item['transTitle']) : this.handleHighLight(item['news_Title']) }}
                               />
                         )}
                             avatar={(
@@ -762,7 +762,7 @@ class Home extends React.Component {
                               </div>
                         )}
                           />
-                          <p dangerouslySetInnerHTML={{ __html: item.transmode === true ? `${item['translation']}...` : `${this.handleHighLight(item['news_Content'])}...` }} />
+                          <p dangerouslySetInnerHTML={{ __html: item.transmode === true ? `${this.handleHighLight(item['translation'])}...` : `${this.handleHighLight(item['news_Content'])}...` }} />
                         </List.Item>
                       )
                     }

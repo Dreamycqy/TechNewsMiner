@@ -38,7 +38,7 @@ class Abstract extends React.Component {
     arr.forEach((e) => {
       if (e !== ' ' && e !== '') {
         const reg = new RegExp(e, 'gi')
-        result = str.replace(reg, `<em style="color:red">${e}</em>`)
+        result = result.replace(reg, `<em style="color:red">${e}</em>`)
       }
     })
     return result
@@ -252,7 +252,7 @@ class Abstract extends React.Component {
                       <a
                         href={this.redirect(item['news_URL'])}
                         target="_blank"
-                        dangerouslySetInnerHTML={{ __html: item.transmode === true ? item['transTitle'] : this.handleHighLight(item['news_Title']) }}
+                        dangerouslySetInnerHTML={{ __html: item.transmode === true ? this.handleHighLight(item['transTitle']) : this.handleHighLight(item['news_Title']) }}
                       />
                         )}
                     description={(
@@ -278,7 +278,7 @@ class Abstract extends React.Component {
                         />
                       )
                       : (
-                        <p dangerouslySetInnerHTML={{ __html: item.edition && item.edition !== '' && item.origin === false ? this.handleHighLight(item['edition']) : item.transmode === true ? `${item['translation']}...` : `${this.handleHighLight(item['news_Content'])}...` }} />
+                        <p dangerouslySetInnerHTML={{ __html: item.edition && item.edition !== '' && item.origin === false ? this.handleHighLight(item['edition']) : item.transmode === true ? `${this.handleHighLight(item['translation'])}...` : `${this.handleHighLight(item['news_Content'])}...` }} />
                       )
                   }
                 </List.Item>
