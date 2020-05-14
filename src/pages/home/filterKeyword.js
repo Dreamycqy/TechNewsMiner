@@ -1,6 +1,7 @@
 import React from 'react'
 import { Icon, Input, Modal, Tag, Tooltip, notification, message } from 'antd'
 import { getFilterKeyword, updateFilterKeyword } from '@/services/index'
+import FilterTree from './filterTree'
 
 const openNotificationWithIcon = (type, info) => {
   notification[type]({
@@ -9,23 +10,40 @@ const openNotificationWithIcon = (type, info) => {
   })
 }
 
+const key_map = require('@/constants/key_map.json')
+
 export default class FilterKeyword extends React.Component {
     state = {
       visible: false,
       filterKeyword: [],
       inputVisible: false,
       inputValue: '',
+      categories: [],
     }
 
     getFilterKeyword = async () => {
       const data = await getFilterKeyword({
-        type: 'xxx',
       })
       if (data && data.code === '200') {
         const filterKeyword = JSON.parse(data.description)
-        this.setState({
-          filterKeyword,
+        let target = filterKeyword.length
+        for (let e = 0; e < filterKeyword.length; e++) {
+          if (target !== filterKeyword.length) {
+            break
+          }
+          for (const i in key_map) {
+            if (key_map[i]['cn'] === filterKeyword[e]) {
+              if (filterKeyword[e + 1] === key_map[i]['en']) {
+                target = e
+              }
+            }
+          }
+        }
+        await this.setState({
+          filterKeyword: filterKeyword.slice(0, target),
+          categories: filterKeyword.slice(target, filterKeyword.length),
         })
+        this.tree.getNewData()
       } else {
         message.error(data.code ? '用户暂无关键词' : '获取用户过滤词失败！')
       }
@@ -35,7 +53,7 @@ export default class FilterKeyword extends React.Component {
       const { init } = this.props
       const { filterKeyword } = this.state
       const data = await updateFilterKeyword({
-        filterKeyword: JSON.stringify(filterKeyword),
+        filterKeyword: JSON.stringify(filterKeyword.concat(this.tree.getMyData())),
       })
       if (data) {
         console.log(data)
@@ -93,7 +111,7 @@ export default class FilterKeyword extends React.Component {
     saveInputRef = input => (this.input = input)
 
     render() {
-      const { filterKeyword, inputVisible, inputValue } = this.state
+      const { filterKeyword, inputVisible, inputValue, categories } = this.state
       return (
         <div>
           <a href="javascript:;" onClick={this.showModal}>
@@ -146,6 +164,9 @@ export default class FilterKeyword extends React.Component {
               添加关键词
             </Tag>
             )}
+            <div>
+              <FilterTree categories={categories} ref={t => this.tree = t} />
+            </div>
           </Modal>
         </div>
       )

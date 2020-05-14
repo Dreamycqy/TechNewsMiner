@@ -6,7 +6,7 @@ import { connect } from 'dva'
 import md5 from 'md5'
 import $ from 'jquery'
 import { makeOption, findPathByLeafId, eventImage, timeout } from '@/utils/common'
-import { search, subQueryNews } from '@/services/index'
+import { search, subQueryNews, getFilterKeyword } from '@/services/index'
 import Export from './export'
 import User from './user'
 import AddCollection from './addCollection'
@@ -65,6 +65,40 @@ class Home extends React.Component {
 
   componentWillMount = () => {
     this.init()
+  }
+
+  getFilterKeyword = async () => {
+    const data = await getFilterKeyword({})
+    if (data && data.code === '200') {
+      const filterKeyword = JSON.parse(data.description)
+      let target = filterKeyword.length
+      for (let e = 0; e < filterKeyword.length; e++) {
+        if (target !== filterKeyword.length) {
+          break
+        }
+        for (const i in key_map) {
+          if (key_map[i]['cn'] === filterKeyword[e]) {
+            if (filterKeyword[e + 1] === key_map[i]['en']) {
+              target = e
+            }
+          }
+        }
+      }
+      const categories = filterKeyword.slice(target, filterKeyword.length)
+      const treeValue = []
+      categories.forEach((e, index) => {
+        if (index % 2 === 0) {
+          for (const i in key_map) {
+            if (key_map[i].cn === e) {
+              treeValue.push(i)
+            }
+          }
+        }
+      })
+      await this.setState({
+        categories, treeValue,
+      })
+    }
   }
 
   translate = (q) => {
@@ -179,6 +213,7 @@ class Home extends React.Component {
   }
 
   search = async () => {
+    await this.getFilterKeyword()
     const {
       searchText, startDate, endDate, categories, country, treeValue,
     } = this.state
