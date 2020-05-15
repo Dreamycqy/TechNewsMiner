@@ -5,10 +5,10 @@ const image = require('./routes/image')
 
 const routesConfig = [
   {
-    path: ['/:module/api/*'],
+    path: ['/api/*'],
     route: proxy,
   }, {
-    path: ['/:module/pic/*'],
+    path: ['/pic/*'],
     route: image,
   }, {
   //   path: ['/:module/oauth/*'],
