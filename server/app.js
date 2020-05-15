@@ -25,6 +25,11 @@ app.use(express.static(path.join(__dirname, '..', 'public'), {
   maxAge: '1y',
 }))
 
+app.use((req, res, next) => {
+  console.log(req.baseUrl)
+  next()
+})
+
 initRoute(app)
 
 // catch 404 and forward to error handler
