@@ -1,2 +1,2 @@
-# TechNewsMiner
+# foreign-newsMiner
 none

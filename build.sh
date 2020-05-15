@@ -21,7 +21,7 @@ yarn install
 rm -rf public
 mkdir public
 npm run prodTest
-cp ./favicon.ico public/techNews/
-mv public/techNews/index.html server/views/index.html
+cp ./favicon.ico public/foreign-news/
+mv public/foreign-news/index.html server/views/index.html
 
 pm2 startOrReload ${pmJson}

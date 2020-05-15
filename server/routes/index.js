@@ -7,7 +7,7 @@ router.get('/', (req, res) => {
   res.setHeader('Cache-Control', 'no-cache, no-store, must-revalidate')
   res.setHeader('Pragma', 'no-cache')
   res.setHeader('Expires', '0')
-  res.render('index', { title: 'techNews' })
+  res.render('index', { title: 'foreign-news' })
 })
 
 module.exports = router
