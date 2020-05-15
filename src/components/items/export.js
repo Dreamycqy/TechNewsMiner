@@ -97,6 +97,7 @@ export default class Export extends React.Component {
     })
     this.setState({ loading: true })
     await Promise.all(promises)
+    this.setState({ loading: false })
     content.push({
       text: [
         { text: '摘要文档', fontSize: 18 },
