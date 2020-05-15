@@ -511,7 +511,7 @@ class Home extends React.Component {
   render() {
     const { uid } = window.localStorage
     if (!uid || uid.length < 1) {
-      window.location.href = '/login'
+      window.location.href = '/foreign-news/login'
     }
     const {
       newsList, searchText, country, showQuickFilter, indeterminate, checkAll, checkedIdList,

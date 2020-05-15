@@ -51,7 +51,7 @@ class Login extends React.Component {
         this.setState({ info: '' })
         message.success('登录成功！')
         this.props.dispatch(routerRedux.push({
-          pathname: '/index',
+          pathname: '/foreign-news/index',
         }))
       } else {
         message.error('登录失败！请检查用户名或密码')

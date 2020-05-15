@@ -18,7 +18,7 @@ class Collection extends React.Component {
   }
 
   jump = (id) => {
-    window.open(`/abstract?id=${id}`)
+    window.open(`/foreign-news/abstract?id=${id}`)
   }
 
   handleDeleteRow = (id) => {

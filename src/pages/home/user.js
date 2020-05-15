@@ -4,7 +4,7 @@ import FilterKeyword from './filterKeyword'
 
 function logout() {
   window.localStorage.setItem('uid', '')
-  window.location.href = '/login'
+  window.location.href = '/foreign-news/login'
 }
 
 class User extends React.Component {
