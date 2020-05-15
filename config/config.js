@@ -32,8 +32,8 @@ export default {
   outputPath: './public/foreign-news/',
   publicPath: '/foreign-news/',
   proxy: {
-    '/api/': { target: 'http://127.0.0.1:8111/', changeOrigin: true },
-    '/pic/': { target: 'http://127.0.0.1:8111/', changeOrigin: true },
+    '/foreign-news/api/': { target: 'http://127.0.0.1:8111/', changeOrigin: true },
+    '/foreign-news/pic/': { target: 'http://127.0.0.1:8111/', changeOrigin: true },
   },
   define: defineProperty(),
   routes: pageRoutes,
