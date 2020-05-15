@@ -81,7 +81,7 @@ export const image2Base64 = (url, ext) => {
     return dataURL
   }
   const image = new Image()
-  image.src = `/foreign-news/pic/${url}`
+  image.src = `/pic/${url}`
   return new Promise((resolve) => {
     image.onload = () => {
       resolve(getBase64Image(image))
