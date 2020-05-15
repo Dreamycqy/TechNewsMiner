@@ -1,14 +1,14 @@
 export default [
   {
-    path: '/',
-    redirect: '/index',
+    path: '/foreign-news',
+    redirect: '/foreign-news/index',
   },
   {
-    path: '/login',
+    path: '/foreign-news/login',
     component: './login',
   },
   {
-    path: '/',
+    path: '/foreign-news',
     component: '../layouts',
     routes: [
       {
