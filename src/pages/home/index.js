@@ -1,5 +1,5 @@
 import React from 'react'
-import { Input, Select, Button, Checkbox, DatePicker, TreeSelect, List, Icon, BackTop, message, Empty } from 'antd'
+import { Input, Select, Button, Checkbox, DatePicker, TreeSelect, List, Icon, BackTop, message, Empty, Modal } from 'antd'
 import moment from 'moment'
 import _ from 'lodash'
 import { connect } from 'dva'
@@ -351,11 +351,27 @@ class Home extends React.Component {
     return result
   }
 
-  subSearchOnClick = () => {
-    const { newsList } = this.state
+  subSearchOnClick = (newsList) => {
     const idList = []
     newsList.forEach(item => idList.push(item.news_ID))
     this.subSearch(idList)
+  }
+
+  handleConfirm = () => {
+    const { newsList } = this.state
+    if (newsList.length > 1000) {
+      const that = this
+      Modal.confirm({
+        content: '当前结果数超过处理上限，是否截取当前结果前1000条进行搜索？',
+        okText: '确定',
+        onOk() {
+          that.subSearchOnClick(newsList.slice(0, 999))
+        },
+        cancelText: '取消',
+      })
+    } else {
+      this.subSearchOnClick(newsList)
+    }
   }
 
   searchInput = (value) => {
@@ -603,7 +619,7 @@ class Home extends React.Component {
             onChange={this.changeDate}
             value={[startDate, endDate]}
           />
-          <Button style={{ marginLeft: 20 }} icon="search" type="primary" onClick={this.subSearchOnClick}>从当前结果中筛选</Button>
+          <Button style={{ marginLeft: 20 }} icon="search" type="primary" onClick={this.handleConfirm}>从当前结果中筛选</Button>
           <br />
           <div style={{ marginTop: 10 }}>
             <span>
