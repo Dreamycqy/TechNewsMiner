@@ -19,8 +19,8 @@ originData.checkedList.forEach((e) => {
   const content = e['news_Content']
   searchText.split(' ').forEach((item) => {
     const reg = new RegExp(item, 'gi')
-    const scoreTitle = title.match(reg).length || 0
-    const scoreContent = content.match(reg).length || 0
+    const scoreTitle = title.match(reg).length === null ? 0 : title.match(reg).length * 10
+    const scoreContent = content.match(reg).length === null ? 0 : content.match(reg).length
     e.score += scoreContent + scoreTitle
   })
 })
