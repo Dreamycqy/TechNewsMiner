@@ -249,8 +249,8 @@ class Home extends React.Component {
         })
       })
       await this.setState({
-        newsList: data,
-        originNewsList: data,
+        newsList: _.uniqBy(data, 'news_Title'),
+        originNewsList: _.uniqBy(data, 'news_Title'),
         checkedIdList: [],
         checkAll: false,
       })
@@ -309,8 +309,8 @@ class Home extends React.Component {
         })
       })
       await this.setState({
-        newsList: data,
-        originNewsList: data,
+        newsList: _.uniqBy(data, 'news_Title'),
+        originNewsList: _.uniqBy(data, 'news_Title'),
         checkedIdList: [],
         checkAll: false,
       })
