@@ -242,12 +242,10 @@ class Home extends React.Component {
         const title = e['news_Title']
         const content = e['news_Content']
         searchValue.split(' ').forEach((item) => {
-          if (title.split(item).length > 0) {
-            e.score += 10 * (title.split(item).length - 1)
-          }
-          if (content.split(item).length > 0) {
-            e.score += 1 * (content.split(item).length - 1)
-          }
+          const reg = new RegExp(item, 'gi')
+          const scoreTitle = title.match(reg).length || 0
+          const scoreContent = content.match(reg).length || 0
+          e.score += scoreContent + scoreTitle
         })
       })
       await this.setState({
@@ -304,12 +302,10 @@ class Home extends React.Component {
         const title = e['news_Title']
         const content = e['news_Content']
         searchValue.split(' ').forEach((item) => {
-          if (title.split(item).length > 0) {
-            e.score += 10 * (title.split(item).length - 1)
-          }
-          if (content.split(item).length > 0) {
-            e.score += 1 * (content.split(item).length - 1)
-          }
+          const reg = new RegExp(item, 'gi')
+          const scoreTitle = title.match(reg).length || 0
+          const scoreContent = content.match(reg).length || 0
+          e.score += scoreContent + scoreTitle
         })
       })
       await this.setState({
