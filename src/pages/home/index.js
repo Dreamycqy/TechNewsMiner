@@ -243,8 +243,8 @@ class Home extends React.Component {
         const content = e['news_Content']
         searchText.split(' ').forEach((item) => {
           const reg = new RegExp(item, 'gi')
-          const scoreTitle = title.match(reg).length === null ? 0 : title.match(reg).length * 10
-          const scoreContent = content.match(reg).length === null ? 0 : content.match(reg).length
+          const scoreTitle = title.match(reg) === null ? 0 : title.match(reg).length * 10
+          const scoreContent = content.match(reg) === null ? 0 : content.match(reg).length
           e.score += scoreContent + scoreTitle
         })
       })
@@ -303,8 +303,8 @@ class Home extends React.Component {
         const content = e['news_Content']
         searchText.split(' ').forEach((item) => {
           const reg = new RegExp(item, 'gi')
-          const scoreTitle = title.match(reg).length === null ? 0 : title.match(reg).length * 10
-          const scoreContent = content.match(reg).length === null ? 0 : content.match(reg).length
+          const scoreTitle = title.match(reg) === null ? 0 : title.match(reg).length * 10
+          const scoreContent = content.match(reg) === null ? 0 : content.match(reg).length
           e.score += scoreContent + scoreTitle
         })
       })
