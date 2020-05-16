@@ -216,11 +216,20 @@ class Home extends React.Component {
   search = async () => {
     window.GLOBAL.requestCancel('search', '取消')
     const {
-      searchText, startDate, endDate, categories, country, treeValue,
+      startDate, endDate, categories, country, treeValue, searchText,
     } = this.state
-    this.setState({ loading: true, lastSearch: searchText })
+    const searchArr = []
+    const arr = searchText.split(' ')
+    arr.forEach((e) => {
+      if (e !== '') {
+        searchArr.push(e)
+      }
+    })
+    const searchValue = searchArr.join(' ')
+    console.log()
+    this.setState({ loading: true, lastSearch: searchValue })
     const data = await search({
-      word: searchText,
+      word: searchValue,
       startDate: startDate.format('YYYY-MM-DD'),
       endDate: endDate.format('YYYY-MM-DD'),
       categories: JSON.stringify(categories),
@@ -231,7 +240,7 @@ class Home extends React.Component {
         e.score = 0
         const title = e['news_Title']
         const content = e['news_Content']
-        searchText.split(' ').forEach((item) => {
+        searchValue.split(' ').forEach((item) => {
           if (title.split(item).length > 0) {
             e.score += 10 * (title.split(item).length - 1)
           }
@@ -271,9 +280,17 @@ class Home extends React.Component {
     const {
       searchText, startDate, endDate, categories, country, treeValue,
     } = this.state
-    this.setState({ loading: true, lastSearch: searchText })
+    const searchArr = []
+    const arr = searchText.split(' ')
+    arr.forEach((e) => {
+      if (e !== '') {
+        searchArr.push(e)
+      }
+    })
+    const searchValue = searchArr.join(' ')
+    this.setState({ loading: true, lastSearch: searchValue })
     const data = await subQueryNews({
-      word: searchText,
+      word: searchValue,
       startDate: startDate.format('YYYY-MM-DD'),
       endDate: endDate.format('YYYY-MM-DD'),
       categories: JSON.stringify(categories),
@@ -285,7 +302,7 @@ class Home extends React.Component {
         e.score = 0
         const title = e['news_Title']
         const content = e['news_Content']
-        searchText.split(' ').forEach((item) => {
+        searchValue.split(' ').forEach((item) => {
           if (title.split(item).length > 0) {
             e.score += 10 * (title.split(item).length - 1)
           }
