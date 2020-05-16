@@ -192,7 +192,7 @@ export default class Export extends React.Component {
       },
     }
     this.setState({ loading: false })
-    pdfMake.createPdf(dd).download(`摘要-${this.props.searchText.replace(/\s/g, '_')}_${moment().format('YYYY-MM-DD_HH:mm')}`)
+    pdfMake.createPdf(dd).download(`摘要-${this.props.searchText.replace(/\s/g, '_')}_${moment().format('YYYY-MM-DD_HH:mm')}.pdf`)
   }
 
   render() {
