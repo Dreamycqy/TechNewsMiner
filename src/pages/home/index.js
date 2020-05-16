@@ -185,7 +185,8 @@ class Home extends React.Component {
     this.setState({ translateAll: !translateAll })
   }
 
-  init = () => {
+  init = async () => {
+    await this.getFilterKeyword({})
     this.search()
   }
 
@@ -214,7 +215,6 @@ class Home extends React.Component {
 
   search = async () => {
     window.GLOBAL.requestCancel('search', '取消')
-    await this.getFilterKeyword({})
     const {
       searchText, startDate, endDate, categories, country, treeValue,
     } = this.state
