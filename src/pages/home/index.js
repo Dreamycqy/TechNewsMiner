@@ -16,6 +16,7 @@ let quickFilterResult = []
 let quickFilterSelect = {}
 let emptyFilterResult = []
 let emptyFilterSelect = {}
+let localEnSearch = []
 const { Search } = Input
 const { RangePicker } = DatePicker
 const { Option } = Select
@@ -33,6 +34,7 @@ const dateFormat = 'YYYY-MM-DD'
 const appid = '20200511000448145'
 const translatekey = 'nCGO32AVxsejOEd7CaVk'
 const myData = require('@/constants/tree_cn.json')
+const myEnData = require('@/constants/tree_en.json')
 const key_map = require('@/constants/key_map.json')
 const countryMap = require('@/constants/countryMap.json')
 
@@ -60,6 +62,7 @@ class Home extends React.Component {
       translateAll: false,
       current: 1,
       pageSize: 10,
+      treeType: 'cn',
     }
   }
 
@@ -95,9 +98,7 @@ class Home extends React.Component {
           }
         }
       })
-      await this.setState({
-        categories, treeValue,
-      })
+      this.selectCategory(treeValue)
     }
   }
 
@@ -363,17 +364,37 @@ class Home extends React.Component {
 
   searchInput = (value) => {
     this.setState({ searchText: value })
-    const { treeValue } = this.state
-    const arr = value.split(' ')
+    const { treeValue, treeType } = this.state
     let temp
-    arr.forEach((e) => {
-      const target = findPathByLeafId(e, myData, 'title')
+    if (treeType === 'cn') {
+      const arr = value.split(' ')
+      arr.forEach((e) => {
+        const target = findPathByLeafId(e, myData, 'title')
+        if (target && !temp) {
+          if (treeValue.indexOf(target.node.key) < 0) {
+            temp = target
+          }
+        }
+      })
+    } else {
+      let arr = value
+      const deleteArr = []
+      localEnSearch.forEach((e) => {
+        if (arr.indexOf(e) > -1) {
+          arr = arr.replace(e, '')
+        } else {
+          deleteArr.push(e)
+        }
+      })
+      localEnSearch = localEnSearch.filter((e) => { return deleteArr.indexOf(e) < 0 })
+      const target = findPathByLeafId(_.trim(arr), myEnData, 'title')
       if (target && !temp) {
         if (treeValue.indexOf(target.node.key) < 0) {
           temp = target
+          localEnSearch.push(_.trim(arr))
         }
       }
-    })
+    }
     if (temp) {
       quickFilterSelect = temp.node
       this.setState({ showQuickFilter: true })
@@ -533,7 +554,7 @@ class Home extends React.Component {
     const {
       newsList, searchText, country, showQuickFilter, indeterminate, checkAll, checkedIdList,
       showSearchBar, startDate, endDate, treeValue, loading, sortor, lastSearch, translateAll,
-      current,
+      current, treeType,
     } = this.state
     return (
       <div>
@@ -592,8 +613,16 @@ class Home extends React.Component {
             <span>
               聚类圈选：&nbsp;&nbsp;
             </span>
+            <Select
+              value={treeType}
+              onChange={value => this.setState({ treeType: value })}
+              style={{ width: 120, marginRight: 10 }}
+            >
+              <Option key="cn" value="cn">中文</Option>
+              <Option key="en" value="en">English</Option>
+            </Select>
             <TreeSelect
-              treeData={myData}
+              treeData={treeType === 'cn' ? myData : myEnData}
               value={treeValue}
               maxTagCount={6}
               maxTagPlaceholder={(omittedValues) => {
