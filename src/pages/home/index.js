@@ -508,6 +508,10 @@ class Home extends React.Component {
       categories.push(key_map[key]['cn'])
       categories.push(key_map[key]['en'])
     })
+    if (keyList.length > 250) {
+      message.error('后端服务暂不支持超过250项聚类，请减少聚类数量')
+      return
+    }
     await this.setState({ categories, treeValue: keyList })
     this.searchInput(this.state.searchText)
   }

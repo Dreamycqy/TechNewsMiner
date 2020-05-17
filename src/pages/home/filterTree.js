@@ -1,5 +1,5 @@
 import React from 'react'
-import { TreeSelect } from 'antd'
+import { TreeSelect, message } from 'antd'
 
 const myData = require('@/constants/tree_cn.json')
 const key_map = require('@/constants/key_map.json')
@@ -37,6 +37,10 @@ export default class FilterKeyword extends React.Component {
         categories.push(key_map[key]['cn'])
         categories.push(key_map[key]['en'])
       })
+      if (keyList.length > 250) {
+        message.error('后端服务暂不支持超过250项聚类，请减少聚类数量')
+        return
+      }
       await this.setState({ categories, treeValue: keyList })
     }
 
