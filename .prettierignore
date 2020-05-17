@@ -5,5 +5,3 @@
 package.json
 .umi
 .umi-production
-/src/assets/vfs_fonts.js
-/src/components/items/export.js

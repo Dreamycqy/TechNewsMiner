@@ -2,5 +2,6 @@ app/**/**
 www/**/*.js
 /*.js
 /server/
-/src/assets/vfs_fonts.js
-/src/components/items/export.js
+/src/assets/
+/src/components/items/
+/src/pages/.umi/
