@@ -596,6 +596,7 @@ class Home extends React.Component {
                 enterButton="搜索"
                 placeholder="请输入搜索关键词"
               />
+              <Button style={{ marginLeft: 20 }} icon="search" type="primary" onClick={this.handleConfirm}>从当前结果中筛选</Button>
               <Button style={{ marginLeft: 20 }} onClick={this.showSearchBarButton}>展开高级选项</Button>
             </div>
             <div style={{ float: 'right', marginRight: 40 }}>
@@ -619,7 +620,6 @@ class Home extends React.Component {
             onChange={this.changeDate}
             value={[startDate, endDate]}
           />
-          <Button style={{ marginLeft: 20 }} icon="search" type="primary" onClick={this.handleConfirm}>从当前结果中筛选</Button>
           <br />
           <div style={{ marginTop: 10 }}>
             <span>
