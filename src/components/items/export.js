@@ -2,8 +2,8 @@ import React from 'react'
 import { Button, notification } from 'antd'
 import moment from 'moment'
 import pdfMake from 'pdfmake/build/pdfmake'
-// import pdfFonts from '@/assets/vfs_fonts'
-import pdfFonts from '@/constants/vfs_fonts'
+import pdfFonts from '@/assets/vfs_fonts'
+// import pdfFonts from '@/constants/vfs_fonts'
 import { image2Base64 } from '@/utils/common'
 
 pdfMake.vfs = pdfFonts.pdfMake.vfs
@@ -178,8 +178,8 @@ export default class Export extends React.Component {
     const dd = {
       content,
       defaultStyle: {
-        // font: 'simsun',
-        font: 'fzhtjw',
+        font: 'simsun',
+        // font: 'fzhtjw',
       },
       info: {
         title: `摘要-${this.props.searchText.replace(/\s/g, '_')}_${moment().format('YYYY-MM-DD_HH:mm')}`,
@@ -187,12 +187,12 @@ export default class Export extends React.Component {
       },
     }
     pdfMake.fonts = {
-      // simsun: {
-      //   normal: 'simsun.TTF',
-      // },
-      fzhtjw: {
-        normal: 'fzhtjw.TTF',
+      simsun: {
+        normal: 'simsun.ttf',
       },
+      // fzhtjw: {
+      //   normal: 'fzhtjw.TTF',
+      // },
     }
     this.setState({ loading: false })
     pdfMake.createPdf(dd).download(`摘要-${this.props.searchText.replace(/\s/g, '_')}_${moment().format('YYYY-MM-DD_HH:mm')}.pdf`)
