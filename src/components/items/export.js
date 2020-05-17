@@ -32,6 +32,9 @@ export default class Export extends React.Component {
       return str
     }
     let resultStr = str
+    if (type === 'content') {
+      resultStr = resultStr.replace(/(^\s+)|(\s+$)/g, " ");
+    }
     const result = []
     const arr = this.props.searchText.split(' ')
     arr.forEach((e) => {
