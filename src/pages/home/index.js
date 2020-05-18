@@ -28,6 +28,7 @@ const countryList = [
   { value: 'fr', name: '法国' },
   { value: 'eu', name: '欧洲' },
   { value: 'ru', name: '俄罗斯' },
+  // { value: 'cn', name: '中国' },
   { value: 'knowledge', name: '智库' },
 ]
 const dateFormat = 'YYYY-MM-DD'
@@ -345,7 +346,7 @@ class Home extends React.Component {
     arr.forEach((e) => {
       if (e !== ' ' && e !== ' ') {
         const reg = new RegExp(e, 'gi')
-        result = result.replace(reg, `<em style="color:red">${e}</em>`)
+        result = result.replace(reg, (text) => { return `<em style="color:red">${text}</em>` })
       }
     })
     return result

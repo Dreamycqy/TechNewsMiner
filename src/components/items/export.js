@@ -40,7 +40,7 @@ export default class Export extends React.Component {
     arr.forEach((e) => {
       if (e !== ' ' && e !== '') {
         const reg = new RegExp(e, 'gi')
-        resultStr = resultStr.replace(reg, `<em>${e}<em>`)
+        resultStr = resultStr.replace(reg, (text) => { return `<em style="color:red">${text}</em>` })
       }
     })
     resultStr.split('<em>').forEach((e) => {

@@ -66,7 +66,7 @@ class Abstract extends React.Component {
     arr.forEach((e) => {
       if (e !== ' ' && e !== '') {
         const reg = new RegExp(e, 'gi')
-        result = result.replace(reg, `<em style="color:red">${e}</em>`)
+        result = result.replace(reg, (text) => { return `<em style="color:red">${text}</em>` })
       }
     })
     return result
