@@ -402,7 +402,6 @@ class Home extends React.Component {
   }
 
   searchInput = async (value) => {
-    const searchText = []
     const { treeValue, treeType } = this.state
     let temp
     value.forEach((e) => {
@@ -415,9 +414,9 @@ class Home extends React.Component {
     })
     if (temp) {
       quickFilterSelect = temp.node
-      this.setState({ showQuickFilter: true, searchText })
+      this.setState({ showQuickFilter: true, searchText: value })
     } else {
-      this.setState({ showQuickFilter: false, searchText })
+      this.setState({ showQuickFilter: false, searchText: value })
     }
   }
 
