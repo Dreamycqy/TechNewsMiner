@@ -42,6 +42,11 @@ class Collection extends React.Component {
     }, {
       title: '搜索词',
       dataIndex: 'searchText',
+      render: (text, record) => {
+        return (
+          <span>{record.searchText.join(', ')}</span>
+        )
+      },
     }, {
       title: '描述',
       dataIndex: 'desc',

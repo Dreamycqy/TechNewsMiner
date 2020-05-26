@@ -28,7 +28,7 @@ export default class Export extends React.Component {
   }
 
   handleHighLight = (str, type) => {
-    if (this.props.searchText === '') {
+    if (this.props.searchText === []) {
       return str
     }
     let resultStr = str
@@ -36,8 +36,7 @@ export default class Export extends React.Component {
       resultStr = resultStr.replace(/(^\s+)|(\s+$)/g, " ");
     }
     const result = []
-    const arr = this.props.searchText.split(' ')
-    arr.forEach((e) => {
+    this.props.searchText.forEach((e) => {
       if (e !== ' ' && e !== '') {
         const reg = new RegExp(e, 'gi')
         resultStr = resultStr.replace(reg, (text) => { return `<em style="color:red">${text}</em>` })
@@ -105,7 +104,7 @@ export default class Export extends React.Component {
         { text: '摘要文档', fontSize: 18 },
         { text: '      ', fontSize: 18 },
         { text: '搜索关键词：', fontSize: 10 },
-        { text: this.props.searchText, fontSize: 10, color: 'red' },
+        { text: this.props.searchText.join(', '), fontSize: 10, color: 'red' },
       ],
       alignment: 'center',
       color: '#2b2b2b',
@@ -185,7 +184,7 @@ export default class Export extends React.Component {
         // font: 'fzhtjw',
       },
       info: {
-        title: `摘要-${this.props.searchText.replace(/\s/g, '_')}_${moment().format('YYYY-MM-DD_HH:mm')}`,
+        title: `摘要-${this.props.searchText.join('+').replace(/\s/g, '_')}_${moment().format('YYYY-MM-DD_HH:mm')}`,
         author: 'Team KEG, Tsinghua University',
       },
     }
@@ -198,7 +197,7 @@ export default class Export extends React.Component {
       // },
     }
     this.setState({ loading: false })
-    pdfMake.createPdf(dd).download(`摘要-${this.props.searchText.replace(/\s/g, '_')}_${moment().format('YYYY-MM-DD_HH:mm')}.pdf`)
+    pdfMake.createPdf(dd).download(`摘要-${this.props.searchText.join(', ').replace(/\s/g, '_')}_${moment().format('YYYY-MM-DD_HH:mm')}.pdf`)
   }
 
   render() {

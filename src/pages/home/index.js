@@ -1,5 +1,5 @@
 import React from 'react'
-import { Input, Select, Button, Checkbox, DatePicker, TreeSelect, List, Icon, BackTop, message, Empty, Modal } from 'antd'
+import { Select, Button, Checkbox, DatePicker, TreeSelect, List, Icon, BackTop, message, Empty, Modal } from 'antd'
 import moment from 'moment'
 import _ from 'lodash'
 import { connect } from 'dva'
@@ -16,8 +16,7 @@ let quickFilterResult = []
 let quickFilterSelect = {}
 let emptyFilterResult = []
 let emptyFilterSelect = {}
-let localEnSearch = []
-const { Search } = Input
+let translateList = []
 const { RangePicker } = DatePicker
 const { Option } = Select
 const countryList = [
@@ -46,7 +45,7 @@ class Home extends React.Component {
     this.state = {
       newsList: [],
       originNewsList: [],
-      searchText: '',
+      searchText: [],
       startDate: moment().subtract(2, 'days'),
       endDate: moment(),
       country: 'all',
@@ -68,7 +67,7 @@ class Home extends React.Component {
   }
 
   componentWillMount = () => {
-    this.init()
+    // this.init()
   }
 
   getFilterKeyword = async () => {
@@ -103,7 +102,7 @@ class Home extends React.Component {
     }
   }
 
-  translate = (q) => {
+  translate = (q, type) => {
     const salt = Date.now()
     const sign = md5(appid + q + salt + translatekey)
     return new Promise((resolve) => {
@@ -116,7 +115,7 @@ class Home extends React.Component {
           appid,
           salt,
           from: 'auto',
-          to: 'zh',
+          to: type ? 'en' : 'zh',
           sign,
         },
         success(data) {
@@ -220,18 +219,9 @@ class Home extends React.Component {
     const {
       startDate, endDate, categories, country, treeValue, searchText,
     } = this.state
-    const searchArr = []
-    const arr = searchText.split(' ')
-    arr.forEach((e) => {
-      if (e !== '') {
-        searchArr.push(e)
-      }
-    })
-    const searchValue = searchArr.join(' ')
-    console.log()
-    this.setState({ loading: true, lastSearch: searchValue })
+    this.setState({ loading: true, searchText, lastSearch: searchText })
     const data = await search({
-      word: searchValue,
+      word: JSON.stringify(searchText),
       startDate: startDate.format('YYYY-MM-DD'),
       endDate: endDate.format('YYYY-MM-DD'),
       categories: JSON.stringify(categories),
@@ -242,7 +232,7 @@ class Home extends React.Component {
         e.score = 0
         const title = e['news_Title']
         const content = e['news_Content']
-        searchText.split(' ').forEach((item) => {
+        searchText.forEach((item) => {
           const reg = new RegExp(item, 'gi')
           const scoreTitle = title.match(reg) === null ? 0 : title.match(reg).length * 10
           const scoreContent = content.match(reg) === null ? 0 : content.match(reg).length
@@ -280,17 +270,9 @@ class Home extends React.Component {
     const {
       searchText, startDate, endDate, categories, country, treeValue,
     } = this.state
-    const searchArr = []
-    const arr = searchText.split(' ')
-    arr.forEach((e) => {
-      if (e !== '') {
-        searchArr.push(e)
-      }
-    })
-    const searchValue = searchArr.join(' ')
-    this.setState({ loading: true, lastSearch: searchValue })
+    this.setState({ loading: true, lastSearch: searchText })
     const data = await subQueryNews({
-      word: searchValue,
+      word: JSON.stringify(searchText),
       startDate: startDate.format('YYYY-MM-DD'),
       endDate: endDate.format('YYYY-MM-DD'),
       categories: JSON.stringify(categories),
@@ -302,7 +284,7 @@ class Home extends React.Component {
         e.score = 0
         const title = e['news_Title']
         const content = e['news_Content']
-        searchText.split(' ').forEach((item) => {
+        searchText.forEach((item) => {
           const reg = new RegExp(item, 'gi')
           const scoreTitle = title.match(reg) === null ? 0 : title.match(reg).length * 10
           const scoreContent = content.match(reg) === null ? 0 : content.match(reg).length
@@ -338,11 +320,11 @@ class Home extends React.Component {
 
   handleHighLight = (str) => {
     const { lastSearch } = this.state
-    if (lastSearch === '') {
+    if (lastSearch === []) {
       return str
     }
     let result = str
-    const arr = lastSearch.split(' ')
+    const arr = lastSearch
     arr.forEach((e) => {
       if (e !== ' ' && e !== ' ') {
         const reg = new RegExp(e, 'gi')
@@ -375,50 +357,49 @@ class Home extends React.Component {
     }
   }
 
-  searchInput = (value) => {
-    this.setState({ searchText: value })
+  searchInput = async (value) => {
+    console.log(value)
+    const searchText = value
     const { treeValue, treeType } = this.state
     let temp
-    if (treeType === 'cn') {
-      const arr = value.split(' ')
-      arr.forEach((e) => {
-        const target = findPathByLeafId(e, myData, 'title')
-        if (target && !temp) {
-          if (treeValue.indexOf(target.node.key) < 0) {
-            temp = target
-          }
-        }
-      })
-    } else {
-      let arr = value
-      const deleteArr = []
-      localEnSearch.forEach((e) => {
-        if (arr.indexOf(e) > -1) {
-          arr = arr.replace(e, '')
-        } else {
-          deleteArr.push(e)
-        }
-      })
-      localEnSearch = localEnSearch.filter((e) => { return deleteArr.indexOf(e) < 0 })
-      const target = findPathByLeafId(_.trim(arr), myEnData, 'title')
+    value.forEach((e) => {
+      const target = findPathByLeafId(e, treeType === 'cn' ? myData : myEnData, 'title')
       if (target && !temp) {
         if (treeValue.indexOf(target.node.key) < 0) {
           temp = target
-          localEnSearch.push(_.trim(arr))
+        }
+      }
+    })
+    const pattern = new RegExp('[\u4E00-\u9FA5]+')
+    translateList = []
+    for (const i of value) {
+      if (translateList.indexOf(i) < 0) {
+        if (pattern.test(i)) {
+          const str = await this.translate(i, 'en')
+          if (str) {
+            searchText.push(str.str)
+            translateList.push(str.str, i)
+          }
+        } else {
+          const str = await this.translate(i)
+          if (str) {
+            searchText.push(str.str)
+            translateList.push(str.str, i)
+          }
         }
       }
     }
+    console.log(searchText)
     if (temp) {
       quickFilterSelect = temp.node
-      this.setState({ showQuickFilter: true })
+      this.setState({ showQuickFilter: true, searchText })
     } else {
-      this.setState({ showQuickFilter: false })
+      this.setState({ showQuickFilter: false, searchText })
     }
   }
 
   searchOnClick = () => {
-    const { queryDate, searchText } = this.state
-    this.search(queryDate, searchText)
+    this.search()
   }
 
   addChecked = (e) => {
@@ -581,28 +562,25 @@ class Home extends React.Component {
               <div style={{ marginRight: 16, fontSize: 20, fontWeight: 600, display: 'inline-block' }}>
                 <a href="javascript:;">科普新闻发现</a>
               </div>
-              <Search
-                addonBefore={(
-                  <div>
-                    <div style={{ width: 70, display: 'inline-block' }}>选择来源：</div>
-                    <Select
-                      value={country}
-                      style={{ width: 85 }}
-                      onChange={this.changeCountry}
-                    >
-                      {makeOption(countryList)}
-                    </Select>
-                  </div>
-                      )}
-                style={{ width: 600, marginTop: 16, borderRadius: 0 }}
-                onChange={e => this.searchInput(e.target.value)}
+              <div style={{ width: 70, display: 'inline-block' }}>选择来源：</div>
+              <Select
+                value={country}
+                style={{ width: 85, marginRight: 10 }}
+                onChange={this.changeCountry}
+              >
+                {makeOption(countryList)}
+              </Select>
+              <Select
+                style={{ width: 400, marginTop: 16, borderRadius: 0 }}
+                onChange={value => this.searchInput(value)}
                 value={searchText}
-                onSearch={this.searchOnClick}
+                mode="tags"
                 enterButton="搜索"
                 placeholder="请输入搜索关键词"
               />
-              <Button style={{ marginLeft: 20 }} icon="search" type="primary" onClick={this.handleConfirm}>从当前结果中筛选</Button>
-              <Button style={{ marginLeft: 20 }} onClick={this.showSearchBarButton}>展开高级选项</Button>
+              <Button style={{ marginLeft: 10 }} icon="search" type="primary" onClick={this.searchOnClick}>搜索</Button>
+              <Button style={{ marginLeft: 10 }} icon="search" type="primary" onClick={this.handleConfirm}>从当前结果中筛选</Button>
+              <Button style={{ marginLeft: 10 }} onClick={this.showSearchBarButton}>展开高级选项</Button>
             </div>
             <div style={{ float: 'right', marginRight: 40 }}>
               <User init={this.init} />
