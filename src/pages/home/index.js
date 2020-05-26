@@ -209,6 +209,9 @@ class Home extends React.Component {
       case 'score':
         this.setState({ newsList: _.orderBy(originNewsList, 'score', 'desc') })
         break
+      case 'newscore':
+        this.setState({ newsList: _.orderBy(originNewsList, 'new_Score', 'desc') })
+        break
       default:
         break
     }
@@ -663,7 +666,8 @@ class Home extends React.Component {
               onChange={value => this.sortData(value)}
             >
               <Option key="time" value="time">时间顺序</Option>
-              <Option key="score" value="score">搜索词权重顺序</Option>
+              <Option key="score" value="score">摘要搜索词权重顺序</Option>
+              <Option key="newscore" value="newscore">全文搜索词权重顺序</Option>
             </Select>
           </div>
           <div style={{ float: 'right', marginRight: 40 }}>
