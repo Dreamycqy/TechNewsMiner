@@ -5,6 +5,7 @@ import _ from 'lodash'
 import { connect } from 'dva'
 import md5 from 'md5'
 import $ from 'jquery'
+// import jieba from 'jieba-js'
 import { makeOption, findPathByLeafId, eventImage, timeout } from '@/utils/common'
 import { search, subQueryNews, getFilterKeyword } from '@/services/index'
 import Export from '@/components/items/export'
@@ -542,6 +543,19 @@ class Home extends React.Component {
     }
   }
 
+  renderRecommand = async (list) => {
+    const result = []
+    for (let i = 0; i < list.length; i++) {
+      if (result.length > 4) {
+        const name = []
+        // await jieba.cut(list[i])
+        console.log(name)
+        result.push(<Button type="link" key={name + i}>{name}</Button>)
+      }
+    }
+    return result
+  }
+
   redirect = (url) => {
     return `https://newsminer.net/link.html?url=${url}`
   }
@@ -829,7 +843,15 @@ class Home extends React.Component {
                       </span>
                     )}
                   >
-                    <Button style={{ display: emptyFilterSelect.title ? 'inline-block' : 'none' }} type="primary" onClick={() => this.emptyQuickFilter()}>继续搜索</Button>
+                    {
+                      emptyFilterSelect.title
+                        ? <Button style={{ display: emptyFilterSelect.title ? 'inline-block' : 'none' }} type="primary" onClick={() => this.emptyQuickFilter()}>继续搜索</Button>
+                        : (
+                          <span>
+                            {this.renderRecommand(lastSearch)}
+                          </span>
+                        )
+                    }
                   </Empty>
                 )
             }
