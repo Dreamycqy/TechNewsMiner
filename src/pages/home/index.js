@@ -67,7 +67,7 @@ class Home extends React.Component {
   }
 
   componentWillMount = () => {
-    // this.init()
+    this.init()
   }
 
   getFilterKeyword = async () => {
@@ -358,8 +358,7 @@ class Home extends React.Component {
   }
 
   searchInput = async (value) => {
-    console.log(value)
-    const searchText = value
+    const searchText = []
     const { treeValue, treeType } = this.state
     let temp
     value.forEach((e) => {
@@ -377,13 +376,13 @@ class Home extends React.Component {
         if (pattern.test(i)) {
           const str = await this.translate(i, 'en')
           if (str) {
-            searchText.push(str.str)
+            searchText.push(i, str.str)
             translateList.push(str.str, i)
           }
         } else {
           const str = await this.translate(i)
           if (str) {
-            searchText.push(str.str)
+            searchText.push(i, str.str)
             translateList.push(str.str, i)
           }
         }
