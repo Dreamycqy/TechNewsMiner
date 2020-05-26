@@ -223,7 +223,27 @@ class Home extends React.Component {
     const {
       startDate, endDate, categories, country, treeValue, searchText,
     } = this.state
-    this.setState({ loading: true, searchText, lastSearch: searchText })
+    const pattern = new RegExp('[\u4E00-\u9FA5]+')
+    translateList = []
+    const arr = []
+    for (const i of searchText) {
+      if (translateList.indexOf(i) < 0) {
+        if (pattern.test(i)) {
+          const str = await this.translate(i, 'en')
+          if (str) {
+            arr.push(i, str.str)
+            translateList.push(str.str, i)
+          }
+        } else {
+          const str = await this.translate(i)
+          if (str) {
+            arr.push(i, str.str)
+            translateList.push(str.str, i)
+          }
+        }
+      }
+    }
+    this.setState({ loading: true, searchText: arr, lastSearch: arr })
     const data = await search({
       word: JSON.stringify(searchText),
       startDate: startDate.format('YYYY-MM-DD'),
@@ -274,7 +294,27 @@ class Home extends React.Component {
     const {
       searchText, startDate, endDate, categories, country, treeValue,
     } = this.state
-    this.setState({ loading: true, lastSearch: searchText })
+    const pattern = new RegExp('[\u4E00-\u9FA5]+')
+    translateList = []
+    const arr = []
+    for (const i of searchText) {
+      if (translateList.indexOf(i) < 0) {
+        if (pattern.test(i)) {
+          const str = await this.translate(i, 'en')
+          if (str) {
+            arr.push(i, str.str)
+            translateList.push(str.str, i)
+          }
+        } else {
+          const str = await this.translate(i)
+          if (str) {
+            arr.push(i, str.str)
+            translateList.push(str.str, i)
+          }
+        }
+      }
+    }
+    this.setState({ loading: true, searchText: arr, lastSearch: arr })
     const data = await subQueryNews({
       word: JSON.stringify(searchText),
       startDate: startDate.format('YYYY-MM-DD'),
@@ -373,26 +413,6 @@ class Home extends React.Component {
         }
       }
     })
-    const pattern = new RegExp('[\u4E00-\u9FA5]+')
-    translateList = []
-    for (const i of value) {
-      if (translateList.indexOf(i) < 0) {
-        if (pattern.test(i)) {
-          const str = await this.translate(i, 'en')
-          if (str) {
-            searchText.push(i, str.str)
-            translateList.push(str.str, i)
-          }
-        } else {
-          const str = await this.translate(i)
-          if (str) {
-            searchText.push(i, str.str)
-            translateList.push(str.str, i)
-          }
-        }
-      }
-    }
-    console.log(searchText)
     if (temp) {
       quickFilterSelect = temp.node
       this.setState({ showQuickFilter: true, searchText })
@@ -543,16 +563,16 @@ class Home extends React.Component {
     }
   }
 
-  renderRecommand = async (list) => {
+  renderRecommand = () => {
     const result = []
-    for (let i = 0; i < list.length; i++) {
-      if (result.length > 4) {
-        const name = []
-        // await jieba.cut(list[i])
-        console.log(name)
-        result.push(<Button type="link" key={name + i}>{name}</Button>)
-      }
-    }
+    // for (let i = 0; i < list.length; i++) {
+    //   if (result.length > 4) {
+    //     const name = []
+    //     // await jieba.cut(list[i])
+    //     console.log(name)
+    //     result.push(<Button type="link" key={name + i}>{name}</Button>)
+    //   }
+    // }
     return result
   }
 
