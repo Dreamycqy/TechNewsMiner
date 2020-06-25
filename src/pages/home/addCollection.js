@@ -65,9 +65,9 @@ class AddCollect extends React.Component {
     } else {
       const target = _.find(dataSource, { id: this.state.selectid })
       target.checkedList = _.uniqBy(target.checkedList.concat(checkedList), 'news_ID')
-      let array = target.searchText.split(' ')
-      array = array.concat(this.props.searchText.split(' '))
-      target.searchText = _.uniq(array).join(' ')
+      let array = target.searchText
+      array = array.concat(this.props.searchText)
+      target.searchText = _.uniq(array)
     }
     window.localStorage.setItem('collection', JSON.stringify(dataSource))
     this.setState({ visible: false })

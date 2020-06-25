@@ -17,7 +17,7 @@ originData.checkedList.forEach((e) => {
   e.score = 0
   const title = e['news_Title']
   const content = e['news_Content']
-  searchText.split(' ').forEach((item) => {
+  searchText.forEach((item) => {
     const reg = new RegExp(item, 'gi')
     const scoreTitle = title.match(reg) === null ? 0 : title.match(reg).length * 10
     const scoreContent = content.match(reg) === null ? 0 : content.match(reg).length
@@ -62,7 +62,7 @@ class Abstract extends React.Component {
       return str
     }
     let result = str
-    const arr = searchText.split(' ')
+    const arr = searchText
     arr.forEach((e) => {
       if (e !== ' ' && e !== '') {
         const reg = new RegExp(e, 'gi')

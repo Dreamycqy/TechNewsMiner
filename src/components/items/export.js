@@ -28,7 +28,8 @@ export default class Export extends React.Component {
   }
 
   handleHighLight = (str, type) => {
-    if (this.props.searchText === []) {
+    console.log(this.props.searchText)
+    if (this.props.searchText.length === 0) {
       return str
     }
     let resultStr = str
@@ -39,11 +40,12 @@ export default class Export extends React.Component {
     this.props.searchText.forEach((e) => {
       if (e !== ' ' && e !== '') {
         const reg = new RegExp(e, 'gi')
-        resultStr = resultStr.replace(reg, (text) => { return `<em style="color:red">${text}</em>` })
+        resultStr = resultStr.replace(reg, (text) => { return `<em>${text}<em>` })
       }
     })
+    console.log(resultStr)
     resultStr.split('<em>').forEach((e) => {
-      if (arr.indexOf(e) > -1) {
+      if (this.props.searchText.indexOf(e) > -1) {
         result.push({ text: e, color: 'red', lineHeight: type === 'title' ? 1.2 : 1.5 })
       } else {
         result.push({ text: e, color: '#2b2b2b', lineHeight: type === 'title' ? 1.2 : 1.5 })

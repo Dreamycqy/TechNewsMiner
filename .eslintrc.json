@@ -36,11 +36,13 @@
     "dot-notation": [0],
     "react/jsx-max-props-per-line": [1, { "maximum": 2, "when": "multiline" }],
     "react/destructuring-assignment": [0],
+    "react/no-access-state-in-setstate": [0],
     "global-require": [0],
     "object-curly-newline": [0],
     "linebreak-style": [0 ,"error", "windows"],
     "react/no-danger": [0],
-    "max-len": [0]
+    "max-len": [0],
+    "no-await-in-loop": [0]
   },
   "parserOptions": {
     "ecmaFeatures": {
