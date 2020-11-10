@@ -252,20 +252,25 @@ class Home extends React.Component {
       sources: JSON.stringify(countryMap[country]),
     }, 'search')
     if (data) {
-      data.forEach((e) => {
-        e.score = 0
-        const title = e['news_Title']
-        const content = e['news_Content']
-        searchText.forEach((item) => {
-          const reg = new RegExp(item, 'gi')
-          const scoreTitle = title.match(reg) === null ? 0 : title.match(reg).length * 10
-          const scoreContent = content.match(reg) === null ? 0 : content.match(reg).length
-          e.score += scoreContent + scoreTitle
+      if (data.length > 0 && typeof data[0] === 'object') {
+        data.forEach((e) => {
+          if (e.score) {
+            e.score = 0
+            const title = e['news_Title']
+            const content = e['news_Content']
+            searchText.forEach((item) => {
+              const reg = new RegExp(item, 'gi')
+              const scoreTitle = title.match(reg) === null ? 0 : title.match(reg).length * 10
+              const scoreContent = content.match(reg) === null ? 0 : content.match(reg).length
+              e.score += scoreContent + scoreTitle
+            })
+          }
         })
-      })
+      }
+      console.log(data)
       await this.setState({
-        newsList: _.uniqBy(data, 'news_Title'),
-        originNewsList: _.uniqBy(data, 'news_Title'),
+        newsList: data[0] !== 'object' ? [] : _.uniqBy(data, 'news_Title'),
+        originNewsList: data[0] === 'string' ? [] : _.uniqBy(data, 'news_Title'),
         checkedIdList: [],
         checkAll: false,
       })
@@ -324,20 +329,22 @@ class Home extends React.Component {
       ids: JSON.stringify(ids),
     })
     if (data) {
-      data.forEach((e) => {
-        e.score = 0
-        const title = e['news_Title']
-        const content = e['news_Content']
-        searchText.forEach((item) => {
-          const reg = new RegExp(item, 'gi')
-          const scoreTitle = title.match(reg) === null ? 0 : title.match(reg).length * 10
-          const scoreContent = content.match(reg) === null ? 0 : content.match(reg).length
-          e.score += scoreContent + scoreTitle
+      if (data.length > 0 && typeof data[0] !== 'string') {
+        data.forEach((e) => {
+          e.score = 0
+          const title = e['news_Title']
+          const content = e['news_Content']
+          searchText.forEach((item) => {
+            const reg = new RegExp(item, 'gi')
+            const scoreTitle = title.match(reg) === null ? 0 : title.match(reg).length * 10
+            const scoreContent = content.match(reg) === null ? 0 : content.match(reg).length
+            e.score += scoreContent + scoreTitle
+          })
         })
-      })
+      }
       await this.setState({
-        newsList: _.uniqBy(data, 'news_Title'),
-        originNewsList: _.uniqBy(data, 'news_Title'),
+        newsList: data[0] === 'string' ? [] : _.uniqBy(data, 'news_Title'),
+        originNewsList: data[0] === 'string' ? [] : _.uniqBy(data, 'news_Title'),
         checkedIdList: [],
         checkAll: false,
       })
@@ -363,6 +370,9 @@ class Home extends React.Component {
   }
 
   handleHighLight = (str) => {
+    if (!str || str.length === 0) {
+      return ''
+    }
     const { lastSearch } = this.state
     if (lastSearch === []) {
       return str
@@ -372,7 +382,7 @@ class Home extends React.Component {
     arr.forEach((e) => {
       if (e !== ' ' && e !== ' ') {
         const reg = new RegExp(e, 'gi')
-        result = result.replace(reg, (text) => { return `<em style="color:red">${text}</em>` })
+        result = result.replace(reg, (text) => { return text ? `<em style="color:red">${text}</em>` : '' })
       }
     })
     return result
@@ -584,6 +594,7 @@ class Home extends React.Component {
     if (!uid || uid.length < 1) {
       window.location.href = '/foreign-news/login'
     }
+    console.log(newsList)
     const {
       newsList, searchText, country, showQuickFilter, indeterminate, checkAll, checkedIdList,
       showSearchBar, startDate, endDate, treeValue, loading, sortor, lastSearch, translateAll,

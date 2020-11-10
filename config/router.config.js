@@ -19,6 +19,18 @@ export default [
         path: './abstract',
         component: './abstract',
       },
+      {
+        path: './user',
+        component: './user',
+      },
+      {
+        path: './tree',
+        component: './tree',
+      },
+      {
+        path: './guide',
+        component: './guide',
+      },
     ],
   },
 ]

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Input, Divider, List, Icon, Popconfirm, Select } from 'antd'
+import { Input, Divider, List, Icon, Popconfirm, Select, Button } from 'antd'
 import md5 from 'md5'
 import $ from 'jquery'
 import _ from 'lodash'
@@ -171,7 +171,7 @@ class Abstract extends React.Component {
   }
 
   render() {
-    const { newsList, sortor } = this.state
+    const { newsList, sortor, newValue } = this.state
     return (
       <div>
         <div style={{ paddingTop: 20 }}>
@@ -325,6 +325,20 @@ class Abstract extends React.Component {
             }
             }
           />
+        </div>
+        <div style={{ padding: 20 }}>
+          <h1>生成摘要导报</h1>
+          <span>关键词：互联网，internet，视听，audio visual，5G</span>
+          <TextArea
+            autosize
+            style={{ marginTop: 20, padding: 20 }}
+            value={newValue}
+          />
+          <div style={{ height: 40, marginTop: 20 }}>
+            <Button style={{ float: 'right' }}>暂存摘要导报</Button>
+            <Button style={{ marginRight: 20, float: 'right' }}>输出导报为PDF</Button>
+            <Button style={{ marginRight: 20, float: 'right' }} type="primary">生成摘要导报</Button>
+          </div>
         </div>
       </div>
     )

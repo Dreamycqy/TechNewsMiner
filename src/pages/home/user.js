@@ -1,5 +1,7 @@
 import React from 'react'
 import { Menu, Modal, Dropdown, Avatar, Icon } from 'antd'
+import { connect } from 'dva'
+import { routerRedux } from 'dva/router'
 import FilterKeyword from './filterKeyword'
 
 function logout() {
@@ -7,6 +9,7 @@ function logout() {
   window.location.href = '/foreign-news/login'
 }
 
+@connect()
 class User extends React.Component {
   constructor(props) {
     super(props)
@@ -25,12 +28,30 @@ class User extends React.Component {
     })
   }
 
+  goUser = () => {
+    this.props.dispatch(routerRedux.push({
+      pathname: '/foreign-news/user',
+    }))
+  }
+
+  goTree = () => {
+    this.props.dispatch(routerRedux.push({
+      pathname: '/foreign-news/tree',
+    }))
+  }
+
   render() {
     const { username } = window.localStorage
     const menu = (
       <Menu>
         <Menu.Item>
           <FilterKeyword init={this.props.init} />
+        </Menu.Item>
+        <Menu.Item>
+          <a href="javascript:;" onClick={() => this.goUser()}>用户管理</a>
+        </Menu.Item>
+        <Menu.Item>
+          <a href="javascript:;" onClick={() => this.goTree()}>知识树管理</a>
         </Menu.Item>
         <Menu.Item>
           <a

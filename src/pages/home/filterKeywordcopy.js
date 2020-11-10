@@ -1,5 +1,5 @@
 import React from 'react'
-import { Icon, Input, Modal, Tag, Tooltip, notification, message } from 'antd'
+import { Icon, Input, Tag, Tooltip, notification, message } from 'antd'
 import { getFilterKeyword, updateFilterKeyword } from '@/services/index'
 import FilterTree from './filterTree'
 
@@ -14,7 +14,6 @@ const key_map = require('@/constants/key_map.json')
 
 export default class FilterKeyword extends React.Component {
     state = {
-      visible: false,
       filterKeyword: [],
       inputVisible: false,
       inputValue: '',
@@ -62,14 +61,10 @@ export default class FilterKeyword extends React.Component {
       } else {
         openNotificationWithIcon('error', '更新失败')
       }
-      this.setState({
-        visible: false,
-      })
     }
 
     hideModal = () => {
       this.setState({
-        visible: false,
         filterKeyword: [],
       })
     }
@@ -77,9 +72,6 @@ export default class FilterKeyword extends React.Component {
 
     showModal = () => {
       this.getFilterKeyword()
-      this.setState({
-        visible: true,
-      })
     }
 
     handleClose = (removedTag) => {
@@ -114,18 +106,7 @@ export default class FilterKeyword extends React.Component {
       const { filterKeyword, inputVisible, inputValue, categories } = this.state
       return (
         <div>
-          <a href="javascript:;" onClick={this.showModal}>
-            我的关键词
-          </a>
-          <Modal
-            title="订阅关键词管理"
-            visible={this.state.visible}
-            onCancel={this.hideModal}
-            onOk={this.updateFilterKeyword}
-            destroyOnClose
-            okText="确认"
-            cancelText="取消"
-          >
+          <div>
             {filterKeyword.map((tag) => {
               const isLongTag = tag.length > 20
               const tagElem = (
@@ -167,7 +148,7 @@ export default class FilterKeyword extends React.Component {
             <div>
               <FilterTree categories={categories} ref={t => this.tree = t} />
             </div>
-          </Modal>
+          </div>
         </div>
       )
     }
