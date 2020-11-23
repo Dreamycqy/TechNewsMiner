@@ -1,4 +1,5 @@
 import React from 'react'
+import { Icon } from 'antd'
 import _ from 'lodash'
 import Bg from '@/assets/bg.jpg'
 
@@ -82,6 +83,11 @@ class Guide extends React.Component {
             <h3 style={{ marginBottom: 10 }}>
               <a href={e.url}>{e.title}</a>
             </h3>
+            <div style={{ height: 30, lineHeight: '30px' }}>
+              <div style={{ float: 'left' }}>
+                <Icon type="" />
+              </div>
+            </div>
             <div>
               <span>{e.guide}</span>
               <a href="javascript:;">&nbsp;&nbsp;展开更多↓</a>

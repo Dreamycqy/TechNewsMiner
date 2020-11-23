@@ -45,7 +45,7 @@ class User extends React.Component {
     const menu = (
       <Menu>
         <Menu.Item>
-          <FilterKeyword init={this.props.init} />
+          <FilterKeyword />
         </Menu.Item>
         <Menu.Item>
           <a href="javascript:;" onClick={() => this.goUser()}>用户管理</a>
@@ -71,10 +71,10 @@ class User extends React.Component {
           <div>
             {
               username && username !== ''
-                ? <Avatar>{username.substr(0, 1).toUpperCase()}</Avatar> : <Avatar icon="user" />
+                ? <Avatar size="small">{username.substr(0, 1).toUpperCase()}</Avatar> : <Avatar icon="user" size="small" />
             }
-            <span style={{ marginLeft: 10 }}>{username && username !== '' ? username : '未登录'}</span>
-            <Icon type="down" />
+            <span style={{ marginLeft: 10, color: 'white' }}>{username && username !== '' ? username : '未登录'}</span>
+            <Icon type="down" style={{ marginLeft: 4, color: 'white' }} />
           </div>
         </Dropdown>
       </div>

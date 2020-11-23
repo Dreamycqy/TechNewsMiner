@@ -144,16 +144,16 @@ class Collect extends React.Component {
               onChange={value => this.setState({ fields: value })}
               style={{ width: '100%', paddingLeft: 10 }}
             >
-              <Checkbox value="A">前沿技术</Checkbox>
-              <Checkbox value="B">健康医疗</Checkbox>
-              <Checkbox value="3">应急避险</Checkbox>
+              <Checkbox value="前沿技术">前沿技术</Checkbox>
+              <Checkbox value="健康医疗">健康医疗</Checkbox>
+              <Checkbox value="应急避险">应急避险</Checkbox>
               <br />
-              <Checkbox value="4">信息科技</Checkbox>
-              <Checkbox value="5">能源利用</Checkbox>
-              <Checkbox value="6">气候环境</Checkbox>
+              <Checkbox value="信息科技">信息科技</Checkbox>
+              <Checkbox value="能源利用">能源利用</Checkbox>
+              <Checkbox value="气候环境">气候环境</Checkbox>
               <br />
-              <Checkbox value="7">食品安全</Checkbox>
-              <Checkbox value="8">航空航天</Checkbox>
+              <Checkbox value="食品安全">食品安全</Checkbox>
+              <Checkbox value="航空航天">航空航天</Checkbox>
             </Checkbox.Group>
           </Form.Item>
           <Form.Item

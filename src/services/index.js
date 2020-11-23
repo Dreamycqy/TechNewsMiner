@@ -39,3 +39,11 @@ export function updateFilterKeyword(body, rSymbol) {
     rSymbol,
   })
 }
+
+export function getContentByIds(body, rSymbol) {
+  return request.post({
+    url: '/foreign-news/api/svc/Foreign/getContentByIds',
+    data: body,
+    rSymbol,
+  })
+}
