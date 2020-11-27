@@ -19,7 +19,12 @@ class Home extends React.Component {
     if (!uid || uid.length < 1) {
       window.location.href = '/foreign-news/login'
     }
-    const config = JSON.parse(params)
+    let config = {
+      fields: [],
+    }
+    if (params) {
+      config = JSON.parse(params)
+    }
     const tabList = config.fields
     tabList.unshift('首页')
     return (
