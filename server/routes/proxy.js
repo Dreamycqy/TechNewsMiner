@@ -15,11 +15,14 @@ router.all('/', (req, res) => {
     url = url.split('/api')[1] // eslint-disable-line
   }
   url = (typeof basePath === 'string' ? basePath : basePath[hostname]) + url
+  if (url.indexOf('getAbstract') > -1) {
+    url = 'http://39.100.31.203:5000/get_abstract'
+  }
   const opt = {
     method: req.method,
     url,
     headers: {
-      'Content-Type': 'application/x-www-form-urlencoded',
+      'Content-Type': url.indexOf('get_abstract') > -1 ? 'application/json' : 'application/x-www-form-urlencoded',
       'Authorization': method === 'GET' ? req.query.uid : req.body.uid,
       'Accept': '*/*'
     },
@@ -39,7 +42,7 @@ router.all('/', (req, res) => {
     opt.qs = req.query
   } else {
     opt.json = true
-    opt.body = qs.stringify(req.body)
+    opt.body = url.indexOf('get_abstract') > -1 ? req.body : qs.stringify(req.body)
   }
   request(opt, (error, response, body) => {
     try {

@@ -47,3 +47,11 @@ export function getContentByIds(body, rSymbol) {
     rSymbol,
   })
 }
+
+export function getAbstract(body, rSymbol) {
+  return request.post({
+    url: '/foreign-news/api/svc/Foreign/getAbstract',
+    data: body,
+    rSymbol,
+  })
+}

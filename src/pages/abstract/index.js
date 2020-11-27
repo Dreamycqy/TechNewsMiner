@@ -1,8 +1,10 @@
 import React from 'react'
-import { Input, Divider, List, Icon, Popconfirm, Select, Button } from 'antd'
+import { Input, Divider, List, Icon, Popconfirm, Select, Button, Spin } from 'antd'
 import md5 from 'md5'
+import moment from 'moment'
 import $ from 'jquery'
 import _ from 'lodash'
+import { getContentByIds, getAbstract } from '@/services/index'
 import { eventImage, getUrlParams } from '@/utils/common'
 import Export from '@/components/items/export'
 
@@ -31,6 +33,8 @@ class Abstract extends React.Component {
     this.state = {
       newsList: originData.checkedList,
       sortor: '',
+      loading: false,
+      newValue: '',
     }
   }
 
@@ -70,6 +74,36 @@ class Abstract extends React.Component {
       }
     })
     return result
+  }
+
+  makeAbs = async () => {
+    this.setState({ loading: true })
+    const { newsList } = this.state
+    let newValue = ''
+    newValue += `摘要  ${name}\n`
+    newValue += `关键词  ${searchText}\n`
+    newValue += `生成时间 ${moment().format('YYYY-MM-DD HH:mm:ss')}\n\n`
+    const contentList = await getContentByIds({
+      ids: JSON.stringify(newsList.map((e) => { return e.news_ID })),
+    })
+    if (contentList) {
+      for (const item of contentList) {
+        let text = item.news_Content
+        if (text.length > 20000) {
+          text = text.substr(0, 20000)
+        }
+        const guide = await getAbstract({
+          num: 4,
+          text,
+        })
+        if (guide) {
+          newValue += `${item.news_Title}\n`
+          newValue += `时间：${item.news_Time} 来源：${item.news_Source}\n\n`
+          newValue += `${guide.data}\n\n\n`
+        }
+      }
+      this.setState({ loading: false, newValue })
+    }
   }
 
   translate = (q) => {
@@ -171,7 +205,7 @@ class Abstract extends React.Component {
   }
 
   render() {
-    const { newsList, sortor, newValue } = this.state
+    const { newsList, sortor, newValue, loading } = this.state
     return (
       <div>
         <div style={{ paddingTop: 20 }}>
@@ -327,17 +361,21 @@ class Abstract extends React.Component {
           />
         </div>
         <div style={{ padding: 20 }}>
-          <h1>生成摘要导报</h1>
-          <span>关键词：互联网，internet，视听，audio visual，5G</span>
-          <TextArea
-            autosize
-            style={{ marginTop: 20, padding: 20 }}
-            value={newValue}
-          />
+          <h1>摘要汇总</h1>
+          {/* <span>关键词：互联网，internet，视听，audio visual，5G</span> */}
+          <Spin spinning={loading}>
+            <TextArea
+              autosize
+              style={{ marginTop: 20, padding: 20 }}
+              value={newValue}
+            />
+          </Spin>
           <div style={{ height: 40, marginTop: 20 }}>
-            <Button style={{ float: 'right' }}>暂存摘要导报</Button>
-            <Button style={{ marginRight: 20, float: 'right' }}>输出导报为PDF</Button>
-            <Button style={{ marginRight: 20, float: 'right' }} type="primary">生成摘要导报</Button>
+            <Button style={{ float: 'right' }}>暂存摘要</Button>
+            <span style={{ marginRight: 20, float: 'right' }}>
+              <Export dataList={newsList} searchText={searchText} info={{ name, desc, time }} />
+            </span>
+            <Button style={{ marginRight: 20, float: 'right' }} type="primary" onClick={() => this.makeAbs()}>生成摘要</Button>
           </div>
         </div>
       </div>

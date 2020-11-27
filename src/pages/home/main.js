@@ -30,11 +30,21 @@ const countryList = [
   // { value: 'cn', name: '中国' },
   { value: 'knowledge', name: '智库' },
 ]
+const typeList = {
+  前沿技术: ['0-7', '0-8', '0-9', '1-1', '1-4', '1-7'],
+  健康医疗: ['0-3', '1-2'],
+  应急避险: ['0-8', '0-9'],
+  信息科技: ['0-6', '1-5'],
+  能源利用: ['0-1', '1-0'],
+  气候环境: ['0-2', '1-3'],
+  食品安全: ['0-4'],
+  航空航天: ['0-0'],
+}
 const dateFormat = 'YYYY-MM-DD'
 const appid = '20200511000448145'
 const translatekey = 'nCGO32AVxsejOEd7CaVk'
-const myData = require('@/constants/tree_cn.json')
-const myEnData = require('@/constants/tree_en.json')
+const kgData = require('@/constants/tree_cn.json')
+const kgEnData = require('@/constants/tree_en.json')
 const key_map = require('@/constants/key_map.json')
 const countryMap = require('@/constants/countryMap.json')
 
@@ -63,11 +73,60 @@ class Main extends React.Component {
       current: 1,
       pageSize: 10,
       treeType: 'cn',
+      myData: [],
+      myEnData: [],
     }
+    this.dataList = []
   }
 
-  componentWillMount = () => {
+  componentWillMount = async () => {
+    if (this.props.type !== '首页') {
+      const list = typeList[this.props.type]
+      const childrenC0 = kgData[0].children.filter((e) => { return list.indexOf(e.key.substr(0, 3)) > -1 })
+      const childrenC1 = kgData[1].children.filter((e) => { return list.indexOf(e.key.substr(0, 3)) > -1 })
+      const childrenE0 = kgEnData[0].children.filter((e) => { return list.indexOf(e.key.substr(0, 3)) > -1 })
+      const childrenE1 = kgEnData[1].children.filter((e) => { return list.indexOf(e.key.substr(0, 3)) > -1 })
+      const myData = [{
+        children: childrenC0,
+        key: '0',
+        value: '0',
+        title: '技术',
+      }, {
+        children: childrenC1,
+        key: '1',
+        value: '1',
+        title: '科学',
+      }]
+      const myEnData = [{
+        children: childrenE0,
+        key: '0',
+        value: '0',
+        title: 'Technology',
+      }, {
+        children: childrenE1,
+        key: '1',
+        value: '1',
+        title: 'Science',
+      }]
+      this.dataList = []
+      this.generateList(myData)
+      const resultList = this.dataList.map((e) => { return e.key })
+      await this.selectCategory(resultList)
+      await this.setState({ myData, myEnData })
+    } else {
+      await this.setState({ myData: kgData, myEnData: kgEnData })
+    }
     this.init()
+  }
+
+  generateList = (data) => {
+    for (let i = 0; i < data.length; i++) {
+      const node = data[i]
+      this.dataList.push(node)
+      if (node.children) {
+        this.generateList(node.children)
+      }
+    }
   }
 
   getFilterKeyword = async () => {
@@ -187,7 +246,7 @@ class Main extends React.Component {
   }
 
   init = async () => {
-    await this.getFilterKeyword({})
+    // await this.getFilterKeyword({})
     this.search()
   }
 
@@ -220,7 +279,7 @@ class Main extends React.Component {
   search = async () => {
     window.GLOBAL.requestCancel('search', '取消')
     const {
-      startDate, endDate, categories, country, treeValue, searchText,
+      startDate, endDate, categories, country, treeValue, searchText, myData,
     } = this.state
     const pattern = new RegExp('[\u4E00-\u9FA5]+')
     translateList = []
@@ -266,7 +325,6 @@ class Main extends React.Component {
           }
         })
       }
-      console.log(data)
       await this.setState({
         newsList: data[0] !== 'object' ? [] : _.uniqBy(data, 'news_Title'),
         originNewsList: data[0] === 'string' ? [] : _.uniqBy(data, 'news_Title'),
@@ -296,7 +354,7 @@ class Main extends React.Component {
 
   subSearch = async (ids) => {
     const {
-      searchText, startDate, endDate, categories, country, treeValue,
+      searchText, startDate, endDate, categories, country, treeValue, myData,
     } = this.state
     const pattern = new RegExp('[\u4E00-\u9FA5]+')
     translateList = []
@@ -411,7 +469,7 @@ class Main extends React.Component {
   }
 
   searchInput = async (value) => {
-    const { treeValue, treeType } = this.state
+    const { treeValue, treeType, myData, myEnData } = this.state
     let temp
     value.forEach((e) => {
       const target = findPathByLeafId(e, treeType === 'cn' ? myData : myEnData, 'title')
@@ -517,14 +575,15 @@ class Main extends React.Component {
 
   selectCategory = async (keyList) => {
     const categories = []
-    keyList.forEach((key) => {
+    let targetList = keyList
+    if (keyList.length > 250) {
+      message.info('后端服务暂不支持超过250项聚类，请减少聚类数量')
+      targetList = keyList.slice(0, 250)
+    }
+    targetList.forEach((key) => {
       categories.push(key_map[key]['cn'])
       categories.push(key_map[key]['en'])
     })
-    if (keyList.length > 250) {
-      message.error('后端服务暂不支持超过250项聚类，请减少聚类数量')
-      return
-    }
     await this.setState({ categories, treeValue: keyList })
     this.searchInput(this.state.searchText)
   }
@@ -596,7 +655,7 @@ class Main extends React.Component {
     const {
       newsList, searchText, country, showQuickFilter, indeterminate, checkAll, checkedIdList,
       showSearchBar, startDate, endDate, treeValue, loading, sortor, lastSearch, translateAll,
-      current, treeType,
+      current, treeType, myData, myEnData,
     } = this.state
     return (
       <div>

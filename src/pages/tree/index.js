@@ -1,83 +1,23 @@
 import React from 'react'
-import { Input, Tree, Divider, Table } from 'antd'
+import { Input, Tree, Divider, Table, Icon, Tooltip, Button } from 'antd'
+import _ from 'lodash'
+import User from '../home/user'
 
 const { TreeNode } = Tree
 const { Search } = Input
+let dataList = []
 const gData = require('@/constants/tree_cn.json')
-
-const dataList = []
-
-const columns = [{
-  title: '名称',
-  dataIndex: 'name',
-}, {
-  title: '来源',
-  render: (text, record) => {
-    return (
-      <div>
-        <a href="javascript:;">文章标题</a>
-      </div>
-    )
-  },
-}, {
-  title: '推荐',
-  render: (text, record) => {
-    return (
-      <div>
-        {record.recommand.map((e, index) => {
-          return (
-            <span>
-              <a href="javascript:;">{e}</a>
-              <span style={{ display: index !== record.recommand.length - 1 ? 'inline-block' : 'none' }}>, </span>
-            </span>
-          )
-        })}
-      </div>
-    )
-  },
-}, {
-  title: '操作',
-  render: (text, record) => {
-    return (
-      <div>
-        <a href="javascript:;">确定</a>
-        <Divider type="vertical" />
-        <a href="javascript:;">删除</a>
-      </div>
-    )
-  },
-}]
+const key_map = require('@/constants/key_map.json')
 
 const dataSource = [{
-  name: '词条1',
+  name: '风洞技术',
+  recommand: ['大型飞机技术'],
+}, {
+  name: '机场地面引导',
   recommand: ['通用航空', '空中交通管制监视技术'],
 }, {
-  name: '词条2',
-  recommand: ['通用航空', '空中交通管制监视技术'],
-}, {
-  name: '词条3',
-  recommand: ['通用航空', '空中交通管制监视技术'],
-}, {
-  name: '词条4',
-  recommand: ['通用航空', '空中交通管制监视技术'],
-}, {
-  name: '词条5',
-  recommand: ['通用航空', '空中交通管制监视技术'],
-}, {
-  name: '词条6',
-  recommand: ['通用航空', '空中交通管制监视技术'],
-}, {
-  name: '词条7',
-  recommand: ['通用航空', '空中交通管制监视技术'],
-}, {
-  name: '词条8',
-  recommand: ['通用航空', '空中交通管制监视技术'],
-}, {
-  name: '词条9',
-  recommand: ['通用航空', '空中交通管制监视技术'],
-}, {
-  name: '词条10',
-  recommand: ['通用航空', '空中交通管制监视技术'],
+  name: '中药原理',
+  recommand: ['现代中医药技术'],
 }]
 
 class Collect extends React.Component {
@@ -87,11 +27,18 @@ class Collect extends React.Component {
       expandedKeys: [],
       searchValue: '',
       autoExpandParent: true,
+      selectKey: '',
     }
   }
 
   componentWillMount() {
-    this.generateList(gData)
+    dataList = []
+    for (const i in key_map) { // eslint-disable-line
+      dataList.push({
+        title: key_map[i].cn,
+        key: i,
+      })
+    }
   }
 
   onExpand = (expandedKeys) => {
@@ -118,15 +65,13 @@ class Collect extends React.Component {
     })
   }
 
-  generateList = (data) => {
-    for (let i = 0; i < data.length; i++) {
-      const node = data[i]
-      const { key } = node
-      dataList.push({ key, title: key })
-      if (node.children) {
-        this.generateList(node.children)
-      }
+  onSelect = async (keys) => {
+    if (keys.length === 0) {
+      return
     }
+    await this.setState({
+      selectKey: keys[0],
+    })
   }
 
   getParentKey = (key, tree) => {
@@ -142,6 +87,15 @@ class Collect extends React.Component {
       }
     }
     return parentKey
+  }
+
+  handleSelect = (name) => {
+    this.onChange({
+      target: {
+        value: name,
+      },
+    })
+    this.setState({ selectKey: _.find(dataList, { title: name }).key })
   }
 
   loop = data => data.map((item) => {
@@ -169,27 +123,92 @@ class Collect extends React.Component {
   })
 
   render() {
-    const { expandedKeys, autoExpandParent } = this.state
-    return (
-      <div style={{ margin: 20 }}>
-        <div style={{ float: 'left', width: 400, borderRight: '1px solid #e8e8e8', padding: 10 }}>
+    const { expandedKeys, autoExpandParent, searchValue, selectKey } = this.state
+    const columns = [{
+      title: '新概念名称',
+      dataIndex: 'name',
+    }, {
+      title: '来源',
+      render: () => {
+        return (
           <div>
-            <Search style={{ marginBottom: 8 }} placeholder="Search" onChange={this.onChange} />
+            <a href="javascript:;">文章标题</a>
+          </div>
+        )
+      },
+    }, {
+      title: '推荐父级',
+      render: (text, record) => {
+        return (
+          <div>
+            {record.recommand.map((e, index) => {
+              return (
+                <span>
+                  <a href="javascript:;" onClick={() => this.handleSelect(e)}>{e}</a>
+                  <span style={{ display: index !== record.recommand.length - 1 ? 'inline-block' : 'none' }}>，&nbsp;</span>
+                </span>
+              )
+            })}
+          </div>
+        )
+      },
+    }, {
+      title: '操作',
+      render: () => {
+        return (
+          <div>
+            <a href="javascript:;">确定</a>
+            <Divider type="vertical" />
+            <a href="javascript:;">删除</a>
+          </div>
+        )
+      },
+    }]
+    return (
+      <div style={{ minHeight: 660 }}>
+        <div style={{ overflow: 'hidden', height: 32, lineHeight: '32px', backgroundColor: '#001529' }}>
+          <div style={{ float: 'left' }}>
+            <div style={{ marginLeft: 40, fontSize: 14, fontWeight: 600, display: 'inline-block' }}>
+              <a href="/foreign-news/index">科普新闻发现</a>
+            </div>
+          </div>
+          <div style={{ float: 'right', marginRight: 40 }}>
+            <User />
+          </div>
+        </div>
+        <div style={{ float: 'left', width: 400, borderRight: '1px solid #e8e8e8', padding: 10, height: 600, overflow: 'scroll' }}>
+          <div>
+            <Search style={{ marginBottom: 8 }} placeholder="Search" value={searchValue} onChange={this.onChange} />
             <Tree
               onExpand={this.onExpand}
               expandedKeys={expandedKeys}
               autoExpandParent={autoExpandParent}
+              selectedKeys={[selectKey]}
+              onSelect={this.onSelect}
+              blockNode
             >
               {this.loop(gData)}
             </Tree>
           </div>
         </div>
-        <div style={{ overflow: 'hidden' }}>
-          {/* <div style={{ height: 60 }}>
-            <div style={{ float: 'left', marginRight:  }}>
-
+        <div style={{ overflow: 'hidden', padding: 20 }}>
+          <div style={{ height: 42 }}>
+            <div style={{ float: 'left', fontSize: 20, fontWeight: 700 }}>
+              知识概念树标注
             </div>
-          </div> */}
+            <div style={{ fontSize: 14, float: 'left', margin: '4px 0 0 10px' }}>
+              <Tooltip title="将自动采集和手动添加的新概念，挂在左侧概念树的选中节点下。" placement="right">
+                <Icon type="question-circle" />
+              </Tooltip>
+            </div>
+          </div>
+          <div style={{ height: 50 }}>
+            <h3 style={{ color: '#000000a6', float: 'left', marginTop: 4 }}>
+              当前选中父级概念：
+              <span style={{ color: '#24b0e6' }}>{key_map[selectKey] ? key_map[selectKey].cn : ''}</span>
+            </h3>
+            <Button type="primary" style={{ float: 'right', marginRight: 20 }}>添加新概念</Button>
+          </div>
           <Table
             dataSource={dataSource}
             columns={columns}

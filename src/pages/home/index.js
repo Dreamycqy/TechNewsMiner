@@ -1,7 +1,6 @@
 import React from 'react'
 import { Tabs } from 'antd'
 import { connect } from 'dva'
-import { getContentByIds } from '@/services/index'
 import Main from './main'
 import User from './user'
 
@@ -13,12 +12,6 @@ class Home extends React.Component {
     super(props)
     this.state = {
     }
-  }
-
-  componentWillMount = () => {
-    getContentByIds({
-      ids: JSON.stringify(['AXIjZV87VovOSDD9E6ns', 'AXLIMyLeBtgBB4QaF1LJ', 'AXORCj36BtgBB4QaG9tp']),
-    })
   }
 
   render() {
@@ -34,7 +27,7 @@ class Home extends React.Component {
         <div style={{ overflow: 'hidden', height: 32, lineHeight: '32px', backgroundColor: '#001529' }}>
           <div style={{ float: 'left' }}>
             <div style={{ marginLeft: 40, fontSize: 14, fontWeight: 600, display: 'inline-block' }}>
-              <a href="javascript:;">科普新闻发现</a>
+              <a href="/foreign-news/index">科普新闻发现</a>
             </div>
           </div>
           <div style={{ float: 'right', marginRight: 40 }}>

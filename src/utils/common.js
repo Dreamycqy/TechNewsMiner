@@ -69,6 +69,21 @@ export const eventImage = (picture) => {
   }
 }
 
+export const eventImageStr = (picture) => {
+  let url
+  const type = typeof picture
+  if (type === 'object') {
+    url = picture[0] // eslint-disable-line
+  } else if (type === 'string') {
+    url = picture.substring(1, picture.length - 1).split(',')[0] // eslint-disable-line
+  }
+  if (url !== undefined && url.length > 0) {
+    return url
+  } else {
+    return ''
+  }
+}
+
 export const image2Base64 = (url, ext) => {
   function getBase64Image(img) {
     let canvas = document.createElement('canvas')
