@@ -55,3 +55,11 @@ export function getAbstract(body, rSymbol) {
     rSymbol,
   })
 }
+
+export function register(body, rSymbol) {
+  return request.post({
+    url: '/foreign-news/api/svc/ForeignLogin/register',
+    data: body,
+    rSymbol,
+  })
+}

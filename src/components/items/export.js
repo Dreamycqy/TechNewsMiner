@@ -1,12 +1,9 @@
 import React from 'react'
-import { Button, notification } from 'antd'
+import { Button, notification, message } from 'antd'
 import moment from 'moment'
 import pdfMake from 'pdfmake/build/pdfmake'
-import pdfFonts from '@/assets/vfs_fonts'
-// import pdfFonts from '@/constants/vfs_fonts'
+import Script from 'react-load-script'
 import { image2Base64 } from '@/utils/common'
-
-pdfMake.vfs = pdfFonts.pdfMake.vfs
 
 const openNotificationWithIcon = (type, info) => {
   notification[type]({
@@ -24,11 +21,16 @@ export default class Export extends React.Component {
     super(props)
     this.state = {
       loading: false,
+      scriptStatus: '',
     }
   }
 
+  handleScript = (type) => {
+    console.log(type, '!!!!')
+    this.setState({ scriptStatus: type })
+  }
+
   handleHighLight = (str, type) => {
-    console.log(this.props.searchText)
     if (this.props.searchText.length === 0) {
       return str
     }
@@ -43,7 +45,6 @@ export default class Export extends React.Component {
         resultStr = resultStr.replace(reg, (text) => { return `<em>${text}<em>` })
       }
     })
-    console.log(resultStr)
     resultStr.split('<em>').forEach((e) => {
       if (this.props.searchText.indexOf(e) > -1) {
         result.push({ text: e, color: 'red', lineHeight: type === 'title' ? 1.2 : 1.5 })
@@ -67,6 +68,11 @@ export default class Export extends React.Component {
   }
 
   download = async () => {
+    if (this.state.scriptStatus !== 'load') {
+      message.info('字体文件加载中，请稍后重试')
+      return
+    }
+    pdfMake.vfs = window.pdfMake.vfs
     let checkedList = []
     if (this.props.dataList) {
       checkedList = this.props.dataList
@@ -183,7 +189,6 @@ export default class Export extends React.Component {
       content,
       defaultStyle: {
         font: 'simsun',
-        // font: 'fzhtjw',
       },
       info: {
         title: `摘要-${this.props.searchText.join('+').replace(/\s/g, '_')}_${moment().format('YYYY-MM-DD_HH:mm')}`,
@@ -194,17 +199,21 @@ export default class Export extends React.Component {
       simsun: {
         normal: 'simsun.ttf',
       },
-      // fzhtjw: {
-      //   normal: 'fzhtjw.TTF',
-      // },
     }
     this.setState({ loading: false })
     pdfMake.createPdf(dd).download(`摘要-${this.props.searchText.join(', ').replace(/\s/g, '_')}_${moment().format('YYYY-MM-DD_HH:mm')}.pdf`)
   }
 
   render() {
+    const { scriptStatus } = this.state
     return (
       <div style={{ display: 'inline-block', marginLeft: 10 }}>
+        <Script
+          url="http://39.97.172.123:3000/vfs_fonts.js"
+          onCreate={() => this.handleScript('create')}
+          onError={() => this.handleScript('error')}
+          onLoad={() => this.handleScript('load')}
+        />
         <Button
           style={{ margin: 0 }} className="gutter-box"
           type="primary" onClick={this.download}

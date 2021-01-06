@@ -347,7 +347,7 @@ class Main extends React.Component {
         }
       }
     } else {
-      // message.error('获取新闻列表失败，请检查是否设置过滤关键词！')
+      message.error('获取新闻列表失败或超时，请检查网络！')
     }
     this.setState({ loading: false })
   }
@@ -421,7 +421,7 @@ class Main extends React.Component {
         }
       }
     } else {
-      message.error('获取新闻列表失败，请检查是否设置过滤关键词！')
+      message.error('获取新闻列表失败或超时，请检查网络！')
     }
     this.setState({ loading: false })
   }

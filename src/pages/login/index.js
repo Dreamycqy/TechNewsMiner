@@ -113,7 +113,9 @@ class Login extends React.Component {
                     登录
                   </Button>
                   <Button
-                    onClick={() => window.open('https://oauth.newsminer.net/page/register.html')}
+                    onClick={() => this.props.dispatch(routerRedux.push({
+                      pathname: '/foreign-news/reg',
+                    }))}
                     style={{ marginLeft: 20 }}
                   >
                     注册
