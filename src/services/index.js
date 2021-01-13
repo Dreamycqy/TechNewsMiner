@@ -63,3 +63,27 @@ export function register(body, rSymbol) {
     rSymbol,
   })
 }
+
+export function getProfile(body, rSymbol) {
+  return request.post({
+    url: '/foreign-news/api/svc/ForeignLogin/getProfile',
+    data: body,
+    rSymbol,
+  })
+}
+
+// export function (body, rSymbol) {
+//   return request.post({
+//     url: '/foreign-news/api/svc/ForeignLogin/',
+//     data: body,
+//     rSymbol,
+//   })
+// }
+
+// export function (body, rSymbol) {
+//   return request.post({
+//     url: '/foreign-news/api/svc/ForeignLogin/',
+//     data: body,
+//     rSymbol,
+//   })
+// }

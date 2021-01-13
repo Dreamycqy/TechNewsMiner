@@ -1,5 +1,5 @@
 import React from 'react'
-import { Select, Button, Checkbox, DatePicker, TreeSelect, List, Icon, BackTop, message, Empty, Modal } from 'antd'
+import { Select, Button, Checkbox, DatePicker, TreeSelect, List, Icon, BackTop, message, Empty, Modal, Tooltip } from 'antd'
 import moment from 'moment'
 import _ from 'lodash'
 import { connect } from 'dva'
@@ -678,7 +678,9 @@ class Main extends React.Component {
               placeholder="请输入搜索关键词"
             />
             <Button style={{ marginLeft: 10 }} icon="search" type="primary" onClick={this.searchOnClick}>搜索</Button>
-            <Button style={{ marginLeft: 10 }} icon="search" type="primary" onClick={this.handleConfirm}>从当前结果中筛选</Button>
+            <Tooltip title="从当前搜索结果中继续搜索">
+              <Button style={{ marginLeft: 10 }} icon="search" type="primary" onClick={this.handleConfirm}>从当前结果中筛选</Button>
+            </Tooltip>
             <Button style={{ marginLeft: 10 }} onClick={this.showSearchBarButton}>展开高级选项</Button>
           </div>
           <div style={{ marginLeft: 160, lineHeight: '0px', display: showQuickFilter ? 'block' : 'none' }}>

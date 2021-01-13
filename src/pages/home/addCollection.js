@@ -1,5 +1,5 @@
 import React from 'react'
-import { Modal, Input, Button, message, Form, Select, Radio } from 'antd'
+import { Modal, Input, Button, message, Form, Select, Radio, Tooltip } from 'antd'
 import uuid from 'uuid'
 import _ from 'lodash'
 import moment from 'moment'
@@ -97,7 +97,14 @@ class AddCollect extends React.Component {
     } = this.state
     return (
       <div style={{ display: 'inline-block' }}>
-        <Button style={{ backgroundColor: '#FFA500', borderColor: '#FFA500' }} type="primary" onClick={() => this.openModal()}>添加收藏</Button>
+        <Tooltip title="将左侧列表所选新闻添加到用户收藏夹">
+          <Button
+            style={{ backgroundColor: '#FFA500', borderColor: '#FFA500' }}
+            type="primary" onClick={() => this.openModal()}
+          >
+            添加收藏
+          </Button>
+        </Tooltip>
         <Modal
           title="添加收藏"
           visible={visible}

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button, notification, message } from 'antd'
+import { Button, notification, message, Tooltip } from 'antd'
 import moment from 'moment'
 import pdfMake from 'pdfmake/build/pdfmake'
 import Script from 'react-load-script'
@@ -214,13 +214,15 @@ export default class Export extends React.Component {
           onError={() => this.handleScript('error')}
           onLoad={() => this.handleScript('load')}
         />
-        <Button
-          style={{ margin: 0 }} className="gutter-box"
-          type="primary" onClick={this.download}
-          icon="export" loading={this.state.loading}
-        >
-          导出到PDF
-        </Button>
+        <Tooltip title="将选中的左侧列表中新闻输出为PDF">
+          <Button
+            style={{ margin: 0 }} className="gutter-box"
+            type="primary" onClick={this.download}
+            icon="export" loading={this.state.loading}
+          >
+            导出到PDF
+          </Button>
+        </Tooltip>
         <br />
       </div>
     )
