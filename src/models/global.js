@@ -1,7 +1,7 @@
 export default {
   namespace: 'global',
   state: {
-    locale: 'cn',
+    userInfo: {},
   },
   reducers: {
     save(state, { payload: { userInfo = {} } }) {

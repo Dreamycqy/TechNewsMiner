@@ -1,15 +1,26 @@
 import React from 'react'
+import { connect } from 'dva'
 import { Menu, Layout, Icon, Avatar } from 'antd'
 import CollectConfig from './collect'
 
 const { Content, Sider } = Layout
 
+function mapStateToProps(state) {
+  const { userInfo } = state.global
+  return {
+    userInfo,
+  }
+}
+@connect(mapStateToProps)
 class User extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
       collapsed: false,
     }
+  }
+
+  componentWillMount = () => {
   }
 
   onCollapse = () => {
@@ -49,7 +60,7 @@ class User extends React.Component {
           </Menu>
         </Sider>
         <Content style={{ margin: 20, backgroundColor: '#fff' }}>
-          <CollectConfig />
+          <CollectConfig userInfo={this.props.userInfo} />
         </Content>
       </Layout>
     )

@@ -1,6 +1,5 @@
 import React from 'react'
 import { Input, Button, Form, Checkbox, Icon, message } from 'antd'
-import uuid from 'uuid'
 import { connect } from 'dva'
 import { routerRedux } from 'dva/router'
 import FilterKw from '@/pages/home/filterKeywordcopy'
@@ -19,25 +18,25 @@ class Collect extends React.Component {
     this.state = {
       collapsed: false,
       email: '',
-      fields: [],
-      wechatId: '',
+      category: [],
+      pushType: [],
     }
   }
 
   componentWillMount() {
-    const { params } = localStorage
-    if (params) {
-      const { email, wechatId, fields } = JSON.parse(params)
+    const { userInfo } = this.props
+    if (userInfo) {
+      const { email, category, pushType } = userInfo
       this.setState({
         email,
-        wechatId,
-        fields,
+        category: JSON.parse(category),
+        pushType: JSON.parse(pushType),
       })
     } else {
       this.setState({
         email: '',
-        fields: [],
-        wechatId: uuid(),
+        category: [],
+        pushType: [],
       })
     }
   }
@@ -54,23 +53,27 @@ class Collect extends React.Component {
     }
   }
 
-  saveData = () => {
-    localStorage.params = JSON.stringify(this.state)
+  saveData = async () => {
+    // const { email, category, pushType } = this.state
+    // const postData = JSON.stringify({
+    //   email, category, pushType,
+    // })
+    // const data = await
     message.success('更新成功！')
   }
 
   returnData = () => {
     const { params } = localStorage
     if (params) {
-      const { email, fields } = JSON.parse(params)
+      const { email, category } = JSON.parse(params)
       this.setState({
         email,
-        fields,
+        category,
       })
     } else {
       this.setState({
         email: '',
-        fields: [],
+        category: [],
       })
     }
   }
@@ -82,7 +85,7 @@ class Collect extends React.Component {
   }
 
   render() {
-    const { email, wechatId, fields } = this.state
+    const { email, category, pushType } = this.state
     return (
       <div style={{ margin: 20 }}>
         <div style={{ position: 'absolute', right: 30, top: 30 }}>
@@ -97,7 +100,7 @@ class Collect extends React.Component {
               </span>
             )}
           >
-            <Checkbox.Group style={{ width: '100%', paddingLeft: 10 }}>
+            <Checkbox.Group value={pushType} style={{ width: '100%', paddingLeft: 10 }}>
               <Checkbox value="A">电子邮件</Checkbox>
               <Checkbox value="B">微信订阅</Checkbox>
             </Checkbox.Group>
@@ -120,7 +123,7 @@ class Collect extends React.Component {
             />
           </Form.Item>
           <br />
-          <Form.Item
+          {/* <Form.Item
             {...formItemLayout} label={(
               <span>
                 <Icon type="wechat" style={{ color: '#888' }} />
@@ -130,7 +133,7 @@ class Collect extends React.Component {
             )}
           >
             <div style={{ paddingLeft: 10 }}>{wechatId}</div>
-          </Form.Item>
+          </Form.Item> */}
           <Form.Item
             {...formItemLayout} label={(
               <span>
@@ -140,8 +143,8 @@ class Collect extends React.Component {
             )}
           >
             <Checkbox.Group
-              value={fields}
-              onChange={value => this.setState({ fields: value })}
+              value={category}
+              onChange={value => this.setState({ category: value })}
               style={{ width: '100%', paddingLeft: 10 }}
             >
               <Checkbox value="前沿技术">前沿技术</Checkbox>

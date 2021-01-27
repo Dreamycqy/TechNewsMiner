@@ -77,7 +77,7 @@ export const eventImageStr = (picture) => {
   } else if (type === 'string') {
     url = picture.substring(1, picture.length - 1).split(',')[0] // eslint-disable-line
   }
-  if (url !== undefined && url.length > 0) {
+  if (url !== undefined && url.length > 0 && url.indexOf('gif') < 0) {
     return url
   } else {
     return ''
@@ -126,4 +126,58 @@ export const theSameLabel = (other) => {
 
 export const timeout = (ms) => {
   return new Promise(resolve => setTimeout(resolve, ms))
+}
+
+export const handleTreeOrigin = (data) => {
+  const chinese = []
+  const english = []
+  data.forEach((e) => {
+    if (e['翻译'].indexOf('Chapter') > -1) {
+      chinese.push({
+        title: e['中文'],
+        children: [],
+        key: `2-${chinese.length}`,
+        value: `2-${chinese.length}`,
+      })
+      english.push({
+        title: e['翻译'],
+        children: [],
+        key: `2-${english.length}`,
+        value: `2-${english.length}`,
+      })
+    } else if (e['中文'].indexOf('、') > -1) {
+      const targetC = chinese[chinese.length - 1].children
+      const targetE = english[english.length - 1].children
+      targetC.push({
+        title: e['中文'].split('、')[1],
+        children: [],
+        key: `2-${chinese.length > 0 ? chinese.length - 1 : 0}-${targetC.length}`,
+        value: `2-${chinese.length > 0 ? chinese.length - 1 : 0}-${targetC.length}`,
+      })
+      targetE.push({
+        title: e['翻译'].split('、')[1],
+        children: [],
+        key: `2-${english.length > 0 ? english.length - 1 : 0}-${targetE.length}`,
+        value: `2-${english.length > 0 ? english.length - 1 : 0}-${targetE.length}`,
+      })
+    } else if (e['中文'].indexOf('（') > -1) {
+      const targetC = chinese[chinese.length - 1].children
+      const targetCC = targetC[targetC.length - 1].children
+      const targetE = english[english.length - 1].children
+      const targetEE = targetE[targetE.length - 1].children
+      targetCC.push({
+        title: e['中文'].split('）')[1],
+        children: [],
+        key: `2-${chinese.length > 0 ? chinese.length - 1 : 0}-${targetC.length > 0 ? targetC.length - 1 : 0}-${targetCC.length}`,
+        value: `2-${chinese.length > 0 ? chinese.length - 1 : 0}-${targetC.length > 0 ? targetC.length - 1 : 0}-${targetCC.length}`,
+      })
+      targetEE.push({
+        title: e['翻译'].split('）')[1],
+        children: [],
+        key: `2-${english.length > 0 ? english.length - 1 : 0}-${targetE.length > 0 ? targetE.length - 1 : 0}-${targetEE.length}`,
+        value: `2-${english.length > 0 ? english.length - 1 : 0}-${targetE.length > 0 ? targetE.length - 1 : 0}-${targetEE.length}`,
+      })
+    }
+  })
+  return { chinese, english }
 }

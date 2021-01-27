@@ -7997,5 +7997,1369 @@
         "key": "1",
         "value": "1",
         "title": "Science"
+    },
+    {
+        "key": "2",
+        "value": "2",
+        "title": "Engineering",
+        "children": [
+            {
+              "title": "Chapter I The nature of engineering",
+              "children": [
+                {
+                  "title": "Engineering and its characteristics",
+                  "children": [
+                    {
+                      "title": "Definition of engineering",
+                      "children": [],
+                      "key": "2-0-0-0",
+                      "value": "2-0-0-0"
+                    },
+                    {
+                      "title": "Characteristics of the engineering",
+                      "children": [],
+                      "key": "2-0-0-1",
+                      "value": "2-0-0-1"
+                    }
+                  ],
+                  "key": "2-0-0",
+                  "value": "2-0-0"
+                },
+                {
+                  "title": "The origin and development of engineering",
+                  "children": [
+                    {
+                      "title": "Origin of engineering",
+                      "children": [],
+                      "key": "2-0-1-0",
+                      "value": "2-0-1-0"
+                    },
+                    {
+                      "title": "Development of engineering",
+                      "children": [],
+                      "key": "2-0-1-1",
+                      "value": "2-0-1-1"
+                    }
+                  ],
+                  "key": "2-0-1",
+                  "value": "2-0-1"
+                },
+                {
+                  "title": "Basic elements and sorts of engineering",
+                  "children": [
+                    {
+                      "title": "Basic elements of engineering",
+                      "children": [],
+                      "key": "2-0-2-0",
+                      "value": "2-0-2-0"
+                    },
+                    {
+                      "title": "Basic sorts of Engineering",
+                      "children": [],
+                      "key": "2-0-2-1",
+                      "value": "2-0-2-1"
+                    }
+                  ],
+                  "key": "2-0-2",
+                  "value": "2-0-2"
+                },
+                {
+                  "title": "Engineering process",
+                  "children": [
+                    {
+                      "title": "Engineering planning",
+                      "children": [],
+                      "key": "2-0-3-0",
+                      "value": "2-0-3-0"
+                    },
+                    {
+                      "title": "Engineering decision",
+                      "children": [],
+                      "key": "2-0-3-1",
+                      "value": "2-0-3-1"
+                    },
+                    {
+                      "title": "Engineering design",
+                      "children": [],
+                      "key": "2-0-3-2",
+                      "value": "2-0-3-2"
+                    },
+                    {
+                      "title": "Engineering implementation",
+                      "children": [],
+                      "key": "2-0-3-3",
+                      "value": "2-0-3-3"
+                    },
+                    {
+                      "title": "Engineering operation",
+                      "children": [],
+                      "key": "2-0-3-4",
+                      "value": "2-0-3-4"
+                    },
+                    {
+                      "title": "Engineering decommission",
+                      "children": [],
+                      "key": "2-0-3-5",
+                      "value": "2-0-3-5"
+                    },
+                    {
+                      "title": "Engineering evaluation",
+                      "children": [],
+                      "key": "2-0-3-6",
+                      "value": "2-0-3-6"
+                    }
+                  ],
+                  "key": "2-0-3",
+                  "value": "2-0-3"
+                },
+                {
+                  "title": "Engineering concept, thinking and method",
+                  "children": [
+                    {
+                      "title": "Engineering concept",
+                      "children": [],
+                      "key": "2-0-4-0",
+                      "value": "2-0-4-0"
+                    },
+                    {
+                      "title": "Engineering thinking",
+                      "children": [],
+                      "key": "2-0-4-1",
+                      "value": "2-0-4-1"
+                    },
+                    {
+                      "title": "Engineering method",
+                      "children": [],
+                      "key": "2-0-4-2",
+                      "value": "2-0-4-2"
+                    }
+                  ],
+                  "key": "2-0-4",
+                  "value": "2-0-4"
+                },
+                {
+                  "title": "Engineering and science, technology and industry",
+                  "children": [
+                    {
+                      "title": "The relationship between engineering and science",
+                      "children": [],
+                      "key": "2-0-5-0",
+                      "value": "2-0-5-0"
+                    },
+                    {
+                      "title": "The relationship between engineering and technology",
+                      "children": [],
+                      "key": "2-0-5-1",
+                      "value": "2-0-5-1"
+                    },
+                    {
+                      "title": "The relationship between engineering and industry",
+                      "children": [],
+                      "key": "2-0-5-2",
+                      "value": "2-0-5-2"
+                    }
+                  ],
+                  "key": "2-0-5",
+                  "value": "2-0-5"
+                }
+              ],
+              "key": "2-0",
+              "value": "2-0"
+            },
+            {
+              "title": "Chapter II Information and electronic engineering",
+              "children": [
+                {
+                  "title": "Information and communication engineering",
+                  "children": [
+                    {
+                      "title": "Wireless communication engineering",
+                      "children": [],
+                      "key": "2-1-0-0",
+                      "value": "2-1-0-0"
+                    },
+                    {
+                      "title": "Air ground integrated network engineering",
+                      "children": [],
+                      "key": "2-1-0-1",
+                      "value": "2-1-0-1"
+                    },
+                    {
+                      "title": "Near-field communication",
+                      "children": [],
+                      "key": "2-1-0-2",
+                      "value": "2-1-0-2"
+                    },
+                    {
+                      "title": "Internet of vehicles engineering",
+                      "children": [],
+                      "key": "2-1-0-3",
+                      "value": "2-1-0-3"
+                    },
+                    {
+                      "title": "Industrial internet engineering",
+                      "children": [],
+                      "key": "2-1-0-4",
+                      "value": "2-1-0-4"
+                    },
+                    {
+                      "title": "Green communication engineering",
+                      "children": [],
+                      "key": "2-1-0-5",
+                      "value": "2-1-0-5"
+                    },
+                    {
+                      "title": "Intelligent security engineering",
+                      "children": [],
+                      "key": "2-1-0-6",
+                      "value": "2-1-0-6"
+                    },
+                    {
+                      "title": "Virtual reality engineering",
+                      "children": [],
+                      "key": "2-1-0-7",
+                      "value": "2-1-0-7"
+                    }
+                  ],
+                  "key": "2-1-0",
+                  "value": "2-1-0"
+                },
+                {
+                  "title": "Control science and engineering",
+                  "children": [
+                    {
+                      "title": "Driverless car",
+                      "children": [],
+                      "key": "2-1-1-0",
+                      "value": "2-1-1-0"
+                    },
+                    {
+                      "title": "Intelligent video surveillance",
+                      "children": [],
+                      "key": "2-1-1-1",
+                      "value": "2-1-1-1"
+                    },
+                    {
+                      "title": "Unmanned storage",
+                      "children": [],
+                      "key": "2-1-1-2",
+                      "value": "2-1-1-2"
+                    },
+                    {
+                      "title": "Energy internet engineering",
+                      "children": [],
+                      "key": "2-1-1-3",
+                      "value": "2-1-1-3"
+                    },
+                    {
+                      "title": "Intelligent building",
+                      "children": [],
+                      "key": "2-1-1-4",
+                      "value": "2-1-1-4"
+                    },
+                    {
+                      "title": "Smart home",
+                      "children": [],
+                      "key": "2-1-1-5",
+                      "value": "2-1-1-5"
+                    },
+                    {
+                      "title": "Networked collaborative manufacturing engineering",
+                      "children": [],
+                      "key": "2-1-1-6",
+                      "value": "2-1-1-6"
+                    },
+                    {
+                      "title": "Intelligent factory",
+                      "children": [],
+                      "key": "2-1-1-7",
+                      "value": "2-1-1-7"
+                    },
+                    {
+                      "title": "Digital supply chain",
+                      "children": [],
+                      "key": "2-1-1-8",
+                      "value": "2-1-1-8"
+                    },
+                    {
+                      "title": "Satellite / inertial multimode integrated navigation",
+                      "children": [],
+                      "key": "2-1-1-9",
+                      "value": "2-1-1-9"
+                    },
+                    {
+                      "title": "Infrared photoelectric multimode guidance",
+                      "children": [],
+                      "key": "2-1-1-10",
+                      "value": "2-1-1-10"
+                    },
+                    {
+                      "title": "Intelligent diagnosis instrument for mechanical fault",
+                      "children": [],
+                      "key": "2-1-1-11",
+                      "value": "2-1-1-11"
+                    }
+                  ],
+                  "key": "2-1-1",
+                  "value": "2-1-1"
+                },
+                {
+                  "title": "Computer and software engineering",
+                  "children": [
+                    {
+                      "title": "Group intelligence perception network engineering",
+                      "children": [],
+                      "key": "2-1-2-0",
+                      "value": "2-1-2-0"
+                    },
+                    {
+                      "title": "Industrial internet engineering",
+                      "children": [],
+                      "key": "2-1-2-1",
+                      "value": "2-1-2-1"
+                    },
+                    {
+                      "title": "Big data engineering",
+                      "children": [],
+                      "key": "2-1-2-2",
+                      "value": "2-1-2-2"
+                    },
+                    {
+                      "title": "Knowledge engineering",
+                      "children": [],
+                      "key": "2-1-2-3",
+                      "value": "2-1-2-3"
+                    },
+                    {
+                      "title": "Software engineering",
+                      "children": [],
+                      "key": "2-1-2-4",
+                      "value": "2-1-2-4"
+                    },
+                    {
+                      "title": "Internet of things engineering",
+                      "children": [],
+                      "key": "2-1-2-5",
+                      "value": "2-1-2-5"
+                    }
+                  ],
+                  "key": "2-1-2",
+                  "value": "2-1-2"
+                },
+                {
+                  "title": "Electronic science and technology",
+                  "children": [
+                    {
+                      "title": "Integrated circuit design and manufacturing engineering",
+                      "children": [],
+                      "key": "2-1-3-0",
+                      "value": "2-1-3-0"
+                    },
+                    {
+                      "title": "Green lighting project",
+                      "children": [],
+                      "key": "2-1-3-1",
+                      "value": "2-1-3-1"
+                    },
+                    {
+                      "title": "Flat panel display engineering",
+                      "children": [],
+                      "key": "2-1-3-2",
+                      "value": "2-1-3-2"
+                    },
+                    {
+                      "title": "Flexible electronic engineering",
+                      "children": [],
+                      "key": "2-1-3-3",
+                      "value": "2-1-3-3"
+                    },
+                    {
+                      "title": "Microwave communication engineering",
+                      "children": [],
+                      "key": "2-1-3-4",
+                      "value": "2-1-3-4"
+                    },
+                    {
+                      "title": "Optoelectronic information engineering",
+                      "children": [],
+                      "key": "2-1-3-5",
+                      "value": "2-1-3-5"
+                    }
+                  ],
+                  "key": "2-1-3",
+                  "value": "2-1-3"
+                },
+                {
+                  "title": "Cyberspace security engineering",
+                  "children": [
+                    {
+                      "title": "Electronic countermeasure engineering",
+                      "children": [],
+                      "key": "2-1-4-0",
+                      "value": "2-1-4-0"
+                    },
+                    {
+                      "title": "Information security engineering",
+                      "children": [],
+                      "key": "2-1-4-1",
+                      "value": "2-1-4-1"
+                    },
+                    {
+                      "title": "Artificial intelligence security",
+                      "children": [],
+                      "key": "2-1-4-2",
+                      "value": "2-1-4-2"
+                    },
+                    {
+                      "title": "Information physical system security engineering",
+                      "children": [],
+                      "key": "2-1-4-3",
+                      "value": "2-1-4-3"
+                    },
+                    {
+                      "title": "Intelligent side channel attack",
+                      "children": [],
+                      "key": "2-1-4-4",
+                      "value": "2-1-4-4"
+                    },
+                    {
+                      "title": "Big data security engineering",
+                      "children": [],
+                      "key": "2-1-4-5",
+                      "value": "2-1-4-5"
+                    },
+                    {
+                      "title": "Behavior anomaly mining",
+                      "children": [],
+                      "key": "2-1-4-6",
+                      "value": "2-1-4-6"
+                    },
+                    {
+                      "title": "Intelligent information hiding",
+                      "children": [],
+                      "key": "2-1-4-7",
+                      "value": "2-1-4-7"
+                    }
+                  ],
+                  "key": "2-1-4",
+                  "value": "2-1-4"
+                }
+              ],
+              "key": "2-1",
+              "value": "2-1"
+            },
+            {
+              "title": "Chapter III Energy and materials engineering",
+              "children": [
+                {
+                  "title": "Energy engineering",
+                  "children": [
+                    {
+                      "title": "Fossil energy exploitation engineering",
+                      "children": [],
+                      "key": "2-2-0-0",
+                      "value": "2-2-0-0"
+                    },
+                    {
+                      "title": "Thermal power engineering",
+                      "children": [],
+                      "key": "2-2-0-1",
+                      "value": "2-2-0-1"
+                    },
+                    {
+                      "title": "Hydropower engineering",
+                      "children": [],
+                      "key": "2-2-0-2",
+                      "value": "2-2-0-2"
+                    },
+                    {
+                      "title": "Wind energy engineering",
+                      "children": [],
+                      "key": "2-2-0-3",
+                      "value": "2-2-0-3"
+                    },
+                    {
+                      "title": "Solar engineering",
+                      "children": [],
+                      "key": "2-2-0-4",
+                      "value": "2-2-0-4"
+                    },
+                    {
+                      "title": "Ocean energy engineering",
+                      "children": [],
+                      "key": "2-2-0-5",
+                      "value": "2-2-0-5"
+                    },
+                    {
+                      "title": "Bioenergy engineering",
+                      "children": [],
+                      "key": "2-2-0-6",
+                      "value": "2-2-0-6"
+                    },
+                    {
+                      "title": "Nuclear engineering",
+                      "children": [],
+                      "key": "2-2-0-7",
+                      "value": "2-2-0-7"
+                    },
+                    {
+                      "title": "Geothermal energy engineering",
+                      "children": [],
+                      "key": "2-2-0-8",
+                      "value": "2-2-0-8"
+                    }
+                  ],
+                  "key": "2-2-0",
+                  "value": "2-2-0"
+                },
+                {
+                  "title": "Energy storage and transmission",
+                  "children": [
+                    {
+                      "title": "Energy storage engineering",
+                      "children": [],
+                      "key": "2-2-1-0",
+                      "value": "2-2-1-0"
+                    },
+                    {
+                      "title": "Power transmission and transformation engineering",
+                      "children": [],
+                      "key": "2-2-1-1",
+                      "value": "2-2-1-1"
+                    }
+                  ],
+                  "key": "2-2-1",
+                  "value": "2-2-1"
+                },
+                {
+                  "title": "Energy conversion and application",
+                  "children": [
+                    {
+                      "title": "Power mechinery engineering",
+                      "children": [],
+                      "key": "2-2-2-0",
+                      "value": "2-2-2-0"
+                    },
+                    {
+                      "title": "Thermal energy and power engineering",
+                      "children": [],
+                      "key": "2-2-2-1",
+                      "value": "2-2-2-1"
+                    },
+                    {
+                      "title": "Refrigeration cryogenic engineering",
+                      "children": [],
+                      "key": "2-2-2-2",
+                      "value": "2-2-2-2"
+                    },
+                    {
+                      "title": "Energy saving engineering",
+                      "children": [],
+                      "key": "2-2-2-3",
+                      "value": "2-2-2-3"
+                    }
+                  ],
+                  "key": "2-2-2",
+                  "value": "2-2-2"
+                },
+                {
+                  "title": "Material production and preparation",
+                  "children": [
+                    {
+                      "title": "Mining engineering",
+                      "children": [],
+                      "key": "2-2-3-0",
+                      "value": "2-2-3-0"
+                    },
+                    {
+                      "title": "Powder metallurgy material engineering",
+                      "children": [],
+                      "key": "2-2-3-1",
+                      "value": "2-2-3-1"
+                    },
+                    {
+                      "title": "Inorganic nonmetal material engineering",
+                      "children": [],
+                      "key": "2-2-3-2",
+                      "value": "2-2-3-2"
+                    },
+                    {
+                      "title": "Polymer material engineering",
+                      "children": [],
+                      "key": "2-2-3-3",
+                      "value": "2-2-3-3"
+                    },
+                    {
+                      "title": "Composite engineering",
+                      "children": [],
+                      "key": "2-2-3-4",
+                      "value": "2-2-3-4"
+                    },
+                    {
+                      "title": "Information functional materials engineering",
+                      "children": [],
+                      "key": "2-2-3-5",
+                      "value": "2-2-3-5"
+                    },
+                    {
+                      "title": "Biomaterial engineering",
+                      "children": [],
+                      "key": "2-2-3-6",
+                      "value": "2-2-3-6"
+                    }
+                  ],
+                  "key": "2-2-3",
+                  "value": "2-2-3"
+                },
+                {
+                  "title": "Material processing and forming",
+                  "children": [
+                    {
+                      "title": "Material casting and forming engineering",
+                      "children": [],
+                      "key": "2-2-4-0",
+                      "value": "2-2-4-0"
+                    },
+                    {
+                      "title": "Material plastic forming Engineering",
+                      "children": [],
+                      "key": "2-2-4-1",
+                      "value": "2-2-4-1"
+                    },
+                    {
+                      "title": "Special processing and forming engineering of materials",
+                      "children": [],
+                      "key": "2-2-4-2",
+                      "value": "2-2-4-2"
+                    },
+                    {
+                      "title": "Material recycling engineering",
+                      "children": [],
+                      "key": "2-2-4-3",
+                      "value": "2-2-4-3"
+                    }
+                  ],
+                  "key": "2-2-4",
+                  "value": "2-2-4"
+                }
+              ],
+              "key": "2-2",
+              "value": "2-2"
+            },
+            {
+              "title": "Chapter IV Medicine and health engineering",
+              "children": [
+                {
+                  "title": "Biomedical engineering",
+                  "children": [
+                    {
+                      "title": "Biomedical engineering",
+                      "children": [],
+                      "key": "2-3-0-0",
+                      "value": "2-3-0-0"
+                    },
+                    {
+                      "title": "Clinical medical engineering",
+                      "children": [],
+                      "key": "2-3-0-1",
+                      "value": "2-3-0-1"
+                    }
+                  ],
+                  "key": "2-3-0",
+                  "value": "2-3-0"
+                },
+                {
+                  "title": "Pharmaceutical engineering",
+                  "children": [
+                    {
+                      "title": "Biopharmaceutical engineering",
+                      "children": [],
+                      "key": "2-3-1-0",
+                      "value": "2-3-1-0"
+                    },
+                    {
+                      "title": "Chemical synthesis pharmaceutical engineering",
+                      "children": [],
+                      "key": "2-3-1-1",
+                      "value": "2-3-1-1"
+                    },
+                    {
+                      "title": "Traditional chinese medicine and natural medicine pharmaceutical engineering",
+                      "children": [],
+                      "key": "2-3-1-2",
+                      "value": "2-3-1-2"
+                    },
+                    {
+                      "title": "Pharmaceutical preparation engineering",
+                      "children": [],
+                      "key": "2-3-1-3",
+                      "value": "2-3-1-3"
+                    },
+                    {
+                      "children": [],
+                      "key": "2-3-1-4",
+                      "value": "2-3-1-4"
+                    }
+                  ],
+                  "key": "2-3-1",
+                  "value": "2-3-1"
+                },
+                {
+                  "title": "Sanitary engineering",
+                  "children": [
+                    {
+                      "title": "Medical and health engineering",
+                      "children": [],
+                      "key": "2-3-2-0",
+                      "value": "2-3-2-0"
+                    },
+                    {
+                      "title": "Public health engineering",
+                      "children": [],
+                      "key": "2-3-2-1",
+                      "value": "2-3-2-1"
+                    },
+                    {
+                      "title": "Occupational health engineering",
+                      "children": [],
+                      "key": "2-3-2-2",
+                      "value": "2-3-2-2"
+                    }
+                  ],
+                  "key": "2-3-2",
+                  "value": "2-3-2"
+                }
+              ],
+              "key": "2-3",
+              "value": "2-3"
+            },
+            {
+              "title": "Chapter V Agriculture and food engineering",
+              "children": [
+                {
+                  "title": "Agricultural engineering",
+                  "children": [
+                    {
+                      "title": "Farmland infrastructure engineering",
+                      "children": [],
+                      "key": "2-4-0-0",
+                      "value": "2-4-0-0"
+                    },
+                    {
+                      "title": "Agricultural mechanization engineering",
+                      "children": [],
+                      "key": "2-4-0-1",
+                      "value": "2-4-0-1"
+                    },
+                    {
+                      "title": "Protected horticultural engineering",
+                      "children": [],
+                      "key": "2-4-0-2",
+                      "value": "2-4-0-2"
+                    },
+                    {
+                      "title": "Agricultural information engineering",
+                      "children": [],
+                      "key": "2-4-0-3",
+                      "value": "2-4-0-3"
+                    },
+                    {
+                      "title": "Primary processing and storage engineering of agricultural products",
+                      "children": [],
+                      "key": "2-4-0-4",
+                      "value": "2-4-0-4"
+                    }
+                  ],
+                  "key": "2-4-0",
+                  "value": "2-4-0"
+                },
+                {
+                  "title": "Food engineering",
+                  "children": [
+                    {
+                      "title": "Grain engineering",
+                      "children": [],
+                      "key": "2-4-1-0",
+                      "value": "2-4-1-0"
+                    },
+                    {
+                      "title": "Oil engineering",
+                      "children": [],
+                      "key": "2-4-1-1",
+                      "value": "2-4-1-1"
+                    },
+                    {
+                      "title": "Aquatic product processing and preservation engineering",
+                      "children": [],
+                      "key": "2-4-1-2",
+                      "value": "2-4-1-2"
+                    },
+                    {
+                      "title": "Processing engineering of livestock and poultry product",
+                      "children": [],
+                      "key": "2-4-1-3",
+                      "value": "2-4-1-3"
+                    },
+                    {
+                      "title": "Fruit and vegetable processing engineering",
+                      "children": [],
+                      "key": "2-4-1-4",
+                      "value": "2-4-1-4"
+                    }
+                  ],
+                  "key": "2-4-1",
+                  "value": "2-4-1"
+                }
+              ],
+              "key": "2-4",
+              "value": "2-4"
+            },
+            {
+              "title": "Chapter VI Environment and construction engineering",
+              "children": [
+                {
+                  "title": "Environmental engineering",
+                  "children": [
+                    {
+                      "title": "Water environment engineering",
+                      "children": [],
+                      "key": "2-5-0-0",
+                      "value": "2-5-0-0"
+                    },
+                    {
+                      "title": "Atmospheric control engineering",
+                      "children": [],
+                      "key": "2-5-0-1",
+                      "value": "2-5-0-1"
+                    },
+                    {
+                      "title": "Solid waste treatment and disposal",
+                      "children": [],
+                      "key": "2-5-0-2",
+                      "value": "2-5-0-2"
+                    },
+                    {
+                      "title": "Noise control engineering",
+                      "children": [],
+                      "key": "2-5-0-3",
+                      "value": "2-5-0-3"
+                    }
+                  ],
+                  "key": "2-5-0",
+                  "value": "2-5-0"
+                },
+                {
+                  "title": "Architecture and civil engineering",
+                  "children": [
+                    {
+                      "title": "Building environment and equipment engineering",
+                      "children": [],
+                      "key": "2-5-1-0",
+                      "value": "2-5-1-0"
+                    },
+                    {
+                      "title": "Building construction engineering",
+                      "children": [],
+                      "key": "2-5-1-1",
+                      "value": "2-5-1-1"
+                    }
+                  ],
+                  "key": "2-5-1",
+                  "value": "2-5-1"
+                },
+                {
+                  "title": "Water conservancy engineering",
+                  "children": [
+                    {
+                      "title": "Flood control engineering",
+                      "children": [],
+                      "key": "2-5-2-0",
+                      "value": "2-5-2-0"
+                    },
+                    {
+                      "title": "Water transfer engineering",
+                      "children": [],
+                      "key": "2-5-2-1",
+                      "value": "2-5-2-1"
+                    }
+                  ],
+                  "key": "2-5-2",
+                  "value": "2-5-2"
+                }
+              ],
+              "key": "2-5",
+              "value": "2-5"
+            },
+            {
+              "title": "Chapter VII Machinery and transport engineering",
+              "children": [
+                {
+                  "title": "Mechanical and power engineering",
+                  "children": [
+                    {
+                      "title": "Mechanical manufacturing engineering",
+                      "children": [],
+                      "key": "2-6-0-0",
+                      "value": "2-6-0-0"
+                    },
+                    {
+                      "title": "Mechanical automation engineering",
+                      "children": [],
+                      "key": "2-6-0-1",
+                      "value": "2-6-0-1"
+                    },
+                    {
+                      "title": "Mechanical and electronic engineering (Mechatronics engineering)",
+                      "children": [],
+                      "key": "2-6-0-2",
+                      "value": "2-6-0-2"
+                    },
+                    {
+                      "title": "Process equipment and control engineering",
+                      "children": [],
+                      "key": "2-6-0-3",
+                      "value": "2-6-0-3"
+                    },
+                    {
+                      "title": "Special equipment engineering",
+                      "children": [],
+                      "key": "2-6-0-4",
+                      "value": "2-6-0-4"
+                    },
+                    {
+                      "title": "Power mechinery engineering",
+                      "children": [],
+                      "key": "2-6-0-5",
+                      "value": "2-6-0-5"
+                    },
+                    {
+                      "title": "Thermal energy and power engineering",
+                      "children": [],
+                      "key": "2-6-0-6",
+                      "value": "2-6-0-6"
+                    }
+                  ],
+                  "key": "2-6-0",
+                  "value": "2-6-0"
+                },
+                {
+                  "title": "Transportation engineering",
+                  "children": [
+                    {
+                      "title": "Vehicle engineering",
+                      "children": [],
+                      "key": "2-6-1-0",
+                      "value": "2-6-1-0"
+                    },
+                    {
+                      "title": "Bridge and tunnel engineering",
+                      "children": [],
+                      "key": "2-6-1-1",
+                      "value": "2-6-1-1"
+                    },
+                    {
+                      "title": "Road and railway engineering",
+                      "children": [],
+                      "key": "2-6-1-2",
+                      "value": "2-6-1-2"
+                    },
+                    {
+                      "title": "Traffic information engineering",
+                      "children": [],
+                      "key": "2-6-1-3",
+                      "value": "2-6-1-3"
+                    },
+                    {
+                      "title": "Logistics engineering",
+                      "children": [],
+                      "key": "2-6-1-4",
+                      "value": "2-6-1-4"
+                    }
+                  ],
+                  "key": "2-6-1",
+                  "value": "2-6-1"
+                },
+                {
+                  "title": "Naval architecture and ocean engineering",
+                  "children": [
+                    {
+                      "title": "Shipbuilding engineering",
+                      "children": [],
+                      "key": "2-6-2-0",
+                      "value": "2-6-2-0"
+                    },
+                    {
+                      "title": "Marine transportation engineering",
+                      "children": [],
+                      "key": "2-6-2-1",
+                      "value": "2-6-2-1"
+                    },
+                    {
+                      "title": "Coastal and reef engineering",
+                      "children": [],
+                      "key": "2-6-2-2",
+                      "value": "2-6-2-2"
+                    },
+                    {
+                      "title": "Marine exploration engineering",
+                      "children": [],
+                      "key": "2-6-2-3",
+                      "value": "2-6-2-3"
+                    },
+                    {
+                      "title": "Ship and offshore platform engineering",
+                      "children": [],
+                      "key": "2-6-2-4",
+                      "value": "2-6-2-4"
+                    }
+                  ],
+                  "key": "2-6-2",
+                  "value": "2-6-2"
+                },
+                {
+                  "title": "Aerospace engineering",
+                  "children": [
+                    {
+                      "title": "Aircraft design and manufacturing engineering",
+                      "children": [],
+                      "key": "2-6-3-0",
+                      "value": "2-6-3-0"
+                    },
+                    {
+                      "title": "Aerospace system engineering",
+                      "children": [],
+                      "key": "2-6-3-1",
+                      "value": "2-6-3-1"
+                    },
+                    {
+                      "title": "Launch vehicle engineering",
+                      "children": [],
+                      "key": "2-6-3-2",
+                      "value": "2-6-3-2"
+                    },
+                    {
+                      "title": "Satellite engineering",
+                      "children": [],
+                      "key": "2-6-3-3",
+                      "value": "2-6-3-3"
+                    },
+                    {
+                      "title": "Deep space exploration engineering",
+                      "children": [],
+                      "key": "2-6-3-4",
+                      "value": "2-6-3-4"
+                    }
+                  ],
+                  "key": "2-6-3",
+                  "value": "2-6-3"
+                }
+              ],
+              "key": "2-6",
+              "value": "2-6"
+            },
+            {
+              "title": "Chapter 8 Chemical engineering, light and textile engineering",
+              "children": [
+                {
+                  "title": "Chemical engineering",
+                  "children": [
+                    {
+                      "title": "Thermodynamics and transfer engineering",
+                      "children": [],
+                      "key": "2-7-0-0",
+                      "value": "2-7-0-0"
+                    },
+                    {
+                      "title": "Catalysis and reaction engineering",
+                      "children": [],
+                      "key": "2-7-0-1",
+                      "value": "2-7-0-1"
+                    },
+                    {
+                      "title": "Chemical safety engineering",
+                      "children": [],
+                      "key": "2-7-0-2",
+                      "value": "2-7-0-2"
+                    },
+                    {
+                      "title": "Chemical system engineering",
+                      "children": [],
+                      "key": "2-7-0-3",
+                      "value": "2-7-0-3"
+                    },
+                    {
+                      "title": "Petroleum chemical engineering",
+                      "children": [],
+                      "key": "2-7-0-4",
+                      "value": "2-7-0-4"
+                    },
+                    {
+                      "title": "Coal chemical engineering",
+                      "children": [],
+                      "key": "2-7-0-5",
+                      "value": "2-7-0-5"
+                    },
+                    {
+                      "title": "Biochemical engineering",
+                      "children": [],
+                      "key": "2-7-0-6",
+                      "value": "2-7-0-6"
+                    },
+                    {
+                      "title": "Fine chemical engineering",
+                      "children": [],
+                      "key": "2-7-0-7",
+                      "value": "2-7-0-7"
+                    },
+                    {
+                      "title": "Nuclear chemical industry and nuclear fuel engineering",
+                      "children": [],
+                      "key": "2-7-0-8",
+                      "value": "2-7-0-8"
+                    },
+                    {
+                      "title": "Biomass chemical engineering",
+                      "children": [],
+                      "key": "2-7-0-9",
+                      "value": "2-7-0-9"
+                    },
+                    {
+                      "title": "Green chemical engineering",
+                      "children": [],
+                      "key": "2-7-0-10",
+                      "value": "2-7-0-10"
+                    }
+                  ],
+                  "key": "2-7-0",
+                  "value": "2-7-0"
+                },
+                {
+                  "title": "Light chemical engineering",
+                  "children": [
+                    {
+                      "title": "Papermaking engineering",
+                      "children": [],
+                      "key": "2-7-1-0",
+                      "value": "2-7-1-0"
+                    },
+                    {
+                      "title": "Leather engineering",
+                      "children": [],
+                      "key": "2-7-1-1",
+                      "value": "2-7-1-1"
+                    },
+                    {
+                      "title": "Sugar making engineering",
+                      "children": [],
+                      "key": "2-7-1-2",
+                      "value": "2-7-1-2"
+                    },
+                    {
+                      "title": "Fermentation engineering",
+                      "children": [],
+                      "key": "2-7-1-3",
+                      "value": "2-7-1-3"
+                    },
+                    {
+                      "title": "Grain engineering",
+                      "children": [],
+                      "key": "2-7-1-4",
+                      "value": "2-7-1-4"
+                    },
+                    {
+                      "title": "Packaging engineering",
+                      "children": [],
+                      "key": "2-7-1-5",
+                      "value": "2-7-1-5"
+                    },
+                    {
+                      "title": "Printing engineering",
+                      "children": [],
+                      "key": "2-7-1-6",
+                      "value": "2-7-1-6"
+                    }
+                  ],
+                  "key": "2-7-1",
+                  "value": "2-7-1"
+                },
+                {
+                  "title": "Textile engineering",
+                  "children": [
+                    {
+                      "title": "Fiber engineering",
+                      "children": [],
+                      "key": "2-7-2-0",
+                      "value": "2-7-2-0"
+                    },
+                    {
+                      "title": "Dyeing and finishing engineering",
+                      "children": [],
+                      "key": "2-7-2-1",
+                      "value": "2-7-2-1"
+                    },
+                    {
+                      "title": "Clothing engineering",
+                      "children": [],
+                      "key": "2-7-2-2",
+                      "value": "2-7-2-2"
+                    },
+                    {
+                      "title": "Nano textile engineering",
+                      "children": [],
+                      "key": "2-7-2-3",
+                      "value": "2-7-2-3"
+                    },
+                    {
+                      "title": "Ecological textile engineering",
+                      "children": [],
+                      "key": "2-7-2-4",
+                      "value": "2-7-2-4"
+                    }
+                  ],
+                  "key": "2-7-2",
+                  "value": "2-7-2"
+                }
+              ],
+              "key": "2-7",
+              "value": "2-7"
+            },
+            {
+              "title": "Chapter 9 Engineering and society",
+              "children": [
+                {
+                  "title": "Social attribute of engineering",
+                  "children": [
+                    {
+                      "title": "Social characteristics of engineering",
+                      "children": [],
+                      "key": "2-8-0-0",
+                      "value": "2-8-0-0"
+                    },
+                    {
+                      "title": "Social function of engineering",
+                      "children": [],
+                      "key": "2-8-0-1",
+                      "value": "2-8-0-1"
+                    }
+                  ],
+                  "key": "2-8-0",
+                  "value": "2-8-0"
+                },
+                {
+                  "title": "Social operation of engineering",
+                  "children": [
+                    {
+                      "title": "The main body of engineering activities: engineering community",
+                      "children": [],
+                      "key": "2-8-1-0",
+                      "value": "2-8-1-0"
+                    },
+                    {
+                      "title": "Social operation of engineering",
+                      "children": [],
+                      "key": "2-8-1-1",
+                      "value": "2-8-1-1"
+                    },
+                    {
+                      "title": "Social assessment of engineering",
+                      "children": [],
+                      "key": "2-8-1-2",
+                      "value": "2-8-1-2"
+                    }
+                  ],
+                  "key": "2-8-1",
+                  "value": "2-8-1"
+                },
+                {
+                  "title": "Social impact of engineering",
+                  "children": [],
+                  "key": "2-8-2",
+                  "value": "2-8-2"
+                },
+                {
+                  "children": [
+                    {
+                      "title": "Engineering risk",
+                      "children": [],
+                      "key": "2-8-3-0",
+                      "value": "2-8-3-0"
+                    },
+                    {
+                      "title": "Value conflict and balance of engineering",
+                      "children": [],
+                      "key": "2-8-3-1",
+                      "value": "2-8-3-1"
+                    }
+                  ],
+                  "key": "2-8-3",
+                  "value": "2-8-3"
+                },
+                {
+                  "title": "Social responsibility of engineering",
+                  "children": [
+                    {
+                      "title": "NIMBY effect",
+                      "children": [],
+                      "key": "2-8-4-0",
+                      "value": "2-8-4-0"
+                    },
+                    {
+                      "title": "Principle of doing good and not doing evil",
+                      "children": [],
+                      "key": "2-8-4-1",
+                      "value": "2-8-4-1"
+                    },
+                    {
+                      "title": "Principle of environmental sustainability",
+                      "children": [],
+                      "key": "2-8-4-2",
+                      "value": "2-8-4-2"
+                    },
+                    {
+                      "title": "Principles of Rights and Justice",
+                      "children": [],
+                      "key": "2-8-4-3",
+                      "value": "2-8-4-3"
+                    },
+                    {
+                      "title": "Responsible engineering innovation",
+                      "children": [],
+                      "key": "2-8-4-4",
+                      "value": "2-8-4-4"
+                    }
+                  ],
+                  "key": "2-8-4",
+                  "value": "2-8-4"
+                },
+                {
+                  "title": "Social participation in engineering",
+                  "children": [
+                    {
+                      "title": "Public understanding of engineering",
+                      "children": [],
+                      "key": "2-8-5-0",
+                      "value": "2-8-5-0"
+                    },
+                    {
+                      "title": "From \"public understanding of engineering\"to “public involvement in engineering”",
+                      "children": [],
+                      "key": "2-8-5-1",
+                      "value": "2-8-5-1"
+                    },
+                    {
+                      "title": "Principles and ways of social participation",
+                      "children": [],
+                      "key": "2-8-5-2",
+                      "value": "2-8-5-2"
+                    }
+                  ],
+                  "key": "2-8-5",
+                  "value": "2-8-5"
+                }
+              ],
+              "key": "2-8",
+              "value": "2-8"
+            }
+        ]
     }
 ]

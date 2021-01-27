@@ -2,9 +2,10 @@ import React from 'react'
 import { Spin } from 'antd'
 import _ from 'lodash'
 import moment from 'moment'
-import { search, getContentByIds, getAbstract } from '@/services/index'
+import { guideSearch, getContentByIds, getAbstract } from '@/services/index'
 import { eventImageStr } from '@/utils/common'
 import Bg from '@/assets/bg.jpg'
+import NewsContent from './newsContent'
 
 const startDate = moment().subtract('7', 'days')
 const endDate = moment()
@@ -46,7 +47,7 @@ class Guide extends React.Component {
   }
 
   componentWillMount = async () => {
-    const theList = ['健康医疗']
+    const theList = ['前沿技术', '健康医疗', '应急避险', '信息科技', '能源利用', '气候环境', '食品安全', '航空航天']
     await theList.forEach((e) => {
       this.search(this.filterType(e))
     })
@@ -75,7 +76,7 @@ class Guide extends React.Component {
       categories.push(key_map[key]['en'])
     })
     let newsList = []
-    const data = await search({
+    const data = await guideSearch({
       word: JSON.stringify([]),
       startDate: startDate.format('YYYY-MM-DD'),
       endDate: endDate.format('YYYY-MM-DD'),
@@ -84,7 +85,7 @@ class Guide extends React.Component {
     }, 'search')
     if (data) {
       const originNewsList = data[0] === 'string' ? [] : _.uniqBy(data, 'news_Title')
-      newsList = _.orderBy(originNewsList, 'new_Score', 'desc').slice(0, 5)
+      newsList = _.orderBy(originNewsList, 'new_Score', 'desc').slice(0, 8)
       const contentList = await getContentByIds({
         ids: JSON.stringify(newsList.map((e) => { return e.news_ID })),
       })
@@ -138,31 +139,7 @@ class Guide extends React.Component {
     )
     item.list.forEach((e) => {
       result.push(
-        <div style={{ padding: 10, height: 180, overflow: 'hidden' }}>
-          <div style={{ float: 'left', padding: 10, width: 120, textAlign: 'center' }}>
-            <div style={{ backgroundColor: '#f1f0ef', lineHeight: '70px', fontSize: 18, marginBottom: 10, height: 70, color: '#999' }}>{e.time.format('DD')}</div>
-            <div style={{ backgroundColor: '#f1f0ef', lineHeight: '70px', fontSize: 18, height: 70, color: '#999' }}>{e.time.format('YYYY-MM')}</div>
-          </div>
-          <div style={{ float: 'left', padding: 10 }}>
-            {e.pic.length > 0
-              ? <img src={e.pic} alt="" height="150px" width="240px" /> : <div style={{ height: 150, width: 240, display: 'inline-block' }} />
-            }
-          </div>
-          <div style={{ padding: 10, overflow: 'hidden' }}>
-            <h3 style={{ marginBottom: 10 }}>
-              <a href={e.url}>{e.title}</a>
-            </h3>
-            {/* <div style={{ height: 30, lineHeight: '30px' }}>
-              <div style={{ float: 'left' }}>
-                <Icon type="" />
-              </div>
-            </div> */}
-            <div>
-              <span>{e.guide}</span>
-              <a href="javascript:;">&nbsp;&nbsp;展开更多↓</a>
-            </div>
-          </div>
-        </div>,
+        <NewsContent data={e} />,
       )
     })
     return result

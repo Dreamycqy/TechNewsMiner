@@ -16,6 +16,14 @@ export function search(body, rSymbol) {
   })
 }
 
+export function guideSearch(body, rSymbol) {
+  return request.post({
+    url: '/foreign-news/api/svc/Foreign/queryNewsV3',
+    data: body,
+    rSymbol,
+  })
+}
+
 export function subQueryNews(body, rSymbol) {
   return request.post({
     url: '/foreign-news/api/svc/Foreign/subQueryNewsV2',
@@ -65,8 +73,8 @@ export function register(body, rSymbol) {
 }
 
 export function getProfile(body, rSymbol) {
-  return request.post({
-    url: '/foreign-news/api/svc/ForeignLogin/getProfile',
+  return request.get({
+    url: '/foreign-news/api/svc/Foreign/getProfile',
     data: body,
     rSymbol,
   })
