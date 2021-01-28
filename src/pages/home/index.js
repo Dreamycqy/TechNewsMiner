@@ -39,7 +39,8 @@ class Home extends React.Component {
     const tabList = []
     if (userInfo.category) {
       const { category } = userInfo
-      category.forEach((e) => {
+      const categoryList = typeof category === 'string' ? JSON.parse(category) : category
+      categoryList.forEach((e) => {
         tabList.push(diction[e])
       })
     }
