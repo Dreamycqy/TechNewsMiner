@@ -2,6 +2,7 @@ import React from 'react'
 import { Input, Button, Form, Checkbox, Icon, message } from 'antd'
 import { connect } from 'dva'
 import { routerRedux } from 'dva/router'
+import { updateProfile } from '@/services/index'
 import FilterKw from '@/pages/home/filterKeywordcopy'
 
 const formItemLayout = {
@@ -11,7 +12,13 @@ const formItemLayout = {
 }
 const { localStorage } = window
 
-@connect()
+function mapStateToProps(state) {
+  const { userInfo } = state.global
+  return {
+    userInfo,
+  }
+}
+@connect(mapStateToProps)
 class Collect extends React.Component {
   constructor(props) {
     super(props)
@@ -20,6 +27,7 @@ class Collect extends React.Component {
       email: '',
       category: [],
       pushType: [],
+      buttonLoading: false,
     }
   }
 
@@ -29,8 +37,26 @@ class Collect extends React.Component {
       const { email, category, pushType } = userInfo
       this.setState({
         email,
-        category: JSON.parse(category),
-        pushType: JSON.parse(pushType),
+        category,
+        pushType,
+      })
+    } else {
+      this.setState({
+        email: '',
+        category: [],
+        pushType: [],
+      })
+    }
+  }
+
+  componentWillReceiveProps(nextProps) {
+    const { userInfo } = nextProps
+    if (userInfo) {
+      const { email, category, pushType } = userInfo
+      this.setState({
+        email,
+        category,
+        pushType,
       })
     } else {
       this.setState({
@@ -54,12 +80,20 @@ class Collect extends React.Component {
   }
 
   saveData = async () => {
-    // const { email, category, pushType } = this.state
-    // const postData = JSON.stringify({
-    //   email, category, pushType,
-    // })
-    // const data = await
-    message.success('更新成功！')
+    const { email, category, pushType } = this.state
+    this.setState({ buttonLoading: true })
+    this.filterKw.updateFilterKeyword()
+    const data = await updateProfile({
+      email,
+      category: JSON.stringify(category),
+      pushType: JSON.stringify(pushType),
+    })
+    if (data) {
+      message.success('更新成功！')
+    } else {
+      message.error('更新失败！')
+    }
+    this.setState({ buttonLoading: false })
   }
 
   returnData = () => {
@@ -85,7 +119,7 @@ class Collect extends React.Component {
   }
 
   render() {
-    const { email, category, pushType } = this.state
+    const { email, category, pushType, buttonLoading } = this.state
     return (
       <div style={{ margin: 20 }}>
         <div style={{ position: 'absolute', right: 30, top: 30 }}>
@@ -100,7 +134,7 @@ class Collect extends React.Component {
               </span>
             )}
           >
-            <Checkbox.Group value={pushType} style={{ width: '100%', paddingLeft: 10 }}>
+            <Checkbox.Group value={pushType} onChange={value => this.setState({ pushType: value })} style={{ width: '100%', paddingLeft: 10 }}>
               <Checkbox value="A">电子邮件</Checkbox>
               <Checkbox value="B">微信订阅</Checkbox>
             </Checkbox.Group>
@@ -147,16 +181,16 @@ class Collect extends React.Component {
               onChange={value => this.setState({ category: value })}
               style={{ width: '100%', paddingLeft: 10 }}
             >
-              <Checkbox value="前沿技术">前沿技术</Checkbox>
-              <Checkbox value="健康医疗">健康医疗</Checkbox>
-              <Checkbox value="应急避险">应急避险</Checkbox>
+              <Checkbox value="NewTech">前沿技术</Checkbox>
+              <Checkbox value="Medicine">健康医疗</Checkbox>
+              <Checkbox value="Danger">应急避险</Checkbox>
               <br />
-              <Checkbox value="信息科技">信息科技</Checkbox>
-              <Checkbox value="能源利用">能源利用</Checkbox>
-              <Checkbox value="气候环境">气候环境</Checkbox>
+              <Checkbox value="Internet">信息科技</Checkbox>
+              <Checkbox value="Energy">能源利用</Checkbox>
+              <Checkbox value="Environment">气候环境</Checkbox>
               <br />
-              <Checkbox value="食品安全">食品安全</Checkbox>
-              <Checkbox value="航空航天">航空航天</Checkbox>
+              <Checkbox value="Food">食品安全</Checkbox>
+              <Checkbox value="Space">航空航天</Checkbox>
             </Checkbox.Group>
           </Form.Item>
           <Form.Item
@@ -167,11 +201,11 @@ class Collect extends React.Component {
               </span>
             )}
           >
-            <FilterKw init={this.props.init} />
+            <FilterKw init={this.props.init} ref={e => this.filterKw = e} />
           </Form.Item>
         </Form>
         <div style={{ marginTop: 20, marginLeft: 300 }}>
-          <Button type="primary" onClick={() => this.saveData()}>更新</Button>
+          <Button type="primary" loading={buttonLoading} onClick={() => this.saveData()}>更新</Button>
           <Button style={{ marginLeft: 30 }} onClick={() => this.returnData()}>取消</Button>
         </div>
       </div>

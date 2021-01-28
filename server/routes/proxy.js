@@ -22,7 +22,7 @@ router.all('/', (req, res) => {
     method: req.method,
     url,
     headers: {
-      'Content-Type': url.indexOf('get_abstract') > -1 ? 'application/json' : 'application/x-www-form-urlencoded',
+      'Content-Type': url.indexOf('get_abstract') > -1 ? 'application/json' : 'application/x-www-form-urlencoded;charset=utf-8',
       'Authorization': method === 'GET' ? req.query.uid : req.body.uid,
       'Accept': '*/*'
     },

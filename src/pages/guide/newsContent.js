@@ -1,17 +1,77 @@
 import React from 'react'
+import { Button } from 'antd'
+import md5 from 'md5'
+import $ from 'jquery'
 import logo from '@/assets/logo.png'
+
+const translatekey = 'nCGO32AVxsejOEd7CaVk'
+const appid = '20200511000448145'
 
 class NewsContent extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
       collepsed: true,
+      titleTrans: '',
+      guideTrans: '',
+      isTrans: false,
     }
+  }
+
+  componentWillReceiveProps = async (nextProps) => {
+    if (nextProps.trans !== this.props.isTrans) {
+      this.setState({ isTrans: nextProps.trans })
+    }
+    if (nextProps.trans === true && this.state.titleTrans === '') {
+      const title = await this.translate(this.props.data.title)
+      const guide = await this.translate(this.props.data.guide)
+      this.setState({ titleTrans: title.str, guideTrans: guide.str })
+    }
+  }
+
+  handleTrans = async () => {
+    if (this.state.isTrans === false) {
+      if (this.state.titleTrans === '') {
+        const title = await this.translate(this.props.data.title)
+        const guide = await this.translate(this.props.data.guide)
+        this.setState({ titleTrans: title.str, guideTrans: guide.str })
+      }
+    }
+    this.setState({ isTrans: !this.state.isTrans })
+  }
+
+  translate = (q) => {
+    const salt = Date.now()
+    const sign = md5(appid + q + salt + translatekey)
+    return new Promise((resolve) => {
+      $.ajax({
+        url: 'https://api.fanyi.baidu.com/api/trans/vip/translate',
+        type: 'get',
+        dataType: 'jsonp',
+        data: {
+          q,
+          appid,
+          salt,
+          from: 'auto',
+          to: 'zh',
+          sign,
+        },
+        success(data) {
+          let str = ''
+          data['trans_result'].forEach((e) => {
+            str += e.dst
+          })
+          resolve({ str })
+        },
+        error() {
+        },
+      })
+    })
   }
 
   render() {
     const e = this.props.data
-    const { collepsed } = this.state
+    const { collepsed, titleTrans, guideTrans, isTrans } = this.state
     return (
       <div style={{ padding: 10, height: collepsed === true ? 200 : '', minHeight: 200 }}>
         <div style={{ float: 'left', padding: 10, width: 120, textAlign: 'center' }}>
@@ -21,26 +81,40 @@ class NewsContent extends React.Component {
         <div style={{ float: 'left', padding: 10 }}>
           {e.pic.length > 0
             ? <img src={e.pic} alt="" height="150px" width="240px" /> : <img src={logo} alt="" height="150px" width="240px" />
-            }
+          }
         </div>
         <div style={{ padding: 10, overflow: 'hidden' }}>
           <h3 style={{ marginBottom: 10 }}>
-            <a href={e.url} target="_blank">{e.title}</a>
+            <a href={e.url} target="_blank">
+              {titleTrans !== '' && isTrans === true ? titleTrans : e.title}
+            </a>
           </h3>
           <div>
-            <div style={{ height: collepsed === true ? 110 : '', overflow: 'hidden' }}>{e.guide}</div>
-            <a
+            <div style={{ height: collepsed === true ? 110 : '', overflow: 'hidden' }}>
+              {guideTrans !== '' && isTrans === true ? guideTrans : e.guide}
+            </div>
+            <Button
               style={{ float: 'right', display: collepsed === true ? 'block' : 'none' }} href="javascript:;"
               onClick={() => this.setState({ collepsed: false })}
+              size="small"
             >
-              &nbsp;&nbsp;展开全文↓
-            </a>
-            <a
-              style={{ float: 'right', display: collepsed === false ? 'block' : 'none', color: 'red' }} href="javascript:;"
+              展开全文↓
+            </Button>
+            <Button
+              style={{ float: 'right', display: collepsed === false ? 'block' : 'none' }} href="javascript:;"
               onClick={() => this.setState({ collepsed: true })}
+              size="small"
             >
-              &nbsp;&nbsp;折叠全文↑
-            </a>
+              折叠全文↑
+            </Button>
+            <Button
+              style={{ float: 'right', marginRight: 10, display: collepsed === false ? 'block' : 'none' }} href="javascript:;"
+              onClick={() => this.handleTrans()}
+              size="small"
+              type="primary"
+            >
+              {isTrans === false ? '翻译' : '取消翻译'}
+            </Button>
           </div>
         </div>
       </div>

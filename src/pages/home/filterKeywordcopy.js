@@ -20,6 +20,10 @@ export default class FilterKeyword extends React.Component {
       categories: [],
     }
 
+    componentWillMount = () => {
+      this.getFilterKeyword()
+    }
+
     getFilterKeyword = async () => {
       const data = await getFilterKeyword({
       })
@@ -49,15 +53,12 @@ export default class FilterKeyword extends React.Component {
     }
 
     updateFilterKeyword = async () => {
-      const { init } = this.props
       const { filterKeyword } = this.state
       const data = await updateFilterKeyword({
         filterKeyword: JSON.stringify(filterKeyword.concat(this.tree.getMyData())),
       })
       if (data) {
-        console.log(data)
         openNotificationWithIcon('success', '更新成功')
-        init()
       } else {
         openNotificationWithIcon('error', '更新失败')
       }

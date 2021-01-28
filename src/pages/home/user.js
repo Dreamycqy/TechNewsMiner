@@ -50,9 +50,9 @@ class User extends React.Component {
         <Menu.Item>
           <a href="javascript:;" onClick={() => this.goUser()}>用户管理</a>
         </Menu.Item>
-        <Menu.Item>
+        {/* <Menu.Item>
           <a href="javascript:;" onClick={() => this.goTree()}>知识树管理</a>
-        </Menu.Item>
+        </Menu.Item> */}
         <Menu.Item>
           <a href="/foreign-news/guide" target="_blank">我的一周导读</a>
         </Menu.Item>

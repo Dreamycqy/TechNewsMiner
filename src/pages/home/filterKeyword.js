@@ -52,8 +52,9 @@ export default class FilterKeyword extends React.Component {
     updateFilterKeyword = async () => {
       // const { init } = this.props
       const { filterKeyword } = this.state
+      const paramList = filterKeyword.concat(this.tree.getMyData())
       const data = await updateFilterKeyword({
-        filterKeyword: JSON.stringify(filterKeyword.concat(this.tree.getMyData())),
+        filterKeyword: JSON.stringify(paramList),
       })
       if (data) {
         console.log(data)

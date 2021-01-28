@@ -5,8 +5,24 @@ import Main from './main'
 import User from './user'
 
 const { TabPane } = Tabs
+const diction = {
+  NewTech: '前沿技术',
+  Medicine: '健康医疗',
+  Danger: '应急避险',
+  Internet: '信息科技',
+  Energy: '能源利用',
+  Environment: '气候环境',
+  Food: '食品安全',
+  Space: '航空航天',
+}
 
-@connect()
+function mapStateToProps(state) {
+  const { userInfo } = state.global
+  return {
+    userInfo,
+  }
+}
+@connect(mapStateToProps)
 class Home extends React.Component {
   constructor(props) {
     super(props)
@@ -15,17 +31,18 @@ class Home extends React.Component {
   }
 
   render() {
-    const { uid, params } = window.localStorage
+    const { uid } = window.localStorage
     if (!uid || uid.length < 1) {
       window.location.href = '/foreign-news/login'
     }
-    let config = {
-      fields: [],
+    const { userInfo } = this.props
+    const tabList = []
+    if (userInfo.category) {
+      const { category } = userInfo
+      category.forEach((e) => {
+        tabList.push(diction[e])
+      })
     }
-    if (params) {
-      config = JSON.parse(params)
-    }
-    const tabList = config.fields
     tabList.unshift('首页')
     return (
       <div>
