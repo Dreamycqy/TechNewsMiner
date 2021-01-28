@@ -209,7 +209,7 @@ export default class Export extends React.Component {
     return (
       <div style={{ display: 'inline-block', marginLeft: 10 }}>
         <Script
-          url="http://39.97.172.123:3000/vfs_fonts.js"
+          url="https://newsminer.net/foreign-news/assets/vfs_fonts.js"
           onCreate={() => this.handleScript('create')}
           onError={() => this.handleScript('error')}
           onLoad={() => this.handleScript('load')}
