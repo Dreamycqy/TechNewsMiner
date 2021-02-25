@@ -27,6 +27,7 @@ const countryList = [
   { value: 'fr', name: '法国' },
   { value: 'eu', name: '欧洲' },
   { value: 'ru', name: '俄罗斯' },
+  { value: 'sf', name: '科学传播组织' },
   // { value: 'cn', name: '中国' },
   { value: 'knowledge', name: '智库' },
 ]
