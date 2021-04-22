@@ -1,7 +1,11 @@
 export default {
   namespace: 'global',
   state: {
-    userInfo: {},
+    userInfo: {
+      email: '',
+      pushType: '',
+      category: [],
+    },
   },
   reducers: {
     save(state, { payload: { userInfo = {} } }) {

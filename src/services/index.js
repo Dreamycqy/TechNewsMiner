@@ -64,6 +64,15 @@ export function getAbstract(body, rSymbol) {
   })
 }
 
+export function getListAbstract(body, rSymbol) {
+  return request.post({
+    url: '/foreign-news/api/svc/Foreign/getListAbstract',
+    data: body,
+    rSymbol,
+  })
+}
+
+
 export function register(body, rSymbol) {
   return request.post({
     url: '/foreign-news/api/svc/ForeignLogin/register',

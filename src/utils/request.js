@@ -12,7 +12,7 @@ export default {
     const showError = opts.showError === undefined ? true : opts.showError
     const rSymbol = opts.rSymbol || params.rSymbol
     const optsUrl = opts.url
-    if (window.localStorage.uid) {
+    if (window.localStorage.uid && typeof params !== 'string') {
       params.uid = window.localStorage.uid
     }
     const { token, cancel } = CancelToken.source()

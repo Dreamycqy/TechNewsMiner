@@ -10,7 +10,6 @@ router.all('/', (req, res) => {
   const { method } = req
   let url = req.baseUrl
   const { basePath } = config
-  console.log(url)
   if (url.indexOf('api') > -1) {
     url = url.split('/api')[1] // eslint-disable-line
   }
@@ -18,12 +17,15 @@ router.all('/', (req, res) => {
   if (url.indexOf('getAbstract') > -1) {
     url = 'http://39.100.31.203:5000/get_abstract'
   }
+  if (url.indexOf('getListAbstract') > -1) {
+    url = 'http://39.100.31.203:5000/get_list_abstract'
+  }
   const opt = {
     method: req.method,
     url,
     headers: {
-      'Content-Type': url.indexOf('get_abstract') > -1 ? 'application/json' : 'application/x-www-form-urlencoded;charset=utf-8',
-      'Authorization': method === 'GET' ? req.query.uid : req.body.uid,
+      'Content-Type': url.indexOf('abstract') > -1 ? 'application/json' : 'application/x-www-form-urlencoded;charset=utf-8',
+      'Authorization': method === 'GET' && url.indexOf('abstract') < 0 ? req.query.uid : req.body.uid,
       'Accept': '*/*'
     },
     timeout: 40e3,
@@ -42,7 +44,7 @@ router.all('/', (req, res) => {
     opt.qs = req.query
   } else {
     opt.json = true
-    opt.body = url.indexOf('get_abstract') > -1 ? req.body : qs.stringify(req.body)
+    opt.body = url.indexOf('abstract') > -1 ? req.body : qs.stringify(req.body)
   }
   request(opt, (error, response, body) => {
     try {

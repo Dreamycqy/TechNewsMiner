@@ -7,7 +7,7 @@ import md5 from 'md5'
 import $ from 'jquery'
 // import jieba from 'jieba-js'
 import { makeOption, findPathByLeafId, eventImage, timeout } from '@/utils/common'
-import { search, subQueryNews, getFilterKeyword } from '@/services/index'
+import { search, subQueryNews, getFilterKeyword, getContentByIds, getListAbstract } from '@/services/index'
 import Export from '@/components/items/export'
 import AddCollection from './addCollection'
 import Collection from './collection'
@@ -31,16 +31,16 @@ const countryList = [
   // { value: 'cn', name: '中国' },
   { value: 'knowledge', name: '智库' },
 ]
-const typeList = {
-  前沿技术: ['0-7', '0-8', '0-9', '1-1', '1-4', '1-7'],
-  健康医疗: ['0-3', '1-2'],
-  应急避险: ['0-8', '0-9'],
-  信息科技: ['0-6', '1-5'],
-  能源利用: ['0-1', '1-0'],
-  气候环境: ['0-2', '1-3'],
-  食品安全: ['0-4'],
-  航空航天: ['0-0'],
-}
+// const typeList = {
+//   前沿技术: ['0-7', '0-8', '0-9', '1-1', '1-4', '1-7'],
+//   健康医疗: ['0-3', '1-2'],
+//   应急避险: ['0-8', '0-9'],
+//   信息科技: ['0-6', '1-5'],
+//   能源利用: ['0-1', '1-0'],
+//   气候环境: ['0-2', '1-3'],
+//   食品安全: ['0-4'],
+//   航空航天: ['0-0'],
+// }
 const dateFormat = 'YYYY-MM-DD'
 const appid = '20200511000448145'
 const translatekey = 'nCGO32AVxsejOEd7CaVk'
@@ -76,44 +76,40 @@ class Main extends React.Component {
       treeType: 'cn',
       myData: [],
       myEnData: [],
+      selectGroups: [],
     }
     this.dataList = []
   }
 
   componentWillMount = async () => {
-    if (this.props.type !== '首页') {
-      const list = typeList[this.props.type]
-      const childrenC0 = kgData[0].children.filter((e) => { return list.indexOf(e.key.substr(0, 3)) > -1 })
-      const childrenC1 = kgData[1].children.filter((e) => { return list.indexOf(e.key.substr(0, 3)) > -1 })
-      const childrenE0 = kgEnData[0].children.filter((e) => { return list.indexOf(e.key.substr(0, 3)) > -1 })
-      const childrenE1 = kgEnData[1].children.filter((e) => { return list.indexOf(e.key.substr(0, 3)) > -1 })
+    if (this.props.type.title !== '首页') {
+      const list = this.props.type.children.map((e) => { return e.key })
+      const coreKey = this.props.type.key
+      const childrenC = []
+      const childrenE = []
+      childrenC[0] = kgData[0].children.filter((e) => { return list.indexOf(e.key.substr(0, 3)) > -1 })
+      childrenC[1] = kgData[1].children.filter((e) => { return list.indexOf(e.key.substr(0, 3)) > -1 })
+      childrenC[2] = kgData[2].children.filter((e) => { return list.indexOf(e.key.substr(0, 3)) > -1 })
+      childrenE[0] = kgEnData[0].children.filter((e) => { return list.indexOf(e.key.substr(0, 3)) > -1 })
+      childrenE[1] = kgEnData[1].children.filter((e) => { return list.indexOf(e.key.substr(0, 3)) > -1 })
+      childrenE[2] = kgEnData[2].children.filter((e) => { return list.indexOf(e.key.substr(0, 3)) > -1 })
       const myData = [{
-        children: childrenC0,
-        key: '0',
-        value: '0',
-        title: '技术',
-      }, {
-        children: childrenC1,
-        key: '1',
-        value: '1',
-        title: '科学',
+        children: childrenC[coreKey],
+        key: coreKey,
+        value: coreKey,
+        title: key_map[coreKey].cn,
       }]
       const myEnData = [{
-        children: childrenE0,
-        key: '0',
-        value: '0',
-        title: 'Technology',
-      }, {
-        children: childrenE1,
-        key: '1',
-        value: '1',
-        title: 'Science',
+        children: childrenE[coreKey],
+        key: coreKey,
+        value: coreKey,
+        title: key_map[coreKey].en,
       }]
       this.dataList = []
       this.generateList(myData)
       const resultList = this.dataList.map((e) => { return e.key })
       await this.selectCategory(resultList)
-      await this.setState({ myData, myEnData })
+      await this.setState({ myData, myEnData, selectGroups: list })
     } else {
       await this.setState({ myData: kgData, myEnData: kgEnData })
     }
@@ -191,6 +187,36 @@ class Main extends React.Component {
     })
   }
 
+  handleGetAbs = async () => {
+    this.setState({ loading: true })
+    const { current, pageSize, newsList } = this.state
+    const selectPart = newsList.slice((current - 1) * pageSize, current * pageSize)
+    const ids = selectPart.map((e) => { return e.news_ID })
+    const selectList = await getContentByIds({
+      ids: JSON.stringify(ids),
+    })
+    if (selectList) {
+      const text = []
+      ids.forEach((e) => {
+        text.push(_.find(selectList, { news_ID: e }).news_Content)
+      })
+      const contentList = await getListAbstract({
+        num: 4,
+        text,
+      })
+      if (contentList.data) {
+        newsList.forEach((e) => {
+          const index = ids.indexOf(e.news_ID)
+          if (index > -1) {
+            e.news_Content = contentList.data[index]
+          }
+        })
+        this.setState({ newsList })
+      }
+    }
+    this.setState({ loading: false })
+  }
+
   handleTranslate = async (newsId) => {
     const { newsList } = this.state
     let target = _.find(newsList, { news_ID: newsId })
@@ -259,22 +285,23 @@ class Main extends React.Component {
     this.setState({ startDate: date[0], endDate: date[1] })
   }
 
-  sortData = (type) => {
+  sortData = async (type) => {
     this.setState({ sortor: type })
     const { originNewsList } = this.state
     switch (type) {
       case 'time':
-        this.setState({ newsList: _.orderBy(originNewsList, 'news_Time', 'desc') })
+        await this.setState({ newsList: _.orderBy(originNewsList, 'news_Time', 'desc') })
         break
       case 'score':
-        this.setState({ newsList: _.orderBy(originNewsList, 'score', 'desc') })
+        await this.setState({ newsList: _.orderBy(originNewsList, 'score', 'desc') })
         break
       case 'newscore':
-        this.setState({ newsList: _.orderBy(originNewsList, 'new_Score', 'desc') })
+        await this.setState({ newsList: _.orderBy(originNewsList, 'new_Score', 'desc') })
         break
       default:
         break
     }
+    this.handleGetAbs()
   }
 
   search = async () => {
@@ -648,6 +675,41 @@ class Main extends React.Component {
     return `https://newsminer.net/link.html?url=${url}`
   }
 
+  handleChangeGroup = async (value) => {
+    if (this.props.type.title !== '首页') {
+      const list = value
+      const coreKey = this.props.type.key
+      const childrenC = []
+      const childrenE = []
+      childrenC[0] = kgData[0].children.filter((e) => { return list.indexOf(e.key.substr(0, 3)) > -1 })
+      childrenC[1] = kgData[1].children.filter((e) => { return list.indexOf(e.key.substr(0, 3)) > -1 })
+      childrenC[2] = kgData[2].children.filter((e) => { return list.indexOf(e.key.substr(0, 3)) > -1 })
+      childrenE[0] = kgEnData[0].children.filter((e) => { return list.indexOf(e.key.substr(0, 3)) > -1 })
+      childrenE[1] = kgEnData[1].children.filter((e) => { return list.indexOf(e.key.substr(0, 3)) > -1 })
+      childrenE[2] = kgEnData[2].children.filter((e) => { return list.indexOf(e.key.substr(0, 3)) > -1 })
+      const myData = [{
+        children: childrenC[coreKey],
+        key: coreKey,
+        value: coreKey,
+        title: key_map[coreKey].cn,
+      }]
+      const myEnData = [{
+        children: childrenE[coreKey],
+        key: coreKey,
+        value: coreKey,
+        title: key_map[coreKey].en,
+      }]
+      this.dataList = []
+      this.generateList(myData)
+      const resultList = this.dataList.map((e) => { return e.key })
+      await this.selectCategory(resultList)
+      await this.setState({ myData, myEnData, selectGroups: list })
+    } else {
+      await this.setState({ myData: kgData, myEnData: kgEnData })
+    }
+    this.init()
+  }
+
   render() {
     const { uid } = window.localStorage
     if (!uid || uid.length < 1) {
@@ -656,11 +718,36 @@ class Main extends React.Component {
     const {
       newsList, searchText, country, showQuickFilter, indeterminate, checkAll, checkedIdList,
       showSearchBar, startDate, endDate, treeValue, loading, sortor, lastSearch, translateAll,
-      current, treeType, myData, myEnData,
+      current, treeType, myData, myEnData, selectGroups,
     } = this.state
+    const plainOptions = []
+    if (this.props.type.children) {
+      this.props.type.children.forEach((e) => {
+        plainOptions.push({
+          label: e.title,
+          value: e.key,
+        })
+      })
+    }
     return (
       <div>
-        <div style={{ height: showQuickFilter ? 64 : 48, paddingLeft: 50, borderBottom: '1px solid #e1e1e1' }}>
+        {
+          this.props.type.children
+            ? (
+              <div style={{ height: 40, paddingLeft: 50, borderBottom: '1px solid #e1e1e1' }}>
+                <div>
+                  <div style={{ width: 70, display: 'inline-block' }}>选择子类：</div>
+                  <Checkbox.Group
+                    options={plainOptions}
+                    value={selectGroups}
+                    onChange={value => this.handleChangeGroup(value)}
+                  />
+                </div>
+              </div>
+            )
+            : null
+        }
+        <div style={{ height: showQuickFilter ? 64 : 48, paddingLeft: 50, paddingTop: this.props.type.children ? 8 : 0, borderBottom: '1px solid #e1e1e1' }}>
           <div>
             <div style={{ width: 70, display: 'inline-block' }}>选择来源：</div>
             <Select
@@ -792,8 +879,8 @@ class Main extends React.Component {
                     pagination={{
                       showSizeChanger: true,
                       showQuickJumper: true,
-                      onShowSizeChange: (page, pageSize) => { this.setState({ current: page, pageSize }) },
-                      onChange: page => this.setState({ current: page }),
+                      onShowSizeChange: (page, pageSize) => { this.setState({ current: page, pageSize }, () => this.handleGetAbs()) },
+                      onChange: page => this.setState({ current: page }, () => this.handleGetAbs()),
                     }}
                     renderItem={(item) => {
                       return (
@@ -847,7 +934,7 @@ class Main extends React.Component {
                               </div>
                         )}
                           />
-                          <p dangerouslySetInnerHTML={{ __html: item.transmode === true ? `${this.handleHighLight(item['translation'])}...` : `${this.handleHighLight(item['news_Content'])}...` }} />
+                          <p dangerouslySetInnerHTML={{ __html: item.transmode === true ? `${this.handleHighLight(item['translation'])}` : `${this.handleHighLight(item['news_Content'])}` }} />
                         </List.Item>
                       )
                     }

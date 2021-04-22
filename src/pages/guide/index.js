@@ -11,39 +11,6 @@ import NewsContent from './newsContent'
 const startDate = moment().subtract('7', 'days')
 const endDate = moment()
 const resultData = []
-const diction = {
-  NewTech: '前沿技术',
-  Medicine: '健康医疗',
-  Danger: '应急避险',
-  Internet: '信息科技',
-  Energy: '能源利用',
-  Environment: '气候环境',
-  Food: '食品安全',
-  Space: '航空航天',
-}
-const typeList = {
-  前沿技术: ['0-7', '0-8', '0-9', '1-1', '1-4', '1-7'],
-  健康医疗: ['0-3', '1-2'],
-  应急避险: ['0-8', '0-9'],
-  信息科技: ['0-6', '1-5'],
-  能源利用: ['0-1', '1-0'],
-  气候环境: ['0-2', '1-3'],
-  食品安全: ['0-4'],
-  航空航天: ['0-0'],
-}
-const colorList = [
-  { name: '前沿技术', color: '#2db7f5' },
-  { name: '健康医疗', color: '#87d068' },
-  { name: '应急避险', color: 'volcano' },
-  { name: '信息科技', color: 'pink' },
-  { name: '能源利用', color: 'gold' },
-  { name: '气候环境', color: 'cyan' },
-  { name: '食品安全', color: 'geekblue' },
-  { name: '航空航天', color: 'purple' },
-]
-// const dateFormat = 'YYYY-MM-DD'
-// const appid = '20200511000448145'
-// const translatekey = 'nCGO32AVxsejOEd7CaVk'
 const key_map = require('@/constants/key_map.json')
 const countryMap = require('@/constants/countryMap.json')
 
@@ -68,8 +35,30 @@ class Guide extends React.Component {
     const { userInfo } = this.props
     if (userInfo.category) {
       const { category } = userInfo
-      await category.forEach((e) => {
-        this.search(this.filterType(diction[e]))
+      let categoryList = []
+      const tabList = []
+      const target = category[category.length - 1]
+      if (target) {
+        if (target[0] === '[') {
+          categoryList = JSON.parse(target)
+        }
+      }
+      categoryList.forEach((e) => {
+        const first = e.split('-')[0]
+        if (!_.find(tabList, { key: first })) {
+          tabList.push({
+            title: key_map[first].cn,
+            key: first,
+            children: [],
+          })
+        }
+        _.find(tabList, { key: first }).children.push({
+          title: key_map[e].cn,
+          key: e,
+        })
+      })
+      await tabList.forEach((e) => {
+        this.search(e.title, this.filterType(e.children.map((j) => { return j.key })))
       })
     }
   }
@@ -78,24 +67,45 @@ class Guide extends React.Component {
     const { userInfo } = nextProps
     if (userInfo.category) {
       const { category } = userInfo
-      await category.forEach((e) => {
-        this.search(this.filterType(diction[e]))
+      let categoryList = []
+      const tabList = []
+      const target = category[category.length - 1]
+      if (target) {
+        if (target[0] === '[') {
+          categoryList = JSON.parse(target)
+        }
+      }
+      categoryList.forEach((e) => {
+        const first = e.split('-')[0]
+        if (!_.find(tabList, { key: first })) {
+          tabList.push({
+            title: key_map[first].cn,
+            key: first,
+            children: [],
+          })
+        }
+        _.find(tabList, { key: first }).children.push({
+          title: key_map[e].cn,
+          key: e,
+        })
+      })
+      await tabList.forEach((e) => {
+        this.search(e.title, this.filterType(e.children.map((j) => { return j.key })))
       })
     }
   }
 
-  filterType = (type) => {
-    const list = typeList[type]
+  filterType = (list) => {
     const keyList = []
     for (const i in key_map) {
-      if (list.indexOf(i.substr(0, 3)) > -1 || i === '0' || i === '1') {
+      if (list.indexOf(i.substr(0, 3)) > -1) {
         keyList.push(i)
       }
     }
-    return { type, keyList }
+    return keyList
   }
 
-  search = async ({ type, keyList }) => {
+  search = async (type, keyList) => {
     this.setState({ loading: true, info: '正在筛选文章' })
     const categories = []
     let targetList = keyList
@@ -164,7 +174,7 @@ class Guide extends React.Component {
     result.push(
       <div
         style={{
-          backgroundColor: _.find(colorList, { name: item.name }).color,
+          backgroundColor: '#2db7f5',
           width: '100%',
           height: 60,
           lineHeight: '60px',

@@ -8004,7 +8004,7 @@
         "title": "Engineering",
         "children": [
             {
-              "title": "Chapter I The nature of engineering",
+              "title": "The nature of engineering",
               "children": [
                 {
                   "title": "Engineering and its characteristics",
@@ -8167,7 +8167,7 @@
               "value": "2-0"
             },
             {
-              "title": "Chapter II Information and electronic engineering",
+              "title": "Information and electronic engineering",
               "children": [
                 {
                   "title": "Information and communication engineering",
@@ -8449,7 +8449,7 @@
               "value": "2-1"
             },
             {
-              "title": "Chapter III Energy and materials engineering",
+              "title": "Energy and materials engineering",
               "children": [
                 {
                   "title": "Energy engineering",
@@ -8647,7 +8647,7 @@
               "value": "2-2"
             },
             {
-              "title": "Chapter IV Medicine and health engineering",
+              "title": "Medicine and health engineering",
               "children": [
                 {
                   "title": "Biomedical engineering",
@@ -8734,7 +8734,7 @@
               "value": "2-3"
             },
             {
-              "title": "Chapter V Agriculture and food engineering",
+              "title": "Agriculture and food engineering",
               "children": [
                 {
                   "title": "Agricultural engineering",
@@ -8815,7 +8815,7 @@
               "value": "2-4"
             },
             {
-              "title": "Chapter VI Environment and construction engineering",
+              "title": "Environment and construction engineering",
               "children": [
                 {
                   "title": "Environmental engineering",
@@ -8891,7 +8891,7 @@
               "value": "2-5"
             },
             {
-              "title": "Chapter VII Machinery and transport engineering",
+              "title": "Machinery and transport engineering",
               "children": [
                 {
                   "title": "Mechanical and power engineering",
@@ -9058,7 +9058,7 @@
               "value": "2-6"
             },
             {
-              "title": "Chapter 8 Chemical engineering, light and textile engineering",
+              "title": "Chemical engineering, light and textile engineering",
               "children": [
                 {
                   "title": "Chemical engineering",
@@ -9224,7 +9224,7 @@
               "value": "2-7"
             },
             {
-              "title": "Chapter 9 Engineering and society",
+              "title": "Engineering and society",
               "children": [
                 {
                   "title": "Social attribute of engineering",
@@ -9292,7 +9292,8 @@
                     }
                   ],
                   "key": "2-8-3",
-                  "value": "2-8-3"
+                  "value": "2-8-3",
+                  "title": "Society"
                 },
                 {
                   "title": "Social responsibility of engineering",

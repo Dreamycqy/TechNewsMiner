@@ -1,9 +1,10 @@
 import React from 'react'
-import { Input, Button, Form, Checkbox, Icon, message } from 'antd'
+import { Input, Button, Form, Checkbox, Icon, message, Tree } from 'antd'
 import { connect } from 'dva'
-import { routerRedux } from 'dva/router'
 import { updateProfile } from '@/services/index'
 import FilterKw from '@/pages/home/filterKeywordcopy'
+
+const treeData = require('@/constants/simpleTree.json')
 
 const formItemLayout = {
   labelCol: { span: 7 },
@@ -11,6 +12,7 @@ const formItemLayout = {
   style: { width: 600, marginTop: 10 },
 }
 const { localStorage } = window
+const { TreeNode } = Tree
 
 function mapStateToProps(state) {
   const { userInfo } = state.global
@@ -26,6 +28,7 @@ class Collect extends React.Component {
       collapsed: false,
       email: '',
       category: [],
+      checkedKeys: [],
       pushType: [],
       buttonLoading: false,
     }
@@ -40,6 +43,12 @@ class Collect extends React.Component {
         category,
         pushType,
       })
+      const target = category[category.length - 1]
+      if (target) {
+        if (target[0] === '[') {
+          this.setState({ checkedKeys: JSON.parse(target), category: category.slice(0, category.length - 1) })
+        }
+      }
     } else {
       this.setState({
         email: '',
@@ -58,6 +67,12 @@ class Collect extends React.Component {
         category,
         pushType,
       })
+      const target = category[category.length - 1]
+      if (target) {
+        if (target[0] === '[') {
+          this.setState({ checkedKeys: JSON.parse(target), category: category.slice(0, category.length - 1) })
+        }
+      }
     } else {
       this.setState({
         email: '',
@@ -71,6 +86,10 @@ class Collect extends React.Component {
     this.setState({ collapsed: !this.state.collapsed })
   }
 
+  onCheck = (checkedKeys) => {
+    this.setState({ checkedKeys })
+  }
+
   checkEmail = (strEmail) => {
     if (!/^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/.test(strEmail)) {
       return false
@@ -80,12 +99,14 @@ class Collect extends React.Component {
   }
 
   saveData = async () => {
-    const { email, category, pushType } = this.state
+    const { email, category, pushType, checkedKeys } = this.state
     this.setState({ buttonLoading: true })
     this.filterKw.updateFilterKeyword()
+    const temp = JSON.parse(JSON.stringify(category))
+    temp.push(JSON.stringify(checkedKeys))
     const data = await updateProfile({
       email,
-      category: JSON.stringify(category),
+      category: JSON.stringify(temp),
       pushType: JSON.stringify(pushType),
     })
     if (data) {
@@ -113,13 +134,22 @@ class Collect extends React.Component {
   }
 
   goBack = () => {
-    this.props.dispatch(routerRedux.push({
-      pathname: '/foreign-news/index',
-    }))
+    window.location.href = '/foreign-news/index'
   }
 
+  renderTreeNodes = data => data.map((item) => {
+    if (item.children) {
+      return (
+        <TreeNode title={item.title} key={item.key} dataRef={item}>
+          {this.renderTreeNodes(item.children)}
+        </TreeNode>
+      )
+    }
+    return <TreeNode key={item.key} {...item} />
+  })
+
   render() {
-    const { email, category, pushType, buttonLoading } = this.state
+    const { email, category, pushType, buttonLoading, checkedKeys } = this.state
     return (
       <div style={{ margin: 20 }}>
         <div style={{ position: 'absolute', right: 30, top: 30 }}>
@@ -192,6 +222,22 @@ class Collect extends React.Component {
               <Checkbox value="Food">食品安全</Checkbox>
               <Checkbox value="Space">航空航天</Checkbox>
             </Checkbox.Group>
+          </Form.Item>
+          <Form.Item
+            {...formItemLayout} label={(
+              <span>
+                <Icon type="apartment" style={{ color: '#888' }} />
+              &nbsp;概念树订阅&nbsp;
+              </span>
+            )}
+          >
+            <Tree
+              checkable
+              onCheck={this.onCheck}
+              checkedKeys={checkedKeys}
+            >
+              {this.renderTreeNodes(treeData)}
+            </Tree>
           </Form.Item>
           <Form.Item
             {...formItemLayout} label={(
