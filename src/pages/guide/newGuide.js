@@ -3,21 +3,16 @@ import { Spin, Button } from 'antd'
 import _ from 'lodash'
 import { connect } from 'dva'
 import moment from 'moment'
-import md5 from 'md5'
-import $ from 'jquery'
 import { guideSearch, getContentByIds, getAbstract } from '@/services/index'
 import { eventImageStr } from '@/utils/common'
 import Bg from '@/assets/bg.jpg'
 import NewsContent from './newsContent'
 
-const startDate = moment().subtract('7', 'days')
+const startDate = moment().subtract(7, 'days')
 const endDate = moment()
 const resultData = []
-const appid = '20200511000448145'
-const translatekey = 'nCGO32AVxsejOEd7CaVk'
 const key_map = require('@/constants/key_map.json')
 const countryMap = require('@/constants/countryMap.json')
-
 
 function mapStateToProps(state) {
   const { userInfo } = state.global
@@ -110,35 +105,6 @@ class Guide extends React.Component {
     return keyList
   }
 
-  translate = (q, type) => {
-    const salt = Date.now()
-    const sign = md5(appid + q + salt + translatekey)
-    return new Promise((resolve) => {
-      $.ajax({
-        url: 'https://api.fanyi.baidu.com/api/trans/vip/translate',
-        type: 'get',
-        dataType: 'jsonp',
-        data: {
-          q,
-          appid,
-          salt,
-          from: 'auto',
-          to: type ? 'en' : 'zh',
-          sign,
-        },
-        success(data) {
-          let str = ''
-          data['trans_result'].forEach((e) => {
-            str += e.dst
-          })
-          resolve({ str })
-        },
-        error() {
-        },
-      })
-    })
-  }
-
   search = async (type, keyList) => {
     this.setState({ loading: true, info: '正在筛选文章' })
     const categories = []
@@ -151,16 +117,8 @@ class Guide extends React.Component {
       categories.push(key_map[key]['en'])
     })
     let newsList = []
-    const word = categories[0].indexOf('与') > -1 ? categories[0].split('与') : categories[0].split('的')
-    const list = JSON.parse(JSON.stringify(word))
-    for (const i of word) {
-      const str = await this.translate(i, 'en')
-      if (str) {
-        list.push(str.str)
-      }
-    }
     const data = await guideSearch({
-      word: JSON.stringify(list),
+      word: JSON.stringify([]),
       startDate: startDate.format('YYYY-MM-DD'),
       endDate: endDate.format('YYYY-MM-DD'),
       categories: JSON.stringify(categories),

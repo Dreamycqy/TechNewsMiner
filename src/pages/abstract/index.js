@@ -2,6 +2,8 @@ import React from 'react'
 import { Input, Divider, List, Icon, Popconfirm, Select, Button, Spin } from 'antd'
 import md5 from 'md5'
 import moment from 'moment'
+import { connect } from 'dva'
+import { routerRedux } from 'dva/router'
 import $ from 'jquery'
 import _ from 'lodash'
 import { getContentByIds, getAbstract } from '@/services/index'
@@ -27,6 +29,7 @@ originData.checkedList.forEach((e) => {
   })
 })
 
+@connect()
 class Abstract extends React.Component {
   constructor(props) {
     super(props)
@@ -204,6 +207,15 @@ class Abstract extends React.Component {
     this.setState({ newsList: newsList.filter(item => item.news_ID !== news_ID) })
   }
 
+  handleMakePaper = (news_ID) => {
+    this.props.dispatch(routerRedux.push({
+      pathname: '/foreign-news/paperMaker',
+      query: {
+        id: news_ID,
+      },
+    }))
+  }
+
   render() {
     const { newsList, sortor, newValue, loading } = this.state
     return (
@@ -271,6 +283,8 @@ class Abstract extends React.Component {
                             </a>
                           )
                         }
+                      <Divider type="vertical" />
+                      <a href="javascript:;" onClick={() => this.handleMakePaper(item['news_ID'])}>生成文章</a>
                     </span>,
                     <Popconfirm
                       title="确定要删除吗？"

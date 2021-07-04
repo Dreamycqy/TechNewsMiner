@@ -58,7 +58,7 @@ export function getContentByIds(body, rSymbol) {
 
 export function getAbstract(body, rSymbol) {
   return request.post({
-    url: '/foreign-news/api/svc/Foreign/getAbstract',
+    url: '/foreign-news/api/get_abstract',
     data: body,
     rSymbol,
   })
@@ -66,7 +66,7 @@ export function getAbstract(body, rSymbol) {
 
 export function getListAbstract(body, rSymbol) {
   return request.post({
-    url: '/foreign-news/api/svc/Foreign/getListAbstract',
+    url: '/foreign-news/api/get_list_abstract',
     data: body,
     rSymbol,
   })
@@ -92,6 +92,22 @@ export function getProfile(body, rSymbol) {
 export function updateProfile(body, rSymbol) {
   return request.post({
     url: '/foreign-news/api/svc/Foreign/updateProfile',
+    data: body,
+    rSymbol,
+  })
+}
+
+export function getXlink(body, rSymbol) {
+  return request.post({
+    url: '/foreign-news/api/xlink',
+    data: body,
+    rSymbol,
+  })
+}
+
+export function kCardSearch(body, rSymbol) {
+  return request.post({
+    url: '/foreign-news/api/kCardSearch',
     data: body,
     rSymbol,
   })

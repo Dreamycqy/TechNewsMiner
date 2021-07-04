@@ -73,7 +73,7 @@ class NewsContent extends React.Component {
     const e = this.props.data
     const { collepsed, titleTrans, guideTrans, isTrans } = this.state
     return (
-      <div style={{ padding: 10, height: collepsed === true ? 200 : '', minHeight: 200 }}>
+      <div style={{ padding: 10 }}>
         <div style={{ float: 'left', padding: 10, width: 120, textAlign: 'center' }}>
           <div style={{ backgroundColor: '#f1f0ef', lineHeight: '70px', fontSize: 18, marginBottom: 10, height: 70, color: '#999' }}>{e.time.format('DD')}</div>
           <div style={{ backgroundColor: '#f1f0ef', lineHeight: '70px', fontSize: 18, height: 70, color: '#999' }}>{e.time.format('YYYY-MM')}</div>
@@ -116,6 +116,37 @@ class NewsContent extends React.Component {
               {isTrans === false ? '翻译' : '取消翻译'}
             </Button>
           </div>
+        </div>
+        <div style={{ overflow: 'hidden' }}>
+          {`<div class="news">
+              <div class="timebox">
+                <div class="timespan timespan_top">
+                  ${e.time.format('DD')}
+                  <!-- 日期 -->
+                </div>
+                <div class="timespan">
+                  ${e.time.format('YYYY-MM')}
+                  <!-- 年-月 -->
+                </div>
+              </div>
+              <div class="imgbox">
+                <img src="${e.pic.length > 0 ? e.pic : ''}" alt="" height="150px" width="240px">
+              </div>
+              <div class="titlebox">
+                <h3 style="margin-bottom: 10px;">
+                  <a href="${e.url}" target="_blank">
+                    ${titleTrans !== '' && isTrans === true ? titleTrans : e.title}
+                    <!-- 标题内容 -->
+                  </a>
+                </h3>
+              <div>
+                <div class="text">
+                  ${guideTrans !== '' && isTrans === true ? guideTrans : e.guide}
+                  <!-- 文字内容 -->
+                </div>
+                </div>
+              </div>
+            </div>`}
         </div>
       </div>
     )

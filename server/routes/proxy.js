@@ -9,16 +9,18 @@ router.all('/', (req, res) => {
   const { hostname } = req
   const { method } = req
   let url = req.baseUrl
-  const { basePath } = config
+  const { basePath, xlink, abstract  } = config
   if (url.indexOf('api') > -1) {
     url = url.split('/api')[1] // eslint-disable-line
   }
-  url = (typeof basePath === 'string' ? basePath : basePath[hostname]) + url
-  if (url.indexOf('getAbstract') > -1) {
-    url = 'http://39.100.31.203:5000/get_abstract'
-  }
-  if (url.indexOf('getListAbstract') > -1) {
-    url = 'http://39.100.31.203:5000/get_list_abstract'
+  if (url.indexOf('kCardSearch') > -1) {
+    url = 'http://39.100.31.203:8077/linkInstance'
+  } else if (url.indexOf('abstract') > -1) {
+    url = abstract + url
+  } else if (url.indexOf('xlink') > -1) {
+    url = xlink + url
+  } else {
+    url = (typeof basePath === 'string' ? basePath : basePath[hostname]) + url
   }
   const opt = {
     method: req.method,

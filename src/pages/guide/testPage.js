@@ -5,12 +5,11 @@ import { connect } from 'dva'
 import moment from 'moment'
 import md5 from 'md5'
 import $ from 'jquery'
-import { guideSearch, getContentByIds, getAbstract } from '@/services/index'
+import { guideSearch, getContentByIds } from '@/services/index'
 import { eventImageStr } from '@/utils/common'
-import Bg from '@/assets/bg.jpg'
 import NewsContent from './newsContent'
 
-const startDate = moment().subtract('7', 'days')
+const startDate = moment().subtract(30, 'days')
 const endDate = moment()
 const resultData = []
 const appid = '20200511000448145'
@@ -179,20 +178,13 @@ class Guide extends React.Component {
           if (text.length > 10000) {
             text = text.substr(0, 10000)
           }
-          const guide = await getAbstract({
-            num: 4,
-            text,
+          final.push({
+            title: item.news_Title,
+            guide: text,
+            pic: eventImageStr(item['news_Pictures']),
+            url: item.news_URL,
+            time: moment(item.news_Time),
           })
-          if (guide) {
-            this.setState({ info: '正在抽取摘要' })
-            final.push({
-              title: item.news_Title,
-              guide: guide.data,
-              pic: eventImageStr(item['news_Pictures']),
-              url: item.news_URL,
-              time: moment(item.news_Time),
-            })
-          }
         }
         resultData.push({
           name: type,
@@ -242,7 +234,7 @@ class Guide extends React.Component {
   render() {
     const { resultDataNew, loading, info } = this.state
     return (
-      <div style={{ padding: 10, background: `url("${Bg}") top repeat`, backgroundSize: '150%' }}>
+      <div style={{ padding: 10 }}>
         <div id="guideheader" style={{ margin: '10px 20px' }}>
           <div style={{ height: 48 }}>
             <h2

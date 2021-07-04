@@ -103,7 +103,9 @@ class Collect extends React.Component {
     this.setState({ buttonLoading: true })
     this.filterKw.updateFilterKeyword()
     const temp = JSON.parse(JSON.stringify(category))
-    temp.push(JSON.stringify(checkedKeys))
+    if (typeof temp === 'object') {
+      temp.push(JSON.stringify(checkedKeys))
+    }
     const data = await updateProfile({
       email,
       category: JSON.stringify(temp),

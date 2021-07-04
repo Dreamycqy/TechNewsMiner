@@ -39,6 +39,10 @@ export default [
         path: './guide',
         component: './guide',
       },
+      {
+        path: './paperMaker',
+        component: './paperMaker',
+      },
     ],
   },
 ]

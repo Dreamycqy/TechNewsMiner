@@ -1,11 +1,10 @@
 import React from 'react'
-import { Select, Button, Checkbox, DatePicker, TreeSelect, List, Icon, BackTop, message, Empty, Modal, Tooltip } from 'antd'
+import { Select, Button, Checkbox, DatePicker, TreeSelect, List, Icon, BackTop, message, Empty, Modal, Tooltip, Divider } from 'antd'
 import moment from 'moment'
 import _ from 'lodash'
 import { connect } from 'dva'
 import md5 from 'md5'
 import $ from 'jquery'
-// import jieba from 'jieba-js'
 import { makeOption, findPathByLeafId, eventImage, timeout } from '@/utils/common'
 import { search, subQueryNews, getFilterKeyword, getContentByIds, getListAbstract } from '@/services/index'
 import Export from '@/components/items/export'
@@ -20,6 +19,7 @@ let translateList = []
 const { RangePicker } = DatePicker
 const { Option } = Select
 const countryList = [
+  { value: 'recommand', name: '推荐' },
   { value: 'all', name: '全部' },
   { value: 'jp', name: '日本' },
   { value: 'us', name: '美国' },
@@ -57,9 +57,9 @@ class Main extends React.Component {
       newsList: [],
       originNewsList: [],
       searchText: [],
-      startDate: moment().subtract(2, 'days'),
+      startDate: moment().subtract(4, 'days'),
       endDate: moment(),
-      country: 'all',
+      country: 'recommand',
       indeterminate: false,
       checkedIdList: [],
       checkAll: false,
@@ -330,14 +330,24 @@ class Main extends React.Component {
       }
     }
     this.setState({ loading: true, searchText: arr, lastSearch: arr })
-    const data = await search({
+    let countryArr = countryMap[country]
+    if (country === 'recommand') {
+      countryArr = []
+      for (const i in countryMap) {
+        if (i !== 'all' && i !== 'jp' && i !== 'ru') {
+          countryArr = countryArr.concat(countryMap[i])
+        }
+      }
+    }
+    const filterData = await search({
       word: JSON.stringify(searchText),
       startDate: startDate.format('YYYY-MM-DD'),
       endDate: endDate.format('YYYY-MM-DD'),
       categories: JSON.stringify(categories),
-      sources: JSON.stringify(countryMap[country]),
+      sources: JSON.stringify(countryArr),
     }, 'search')
-    if (data) {
+    if (filterData) {
+      const data = filterData.filter((e) => { return e.news_Content.length > 150 })
       if (data.length > 0 && typeof data[0] === 'object') {
         data.forEach((e) => {
           if (e.score) {
@@ -710,6 +720,16 @@ class Main extends React.Component {
     this.init()
   }
 
+  handleMakePaper = (news_ID) => {
+    window.open(`/foreign-news/paperMaker?id=${news_ID}`)
+    // this.props.dispatch(routerRedux.push({
+    //   pathname: '/foreign-news/paperMaker',
+    //   query: {
+    //     id: news_ID,
+    //   },
+    // }))
+  }
+
   render() {
     const { uid } = window.localStorage
     if (!uid || uid.length < 1) {
@@ -889,20 +909,22 @@ class Main extends React.Component {
                           actions={[
                             <span>
                               {
-                            item.transmode !== true
-                              ? (
-                                <a href="javascript:;" onClick={() => this.handleTranslate(item['news_ID'])}>
-                                  <Icon type="cloud-sync" />
-                                  &nbsp;&nbsp;翻译
-                                </a>
-                              )
-                              : (
-                                <a href="javascript:;" onClick={() => this.handleTransBack(item['news_ID'])}>
-                                  <Icon type="cloud-sync" />
-                                  &nbsp;&nbsp;原文
-                                </a>
-                              )
-                          }
+                                item.transmode !== true
+                                  ? (
+                                    <a href="javascript:;" onClick={() => this.handleTranslate(item['news_ID'])}>
+                                      <Icon type="cloud-sync" />
+                                      &nbsp;&nbsp;翻译
+                                    </a>
+                                  )
+                                  : (
+                                    <a href="javascript:;" onClick={() => this.handleTransBack(item['news_ID'])}>
+                                      <Icon type="cloud-sync" />
+                                      &nbsp;&nbsp;原文
+                                    </a>
+                                  )
+                                }
+                              <Divider type="vertical" />
+                              <a href="javascript:;" onClick={() => this.handleMakePaper(item['news_ID'])}>生成文章</a>
                             </span>,
                           ]}
                         >
